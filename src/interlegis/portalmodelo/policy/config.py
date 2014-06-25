@@ -160,9 +160,16 @@ SITE_STRUCTURE = [
     ),
     dict(
         type='Folder',
-        title=u'Boletim',
+        title=u'Boletins',
         excludeFromNav=True,
         _addable_types=['EasyNewsletter'],
+        _children=[
+            dict(
+                type='EasyNewsletter',
+                title=u'Acompanhe a Câmara',
+                description=u'Receba por e-mail tudo o que acontece de novo na nossa Casa Legislativa.',
+            ),
+        ],
     ),
     dict(
         type='Folder',

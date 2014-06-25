@@ -4,7 +4,8 @@ Changelog
 1.0b3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Cria boletim padrão e adiciona portlet de assinatura (https://colab.interlegis.leg.br/ticket/2879).
+  [hvelarde]
 
 
 1.0b2 (2014-06-05)
