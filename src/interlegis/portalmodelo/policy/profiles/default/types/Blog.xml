@@ -9,7 +9,4 @@
     <element value="Image" />
     <element value="News Item" />
   </property>
-  <property name="behaviors">
-    <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation" />
-  </property>
 </object>
