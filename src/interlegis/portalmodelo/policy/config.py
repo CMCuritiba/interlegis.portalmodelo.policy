@@ -1,10 +1,20 @@
 # -*- coding:utf-8 -*-
+from interlegis.intranetmodelo.policy.utils import _add_id
+
+import os
 
 PROJECTNAME = 'interlegis.portalmodelo.policy'
 PROFILE_ID = '{0}:default'.format(PROJECTNAME)
 
 # content created at Plone's installation
 DEFAULT_CONTENT = ('front-page', 'news', 'events', 'Members')
+
+LOREM_TITLE = u'Lorem ipsum'
+LOREM_DESCRIPTION = u'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.'
+
+IMAGE = open(
+    os.path.join(
+        os.path.dirname(__file__), 'tests', 'bandeira-brasil.jpg')).read()
 
 # new site structure; this dictionary defines the objects that are going to be
 # created on the root of the site; it also includes information about folder
@@ -29,6 +39,50 @@ SITE_STRUCTURE = [
                 type='Folder',
                 title=u'Notícias',
                 _addable_types=['Collection', 'Folder', 'News Item'],
+                _children=[
+                    dict(
+                        type='Collection',
+                        title=u'Notícias',
+                        query=[
+                            dict(
+                                i='portal_type',
+                                o='plone.app.querystring.operation.selection.is',
+                                v='News Item',
+                            ),
+                            dict(
+                                i='path',
+                                o='plone.app.querystring.operation.string.relativePath',
+                                v='../',
+                            ),
+                        ],
+                        sort_reversed=True,
+                        sort_on=u'created',
+                        limit=100,
+                    ),
+                    dict(
+                        type='News Item',
+                        title=LOREM_TITLE,
+                        description=LOREM_DESCRIPTION,
+                    ),
+                    dict(
+                        type='News Item',
+                        id='lorem-ipsum-1',
+                        title=LOREM_TITLE,
+                        description=LOREM_DESCRIPTION,
+                    ),
+                    dict(
+                        type='News Item',
+                        id='lorem-ipsum-2',
+                        title=LOREM_TITLE,
+                        description=LOREM_DESCRIPTION,
+                    ),
+                    dict(
+                        type='News Item',
+                        id='lorem-ipsum-3',
+                        title=LOREM_TITLE,
+                        description=LOREM_DESCRIPTION,
+                    ),
+                ],
             ),
             dict(
                 type='Folder',
@@ -211,14 +265,4 @@ SITE_STRUCTURE = [
     ),
 ]
 
-# add a key for the id as the normalized title, if it does not exists
-from plone.i18n.normalizer import idnormalizer
-for item in SITE_STRUCTURE:
-    if 'id' not in item:
-        item['id'] = idnormalizer.normalize(item['title'], 'pt')
-    if '_children' in item:
-        for i in item['_children']:
-            if 'id' not in i:
-                i['id'] = idnormalizer.normalize(i['title'], 'pt')
-
-SITE_STRUCTURE = tuple(SITE_STRUCTURE)
+SITE_STRUCTURE = _add_id(SITE_STRUCTURE)

@@ -39,7 +39,7 @@
   <!-- collective.cover configuration -->
   <record name="collective.cover.controlpanel.ICoverSettings.layouts">
     <value>
-      <element key="Portal Modelo">[{"type": "row", "children": [{"data": {"layout-type": "column", "column-size": 16}, "type": "group", "children": [{"tile-type": "collective.cover.collection", "type": "tile", "id": "c6572780c3d24b4f933fdb90bc280b34"}, {"tile-type": "collective.cover.collection", "type": "tile", "id": "be294b89ec074f828fea636af72bfaa3"}], "roles": ["Manager"]}]}]</element>
+      <element key="Portal Modelo">[{"type": "row", "children": [{"data": {"layout-type": "column", "column-size": 16}, "type": "group", "children": [{"tile-type": "collective.cover.carousel", "type": "tile", "id": "f564572ae5444c02948e5c9b39f15d6f"}, {"tile-type": "collective.cover.collection", "type": "tile", "id": "05683253bc0f405dbcf9b97f1f2cc81d"}], "roles": ["Manager"]}]}]</element>
     </value>
   </record>
 

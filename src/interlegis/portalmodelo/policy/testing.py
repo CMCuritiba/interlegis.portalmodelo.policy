@@ -30,6 +30,7 @@ class Fixture(PloneSandboxLayer):
 
         z2.installProduct(app, 'Products.AROfficeTransforms')
         z2.installProduct(app, 'Products.DateRecurringIndex')
+        z2.installProduct(app, 'Products.EasyNewsletter')
         z2.installProduct(app, 'Products.Ploneboard')
 
     def setUpPloneSite(self, portal):
@@ -46,6 +47,7 @@ class Fixture(PloneSandboxLayer):
     def tearDownZope(self, app):
         z2.uninstallProduct(app, 'Products.AROfficeTransforms')
         z2.uninstallProduct(app, 'Products.DateRecurringIndex')
+        z2.uninstallProduct(app, 'Products.EasyNewsletter')
         z2.uninstallProduct(app, 'Products.Ploneboard')
 
 FIXTURE = Fixture()

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from five import grok
 from interlegis.portalmodelo.policy.config import DEFAULT_CONTENT
+from interlegis.portalmodelo.policy.config import IMAGE
 from interlegis.portalmodelo.policy.config import PROJECTNAME
 from interlegis.portalmodelo.policy.config import SITE_STRUCTURE
 from plone import api
@@ -83,52 +84,30 @@ def constrain_types(folder, addable_types):
     folder.setLocallyAllowedTypes(addable_types)
 
 
-def create_children_structure(folder, children):
-    """Create and publish folder structure as defined in config.py.
-    """
-    for item in children:
+def create_site_structure(root, structure):
+    """Create and publish new site structure as defined in config.py."""
+    for item in structure:
         id = item['id']
         title = item['title']
-        if not hasattr(folder, id):
-            obj = api.content.create(folder, **item)
-
+        if id not in root:
+            obj = api.content.create(root, **item)
             # publish private content
             if api.content.get_state(obj) == 'private':
                 api.content.transition(obj, 'publish')
             elif obj.portal_type == 'PloneboardForum':
                 api.content.transition(obj, 'make_freeforall')
-
-            # constrain types in folder?
-            if '_addable_types' in item:
-                constrain_types(obj, item['_addable_types'])
-            # XXX: following two lines are a workaround for issue in plone.api
-            #      see: https://github.com/plone/plone.api/issues/99
-            obj.setTitle(title)
-            obj.reindexObject('Title')
-
-
-def create_site_structure(site):
-    """Create and publish new site structure as defined in config.py.
-    """
-    logger.info(u'Criando conteúdo padrão do Portal Modelo')
-    for item in SITE_STRUCTURE:
-        id = item['id']
-        title = item['title']
-        if not hasattr(site, id):
-            obj = api.content.create(site, **item)
-            # publish private content
-            if api.content.get_state(obj) == 'private':
-                api.content.transition(obj, 'publish')
             # constrain types in folder?
             if '_addable_types' in item:
                 constrain_types(obj, item['_addable_types'])
             # the content has more content inside? create it
             if '_children' in item:
-                create_children_structure(obj, item['_children'])
-            # XXX: following two lines are a workaround for issue in plone.api
-            #      see: https://github.com/plone/plone.api/issues/99
+                create_site_structure(obj, item['_children'])
+            # add an image to all news items
+            if obj.portal_type == 'News Item':
+                obj.setImage(IMAGE)
+            # XXX: workaround for https://github.com/plone/plone.api/issues/99
             obj.setTitle(title)
-            obj.reindexObject('Title')
+            obj.reindexObject()
             logger.debug(u'    {0} criado e publicado'.format(title))
         else:
             logger.debug(u'    pulando {0}; conteúdo existente'.format(title))
@@ -152,6 +131,7 @@ def setup_csvdata_permissions(portal):
         roles=(),
     )
 
+
 def install_legislative_process_integration(self):
     """Install interlegis.portalmodelo.pl package.
 
@@ -164,14 +144,34 @@ def install_legislative_process_integration(self):
 
 
 def populate_cover(site):
-    """Populate site front page."""
-    from cover import get_tiles
+    """Populate site front page. The layout is composed by 3 rows:
+
+    1. 1 carousel tile
+    2. 1 collection tiles
+    3. TODO: 1 parlamientarians tile
+
+    Populate and configure those tiles.
+    """
+    from cover import set_tile_configuration
+    from plone.uuid.interfaces import IUUID
+
     cover = site['pagina-inicial']
-    tiles = get_tiles(cover)
-    tile_url = '{0}/{1}'.format(tiles[0]['type'], tiles[0]['id'])
-    tile = cover.restrictedTraverse(tile_url)
+    # first row
+    tiles = cover.list_tiles('collective.cover.carousel')
+    obj = site['sobre-a-camara']['noticias']['lorem-ipsum']
+    uuid = IUUID(obj)
+    data = dict(uuids=[uuid])
+    cover.set_tile_data(tiles[0], **data)
+    set_tile_configuration(cover, tiles[0], image={'scale': 'large'})
+    # second row
+    tiles = cover.list_tiles('collective.cover.collection')
     obj = site['sobre-a-camara']['noticias']['noticias']
-    tile.populate_with_object(obj)
+    assert obj.portal_type == 'Collection'
+    uuid = IUUID(obj)
+    data = dict(header=u'Notícias', footer=u'Mais…', uuid=uuid)
+    cover.set_tile_data(tiles[0], **data)
+    set_tile_configuration(
+        cover, tiles[0], image=dict(order=0, scale='thumb'), date=dict(order=1))
 
 
 def set_site_default_page(site):
@@ -313,7 +313,7 @@ def setup_various(context):
     import_registry_settings(portal)
     delete_default_content(portal)
     delete_default_portlets(portal)
-    create_site_structure(portal)
+    create_site_structure(portal, SITE_STRUCTURE)
     setup_csvdata_permissions(portal)
     install_legislative_process_integration(portal)
     set_site_default_page(portal)
