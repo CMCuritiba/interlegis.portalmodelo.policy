@@ -197,6 +197,23 @@ SITE_STRUCTURE = [
         type='OmbudsOffice',
         title=u'Ouvidoria',
         description=u'Sistema de informações ao cidadão.',
+        claim_types=[
+            dict(claim_type='Denúncia'),
+            dict(claim_type='Dúvida'),
+            dict(claim_type='Elogio'),
+            dict(claim_type='Pedido de Acesso à Informação'),
+            dict(claim_type='Solicitação'),
+            dict(claim_type='Sugestão'),
+            dict(claim_type='Reclamação'),
+        ],
+        areas=[
+            dict(responsible='Nome do Responsável', email='nome@dominio.leg.br', area='Administração'),
+            dict(responsible='Nome do Responsável', email='nome@dominio.leg.br', area='Assessoria Legislativa e Jurídica'),
+            dict(responsible='Nome do Responsável', email='nome@dominio.leg.br', area='Comissões'),
+            dict(responsible='Nome do Responsável', email='nome@dominio.leg.br', area='Ouvidoria'),
+            dict(responsible='Nome do Responsável', email='nome@dominio.leg.br', area='Secretaria Legislativa'),
+            dict(responsible='Nome do Responsável', email='nome@dominio.leg.br', area='Plenário'),
+        ],
     ),
     dict(
         type='Folder',
