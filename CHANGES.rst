@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0b3 (unreleased)
+1.0b3 (2014-07-02)
 ------------------
 
 - Cria boletim padrão e adiciona portlet de assinatura (https://colab.interlegis.leg.br/ticket/2879).
