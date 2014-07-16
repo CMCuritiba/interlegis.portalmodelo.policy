@@ -98,7 +98,7 @@ SITE_STRUCTURE = [
     ),
     dict(
         type='Folder',
-        title=u'Processo legislativo',
+        title=u'Processo Legislativo',
         excludeFromNav=True,
         _addable_types=['Folder', 'File', 'Link', 'Document', 'Window'],
     ),
@@ -116,6 +116,7 @@ SITE_STRUCTURE = [
     dict(
         type='Folder',
         title=u'Transparência',
+        excludeFromNav=True,
         _addable_types=['Folder', 'File', 'Link', 'Document', 'Window'],
         _children=[
             dict(
@@ -223,7 +224,9 @@ SITE_STRUCTURE = [
     ),
     dict(
         type='Folder',
-        title=u'Banco de imagens',
+        id='imagens',
+        title=u'Banco de Imagens',
+        description=u'Banco de imagens usadas e referenciadas nos conteúdos do portal.',
         excludeFromNav=True,
         _addable_types=['Folder', 'Image', 'Link'],
     ),
@@ -237,27 +240,29 @@ SITE_STRUCTURE = [
     ),
     dict(
         type='Folder',
-        title=u'Boletins',
+        title=u'Boletim',
+        description=u'Boletins informativos da Casa Legislativa. Cadastre seu e-mail para ficar sabendo das nossas novidades.',
         excludeFromNav=True,
         _addable_types=['EasyNewsletter'],
         _children=[
             dict(
                 type='EasyNewsletter',
                 title=u'Acompanhe a Câmara',
-                description=u'Receba por e-mail tudo o que acontece de novo na nossa Casa Legislativa.',
+                description=u'Receba por e-mail periodicamente o que acontece de novo na nossa Casa Legislativa.',
             ),
         ],
     ),
     dict(
         type='Folder',
         title=u'Enquetes',
+        description=u'Pesquisas de opinião feitas pela Casa Legislativa.',
         excludeFromNav=True,
         _addable_types=['collective.polls.poll'],
     ),
     dict(
         type='Ploneboard',
         title=u'Fóruns',
-        excludeFromNav=True,
+        excludeFromNav=False,
         _children=[
             dict(
                 type='PloneboardForum',
@@ -267,7 +272,7 @@ SITE_STRUCTURE = [
             dict(
                 type='PloneboardForum',
                 title=u'Saúde',
-                description='Debates sobre saúde pública em nosso município .',
+                description='Debates sobre saúde pública em nosso município.',
             ),
             dict(
                 type='PloneboardForum',
@@ -284,7 +289,8 @@ SITE_STRUCTURE = [
     ),
     dict(
         type='Document',
-        title=u'Perguntas frequentes',
+        title=u'Perguntas Frequentes',
+        description=u'Relação de perguntas que são feitas com frequência para a Casa Legislativa e suas respostas.',
     ),
 ]
 
