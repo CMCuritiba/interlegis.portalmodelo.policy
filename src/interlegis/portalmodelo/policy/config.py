@@ -22,7 +22,7 @@ IMAGE = open(
 SITE_STRUCTURE = [
     dict(
         type='collective.cover.content',
-        title=u'Página inicial',
+        title=u'Página Inicial',
         template_layout='Portal Modelo',
     ),
     dict(
@@ -157,39 +157,45 @@ SITE_STRUCTURE = [
     ),
     dict(
         type='Folder',
-        title=u'Links úteis',
+        title=u'Links Úteis',
         excludeFromNav=True,
         _addable_types=['Folder', 'Link'],
         _children=[
             dict(
                 type='Link',
-                title=u'Prefeitura',
-                remoteUrl='http://',
+                title=u'Prefeitura Municipal',
+                description=u'Portal da Prefeitura Municipal.',
+                remoteUrl='http://www.prefeitura.uf.gov.br',
             ),
             dict(
                 type='Link',
-                title=u'Diario Oficial',
-                remoteUrl='http://',
+                title=u'Diario Oficial do Município',
+                description=u'Site do diário oficial do município (deve ser removido se não existir).',
+                remoteUrl='http://diario.municipio.uf.gov.br',
             ),
             dict(
                 type='Link',
-                title=u'Programa Interlegis',
-                remoteUrl='http://www.interlegis.gov.br',
-            ),
-            dict(
-                type='Link',
-                title=u'Assembléia Estadual',
-                remoteUrl='http://',
+                title=u'Assembleia Legislativa',
+                description=u'Portal da Assembleia Legislativa do Estado.',
+                remoteUrl='http://www.assembleia.uf.leg.br',
             ),
             dict(
                 type='Link',
                 title=u'Câmara dos Deputados',
-                remoteUrl='http://www.camara.gov.br',
+                description=u'Portal da Câmara dos Deputados Federal.',
+                remoteUrl='http://www.camara.leg.br',
             ),
             dict(
                 type='Link',
                 title=u'Senado Federal',
-                remoteUrl='http://www.senado.gov.br',
+                description=u'Portal do Senado Federal do Brasil.',
+                remoteUrl='http://www.senado.leg.br',
+            ),
+            dict(
+                type='Link',
+                title=u'Programa Interlegis',
+                description=u'Portal do Programa de Integração e Modernização do Legislativo Brasileiro.',
+                remoteUrl='http://www.interlegis.leg.br',
             ),
         ],
     ),
