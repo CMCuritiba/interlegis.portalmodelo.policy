@@ -85,8 +85,8 @@ class SitePropertiesTestCase(unittest.TestCase):
         ]
         self.assertItemsEqual(types_searched, expected)
 
-    def test_icon_visibility_is_disabled(self):
-        self.assertEqual(self.properties.icon_visibility, 'disabled')
+    def test_icons_are_visible_to_authenticated_users_only(self):
+        self.assertEqual(self.properties.icon_visibility, 'authenticated')
 
 
 class NavtreePropertiesTestCase(unittest.TestCase):

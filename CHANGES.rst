@@ -4,7 +4,8 @@ Changelog
 1.0b4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Os ícones dos tipos de conteúdo só devem se mostrar para usuários autenticados (https://colab.interlegis.leg.br/ticket/2972).
+  [hvelarde]
 
 
 1.0b3 (2014-07-02)
