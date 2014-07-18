@@ -4,6 +4,9 @@ Changelog
 1.0b4 (unreleased)
 ------------------
 
+- Refactored folders structure from the root folder of portal.
+  [jeanferri]
+
 - Os ícones dos tipos de conteúdo só devem se mostrar para usuários autenticados (https://colab.interlegis.leg.br/ticket/2972).
   [hvelarde]
 
