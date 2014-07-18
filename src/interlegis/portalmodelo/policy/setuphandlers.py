@@ -158,7 +158,7 @@ def populate_cover(site):
     cover = site['pagina-inicial']
     # first row
     tiles = cover.list_tiles('collective.cover.carousel')
-    obj = site['sobre-a-camara']['noticias']['lorem-ipsum']
+    obj = site['sobre-a-camara']['noticias']['primeira-noticia']
     uuid = IUUID(obj)
     data = dict(uuids=[uuid])
     cover.set_tile_data(tiles[0], **data)
@@ -229,7 +229,7 @@ def import_images(site):
     """
     from StringIO import StringIO
     import os
-    image_bank = site['banco-de-imagens']
+    image_bank = site['imagens']
     # look inside "static" folder and import all files
     path = os.path.dirname(os.path.abspath(__file__)) + '/static/'
     logger.info(u'Importando imagens')
@@ -331,7 +331,7 @@ def fix_image_links_in_static_portlet(context):
 
     def get_image_uid(image):
         """Return image UID."""
-        folder = portal['banco-de-imagens']
+        folder = portal['imagens']
         if image in folder:
             return folder[image].UID()
 
