@@ -87,7 +87,7 @@ class DependenciesSettingsTestCase(unittest.TestCase):
     def test_collective_upload_settings(self):
         from collective.upload.interfaces import IUploadSettings
         settings = self.registry.forInterface(IUploadSettings)
-        expected = 'gif, jpeg, jpg, png, pdf, doc, txt, docx'
+        expected = 'gif, jpeg, jpg, png, pdf, doc, txt, docx, ods, odt, odp, html, csv, zip, tgz, ppt, pptx, xls, xlsx'
         self.assertEqual(settings.upload_extensions, expected)
         self.assertEqual(settings.max_file_size, 10485760)
         self.assertEqual(settings.resize_max_width, 3872)

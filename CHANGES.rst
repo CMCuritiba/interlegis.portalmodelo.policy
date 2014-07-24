@@ -4,6 +4,10 @@ Changelog
 1.0b4 (unreleased)
 ------------------
 
+- Add ods, odt, odp, html, csv, zip, tgz, ppt, pptx, xls and xlsx to the list
+  of file types that can be uploaded to the portal (https://colab.interlegis.leg.br/ticket/2966).
+  [hvelarde]
+
 - Refactored folders structure from the root folder of portal.
   [jeanferri]
 
