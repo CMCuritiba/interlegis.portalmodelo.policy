@@ -96,56 +96,21 @@ class NavtreePropertiesTestCase(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
         self.navtree = self.portal['portal_properties'].navtree_properties
+        self.types = self.portal['portal_types']
         self.maxDiff = None
 
-    def test_metaTypesNotToList(self):
-        metaTypesNotToList = list(self.navtree.metaTypesNotToList)
-        types_expected = [
-            'ATBooleanCriterion',
-            'ATCurrentAuthorCriterion',
-            'ATDateCriteria',
-            'ATDateRangeCriterion',
-            'ATListCriterion',
-            'ATPathCriterion',
-            'ATPortalTypeCriterion',
-            'ATReferenceCriterion',
-            'ATRelativePathCriterion',
-            'ATSelectionCriterion',
-            'ATSimpleIntCriterion',
-            'ATSimpleStringCriterion',
-            'ATSortCriterion',
-            'ChangeSet',
-            'Claim',
-            'Discussion Item',
-            'ENLIssue',
-            'ENLSubscriber',
-            'ENLTemplate',
-            'FieldsetEnd',
-            'FieldsetFolder',
-            'FieldsetStart',
-            'FormBooleanField',
-            'FormCaptchaField',
-            'FormCustomScriptAdapter',
-            'FormDateField',
-            'FormFileField',
-            'FormFixedPointField',
-            'FormIntegerField',
-            'FormLabelField',
-            'FormLikertField',
-            'FormLinesField',
-            'FormMailerAdapter',
-            'FormMultiSelectionField',
-            'FormPasswordField',
-            'FormRichLabelField',
-            'FormRichTextField',
-            'FormSaveDataAdapter',
-            'FormSelectionField',
-            'FormStringField',
-            'FormTextField',
-            'FormThanksPage',
-            'Plone Site',
-            'PloneboardComment',
-            'PloneboardConversation',
-            'TempFolder',
+    def test_content_types_displayed_on_navigation(self):
+        all_types = set(self.types.listContentTypes())
+        metaTypesNotToList = set(self.navtree.metaTypesNotToList)
+        content_types_displayed = all_types - metaTypesNotToList
+        expected = [
+            'Blog',
+            'Collection',
+            'EasyNewsletter',
+            'Folder',
+            'FormFolder',
+            'OmbudsOffice',
+            'Ploneboard',
+            'PloneboardForum',
         ]
-        self.assertItemsEqual(metaTypesNotToList, types_expected)
+        self.assertItemsEqual(content_types_displayed, expected)
