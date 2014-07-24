@@ -13,7 +13,7 @@ AVAILABLE = [
 ]
 
 DEPENDENCIES = [
-#    'brasil.gov.vcge',
+    # 'brasil.gov.vcge',
     'collective.cover',
     'collective.polls',
     'collective.upload',
