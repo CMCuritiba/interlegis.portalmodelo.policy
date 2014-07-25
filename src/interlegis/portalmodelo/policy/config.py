@@ -162,7 +162,7 @@ SITE_STRUCTURE = [
             ),
             dict(
                 type='Folder',
-                title=u'Parlamentares',
+                title=u'Parlamentares e Gabinetes',
                 description=u'Repasses, verbas indenizatórias, cotas, subsídios, viagens e demais despesas dos parlamentares e seus gabinetes.',
             ),
             dict(
@@ -285,7 +285,7 @@ SITE_STRUCTURE = [
     dict(
         type='OmbudsOffice',
         title=u'Ouvidoria',
-        description=u'Sistema de informações ao cidadão, que controla as solicitações demandadas à Casa Legislativa, permitindo seu acompanhamento e pesquisa.',
+        description=u'Sistema eletrônico de informações ao cidadão, que controla as demandas dos cidadãos à Casa Legislativa, permitindo seu acompanhamento e pesquisa.',
         claim_types=[
             dict(claim_type='Denúncia'),
             dict(claim_type='Dúvida'),
