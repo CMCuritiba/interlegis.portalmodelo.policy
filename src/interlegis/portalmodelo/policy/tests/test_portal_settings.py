@@ -40,8 +40,8 @@ class SitePropertiesTestCase(unittest.TestCase):
     def test_enable_link_integrity_checks_is_enabled(self):
         self.assertTrue(self.properties.enable_link_integrity_checks)
 
-    def test_livesearch_is_disabled(self):
-        self.assertFalse(self.properties.enable_livesearch)
+    def test_livesearch_is_enabled(self):
+        self.assertTrue(self.properties.enable_livesearch)
 
     def test_brasilian_portuguese_is_default_language(self):
         self.assertTrue(self.languages.use_combined_language_codes)
@@ -59,28 +59,22 @@ class SitePropertiesTestCase(unittest.TestCase):
             'Blog',
             'Claim',
             'Collection',
-            'collective.cover.content',
             'collective.polls.poll',
             'CSVData',
             'Document',
             'EasyNewsletter',
-            'ENLIssue',
-            'ENLSubscriber',
-            'ENLTemplate',
             'Event',
             'File',
             'Folder',
             'FormFolder',
             'Image',
+            'Legislature',
             'Link',
             'News Item',
             'OmbudsOffice',
             'Parliamentarian',
             'Ploneboard',
-            'PloneboardComment',
             'PloneboardForum',
-            'sc.embedder',
-            'Topic',
             'Window',
         ]
         self.assertItemsEqual(types_searched, expected)

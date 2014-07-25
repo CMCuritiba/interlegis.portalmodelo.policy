@@ -4,6 +4,9 @@ Changelog
 1.0b4 (unreleased)
 ------------------
 
+- Enable live search and fix searchable content types (https://colab.interlegis.leg.br/ticket/2962).
+  [hvelarde]
+
 - Fix content types displayed on navigation (https://colab.interlegis.leg.br/ticket/2961).
   [hvelarde]
 
