@@ -4,6 +4,9 @@ Changelog
 1.0b4 (unreleased)
 ------------------
 
+- Changed Folder default_view to folder_summary_view
+  [ericof]
+
 - Enable live search and fix searchable content types (https://colab.interlegis.leg.br/ticket/2962).
   [hvelarde]
 
