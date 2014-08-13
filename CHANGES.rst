@@ -4,6 +4,9 @@ Changelog
 1.0b4 (unreleased)
 ------------------
 
+- Changed default footer navigation
+  [jeanferri]
+
 - Changed Folder default_view to folder_summary_view
   [ericof]
 
