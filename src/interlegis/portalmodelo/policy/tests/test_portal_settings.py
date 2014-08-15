@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from interlegis.portalmodelo.policy.testing import INTEGRATION_TESTING
+from plone import api
 
 import unittest
 
@@ -108,3 +109,31 @@ class NavtreePropertiesTestCase(unittest.TestCase):
             'PloneboardForum',
         ]
         self.assertItemsEqual(content_types_displayed, expected)
+
+
+class SyndicationPropertiesTestCase(unittest.TestCase):
+
+    layer = INTEGRATION_TESTING
+
+    def setUp(self):
+        self.portal = self.layer['portal']
+        self.actions = api.portal.get_tool('portal_actions').document_actions
+        self.base_registry = 'Products.CMFPlone.interfaces.syndication.ISiteSyndicationSettings'
+
+    def test_rss_action(self):
+        rss_action = self.actions.rss
+        self.assertTrue(rss_action.visible)
+
+    def test_syndication_enabled(self):
+        record = 'default_enabled'
+        enabled = api.portal.get_registry_record(
+            '{0}.{1}'.format(self.base_registry, record)
+        )
+        self.assertTrue(enabled)
+
+    def test_syndication_link(self):
+        record = 'show_syndication_link'
+        show = api.portal.get_registry_record(
+            '{0}.{1}'.format(self.base_registry, record)
+        )
+        self.assertTrue(show)
