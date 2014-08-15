@@ -4,6 +4,9 @@ Changelog
 1.0b4 (unreleased)
 ------------------
 
+- Enable syndication by default
+  [ericof]
+
 - Changed default footer navigation
   [jeanferri]
 
