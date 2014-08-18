@@ -4,7 +4,7 @@ from setuptools import find_packages
 from setuptools import setup
 
 version = '1.0b4.dev0'
-description = 'Pacote policy do Portal Modelo.'
+description = u'Pacote de politicas do Portal Modelo.'
 long_description = (
     open('README.rst').read() + '\n' +
     open('CONTRIBUTORS.rst').read() + '\n' +
@@ -28,10 +28,10 @@ setup(
         'Programming Language :: Python :: 2.7',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
-    keywords='FIXME',
-    author='FIXME',
-    author_email='FIXME',
-    url='https://github.com/plonegovbr/interlegis.portalmodelo.policy',
+    keywords='interlegis portalmodelo egov plone brasil',
+    author='Programa Interlegis',
+    author_email='ti@interlegis.leg.br',
+    url='https://github.com/interlegis/interlegis.portalmodelo.policy',
     license='GPLv2',
     packages=find_packages('src'),
     package_dir={'': 'src'},
