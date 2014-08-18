@@ -4,6 +4,12 @@ Changelog
 1.0b4 (unreleased)
 ------------------
 
+- Override default view for Zope Root
+  [ericof]
+
+- Override new site creation form
+  [ericof]
+
 - Changing 'Home' link to portal_url to avoid Intranet owning home link
   [jeanferri]
 
