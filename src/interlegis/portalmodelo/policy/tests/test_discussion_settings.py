@@ -21,7 +21,6 @@ class DiscussionTestCase(unittest.TestCase):
         self.assertTrue(settings.anonymous_email_enabled)
         self.assertEqual(settings.captcha, u'captcha')
         self.assertTrue(settings.globally_enabled)
-        self.assertTrue(settings.moderation_enabled)
         self.assertTrue(settings.show_commenter_image)
         self.assertEqual(settings.text_transform, u'text/plain')
 
