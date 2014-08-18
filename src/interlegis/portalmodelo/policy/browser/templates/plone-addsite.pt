@@ -76,7 +76,7 @@
 
         <input type="text" name="description"
                size="60"
-               value="Ribeirão Preto - SP" />
+               value="Município - Estado" />
       </div>
 
       <tal:baseprofile condition="python: len(base_profiles) > 1">
