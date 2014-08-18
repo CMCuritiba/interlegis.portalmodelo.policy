@@ -4,6 +4,9 @@ Changelog
 1.0b4 (unreleased)
 ------------------
 
+- Reorder right portlets and tests fixing for default content creation
+  [jeanferri]
+
 - Override default view for Zope Root
   [ericof]
 

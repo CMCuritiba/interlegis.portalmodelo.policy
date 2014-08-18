@@ -13,7 +13,7 @@
     manager="plone.leftcolumn" type="portlets.Navigation" visible="True">
   <property name="topLevel">0</property>
   <property name="currentFolderOnly">False</property>
-  <property name="name">Processo legislativo</property>
+  <property name="name">Processo Legislativo</property>
   <property name="includeTop">False</property>
   <property name="bottomLevel">0</property>
   <property name="root">/processo-legislativo</property>
@@ -40,18 +40,10 @@
     manager="plone.leftcolumn" type="portlets.Navigation" visible="True">
   <property name="topLevel">0</property>
   <property name="currentFolderOnly">False</property>
-  <property name="name">Links úteis</property>
+  <property name="name">Links Úteis</property>
   <property name="includeTop">False</property>
   <property name="bottomLevel">0</property>
   <property name="root">/links-uteis</property>
- </assignment>
- <assignment name="voting-portlet" category="context" key="/"
-    manager="plone.rightcolumn" type="collective.polls.VotePortlet"
-    visible="True">
-  <property name="show_closed">False</property>
-  <property name="poll">latest</property>
-  <property name="show_total">True</property>
-  <property name="header">Sobre o Portal</property>
  </assignment>
  <assignment name="redes-sociais" category="context" key="/"
     manager="plone.rightcolumn" type="plone.portlet.static.Static"
@@ -64,8 +56,16 @@
   </property>
   <property name="more_url"/>
   <property name="omit_border">False</property>
-  <property name="header">Redes sociais</property>
+  <property name="header">Redes Sociais</property>
   <property name="footer"/>
+ </assignment>
+ <assignment name="voting-portlet" category="context" key="/"
+    manager="plone.rightcolumn" type="collective.polls.VotePortlet"
+    visible="True">
+  <property name="show_closed">False</property>
+  <property name="poll">latest</property>
+  <property name="show_total">True</property>
+  <property name="header">Sobre o Portal</property>
  </assignment>
  <assignment name="events" category="context" key="/"
     manager="plone.rightcolumn" type="portlets.Events" visible="True">
@@ -85,11 +85,11 @@
   </assignment>
  <assignment name="sessoes-online" category="context" key="/"
     manager="plone.rightcolumn" type="plone.portlet.static.Static"
-    visible="False">
+    visible="True">
   <property name="text">&lt;p&gt;&lt;a title="" href="" class="internal-link" target="_self"&gt;Acompanhe ao vivo as sess&#245;es da C&#226;mara&lt;/a&gt;.&lt;/p&gt;</property>
   <property name="more_url"/>
   <property name="omit_border">False</property>
-  <property name="header">Sessões on-line</property>
+  <property name="header">Sessões On-line</property>
   <property name="footer"/>
  </assignment>
 </portlets>

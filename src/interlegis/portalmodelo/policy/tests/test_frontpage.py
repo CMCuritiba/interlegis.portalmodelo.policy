@@ -20,9 +20,10 @@ class FrontPageTestCase(unittest.TestCase):
 
         browser.open(portal_url)
         self.assertIn('Página Inicial', browser.contents)
+        self.assertIn('Blog Legislativo', browser.contents)
+        self.assertIn('Fóruns', browser.contents)
         self.assertIn('Ouvidoria', browser.contents)
-        self.assertIn('Transparência', browser.contents)
-        self.assertIn('Perguntas frequentes', browser.contents)
+        self.assertIn('Perguntas Frequentes', browser.contents)
 
     def test_navigation_portlets(self):
         browser = Browser(self.layer['app'])
@@ -34,6 +35,7 @@ class FrontPageTestCase(unittest.TestCase):
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-historia', browser.contents)
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-funcao-e-definicao', browser.contents)
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-estrutura', browser.contents)
+        self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-regimento-interno', browser.contents)
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-noticias', browser.contents)
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-eventos', browser.contents)
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-fotos', browser.contents)
@@ -44,25 +46,27 @@ class FrontPageTestCase(unittest.TestCase):
         self.assertIn('navTreeItem visualNoMarker section-mesa-diretora', browser.contents)
 
         # Leis
-        self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-legislacao-municipal', browser.contents)
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-lei-organica-municipal', browser.contents)
-        self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-lexml', browser.contents)
+        self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-legislacao-municipal', browser.contents)
+        self.assertIn('navTreeItem visualNoMarker section-legislacao-estadual', browser.contents)
+        self.assertIn('navTreeItem visualNoMarker section-legislacao-federal', browser.contents)
+        self.assertIn('navTreeItem visualNoMarker section-pesquisar-no-lexml', browser.contents)
 
         # Transparência
-        self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-despesas', browser.contents)
-        self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-transferencias', browser.contents)
-        self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-receitas', browser.contents)
-        self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-acompanhamento', browser.contents)
-        self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-licitacoes', browser.contents)
-        self.assertIn('navTreeItem visualNoMarker section-faq', browser.contents)
+        self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-orcamento-e-financas', browser.contents)
+        self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-licitacoes-e-contratos', browser.contents)
+        self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-recursos-humanos', browser.contents)
+        self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-parlamentares-e-gabinetes', browser.contents)
+        self.assertIn('navTreeItem visualNoMarker section-acesso-a-informacao', browser.contents)
+        self.assertIn('navTreeItem visualNoMarker section-dados-abertos', browser.contents)
 
         # Links úteis
-        self.assertIn('navTreeItem visualNoMarker section-prefeitura', browser.contents)
-        self.assertIn('navTreeItem visualNoMarker section-diario-oficial', browser.contents)
-        self.assertIn('navTreeItem visualNoMarker section-programa-interlegis', browser.contents)
-        self.assertIn('navTreeItem visualNoMarker section-assembleia-estadual', browser.contents)
+        self.assertIn('navTreeItem visualNoMarker section-prefeitura-municipal', browser.contents)
+        self.assertIn('navTreeItem visualNoMarker section-diario-oficial-do-municipio', browser.contents)
+        self.assertIn('navTreeItem visualNoMarker section-assembleia-legislativa', browser.contents)
         self.assertIn('navTreeItem visualNoMarker section-camara-dos-deputados', browser.contents)
         self.assertIn('navTreeItem visualNoMarker section-senado-federal', browser.contents)
+        self.assertIn('navTreeItem visualNoMarker section-programa-interlegis', browser.contents)
 
     def test_poll_portlet(self):
         browser = Browser(self.layer['app'])
@@ -74,11 +78,17 @@ class FrontPageTestCase(unittest.TestCase):
         browser = Browser(self.layer['app'])
         portal_url = self.portal.absolute_url()
         browser.open(portal_url)
-        self.assertIn('Redes sociais', browser.contents)
+        self.assertIn('Redes Sociais', browser.contents)
+
+    def test_newsletter_portlet(self):
+        browser = Browser(self.layer['app'])
+        portal_url = self.portal.absolute_url()
+        browser.open(portal_url)
+        self.assertIn('Acompanhe a Câmara', browser.contents)
 
     def test_video_portlet(self):
         browser = Browser(self.layer['app'])
         portal_url = self.portal.absolute_url()
         browser.open(portal_url)
-        # the portlet is there, but hidden
-        self.assertNotIn('Sessões on-line', browser.contents)
+        self.assertIn('Sessões On-line', browser.contents)
+
