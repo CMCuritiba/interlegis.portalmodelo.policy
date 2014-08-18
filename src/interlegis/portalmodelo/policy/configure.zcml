@@ -31,6 +31,8 @@
   <include package="sc.galleria.support" />
   <include package="sc.social.like" />
 
+  <include package=".browser" />
+
   <include file="profiles.zcml" />
 
 </configure>

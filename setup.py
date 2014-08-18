@@ -78,6 +78,7 @@ setup(
         'sc.social.like',
         'setuptools',
         'Solgema.fullcalendar',
+        'z3c.unconfigure',
         'zope.component',
         'zope.i18nmessageid',
         'zope.interface',

@@ -231,7 +231,7 @@ def import_images(site):
     import os
     image_bank = site['imagens']
     # look inside "static" folder and import all files
-    path = os.path.dirname(os.path.abspath(__file__)) + '/static/'
+    path = os.path.dirname(os.path.abspath(__file__)) + '/browser/static/'
     logger.info(u'Importando imagens')
     for name in os.listdir(path):
         with open(path + name) as f:
