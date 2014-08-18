@@ -137,3 +137,15 @@ class SyndicationPropertiesTestCase(unittest.TestCase):
             '{0}.{1}'.format(self.base_registry, record)
         )
         self.assertTrue(show)
+
+
+class HomePropertiesTestCase(unittest.TestCase):
+
+    layer = INTEGRATION_TESTING
+
+    def test_index_action(self):
+        self.portal = self.layer['portal']
+        self.actions = api.portal.get_tool('portal_actions').portal_tabs
+        home_action = self.actions.index_html
+        self.assertEqual(home_action.url_expr, 'string:${portal_url}')
+

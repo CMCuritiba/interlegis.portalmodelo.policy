@@ -4,6 +4,9 @@ Changelog
 1.0b4 (unreleased)
 ------------------
 
+- Changing 'Home' link to portal_url to avoid Intranet owning home link
+  [jeanferri]
+
 - Enable syndication by default
   [ericof]
 
