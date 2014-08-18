@@ -5,20 +5,17 @@
       <element value="collective.cover.content" />
       <element value="collective.polls.poll" />
       <element value="CSVData" />
-      <element value="Document" />
       <element value="Event" />
       <element value="File" />
       <element value="FileAttachment" />
       <element value="Image" />
       <element value="ImageAttachment" />
       <element value="Legislature" />
-      <element value="Link" />
       <element value="News Item" />
       <element value="Parliamentarian" />
       <element value="sc.embedder" />
       <element value="Session" />
       <element value="Topic" />
-      <element value="Window" />
     </property>
   </object>
 

@@ -101,12 +101,15 @@ class NavtreePropertiesTestCase(unittest.TestCase):
         expected = [
             'Blog',
             'Collection',
+            'Document',
             'EasyNewsletter',
             'Folder',
             'FormFolder',
+            'Link',
             'OmbudsOffice',
             'Ploneboard',
             'PloneboardForum',
+            'Window',
         ]
         self.assertItemsEqual(content_types_displayed, expected)
 
