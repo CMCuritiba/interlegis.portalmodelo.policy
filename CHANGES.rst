@@ -4,6 +4,9 @@ Changelog
 1.0b4 (unreleased)
 ------------------
 
+- Adding 'Acesso à Informação' page content and image
+  [jeanferri]
+
 - Reorder right portlets and tests fixing for default content creation
   [jeanferri]
 

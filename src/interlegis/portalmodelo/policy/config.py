@@ -9,7 +9,6 @@ PROFILE_ID = '{0}:default'.format(PROJECTNAME)
 # content created at Plone's installation
 DEFAULT_CONTENT = ('front-page', 'news', 'events', 'Members')
 
-LOREM_TITLE = u'Lorem ipsum'
 LOREM_DESCRIPTION = u'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.'
 
 IMAGE = open(
@@ -40,6 +39,7 @@ SITE_STRUCTURE = [
                     dict(
                         type='Collection',
                         title=u'Notícias',
+                        excludeFromNav=True,
                         query=[
                             dict(
                                 i='portal_type',
@@ -169,7 +169,7 @@ SITE_STRUCTURE = [
                 type='Document',
                 title=u'Acesso à Informação',
                 description=u'Instruções sobre como fazer solicitações com base na Lei de Acesso à Informação a esta Casa Legislativa.',
-                text=u'<p></p>',
+                text=u'<p><a class="external-link" href="http://www.acessoainformacao.gov.br"><img class="image-right" src="../imagens/acesso-a-informacao.jpg/image_mini" /></a>A Lei de Acesso à Informação (LAI) - <a class="external-link" href="http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:2011-11-18;12527" target="_self" title="">lei nº 12.527/2011</a> - regulamenta o direito constitucional de obter informações públicas. Essa norma entrou em vigor em 16 de maio de 2012 e criou mecanismos que possibilitam a qualquer pessoa, física ou jurídica, sem necessidade de apresentar motivo, o recebimento de informações públicas dos órgãos e entidades.</p><p>Os pedidos de informações devem ser realizados nas instalações físicas desta Casa Legislativa ou através da <a class="external-link" href="../ouvidoria">Ouvidoria</a> deste site. Preenchendo o formulário o cidadão receberá um número de protocolo e poderá acompanhar a tramitação do seu pedido de informação.</p><p>A LAI estabelece também um conjunto mínimo de informações que devem ser publicadas nas seções de acesso à informação dos sites dos órgãos e entidades públicas. Além da publicação das informações exigidas, os órgãos podem divulgar outros dados de interesse público por iniciativa própria, ou seja, de forma proativa.</p><p>Portanto, antes de apresentar um pedido de acesso, é importante que você verifique se a informação desejada já está disponível na seção de <a class="internal-link" href="./">Transparência</a> deste site ou se ela já foi publicada como resposta a uma outra solicitação de informações realizada anteriormente através da <a class="external-link" href="../ouvidoria">Ouvidoria</a> deste site, que é o e-SIC (Sistema Eletrônico de Informações ao Cidadão) desta Casa Legislativa.</p>',
             ),
             dict(
                 type='Document',
@@ -267,18 +267,53 @@ SITE_STRUCTURE = [
         _children=[
             dict(
                 type='PloneboardForum',
+                title=u'Corrupção',
+                description=u'Debates sobre corrupção pública e privada em nosso município.',
+            ),
+            dict(
+                type='PloneboardForum',
                 title=u'Educação',
-                description='Debates sobre o ensino público em nosso município.',
+                description=u'Debates sobre o ensino público em nosso município.',
+            ),
+            dict(
+                type='PloneboardForum',
+                title=u'Habitação',
+                description=u'Debates sobre moradia e habitação em nosso município.',
+            ),
+            dict(
+                type='PloneboardForum',
+                title=u'Infraestrutura',
+                description=u'Debates sobre infraestrutura urbana em nosso município.',
+            ),
+            dict(
+                type='PloneboardForum',
+                title=u'Meio Ambiente',
+                description=u'Debates sobre ecologia e meio ambiente em nosso município.',
+            ),
+            dict(
+                type='PloneboardForum',
+                title=u'Saneamento',
+                description=u'Debates sobre saneamento básico urbana em nosso município.',
             ),
             dict(
                 type='PloneboardForum',
                 title=u'Saúde',
-                description='Debates sobre saúde pública em nosso município.',
+                description=u'Debates sobre saúde pública em nosso município.',
+            ),
+            dict(
+                type='PloneboardForum',
+                title=u'Segurança',
+                description=u'Debates sobre segurança pública em nosso município.',
             ),
             dict(
                 type='PloneboardForum',
                 title=u'Transporte',
-                description='Debates sobre mobilidade urbana em nosso município.',
+                description=u'Debates sobre mobilidade urbana em nosso município.',
+            ),
+            dict(
+                type='PloneboardForum',
+                title=u'Tributação',
+                description=u'Debates sobre tributação em nosso município.',
             ),
         ],
     ),
