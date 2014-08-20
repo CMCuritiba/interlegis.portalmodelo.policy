@@ -24,6 +24,7 @@ class FrontPageTestCase(unittest.TestCase):
         self.assertIn('Fóruns', browser.contents)
         self.assertIn('Ouvidoria', browser.contents)
         self.assertIn('Perguntas Frequentes', browser.contents)
+        self.assertIn('RSS', browser.contents)
 
     def test_navigation_portlets(self):
         browser = Browser(self.layer['app'])

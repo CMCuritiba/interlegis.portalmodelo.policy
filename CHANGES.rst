@@ -4,6 +4,9 @@ Changelog
 1.0b4 (unreleased)
 ------------------
 
+- Adding RSS page to main navigation
+  [jeanferri]
+
 - Adding 'Acesso à Informação' page content and image
   [jeanferri]
 
