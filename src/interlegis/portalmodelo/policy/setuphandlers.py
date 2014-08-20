@@ -345,7 +345,7 @@ def fix_image_links_in_static_portlet(context):
     assert 'redes-sociais' in mapping
 
     portlet = mapping['redes-sociais']
-    images = ['ico-facebook.png', 'ico-twitter.png', 'ico-google.png']
+    images = ['ico-facebook.png', 'ico-twitter.png', 'ico-google.png', 'ico-youtube.png', 'ico-pinterest.png']
     for i in images:
         uid = 'resolveuid/' + get_image_uid(i)
         portlet.text = portlet.text.replace(i, uid)

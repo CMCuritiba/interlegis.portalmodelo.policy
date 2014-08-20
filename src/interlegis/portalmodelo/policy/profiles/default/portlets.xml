@@ -49,9 +49,11 @@
     manager="plone.rightcolumn" type="plone.portlet.static.Static"
     visible="True">
   <property name="text">&lt;p&gt;
-      &lt;a class="external-link" href="https://facebook.com/" target="_self" title=""&gt;&lt;img class="image-inline" src="ico-facebook.png" /&gt;&lt;/a&gt;
-      &lt;a class="external-link" href="https://twitter.com/" target="_self" title=""&gt;&lt;img class="image-inline" src="ico-twitter.png" /&gt;&lt;/a&gt;
-      &lt;a class="external-link" href="https://plus.google.com/" target="_self" title=""&gt;&lt;img class="image-inline" src="ico-google.png" /&gt;&lt;/a&gt;
+      &lt;a href="https://facebook.com/" title=""&gt;&lt;img class="image-inline" src="ico-facebook.png" /&gt;&lt;/a&gt;
+      &lt;a href="https://twitter.com/" title=""&gt;&lt;img class="image-inline" src="ico-twitter.png" /&gt;&lt;/a&gt;
+      &lt;a href="https://plus.google.com/" title=""&gt;&lt;img class="image-inline" src="ico-google.png" /&gt;&lt;/a&gt;
+      &lt;a href="https://youtube.com/" title=""&gt;&lt;img class="image-inline" src="ico-youtube.png" /&gt;&lt;/a&gt;
+      &lt;a href="https://pinterest.com/" title=""&gt;&lt;img class="image-inline" src="ico-pinterest.png" /&gt;&lt;/a&gt;
       &lt;/p&gt;
   </property>
   <property name="more_url"/>

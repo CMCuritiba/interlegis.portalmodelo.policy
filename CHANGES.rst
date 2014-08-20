@@ -4,6 +4,9 @@ Changelog
 1.0b4 (unreleased)
 ------------------
 
+- Adding youtube and pinterest icons to 'Redes Sociais' portlet
+  [jeanferri]
+
 - Adding RSS page to main navigation
   [jeanferri]
 
