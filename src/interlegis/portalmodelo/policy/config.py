@@ -94,7 +94,7 @@ SITE_STRUCTURE = [
                 id='fotos',
                 title=u'Galeria de Fotos',
                 description=u'Galeria de fotos da Casa Legislativa, de parlamentares, funcionários, eventos ocorridos, cidadãos colaboradores, entre outros.',
-                default_page='galleria_view'
+                default_page='galleria_view',
                 _addable_types=['Collection', 'Folder', 'Image', 'Link'],
             ),
         ],
