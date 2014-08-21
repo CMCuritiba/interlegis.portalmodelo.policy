@@ -84,12 +84,17 @@ SITE_STRUCTURE = [
             ),
             dict(
                 type='Folder',
-                title=u'Eventos',
+                id='eventos',
+                title=u'Agenda de Eventos',
+                description=u'Agenda de eventos ocorridos nesta Casa Legislativa ou eventos relevantes que tenham participação de parlamentares, funcionários, cidadãos em destaque, entre outros.',
                 _addable_types=['Collection', 'Event', 'Folder'],
             ),
             dict(
                 type='Folder',
-                title=u'Fotos',
+                id='fotos',
+                title=u'Galeria de Fotos',
+                description=u'Galeria de fotos da Casa Legislativa, de parlamentares, funcionários, eventos ocorridos, cidadãos colaboradores, entre outros.',
+                default_page='galleria_view'
                 _addable_types=['Collection', 'Folder', 'Image', 'Link'],
             ),
         ],
@@ -354,13 +359,13 @@ SITE_STRUCTURE = [
     dict(
         type='collective.cover.content',
         title=u'Página Inicial',
-        description=u'Objeto que compõem a página inicial do site. Não exclua este objeto!',
+        description=u'Objeto que compõem a página inicial do site. (atenção: este objeto não deve ser excluído)',
         template_layout='Portal Modelo',
     ),
     dict(
         type='Document',
         title=u'Rodapé',
-        description=u'Conteúdo editável do rodapé do site. Não exclua este objeto!',
+        description=u'Conteúdo editável do rodapé do site. (atenção: este objeto não deve ser excluído))',
         text=u'<table class="invisible"><tbody><tr><th style="text-align:left">Institucional</th><th style="text-align:left">Atividade Legislativa</th><th style="text-align:left">Serviços</th><th style="text-align:left">Atendimento</th></tr><tr><td><ul><li><a href="sobre-a-camara/acesso">Acesso</a></li><li><a href="sobre-a-camara/historia">História</a></li><li><a href="sobre-a-camara/funcao-e-definicao">Função e Definição</a></li><li><a href="sobre-a-camara/estrutura">Estrutura</a></li><li><a href="sobre-a-camara/noticias">Notícias</a></li><li><a href="sobre-a-camara/eventos">Agenda</a></li><li><a href="blog">Blog</a></li></ul></td><td><ul><li><a href="processo-legislativo/parlamentares">Parlamentares</a></li><li><a href="processo-legislativo/legislaturas">Legislaturas</a></li><li><a href="processo-legislativo/mesa-diretora">Mesa Diretora</a></li><li><a href="processo-legislativo/comissoes">Comissões</a></li><li><a href="sobre-a-camara/regimento-interno">Regimento Interno</a></li><li><a href="leis/lei-organica-municipal">Lei Orgância Municipal</a></li><li><a href="leis/legislacao-municipal">Legislação Municipal</a></li></ul></td><td><ul><li><a href="transparencia">Transparência</a></li><li><a href="ouvidoria">Informações ao Cidadão</a></li><li><a href="foruns">Fóruns</a></li><li><a href="transparencia/dados-abertos">Dados Abertos</a></li><li><a href="boletins">Boletim Informativo</a></li><li><a href="perguntas-frequentes">Perguntas Frequentes</a></li><li><a href="rss">RSS</a></li></ul></td><td><p>Endereço da Casa Legislativa, nº do prédio<br />Município, UF - CEP: 12345-678<br />Fone: (12) 3456-7890 - Fax: (09) 8765-4321<br />E-mail: <a href="mailto:atendimento@dominio.leg.br">atendimento@dominio.leg.br</a></p></td></tr></tbody></table>',
         excludeFromNav=True,
     ),
