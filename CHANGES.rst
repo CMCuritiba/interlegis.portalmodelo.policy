@@ -4,6 +4,9 @@ Changelog
 1.0b4 (unreleased)
 ------------------
 
+- Change collection default_view to summary_view
+  [jeanferri]
+
 - Adding youtube and pinterest icons to 'Redes Sociais' portlet
   [jeanferri]
 
