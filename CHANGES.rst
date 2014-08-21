@@ -4,6 +4,9 @@ Changelog
 1.0b4 (unreleased)
 ------------------
 
+- Changed /imagens and /sobre-a-camara/fotos default_view
+  [jeanferri]
+
 - Change collection default_view to summary_view
   [jeanferri]
 

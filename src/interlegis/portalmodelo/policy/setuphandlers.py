@@ -222,6 +222,18 @@ def set_solgemafullcalendar_view(obj):
     logger.info(u'Visão de calendario estabelecida para {0}'.format(obj.title))
 
 
+def set_galleria_view(obj):
+    """Set galleria_view as default view on object."""
+    obj.setLayout('galleria_view')
+    logger.info(u'Visão de galeria estabelecida para {0}'.format(obj.title))
+
+
+def set_atct_album_view(obj):
+    """Set atct_album_view as default view on object."""
+    obj.setLayout('atct_album_view')
+    logger.info(u'Visão de miniaturas estabelecida para {0}'.format(obj.title))
+
+
 def import_images(site):
     """Import all images inside the "static" folder of the package and import
     them inside the "Banco de imagens" folder. We are assuming the folder
@@ -274,6 +286,8 @@ def miscelaneous_house_folder(site):
         folder['noticias'], type='Collection', portal_type='News Item')
 
     set_solgemafullcalendar_view(site['sobre-a-camara']['eventos'])
+    set_galleria_view(site['sobre-a-camara']['fotos'])
+    set_atct_album_view(site['imagens'])
 
 
 def import_registry_settings(site):
