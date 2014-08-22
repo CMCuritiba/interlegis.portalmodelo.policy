@@ -165,7 +165,7 @@ def populate_cover(site):
     set_tile_configuration(cover, tiles[0], image={'scale': 'large'})
     # second row
     tiles = cover.list_tiles('collective.cover.collection')
-    obj = site['sobre-a-camara']['noticias']['noticias']
+    obj = site['sobre-a-camara']['noticias']['agregador']
     assert obj.portal_type == 'Collection'
     uuid = IUUID(obj)
     data = dict(header=u'Notícias', footer=u'Mais…', uuid=uuid)
@@ -252,41 +252,44 @@ def import_images(site):
         logger.debug(u'    {0} importada'.format(name))
 
 
-def create_default_view_on_folder(folder, type='Document', portal_type=None):
+def set_default_view_on_folder(folder, object_id=''):
     """Create and publish a Document (or other content type) inside a folder
     and set it as the default view of that folder.
     """
     assert folder.portal_type == 'Folder'
     id = folder.id
     title = folder.title
-    kwargs = {}
-    if type == 'Collection':
-        assert portal_type is not None
-        kwargs = get_collection_default_kwargs('News Item')
-    obj = api.content.create(folder, type=type, title=title, **kwargs)
-    api.content.transition(obj, 'publish')
-    folder.setDefaultPage(id)
+    object_id = object_id or id
+
+    #kwargs = {}
+    #if type == 'Collection':
+    #    assert portal_type is not None
+    #    kwargs = get_collection_default_kwargs('News Item')
+    #obj = api.content.create(folder, type=type, title=title, **kwargs)
+    #api.content.transition(obj, 'publish')
+
+    folder.setDefaultPage(object_id)
     logger.info(u'Visão padrão criada e estabelecida para {0}'.format(title))
-    return obj
+    #return obj
 
 
 def miscelaneous_house_folder(site):
     """Set various adjustments on site content on "Sobre a Câmara" folder:
 
-    - Create default views on subfolders
-    - Create collection on "Notícias" listing only "News Item"
+    - Set default views on subfolders
     - Set solgemafullcalendar_view view on "Eventos"
+    - Set galleria_view view on "Fotos"
+    - Set atct_album_view view on "Banco de Imagens"
     """
     folder = site['sobre-a-camara']
-    create_default_view_on_folder(folder['acesso'])
-    create_default_view_on_folder(folder['historia'])
-    create_default_view_on_folder(folder['funcao-e-definicao'])
-    create_default_view_on_folder(folder['estrutura'])
-    create_default_view_on_folder(
-        folder['noticias'], type='Collection', portal_type='News Item')
+    set_default_view_on_folder(folder['acesso'], object_id='pagina-padrao')
+    set_default_view_on_folder(folder['historia'], object_id='pagina-padrao')
+    set_default_view_on_folder(folder['funcao-e-definicao'], object_id='pagina-padrao')
+    set_default_view_on_folder(folder['estrutura'], object_id='pagina-padrao')
+    set_default_view_on_folder(folder['noticias'], object_id='agregador')
 
-    set_solgemafullcalendar_view(site['sobre-a-camara']['eventos'])
-    set_galleria_view(site['sobre-a-camara']['fotos'])
+    set_solgemafullcalendar_view(folder['eventos'])
+    set_galleria_view(folder['fotos'])
     set_atct_album_view(site['imagens'])
 
 

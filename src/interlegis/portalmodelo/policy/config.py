@@ -9,7 +9,8 @@ PROFILE_ID = '{0}:default'.format(PROJECTNAME)
 # content created at Plone's installation
 DEFAULT_CONTENT = ('front-page', 'news', 'events', 'Members')
 
-LOREM_DESCRIPTION = u'Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.'
+LOREM_DESCRIPTION = u'Este é um exemplo de notícia que pode ser criado e publicado no Portal Modelo. Você pode excluí-la e criar suas próprias notícias. Divirta-se! ;-)'
+LOREM_TEXT = u'<p>Este é um conteúdo padrão que deve ser editado pelo usuário editor do site. Para alterá-lo basta se autenticar no portal, e clicar na aba <em><a href="pagina-padrao/edit">Edição</a></em>, que fica logo acima do título da notícia, então, inserir o conteúdo real e clicar no botão <em>Salvar</em>.</p><p>Esta notícia está dentro da pasta <em>notícias</em> e foi criada como exemplo, logo, pode ser excluída. Dentro desta pasta você pode criar outras notícias através do menu <em>Adicionar item...</em>, e então publicá-as através do menu <em>Estado</em>. Elas irão aparecer automaticamente na página inicial do site e você poderá selecionar as notícias de destaque no carrossel da página inicial, clicando a aba <em>Compor</em> e arrastando-as para o carrossel.</p>'
 
 IMAGE = open(
     os.path.join(
@@ -26,20 +27,81 @@ SITE_STRUCTURE = [
         excludeFromNav=True,
         _addable_types=['Folder', 'File', 'Link', 'Document', 'Window'],
         _children=[
-            dict(type='Folder', title=u'Acesso'),
-            dict(type='Folder', title=u'História'),
-            dict(type='Folder', title=u'Função e Definição'),
-            dict(type='Folder', title=u'Estrutura'),
-            dict(type='Folder', title=u'Regimento Interno'),
+            dict(
+                type='Folder',
+                title=u'Acesso',
+                description=u'Informações gerais de como interagir com a Casa Legislativa, presencialmente ou por qualquer meio de comunicação, tais como, fotos da sede, mapa de como chegar, endereço completo, horários de atendimento, telefones de contato, endereços de e-mail relevantes, links para serviços e o que mais for importante.',
+                _children=[
+                    dict(
+                        type='Document',
+                        id='pagina-padrao',
+                        title=u'Acesso',
+                        description=u'Informações gerais de como interagir com a Casa Legislativa, presencialmente ou por qualquer meio de comunicação, tais como, fotos da sede, mapa de como chegar, endereço completo, horários de atendimento, telefones de contato, endereços de e-mail relevantes, links para serviços e o que mais for importante.',
+                        text=u'<p>Este é um conteúdo padrão que deve ser editado pelo usuário editor do site. Para alterá-lo basta se autenticar no portal, e clicar na aba <em><a href="pagina-padrao/edit">Edição</a></em>, que fica logo acima do título da página, então, inserir o conteúdo real e clicar no botão <em>Salvar</em>.</p><p>Esta página está dentro de uma pasta e foi selecionada como sua visão padrão. Na pasta você também pode criar outros conteúdos através do menu <em>Adicionar item...</em>, e conectá-los nesta página através de links internos com o editor visual.</p><p>Nesta página você deve publicar informações gerais de como interagir com a Casa Legislativa, presencialmente ou por qualquer meio de comunicação, tais como, fotos da sede, mapa de como chegar, endereço completo, horários de atendimento, telefones de contato, endereços de e-mail relevantes, links para serviços e o que mais for importante.</p>',
+                    ),
+                ],
+            ),
+            dict(
+                type='Folder',
+                title=u'História',
+                description=u'Textos sobre a história da Casa Legislativa, desde sua criação, bem como, fotos, vídeos, áudios, entre outros.',
+                _children=[
+                    dict(
+                        type='Document',
+                        id='pagina-padrao',
+                        title=u'História',
+                        description=u'Textos sobre a história da Casa Legislativa, desde sua criação, bem como, fotos, vídeos, áudios, entre outros.',
+                        text=u'<p>Este é um conteúdo padrão que deve ser editado pelo usuário editor do site. Para alterá-lo basta se autenticar no portal, e clicar na aba <em><a href="pagina-padrao/edit">Edição</a></em>, que fica logo acima do título da página, então, inserir o conteúdo real e clicar no botão <em>Salvar</em>.</p><p>Esta página está dentro de uma pasta e foi selecionada como sua visão padrão. Na pasta você também pode criar outros conteúdos através do menu <em>Adicionar item...</em>, e conectá-los nesta página através de links internos com o editor visual.</p><p>Nesta página você deve publicar textos sobre a história da Casa Legislativa, desde sua criação, bem como, fotos, vídeos, áudios, etc, que permitam às pessoas conhecer o seu legislativo.</p>',
+                    ),
+                ],
+            ),
+            dict(
+                type='Folder',
+                title=u'Função e Definição',
+                description=u'Informações sobre as funções da Casa Legislativa e definições sobre como ela funciona, bem como, sobre o Processo Legislativo, plenário, número de parlamentares, entre outros.',
+                _children=[
+                    dict(
+                        type='Document',
+                        id='pagina-padrao',
+                        title=u'Função e Definição',
+                        description=u'Informações sobre as funções da Casa Legislativa e definições sobre como ela funciona, bem como, sobre o Processo Legislativo, plenário, número de parlamentares, entre outros.',
+                        text=u'<p>Este é um conteúdo padrão que deve ser editado pelo usuário editor do site. Para alterá-lo basta se autenticar no portal, e clicar na aba <em><a href="pagina-padrao/edit">Edição</a></em>, que fica logo acima do título da página, então, inserir o conteúdo real e clicar no botão <em>Salvar</em>.</p><p>Esta página está dentro de uma pasta e foi selecionada como sua visão padrão. Na pasta você também pode criar outros conteúdos através do menu <em>Adicionar item...</em>, e conectá-los nesta página através de links internos com o editor visual.</p><p>Nesta página você deve publicar informações sobre as funções da Casa Legislativa e definições sobre como ela funciona, bem como, sobre o Processo Legislativo, plenário, número de parlamentares, etc.</p>',
+                    ),
+                ],
+            ),
+            dict(
+                type='Folder',
+                title=u'Estrutura',
+                description=u'Informações sobre a estrutura organizacional da Casa Legislativa, tais como, organograma, setores, chefias e responsáveis com fotos e seus respectivos contatos.',
+                _children=[
+                    dict(
+                        type='Document',
+                        id='pagina-padrao',
+                        title=u'Estrutura',
+                        description=u'Informações sobre a estrutura organizacional da Casa Legislativa, tais como, organograma, setores, chefias e responsáveis com fotos e seus respectivos contatos.',
+                        text=u'<p>Este é um conteúdo padrão que deve ser editado pelo usuário editor do site. Para alterá-lo basta se autenticar no portal, e clicar na aba <em><a href="pagina-padrao/edit">Edição</a></em>, que fica logo acima do título da página, então, inserir o conteúdo real e clicar no botão <em>Salvar</em>.</p><p>Esta página está dentro de uma pasta e foi selecionada como sua visão padrão. Na pasta você também pode criar outros conteúdos através do menu <em>Adicionar item...</em>, e conectá-los nesta página através de links internos com o editor visual.</p><p>Nesta página você deve publicar informações sobre a estrutura organizacional da Casa Legislativa, tais como, organograma, setores, chefias e responsáveis com fotos e seus contatos, para que os cidadãos os conheçam e possam contactá-los.</p>',
+                    ),
+                ],
+            ),
+            dict(
+                type='Folder',
+                title=u'Regimento Interno',
+                description=u'',
+            ),
             dict(
                 type='Folder',
                 title=u'Notícias',
+                description=u'Banco de notícias desta Casa Legislativa.',
                 _addable_types=['Collection', 'Folder', 'News Item'],
                 _children=[
                     dict(
                         type='Collection',
+                        id='agregador',
                         title=u'Notícias',
-                        excludeFromNav=True,
+                        description=u'Banco de notícias desta Casa Legislativa.',
+                        sort_reversed=True,
+                        sort_on=u'effective',
+                        limit=1000,
                         query=[
                             dict(
                                 i='portal_type',
@@ -52,40 +114,37 @@ SITE_STRUCTURE = [
                                 v='../',
                             ),
                         ],
-                        sort_reversed=True,
-                        sort_on=u'created',
-                        limit=100,
                     ),
                     dict(
                         type='News Item',
                         title=u'Primeira Notícia',
                         description=LOREM_DESCRIPTION,
-                        text=u'<p></p>',
+                        text=LOREM_TEXT,
                     ),
                     dict(
                         type='News Item',
                         title=u'Segunda Notícia',
                         description=LOREM_DESCRIPTION,
-                        text=u'<p></p>',
+                        text=LOREM_TEXT,
                     ),
                     dict(
                         type='News Item',
                         title=u'Terceira Notícia',
                         description=LOREM_DESCRIPTION,
-                        text=u'<p></p>',
+                        text=LOREM_TEXT,
                     ),
                     dict(
                         type='News Item',
                         title=u'Quarta Notícia',
                         description=LOREM_DESCRIPTION,
-                        text=u'<p></p>',
+                        text=LOREM_TEXT,
                     ),
                 ],
             ),
             dict(
                 type='Folder',
                 id='eventos',
-                title=u'Agenda de Eventos',
+                title=u'Agenda',
                 description=u'Agenda de eventos ocorridos nesta Casa Legislativa ou eventos relevantes que tenham participação de parlamentares, funcionários, cidadãos em destaque, entre outros.',
                 _addable_types=['Collection', 'Event', 'Folder'],
             ),
@@ -93,8 +152,7 @@ SITE_STRUCTURE = [
                 type='Folder',
                 id='fotos',
                 title=u'Galeria de Fotos',
-                description=u'Galeria de fotos da Casa Legislativa, de parlamentares, funcionários, eventos ocorridos, cidadãos colaboradores, entre outros.',
-                default_page='galleria_view',
+                description=u'Galeria de fotos da Casa Legislativa, parlamentares, funcionários, eventos ocorridos, cidadãos colaboradores, entre outros.',
                 _addable_types=['Collection', 'Folder', 'Image', 'Link'],
             ),
         ],
@@ -354,13 +412,14 @@ SITE_STRUCTURE = [
         type='Document',
         title=u'RSS',
         description=u'Assine os canais RSS disponíveis em cada seção do site e receba automaticamente todas as suas atualizações.',
-        text=u'<p><img class="image-right" src="imagens/rss.png" />RSS é um recurso que serve para agregar conteúdos da web, podendo ser acessados por programas ou sites agregadores, facilitando o intercâmbio de informação e sua atualização. Uma descrição mais abrangente sobre essa tecnologia está disponível na <a href="http://pt.wikipedia.org/wiki/RSS">Wikipédia</a>.</p><p>Este site possui vários canais RSS (RDF Site Summary 1.0) habilitados. Basicamente, cada seção do site tem seu canal RSS que você pode assinar para receber automaticamente suas atualizações. Quando um novo conteúdo é publicado em um desses canais, ele é automaticamente transferido para os dispositivos que estiverem usando-o. Os principais canais são:</p><ul><li><a href="RSS">Geral (todos os conteúdos do site)</a></li><li><a href="sobre-a-camara/noticias/RSS">Notícias</a></li><li><a href="sobre-a-camara/eventos/RSS">Agenda</a></li><li><a href="foruns/RSS">Fóruns</a></li><li><a href="ouvidoria/RSS">Ouvidoria (e-SIC)</a></li><li><a href="blog/RSS">Blog</a></li><li><a href="sobre-a-camara/clipping/RSS">Clipping (publicações de terceiros)</a></li><li><a href="enquetes/RSS">Enquetes</a></li></ul><p>Além disso, a busca do site também pode ser retornada como um canal RSS. Por exemplo, se você fizer uma busca pela palavra <em>lei</em>, mesmo após usar os filtros para melhorar o resultado, é possível usar sua URL como resposta em formato RSS, apenas trocando sua base de <a href="@@search?SearchableText=lei">@@search</a> para <a href="@@search_rss?SearchableText=lei">@@search_rss</a>.</p>',
+        text=u'<p><img class="image-right" src="imagens/ico-rss.png" />RSS é um recurso que serve para agregar conteúdos da web, podendo ser acessados por programas ou sites agregadores, facilitando o intercâmbio de informação e sua atualização. Uma descrição mais abrangente sobre essa tecnologia está disponível na <a href="http://pt.wikipedia.org/wiki/RSS">Wikipédia</a>.</p><p>Este site possui vários canais RSS (RDF Site Summary 1.0) habilitados. Basicamente, cada seção do site tem seu canal RSS que você pode assinar para receber automaticamente suas atualizações. Quando um novo conteúdo é publicado em um desses canais, ele é automaticamente transferido para os dispositivos que estiverem usando-o. Os principais canais são:</p><ul><li><a href="RSS">Geral (todos os conteúdos do site)</a></li><li><a href="sobre-a-camara/noticias/RSS">Notícias</a></li><li><a href="sobre-a-camara/eventos/RSS">Agenda</a></li><li><a href="foruns/RSS">Fóruns</a></li><li><a href="ouvidoria/RSS">Ouvidoria (e-SIC)</a></li><li><a href="blog/RSS">Blog</a></li><li><a href="sobre-a-camara/clipping/RSS">Clipping (publicações de terceiros)</a></li><li><a href="enquetes/RSS">Enquetes</a></li></ul><p>Além disso, a busca do site também pode ser retornada como um canal RSS. Por exemplo, se você fizer uma busca pela palavra <em>lei</em>, mesmo após usar os filtros para melhorar o resultado, é possível usar sua URL como resposta em formato RSS, apenas trocando sua base de <a href="@@search?SearchableText=lei">@@search</a> para <a href="@@search_rss?SearchableText=lei">@@search_rss</a>.</p>',
     ),
     dict(
         type='collective.cover.content',
         title=u'Página Inicial',
         description=u'Objeto que compõem a página inicial do site. (atenção: este objeto não deve ser excluído)',
         template_layout='Portal Modelo',
+        excludeFromNav=True,
     ),
     dict(
         type='Document',

@@ -4,6 +4,9 @@ Changelog
 1.0b4 (unreleased)
 ------------------
 
+- Refactoring content creation on sobre-a-camara structure and it contents
+  [jeanferri]
+
 - Changed /imagens and /sobre-a-camara/fotos default_view
   [jeanferri]
 
