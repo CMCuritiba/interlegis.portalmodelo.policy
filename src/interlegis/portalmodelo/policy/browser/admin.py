@@ -54,8 +54,8 @@ class AddPloneSite(AddPloneSiteView):
             extensions.append(extension)
         # Dados do formulario
         site_id = form.get('site_id', 'portalmodelo')
-        title = form.get('title', 'Portal Modelo')
-        description = form.get('description', '')
+        title = form.get('title_site', 'Portal Modelo')
+        description = form.get('description_site', '')
         # Se o formulario tiver sido enviado, criaremos o site
         submitted = form.get('form.submitted', False)
         if submitted:

@@ -58,23 +58,23 @@
       </div>
 
       <div class="field">
-        <label for="title" i18n:translate="label_title">Título</label>
+        <label for="title_site" i18n:translate="label_title">Título</label>
 
         <div class="formHelp" i18n:translate="">
           O título deste Portal Modelo.
         </div>
 
-        <input type="text" name="title" size="30" value="Câmara Municipal" />
+        <input type="text" name="title_site" size="30" value="Câmara Municipal" />
       </div>
 
       <div class="field">
-        <label for="description">Descrição</label>
+        <label for="description_site">Descrição</label>
 
         <div class="formHelp" i18n:translate="">
           Uma breve descrição deste site. Será exibido como uma segunda linha abaixo do título em todas as páginas do portal.
         </div>
 
-        <input type="text" name="description"
+        <input type="text" name="description_site"
                size="60"
                value="Município - Estado" />
       </div>
