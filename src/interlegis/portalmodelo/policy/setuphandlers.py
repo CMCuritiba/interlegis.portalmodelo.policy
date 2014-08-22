@@ -89,7 +89,10 @@ def create_site_structure(root, structure):
     for item in structure:
         id = item['id']
         title = item['title']
+        description = item.get('description', u'')
         if id not in root:
+            if 'creators' not in item:
+                item['creators'] = (u'Programa Interlegis', )
             obj = api.content.create(root, **item)
             # publish private content
             if api.content.get_state(obj) == 'private':
@@ -107,6 +110,7 @@ def create_site_structure(root, structure):
                 obj.setImage(IMAGE)
             # XXX: workaround for https://github.com/plone/plone.api/issues/99
             obj.setTitle(title)
+            obj.setDescription(description)
             obj.reindexObject()
             logger.debug(u'    {0} criado e publicado'.format(title))
         else:
@@ -259,7 +263,10 @@ def create_default_view_on_folder(folder, type='Document', portal_type=None):
     assert folder.portal_type == 'Folder'
     id = folder.id
     title = folder.title
-    kwargs = {}
+    kwargs = {
+        'description': u'',
+        'creators': (u'Programa Interlegis', ),
+    }
     if type == 'Collection':
         assert portal_type is not None
         kwargs = get_collection_default_kwargs('News Item')
