@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0b4 (unreleased)
+1.0b4 (2014-08-25)
 ------------------
 
 - Refactoring content creation on sobre-a-camara structure and it contents
