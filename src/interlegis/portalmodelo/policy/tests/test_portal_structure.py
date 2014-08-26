@@ -78,7 +78,7 @@ class PortalStructureTestCase(unittest.TestCase):
 
     def test_solgemafullcalendar_view_was_set(self):
         agendas = [
-            self.portal['sobre-a-camara']['eventos'],
+            self.portal['institucional']['eventos'],
         ]
         for a in agendas:
             self.assertEqual(a.getLayout(), 'solgemafullcalendar_view')

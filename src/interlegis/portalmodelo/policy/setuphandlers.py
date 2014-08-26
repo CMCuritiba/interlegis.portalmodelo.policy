@@ -162,14 +162,14 @@ def populate_cover(site):
     cover = site['pagina-inicial']
     # first row
     tiles = cover.list_tiles('collective.cover.carousel')
-    obj = site['sobre-a-camara']['noticias']['primeira-noticia']
+    obj = site['institucional']['noticias']['primeira-noticia']
     uuid = IUUID(obj)
     data = dict(uuids=[uuid])
     cover.set_tile_data(tiles[0], **data)
     set_tile_configuration(cover, tiles[0], image={'scale': 'large'})
     # second row
     tiles = cover.list_tiles('collective.cover.collection')
-    obj = site['sobre-a-camara']['noticias']['agregador']
+    obj = site['institucional']['noticias']['agregador']
     assert obj.portal_type == 'Collection'
     uuid = IUUID(obj)
     data = dict(header=u'Notícias', footer=u'Mais…', uuid=uuid)
@@ -288,7 +288,7 @@ def miscelaneous_house_folder(site):
     - Set galleria_view view on "Fotos"
     - Set atct_album_view view on "Banco de Imagens"
     """
-    folder = site['sobre-a-camara']
+    folder = site['institucional']
     set_default_view_on_folder(folder['acesso'], object_id='pagina-padrao')
     set_default_view_on_folder(folder['historia'], object_id='pagina-padrao')
     set_default_view_on_folder(folder['funcao-e-definicao'], object_id='pagina-padrao')

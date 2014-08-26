@@ -1,8 +1,11 @@
 Changelog
 =========
 
-1.0b5 (unreleased)
+1.0rc1 (unreleased)
 ------------------
+
+- Changed folder id from sobre-a-camara to institucional for generalization
+  [jeanferri]
 
 - Added TV Legislativa structure including a folder for videos and a portlet
   [jeanferri]
