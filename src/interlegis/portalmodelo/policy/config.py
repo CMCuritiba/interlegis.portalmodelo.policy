@@ -155,6 +155,13 @@ SITE_STRUCTURE = [
                 description=u'Galeria de fotos da Casa Legislativa, parlamentares, funcionários, eventos ocorridos, cidadãos colaboradores, entre outros.',
                 _addable_types=['Collection', 'Folder', 'Image', 'Link'],
             ),
+            dict(
+                type='Folder',
+                id='videos',
+                title=u'Galeria de Vídeos',
+                description=u'Galeria de vídeos e áudios da Casa Legislativa, eventos ocorridos, sessões legislativas, promocionais, informativos, entre outros.',
+                _addable_types=['Collection', 'Folder', 'File', 'Link', 'sc.embedder'],
+            ),
         ],
     ),
     dict(

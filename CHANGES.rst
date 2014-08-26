@@ -4,7 +4,8 @@ Changelog
 1.0b5 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Added TV Legislativa structure including a folder for videos and a portlet
+  [jeanferri]
 
 
 1.0b4 (2014-08-25)

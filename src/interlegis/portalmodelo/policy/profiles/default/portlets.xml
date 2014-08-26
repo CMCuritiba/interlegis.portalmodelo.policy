@@ -85,13 +85,13 @@
     <property name="portlet_description"/>
     <property name="show_unsubscribe">True</property>
   </assignment>
- <assignment name="sessoes-online" category="context" key="/"
+ <assignment name="tv-legislativa" category="context" key="/"
     manager="plone.rightcolumn" type="plone.portlet.static.Static"
     visible="True">
-  <property name="text">&lt;p&gt;&lt;a title="" href="" class="internal-link" target="_self"&gt;Acompanhe ao vivo as sess&#245;es da C&#226;mara&lt;/a&gt;.&lt;/p&gt;</property>
-  <property name="more_url"/>
+  <property name="text">&lt;iframe src="http://www.youtube.com/embed/Sll8S1_ksfU?feature=oembed" width="200" height="150" allowfullscreen="" frameborder="0"&gt;&lt;/iframe&gt;</property>
+  <property name="more_url">sobre-a-camara/videos</property>
   <property name="omit_border">False</property>
-  <property name="header">Sessões On-line</property>
-  <property name="footer"/>
+  <property name="header">TV Legislativa</property>
+  <property name="footer">Galeria de vídeos...</property>
  </assignment>
 </portlets>
