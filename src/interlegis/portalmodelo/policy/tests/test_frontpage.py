@@ -40,6 +40,7 @@ class FrontPageTestCase(unittest.TestCase):
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-noticias', browser.contents)
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-eventos', browser.contents)
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-fotos', browser.contents)
+        self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-videos', browser.contents)
 
         # Processo legislativo
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-parlamentares', browser.contents)
@@ -91,5 +92,5 @@ class FrontPageTestCase(unittest.TestCase):
         browser = Browser(self.layer['app'])
         portal_url = self.portal.absolute_url()
         browser.open(portal_url)
-        self.assertIn('Sessões On-line', browser.contents)
+        self.assertIn('TV Legislativa', browser.contents)
 
