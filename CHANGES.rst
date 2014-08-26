@@ -4,6 +4,9 @@ Changelog
 1.0rc1 (unreleased)
 ------------------
 
+- Added portlet "Acesso à Informação" as a banner in static portlet
+  [jeanferri]
+
 - Changed folder id from sobre-a-camara to institucional for generalization
   [jeanferri]
 

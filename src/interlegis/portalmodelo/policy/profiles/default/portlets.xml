@@ -49,11 +49,11 @@
     manager="plone.rightcolumn" type="plone.portlet.static.Static"
     visible="True">
   <property name="text">&lt;p&gt;
-      &lt;a href="https://facebook.com/facebook" title="Facebook"&gt;&lt;img class="image-inline" src="ico-facebook.png" /&gt;&lt;/a&gt;
-      &lt;a href="https://twitter.com/twitter" title="Twitter"&gt;&lt;img class="image-inline" src="ico-twitter.png" /&gt;&lt;/a&gt;
-      &lt;a href="https://instagram.com/instagram" title="Instagram"&gt;&lt;img class="image-inline" src="ico-instagram.png" /&gt;&lt;/a&gt;
-      &lt;a href="https://youtube.com/youtube" title="Youtube"&gt;&lt;img class="image-inline" src="ico-youtube.png" /&gt;&lt;/a&gt;
-      &lt;a href="https://pinterest.com/pinterest" title="Pinterest"&gt;&lt;img class="image-inline" src="ico-pinterest.png" /&gt;&lt;/a&gt;
+      &lt;a href="https://facebook.com/facebook" title="Facebook"&gt;&lt;img class="image-inline" src="ico-facebook.png" alt="Facebook" /&gt;&lt;/a&gt;
+      &lt;a href="https://twitter.com/twitter" title="Twitter"&gt;&lt;img class="image-inline" src="ico-twitter.png" alt="Twitter" /&gt;&lt;/a&gt;
+      &lt;a href="https://instagram.com/instagram" title="Instagram"&gt;&lt;img class="image-inline" src="ico-instagram.png" alt="Instagram" /&gt;&lt;/a&gt;
+      &lt;a href="https://youtube.com/youtube" title="Youtube"&gt;&lt;img class="image-inline" src="ico-youtube.png" alt="Youtube" /&gt;&lt;/a&gt;
+      &lt;a href="https://pinterest.com/pinterest" title="Pinterest"&gt;&lt;img class="image-inline" src="ico-pinterest.png" alt="Pinterest" /&gt;&lt;/a&gt;
       &lt;/p&gt;
   </property>
   <property name="more_url"/>
@@ -93,5 +93,15 @@
   <property name="omit_border">False</property>
   <property name="header">TV Legislativa</property>
   <property name="footer">Galeria de vídeos...</property>
+ </assignment>
+ <assignment name="acesso-informacao" category="context" key="/"
+    manager="plone.rightcolumn" type="plone.portlet.static.Static"
+    visible="True">
+  <property
+     name="text">&lt;a href="transparencia/acesso-a-informacao" title="Acesso à Informação"&gt;&lt;img class="image-inline" src="imagens/acesso-a-informacao.jpg/image_mini" alt="Acesso à Informação" /&gt;&lt;/a&gt;</property>
+  <property name="more_url"/>
+  <property name="omit_border">True</property>
+  <property name="header">Acesso à Informação</property>
+  <property name="footer"/>
  </assignment>
 </portlets>
