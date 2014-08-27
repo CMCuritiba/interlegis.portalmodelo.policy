@@ -4,6 +4,9 @@ Changelog
 1.0rc1 (unreleased)
 ------------------
 
+- Added Clipping folder in 'Sobre a Câmara' section
+  [jeanferri]
+
 - Changed newsletter id from /boletins/acompanhe-a-camara to /boletins/aconpanhe
   for generalization
   [jeanferri]

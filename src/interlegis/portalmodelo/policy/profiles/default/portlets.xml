@@ -67,7 +67,7 @@
   <property name="show_closed">False</property>
   <property name="poll">latest</property>
   <property name="show_total">True</property>
-  <property name="header">Sobre o Portal</property>
+  <property name="header">Pesquisa de Opinião</property>
  </assignment>
  <assignment name="events" category="context" key="/"
     manager="plone.rightcolumn" type="portlets.Events" visible="True">
@@ -92,7 +92,7 @@
   <property name="more_url">institucional/videos</property>
   <property name="omit_border">False</property>
   <property name="header">TV Legislativa</property>
-  <property name="footer">Galeria de vídeos...</property>
+  <property name="footer">Mais vídeos…</property>
  </assignment>
  <assignment name="acesso-informacao" category="context" key="/"
     manager="plone.rightcolumn" type="plone.portlet.static.Static"

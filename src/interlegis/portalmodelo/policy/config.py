@@ -51,7 +51,7 @@ SITE_STRUCTURE = [
                         type='Document',
                         id='pagina-padrao',
                         title=u'História',
-                        description=u'Textos sobre a história da Casa Legislativa, desde sua criação, bem como, fotos, vídeos, áudios, entre outros.',
+                        description=u'Textos sobre a história da Casa Legislativa, desde sua criação, bem como, fotos, vídeos, áudios, entre outras.',
                         text=u'<p>Este é um conteúdo padrão que deve ser editado pelo usuário editor do site. Para alterá-lo basta se autenticar no portal, e clicar na aba <em><a href="pagina-padrao/edit">Edição</a></em>, que fica logo acima do título da página, então, inserir o conteúdo real e clicar no botão <em>Salvar</em>.</p><p>Esta página está dentro de uma pasta e foi selecionada como sua visão padrão. Na pasta você também pode criar outros conteúdos através do menu <em>Adicionar item...</em>, e conectá-los nesta página através de links internos com o editor visual.</p><p>Nesta página você deve publicar textos sobre a história da Casa Legislativa, desde sua criação, bem como, fotos, vídeos, áudios, etc, que permitam às pessoas conhecer o seu legislativo.</p>',
                     ),
                 ],
@@ -59,13 +59,13 @@ SITE_STRUCTURE = [
             dict(
                 type='Folder',
                 title=u'Função e Definição',
-                description=u'Informações sobre as funções da Casa Legislativa e definições sobre como ela funciona, bem como, sobre o Processo Legislativo, plenário, número de parlamentares, entre outros.',
+                description=u'Informações sobre as funções da Casa Legislativa e definições sobre como ela funciona, bem como, sobre o Processo Legislativo, plenário, número de parlamentares, entre outras.',
                 _children=[
                     dict(
                         type='Document',
                         id='pagina-padrao',
                         title=u'Função e Definição',
-                        description=u'Informações sobre as funções da Casa Legislativa e definições sobre como ela funciona, bem como, sobre o Processo Legislativo, plenário, número de parlamentares, entre outros.',
+                        description=u'Informações sobre as funções da Casa Legislativa e definições sobre como ela funciona, bem como, sobre o Processo Legislativo, plenário, número de parlamentares, entre outras.',
                         text=u'<p>Este é um conteúdo padrão que deve ser editado pelo usuário editor do site. Para alterá-lo basta se autenticar no portal, e clicar na aba <em><a href="pagina-padrao/edit">Edição</a></em>, que fica logo acima do título da página, então, inserir o conteúdo real e clicar no botão <em>Salvar</em>.</p><p>Esta página está dentro de uma pasta e foi selecionada como sua visão padrão. Na pasta você também pode criar outros conteúdos através do menu <em>Adicionar item...</em>, e conectá-los nesta página através de links internos com o editor visual.</p><p>Nesta página você deve publicar informações sobre as funções da Casa Legislativa e definições sobre como ela funciona, bem como, sobre o Processo Legislativo, plenário, número de parlamentares, etc.</p>',
                     ),
                 ],
@@ -144,6 +144,35 @@ SITE_STRUCTURE = [
             ),
             dict(
                 type='Folder',
+                title=u'Clipping',
+                description=u'Coleção de notícias publicadas por terceiros, relacionadas a esta Casa Legislativa.',
+                _addable_types=['Collection', 'Folder', 'News Item'],
+                _children=[
+                    dict(
+                        type='Collection',
+                        id='agregador',
+                        title=u'Clipping',
+                        description=u'Coleção de notícias publicadas por terceiros, relacionadas a esta Casa Legislativa.',
+                        sort_reversed=True,
+                        sort_on=u'effective',
+                        limit=1000,
+                        query=[
+                            dict(
+                                i='portal_type',
+                                o='plone.app.querystring.operation.selection.is',
+                                v='News Item',
+                            ),
+                            dict(
+                                i='path',
+                                o='plone.app.querystring.operation.string.relativePath',
+                                v='../',
+                            ),
+                        ],
+                    ),
+                ],
+            ),
+            dict(
+                type='Folder',
                 id='eventos',
                 title=u'Agenda',
                 description=u'Agenda de eventos ocorridos nesta Casa Legislativa ou eventos relevantes que tenham participação de parlamentares, funcionários, cidadãos em destaque, entre outros.',
@@ -153,7 +182,7 @@ SITE_STRUCTURE = [
                 type='Folder',
                 id='fotos',
                 title=u'Galeria de Fotos',
-                description=u'Galeria de fotos da Casa Legislativa, parlamentares, funcionários, eventos ocorridos, cidadãos colaboradores, entre outros.',
+                description=u'Galeria de fotos da Casa Legislativa, sessões, parlamentares, funcionários, eventos ocorridos, cidadãos colaboradores, entre outros.',
                 _addable_types=['Collection', 'Folder', 'Image', 'Link'],
             ),
             dict(

@@ -172,7 +172,7 @@ def populate_cover(site):
     obj = site['institucional']['noticias']['agregador']
     assert obj.portal_type == 'Collection'
     uuid = IUUID(obj)
-    data = dict(header=u'Notícias', footer=u'Mais…', uuid=uuid)
+    data = dict(header=u'Notícias', footer=u'Mais notícias…', uuid=uuid)
     cover.set_tile_data(tiles[0], **data)
     set_tile_configuration(
         cover, tiles[0], image=dict(order=0, scale='thumb'), date=dict(order=1))
@@ -294,6 +294,7 @@ def miscelaneous_house_folder(site):
     set_default_view_on_folder(folder['funcao-e-definicao'], object_id='pagina-padrao')
     set_default_view_on_folder(folder['estrutura'], object_id='pagina-padrao')
     set_default_view_on_folder(folder['noticias'], object_id='agregador')
+    set_default_view_on_folder(folder['clipping'], object_id='agregador')
 
     set_solgemafullcalendar_view(folder['eventos'])
     set_galleria_view(folder['fotos'])
@@ -318,6 +319,7 @@ def create_feedback_poll(site):
         folder,
         'collective.polls.poll',
         title=u'Gostou do novo portal?',
+        description=u'O que você achou do novo portal desta Casa Legislativa?',
         options=[
             dict(option_id=0, description=u'Sim'),
             dict(option_id=1, description=u'Não'),

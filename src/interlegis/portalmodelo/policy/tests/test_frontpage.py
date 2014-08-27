@@ -38,6 +38,7 @@ class FrontPageTestCase(unittest.TestCase):
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-estrutura', browser.contents)
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-regimento-interno', browser.contents)
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-noticias', browser.contents)
+        self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-clipping', browser.contents)
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-eventos', browser.contents)
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-fotos', browser.contents)
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-videos', browser.contents)
