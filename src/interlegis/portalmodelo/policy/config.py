@@ -320,6 +320,7 @@ SITE_STRUCTURE = [
         _children=[
             dict(
                 type='EasyNewsletter',
+                id='acompanhe',
                 title=u'Acompanhe a Câmara',
                 description=u'Receba por e-mail periodicamente o que acontece de novo na nossa Casa Legislativa.',
             ),

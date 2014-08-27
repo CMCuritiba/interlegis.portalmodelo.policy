@@ -4,6 +4,10 @@ Changelog
 1.0rc1 (unreleased)
 ------------------
 
+- Changed newsletter id from /boletins/acompanhe-a-camara to /boletins/aconpanhe
+  for generalization
+  [jeanferri]
+
 - Added portlet "Acesso à Informação" as a banner in static portlet
   [jeanferri]
 

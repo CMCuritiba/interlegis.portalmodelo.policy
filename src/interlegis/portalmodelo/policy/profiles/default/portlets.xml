@@ -81,7 +81,7 @@
     <property name="query_organization">False</property>
     <property name="query_fullname">True</property>
     <property name="portlet_title">Acompanhe a Câmara</property>
-    <property name="newsletter">/boletins/acompanhe-a-camara</property>
+    <property name="newsletter">/boletins/acompanhe</property>
     <property name="portlet_description"/>
     <property name="show_unsubscribe">True</property>
   </assignment>
