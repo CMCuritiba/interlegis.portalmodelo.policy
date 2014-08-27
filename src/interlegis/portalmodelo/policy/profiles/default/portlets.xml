@@ -98,7 +98,7 @@
     manager="plone.rightcolumn" type="plone.portlet.static.Static"
     visible="True">
   <property
-     name="text">&lt;a href="transparencia/acesso-a-informacao" title="Acesso à Informação"&gt;&lt;img class="image-inline" src="acesso-a-informacao.jpg" alt="Acesso à Informação" /&gt;&lt;/a&gt;</property>
+     name="text">&lt;a href="transparencia/acesso-a-informacao" title="Acesso à Informação"&gt;&lt;img class="image-inline" src="acesso-a-informacao.png" alt="Acesso à Informação" /&gt;&lt;/a&gt;</property>
   <property name="more_url"/>
   <property name="omit_border">True</property>
   <property name="header">Acesso à Informação</property>

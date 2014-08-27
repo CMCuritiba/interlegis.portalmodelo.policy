@@ -380,7 +380,7 @@ def fix_image_links_in_static_portlet(context):
 
     assert 'acesso-informacao' in mapping
     portlet = mapping['acesso-informacao']
-    image = 'acesso-a-informacao.jpg'
+    image = 'acesso-a-informacao.png'
     uid = 'resolveuid/' + get_image_uid(image) + '/image_mini'
     portlet.text = portlet.text.replace(image, uid)
     logger.debug(u'Link substituido no portlet de acesso a informacao')
