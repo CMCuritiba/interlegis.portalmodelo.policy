@@ -15,7 +15,7 @@ HOME_TILE_TEXT = u'<h3>Nossos Parlamentares</h3><table class="invisible"><tbody>
 
 IMAGE = open(
     os.path.join(
-        os.path.dirname(__file__), 'tests', 'bandeira-brasil.jpg')).read()
+        os.path.dirname(__file__), 'browser/static', 'bandeira-brasil.jpg')).read()
 
 # new site structure; this dictionary defines the objects that are going to be
 # created on the root of the site; it also includes information about folder

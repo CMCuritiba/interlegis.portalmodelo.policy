@@ -20,7 +20,7 @@
 
 <body tal:define="sites view/sites">
 <div id="box">
-    <img src="++resource++portal_modelo_v3/interlegis.png" width="241" height="80" alt="Programa Interlegis" />
+    <img src="++resource++portal_modelo_v3/interlegis-logo.png" width="237" height="80" alt="Programa Interlegis" />
     <div id="text">
         <h1 i18n:translate="">
             Portal e Intranet Modelo
