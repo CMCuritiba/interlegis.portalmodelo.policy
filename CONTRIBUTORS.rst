@@ -7,7 +7,7 @@ Contributors
 * Jean Ferri
 * Érico Andrei
 * `CGU`_ (Acesso à Informação image)
-* `Wikipedia`_ (RSS icon and opendata image)
+* `Wikipedia`_ (RSS icon, OpenData and Coat of Arms of Brazil images)
 * `Peter D`_ (FAQ icon)
 
 .. _`CC BY-NC 3.0`: https://creativecommons.org/licenses/by-nc/3.0/

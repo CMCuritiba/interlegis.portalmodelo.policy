@@ -4,6 +4,9 @@ Changelog
 1.0rc1 (unreleased)
 ------------------
 
+- Added 'Nossos Parlamentares' Cover tile in the portal home
+  [jeanferri]
+
 - Added Clipping folder in 'Sobre a Câmara' section
   [jeanferri]
 

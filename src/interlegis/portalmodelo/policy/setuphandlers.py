@@ -2,6 +2,7 @@
 from five import grok
 from interlegis.portalmodelo.policy.config import DEFAULT_CONTENT
 from interlegis.portalmodelo.policy.config import IMAGE
+from interlegis.portalmodelo.policy.config import HOME_TILE_TEXT
 from interlegis.portalmodelo.policy.config import PROJECTNAME
 from interlegis.portalmodelo.policy.config import SITE_STRUCTURE
 from plone import api
@@ -152,7 +153,7 @@ def populate_cover(site):
 
     1. 1 carousel tile
     2. 1 collection tiles
-    3. TODO: 1 parlamientarians tile
+    3. 1 parlamientarians tile
 
     Populate and configure those tiles.
     """
@@ -162,9 +163,11 @@ def populate_cover(site):
     cover = site['pagina-inicial']
     # first row
     tiles = cover.list_tiles('collective.cover.carousel')
-    obj = site['institucional']['noticias']['primeira-noticia']
-    uuid = IUUID(obj)
-    data = dict(uuids=[uuid])
+    obj1 = site['institucional']['noticias']['terceira-noticia']
+    obj2 = site['institucional']['noticias']['primeira-noticia']
+    uuid1 = IUUID(obj1)
+    uuid2 = IUUID(obj2)
+    data = dict(uuids=[uuid1, uuid2])
     cover.set_tile_data(tiles[0], **data)
     set_tile_configuration(cover, tiles[0], image={'scale': 'large'})
     # second row
@@ -176,6 +179,10 @@ def populate_cover(site):
     cover.set_tile_data(tiles[0], **data)
     set_tile_configuration(
         cover, tiles[0], image=dict(order=0, scale='thumb'), date=dict(order=1))
+    # third row
+    tiles = cover.list_tiles('collective.cover.richtext')
+    data = dict(text=HOME_TILE_TEXT)
+    cover.set_tile_data(tiles[0], **data)
 
 
 def set_site_default_page(site):
