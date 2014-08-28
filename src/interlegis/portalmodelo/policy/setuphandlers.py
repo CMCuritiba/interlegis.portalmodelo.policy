@@ -178,7 +178,7 @@ def populate_cover(site):
     data = dict(header=u'Notícias', footer=u'Mais notícias…', uuid=uuid)
     cover.set_tile_data(tiles[0], **data)
     set_tile_configuration(
-        cover, tiles[0], image=dict(order=0, scale='thumb'), date=dict(order=1))
+        cover, tiles[0], image=dict(order=0, scale='thumb'), date=dict(order=1), title=dict(htmltag='h3'))
     # third row
     tiles = cover.list_tiles('collective.cover.richtext')
     data = dict(text=HOME_TILE_TEXT)
