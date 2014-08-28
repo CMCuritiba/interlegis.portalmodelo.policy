@@ -366,6 +366,7 @@ SITE_STRUCTURE = [
     dict(
         type='Ploneboard',
         title=u'Fóruns',
+        description=u'Fóruns de debates sobre temas importantes para o município. Exerça sua cidadania! Participe!',
         _children=[
             dict(
                 type='PloneboardForum',
