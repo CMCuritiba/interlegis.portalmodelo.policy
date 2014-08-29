@@ -74,7 +74,7 @@ class PortalStructureTestCase(unittest.TestCase):
 
     def test_cover_is_site_default_page(self):
         default_page = self.portal.getDefaultPage()
-        self.assertEqual(default_page, 'pagina-inicial')
+        self.assertEqual(default_page, 'front-page')
 
     def test_solgemafullcalendar_view_was_set(self):
         agendas = [

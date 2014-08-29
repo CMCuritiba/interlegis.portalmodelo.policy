@@ -22,6 +22,22 @@ IMAGE = open(
 # constrains and objects to be created inside them
 SITE_STRUCTURE = [
     dict(
+        type='collective.cover.content',
+        id='front-page',
+        title=u'Página Inicial',
+        description=u'Objeto que compõem a página inicial do site. (atenção: este objeto não deve ser excluído)',
+        template_layout='Portal Modelo',
+        excludeFromNav=True,
+    ),
+    dict(
+        type='Document',
+        id='footer-page',
+        title=u'Rodapé do Portal',
+        description=u'Conteúdo editável do rodapé do site. (atenção: este objeto não deve ser excluído))',
+        text=u'<table class="invisible"><tbody><tr><th style="text-align:left">Institucional</th><th style="text-align:left">Atividade Legislativa</th><th style="text-align:left">Serviços</th><th style="text-align:left">Atendimento</th></tr><tr><td><ul><li><a href="institucional/acesso">Acesso</a></li><li><a href="institucional/historia">História</a></li><li><a href="institucional/funcao-e-definicao">Função e Definição</a></li><li><a href="institucional/estrutura">Estrutura</a></li><li><a href="institucional/noticias">Notícias</a></li><li><a href="institucional/eventos">Agenda</a></li><li><a href="blog">Blog</a></li></ul></td><td><ul><li><a href="processo-legislativo/parlamentares">Parlamentares</a></li><li><a href="processo-legislativo/legislaturas">Legislaturas</a></li><li><a href="processo-legislativo/@@mesa-diretora">Mesa Diretora</a></li><li><a href="processo-legislativo/comissoes">Comissões</a></li><li><a href="institucional/regimento-interno">Regimento Interno</a></li><li><a href="leis/lei-organica-municipal">Lei Orgância Municipal</a></li><li><a href="leis/legislacao-municipal">Legislação Municipal</a></li></ul></td><td><ul><li><a href="transparencia">Transparência</a></li><li><a href="ouvidoria">Informações ao Cidadão</a></li><li><a href="foruns">Fóruns</a></li><li><a href="transparencia/dados-abertos">Dados Abertos</a></li><li><a href="boletins">Boletim Informativo</a></li><li><a href="perguntas-frequentes">Perguntas Frequentes</a></li><li><a href="rss-info">RSS</a></li></ul></td><td><p>Endereço da Casa Legislativa, nº do prédio<br />Município, UF - CEP: 12345-678<br />Fone: (12) 3456-7890 - Fax: (09) 8765-4321<br />E-mail: <a href="mailto:atendimento@dominio.leg.br">atendimento@dominio.leg.br</a></p></td></tr></tbody></table>',
+        excludeFromNav=True,
+    ),
+    dict(
         type='Folder',
         id='institucional',
         title=u'Sobre a Câmara',
@@ -229,7 +245,7 @@ SITE_STRUCTURE = [
                 type='Link',
                 title=u'Legislação Federal',
                 description=u'Link para o acervo de normas jurídicas da República.',
-                remoteUrl='http://www.senado.leg.br/legislacao',
+                remoteUrl='http://www.planalto.gov.br/legislacao',
             ),
             dict(
                 type='Link',
@@ -454,20 +470,6 @@ SITE_STRUCTURE = [
         title=u'RSS',
         description=u'Assine os canais RSS disponíveis em cada seção do site e receba automaticamente todas as suas atualizações.',
         text=u'<p><img class="image-right" src="imagens/ico-rss.png" alt="RSS" />RSS é um recurso que serve para agregar conteúdos da web, podendo ser acessados por programas ou sites agregadores, facilitando o intercâmbio de informação e sua atualização. Uma descrição mais abrangente sobre essa tecnologia está disponível na <a href="http://pt.wikipedia.org/wiki/RSS">Wikipédia</a>.</p><p>Este site possui vários canais RSS (RDF Site Summary 1.0) habilitados. Basicamente, cada seção do site tem seu canal RSS que você pode assinar para receber automaticamente suas atualizações. Quando um novo conteúdo é publicado em um desses canais, ele é automaticamente transferido para os dispositivos que estiverem usando-o. Os principais canais são:</p><ul><li><a href="RSS">Geral (todos os conteúdos do site)</a></li><li><a href="institucional/noticias/RSS">Notícias</a></li><li><a href="institucional/eventos/RSS">Agenda</a></li><li><a href="foruns/RSS">Fóruns</a></li><li><a href="ouvidoria/RSS">Ouvidoria (e-SIC)</a></li><li><a href="blog/RSS">Blog</a></li><li><a href="enquetes/RSS">Enquetes</a></li></ul><p>Além disso, a busca do site também pode ser retornada como um canal RSS. Por exemplo, se você fizer uma busca pela palavra <em>lei</em>, mesmo após usar os filtros para melhorar o resultado, é possível usar sua URL como resposta em formato RSS, apenas trocando sua base de <a href="@@search?SearchableText=lei">@@search</a> para <a href="@@search_rss?SearchableText=lei">@@search_rss</a>.</p>',
-    ),
-    dict(
-        type='collective.cover.content',
-        title=u'Página Inicial',
-        description=u'Objeto que compõem a página inicial do site. (atenção: este objeto não deve ser excluído)',
-        template_layout='Portal Modelo',
-        excludeFromNav=True,
-    ),
-    dict(
-        type='Document',
-        title=u'Rodapé',
-        description=u'Conteúdo editável do rodapé do site. (atenção: este objeto não deve ser excluído))',
-        text=u'<table class="invisible"><tbody><tr><th style="text-align:left">Institucional</th><th style="text-align:left">Atividade Legislativa</th><th style="text-align:left">Serviços</th><th style="text-align:left">Atendimento</th></tr><tr><td><ul><li><a href="institucional/acesso">Acesso</a></li><li><a href="institucional/historia">História</a></li><li><a href="institucional/funcao-e-definicao">Função e Definição</a></li><li><a href="institucional/estrutura">Estrutura</a></li><li><a href="institucional/noticias">Notícias</a></li><li><a href="institucional/eventos">Agenda</a></li><li><a href="blog">Blog</a></li></ul></td><td><ul><li><a href="processo-legislativo/parlamentares">Parlamentares</a></li><li><a href="processo-legislativo/legislaturas">Legislaturas</a></li><li><a href="processo-legislativo/@@mesa-diretora">Mesa Diretora</a></li><li><a href="processo-legislativo/comissoes">Comissões</a></li><li><a href="institucional/regimento-interno">Regimento Interno</a></li><li><a href="leis/lei-organica-municipal">Lei Orgância Municipal</a></li><li><a href="leis/legislacao-municipal">Legislação Municipal</a></li></ul></td><td><ul><li><a href="transparencia">Transparência</a></li><li><a href="ouvidoria">Informações ao Cidadão</a></li><li><a href="foruns">Fóruns</a></li><li><a href="transparencia/dados-abertos">Dados Abertos</a></li><li><a href="boletins">Boletim Informativo</a></li><li><a href="perguntas-frequentes">Perguntas Frequentes</a></li><li><a href="rss-info">RSS</a></li></ul></td><td><p>Endereço da Casa Legislativa, nº do prédio<br />Município, UF - CEP: 12345-678<br />Fone: (12) 3456-7890 - Fax: (09) 8765-4321<br />E-mail: <a href="mailto:atendimento@dominio.leg.br">atendimento@dominio.leg.br</a></p></td></tr></tbody></table>',
-        excludeFromNav=True,
     ),
 ]
 

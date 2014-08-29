@@ -4,6 +4,9 @@ Changelog
 1.0rc1 (unreleased)
 ------------------
 
+- Changed home page id from 'pagina-inicial' to 'front-page' for internationalization
+  [jeanferri]
+
 - Added 'Nossos Parlamentares' Cover tile in the portal home
   [jeanferri]
 

@@ -160,7 +160,7 @@ def populate_cover(site):
     from cover import set_tile_configuration
     from plone.uuid.interfaces import IUUID
 
-    cover = site['pagina-inicial']
+    cover = site['front-page']
     # first row
     tiles = cover.list_tiles('collective.cover.carousel')
     obj1 = site['institucional']['noticias']['terceira-noticia']
@@ -187,7 +187,7 @@ def populate_cover(site):
 
 def set_site_default_page(site):
     """Set front page as site default page."""
-    site.setDefaultPage('pagina-inicial')
+    site.setDefaultPage('front-page')
     logger.info(u'Visão padrão do site estabelecida')
 
 
