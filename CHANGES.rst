@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.0rc1 (unreleased)
-------------------
+1.0rc1 (2014-08-30)
+-------------------
 
 - Changed home page id from 'pagina-inicial' to 'front-page' for internationalization
   [jeanferri]
