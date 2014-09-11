@@ -113,6 +113,14 @@ class NavtreePropertiesTestCase(unittest.TestCase):
         ]
         self.assertItemsEqual(content_types_displayed, expected)
 
+    def test_ids_not_to_list_on_navigation(self):
+        idsNotToList = set(self.navtree.idsNotToList)
+        expected = [
+            'front-page',
+            'footer-page',
+        ]
+        self.assertItemsEqual(idsNotToList, expected)
+
 
 class SyndicationPropertiesTestCase(unittest.TestCase):
 

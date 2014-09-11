@@ -18,7 +18,10 @@ class PortalStructureTestCase(unittest.TestCase):
         self.portal = self.layer['portal']
 
     def test_default_content_was_deleted(self):
-        for item in DEFAULT_CONTENT:
+        default_content = list(DEFAULT_CONTENT)
+        # front-page was recreated as a collective.cover page
+        default_content.remove('front-page')
+        for item in default_content:
             self.assertNotIn(
                 item, self.portal, u'{0} not removed'.format(item))
 

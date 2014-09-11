@@ -17,6 +17,10 @@
       <element value="Session" />
       <element value="Topic" />
     </property>
+    <property name="idsNotToList" type="lines">
+      <element value="front-page" />
+      <element value="footer-page" />
+    </property>
   </object>
 
   <object name="site_properties" meta_type="Plone Property Sheet" purge="False">

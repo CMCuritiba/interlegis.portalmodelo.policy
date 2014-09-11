@@ -4,7 +4,8 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Removed front-page and footer-page objects from sitemap
+  [jeanferri]
 
 
 1.0rc1 (2014-08-30)
