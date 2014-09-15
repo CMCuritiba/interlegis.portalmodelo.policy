@@ -15,6 +15,7 @@ AVAILABLE = [
 DEPENDENCIES = [
     # 'brasil.gov.vcge',
     'collective.cover',
+    'collective.flowplayer',
     'collective.polls',
     'collective.upload',
     'collective.weather',
@@ -107,3 +108,4 @@ class DependenciesSettingsTestCase(unittest.TestCase):
             [u'Brazil/Acre', u'Brazil/DeNoronha', u'Brazil/East', u'Brazil/West']
         )
         self.assertEqual(self.registry['plone.app.event.first_weekday'], u'6')
+

@@ -42,6 +42,7 @@ setup(
         'brasil.gov.vcge',
         'collective.contentrules.mailtogroup',
         'collective.cover',
+        'collective.flowplayer',
         'collective.polls',
         'collective.upload',
         'collective.weather',

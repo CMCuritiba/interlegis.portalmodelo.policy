@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
+- Added collective.flowplayer to provide a player for MP3 and MP4 local files
+  [jeanferri]
+
 - Removed front-page and footer-page objects from sitemap
   [jeanferri]
 
