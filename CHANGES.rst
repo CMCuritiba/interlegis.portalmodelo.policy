@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
+- Fix Discussion Item workflow and settings
+  [ericof]
+
 - Add coveralls.io support
   [ericof]
 

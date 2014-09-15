@@ -337,6 +337,18 @@ def create_feedback_poll(site):
     logger.debug(u'Enquete inicial criada e publicada')
 
 
+def set_comments_as_moderated(site):
+    """By default comments will be moderated."""
+    k = 'plone.app.discussion.interfaces.IDiscussionSettings.moderation_enabled'
+    api.portal.set_registry_record(
+        k, True
+    )
+    wt = api.portal.get_tool('portal_workflow')
+    wt.setChainForPortalTypes(('Discussion Item',),
+                              'comment_review_workflow')
+    logger.debug(u'Moderacao para Comentarios aplicada')
+
+
 def setup_various(context):
     marker_file = '{0}.txt'.format(PROJECTNAME)
     if context.readDataFile(marker_file) is None:
@@ -354,6 +366,7 @@ def setup_various(context):
     import_images(portal)
     populate_cover(portal)
     create_feedback_poll(portal)
+    set_comments_as_moderated(portal)
 
 
 def fix_image_links_in_static_portlet(context):
