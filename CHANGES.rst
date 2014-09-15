@@ -4,6 +4,12 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
+- Add coveralls.io support
+  [ericof]
+
+- Fix Travis configuration for this package
+  [ericof]
+
 - Added collective.flowplayer to provide a player for MP3 and MP4 local files
   [jeanferri]
 
