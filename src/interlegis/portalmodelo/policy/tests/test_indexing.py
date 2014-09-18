@@ -31,7 +31,7 @@ class FileIndexingTestCase(unittest.TestCase):
         self.assertTrue(results[0].id == 'test_file')
 
     # For some reason word splitter is broken for this portal transformation
-    @unittest.skip
+    @unittest.skip('Issue with word splitter in travis-ci')
     def test_odt(self):
         self.folder.invokeFactory('File', 'test_file')
         self.folder.test_file.setFile(
@@ -46,7 +46,7 @@ class FileIndexingTestCase(unittest.TestCase):
         self.assertTrue(results[0].id == 'test_file')
 
     # For some reason word splitter is broken for this portal transformation
-    @unittest.skip
+    @unittest.skip('Issue with word splitter in travis-ci')
     def test_doc(self):
         self.folder.invokeFactory('File', 'test_file')
         self.folder.test_file.setFile(loadFile('test.doc'))
