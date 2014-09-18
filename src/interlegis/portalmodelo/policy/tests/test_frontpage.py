@@ -84,11 +84,11 @@ class FrontPageTestCase(unittest.TestCase):
         browser.open(portal_url)
         self.assertIn('TV Legislativa', browser.contents)
 
-    def test_audio_portlet(self):
-        browser = Browser(self.layer['app'])
-        portal_url = self.portal.absolute_url()
-        browser.open(portal_url)
-        self.assertIn('Rádio Legislativa', browser.contents)
+    #def test_audio_portlet(self):
+    #    browser = Browser(self.layer['app'])
+    #    portal_url = self.portal.absolute_url()
+    #    browser.open(portal_url)
+    #    self.assertIn('Rádio Legislativa', browser.contents)
 
     def test_poll_portlet(self):
         browser = Browser(self.layer['app'])
