@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
+- Added Rádio Legislativa structure including a folder for audios and a portlet
+  [jeanferri]
+
 - Added collective.flowplayer to provide a player for MP3 and MP4 local files
   [jeanferri]
 

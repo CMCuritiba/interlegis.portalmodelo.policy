@@ -61,6 +61,25 @@
   <property name="header">Redes Sociais</property>
   <property name="footer"/>
  </assignment>
+ <assignment name="tv-legislativa" category="context" key="/"
+    manager="plone.rightcolumn" type="plone.portlet.static.Static"
+    visible="True">
+  <property name="text">&lt;iframe src="http://www.youtube.com/embed/Sll8S1_ksfU?feature=oembed" width="200" height="150" allowfullscreen="" frameborder="0"&gt;&lt;/iframe&gt;</property>
+  <property name="more_url">institucional/videos</property>
+  <property name="omit_border">False</property>
+  <property name="header">TV Legislativa</property>
+  <property name="footer">Mais vídeos…</property>
+ </assignment>
+ <assignment name="radio-legislativa" category="context" key="/"
+    manager="plone.rightcolumn" type="collective.flowplayer.Player"
+    visible="True">
+  <property name="show_more">True</property>
+  <property name="header">Rádio Legislativa</property>
+  <property name="splash">/imagens/audio-player.png</property>
+  <property name="limit"/>
+  <property name="target">/institucional/audios</property>
+  <property name="random">False</property>
+ </assignment>
  <assignment name="voting-portlet" category="context" key="/"
     manager="plone.rightcolumn" type="collective.polls.VotePortlet"
     visible="True">
@@ -85,15 +104,6 @@
     <property name="portlet_description"/>
     <property name="show_unsubscribe">True</property>
   </assignment>
- <assignment name="tv-legislativa" category="context" key="/"
-    manager="plone.rightcolumn" type="plone.portlet.static.Static"
-    visible="True">
-  <property name="text">&lt;iframe src="http://www.youtube.com/embed/Sll8S1_ksfU?feature=oembed" width="200" height="150" allowfullscreen="" frameborder="0"&gt;&lt;/iframe&gt;</property>
-  <property name="more_url">institucional/videos</property>
-  <property name="omit_border">False</property>
-  <property name="header">TV Legislativa</property>
-  <property name="footer">Mais vídeos…</property>
- </assignment>
  <assignment name="acesso-informacao" category="context" key="/"
     manager="plone.rightcolumn" type="plone.portlet.static.Static"
     visible="True">

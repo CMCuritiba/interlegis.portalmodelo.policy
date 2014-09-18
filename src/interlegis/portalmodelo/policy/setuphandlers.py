@@ -239,6 +239,12 @@ def set_galleria_view(obj):
     logger.info(u'Visão de galeria estabelecida para {0}'.format(obj.title))
 
 
+def set_flowplayer_view(obj):
+    """Set flowplayer as default view on object."""
+    obj.setLayout('flowplayer')
+    logger.info(u'Visão de flowplayer estabelecida para {0}'.format(obj.title))
+
+
 def set_atct_album_view(obj):
     """Set atct_album_view as default view on object."""
     obj.setLayout('atct_album_view')
@@ -293,6 +299,7 @@ def miscelaneous_house_folder(site):
     - Set default views on subfolders
     - Set solgemafullcalendar_view view on "Eventos"
     - Set galleria_view view on "Fotos"
+    - Set flowplayer view on "Áudios"
     - Set atct_album_view view on "Banco de Imagens"
     """
     folder = site['institucional']
@@ -305,6 +312,7 @@ def miscelaneous_house_folder(site):
 
     set_solgemafullcalendar_view(folder['eventos'])
     set_galleria_view(folder['fotos'])
+    set_flowplayer_view(folder['audios'])
     set_atct_album_view(site['imagens'])
 
 

@@ -42,6 +42,7 @@ class FrontPageTestCase(unittest.TestCase):
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-eventos', browser.contents)
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-fotos', browser.contents)
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-videos', browser.contents)
+        self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-audios', browser.contents)
 
         # Processo legislativo
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-parlamentares', browser.contents)
@@ -71,27 +72,33 @@ class FrontPageTestCase(unittest.TestCase):
         self.assertIn('navTreeItem visualNoMarker section-senado-federal', browser.contents)
         self.assertIn('navTreeItem visualNoMarker section-programa-interlegis', browser.contents)
 
-    def test_poll_portlet(self):
-        browser = Browser(self.layer['app'])
-        portal_url = self.portal.absolute_url()
-        browser.open(portal_url)
-        self.assertIn('Gostou do novo portal?', browser.contents)
-
     def test_social_networks_portlet(self):
         browser = Browser(self.layer['app'])
         portal_url = self.portal.absolute_url()
         browser.open(portal_url)
         self.assertIn('Redes Sociais', browser.contents)
 
-    def test_newsletter_portlet(self):
-        browser = Browser(self.layer['app'])
-        portal_url = self.portal.absolute_url()
-        browser.open(portal_url)
-        self.assertIn('Acompanhe a Câmara', browser.contents)
-
     def test_video_portlet(self):
         browser = Browser(self.layer['app'])
         portal_url = self.portal.absolute_url()
         browser.open(portal_url)
         self.assertIn('TV Legislativa', browser.contents)
+
+    def test_audio_portlet(self):
+        browser = Browser(self.layer['app'])
+        portal_url = self.portal.absolute_url()
+        browser.open(portal_url)
+        self.assertIn('Rádio Legislativa', browser.contents)
+
+    def test_poll_portlet(self):
+        browser = Browser(self.layer['app'])
+        portal_url = self.portal.absolute_url()
+        browser.open(portal_url)
+        self.assertIn('Gostou do novo portal?', browser.contents)
+
+    def test_newsletter_portlet(self):
+        browser = Browser(self.layer['app'])
+        portal_url = self.portal.absolute_url()
+        browser.open(portal_url)
+        self.assertIn('Acompanhe a Câmara', browser.contents)
 
