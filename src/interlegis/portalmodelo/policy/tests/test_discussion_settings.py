@@ -19,6 +19,7 @@ class DiscussionTestCase(unittest.TestCase):
         settings = getUtility(IRegistry).forInterface(IDiscussionSettings)
         self.assertTrue(settings.anonymous_comments)
         self.assertTrue(settings.anonymous_email_enabled)
+        self.assertTrue(settings.moderation_enabled)
         self.assertEqual(settings.captcha, u'captcha')
         self.assertTrue(settings.globally_enabled)
         self.assertTrue(settings.show_commenter_image)

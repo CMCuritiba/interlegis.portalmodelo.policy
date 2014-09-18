@@ -178,7 +178,12 @@ def populate_cover(site):
     data = dict(header=u'Notícias', footer=u'Mais notícias…', uuid=uuid)
     cover.set_tile_data(tiles[0], **data)
     set_tile_configuration(
-        cover, tiles[0], image=dict(order=0, scale='thumb'), date=dict(order=1), title=dict(htmltag='h3'))
+        cover,
+        tiles[0],
+        image=dict(order=0, scale='thumb'),
+        date=dict(order=1),
+        title=dict(htmltag='h3')
+    )
     # third row
     tiles = cover.list_tiles('collective.cover.richtext')
     data = dict(text=HOME_TILE_TEXT)
@@ -278,19 +283,19 @@ def set_default_view_on_folder(folder, object_id=''):
     title = folder.title
     object_id = object_id or id
 
-    #kwargs = {
-    #    'description': u'',
-    #    'creators': (u'Programa Interlegis', ),
-    #}
-    #if type == 'Collection':
-    #    assert portal_type is not None
-    #    kwargs = get_collection_default_kwargs('News Item')
-    #obj = api.content.create(folder, type=type, title=title, **kwargs)
-    #api.content.transition(obj, 'publish')
+    # kwargs = {
+    #     'description': u'',
+    #     'creators': (u'Programa Interlegis', ),
+    # }
+    # if type == 'Collection':
+    #     assert portal_type is not None
+    #     kwargs = get_collection_default_kwargs('News Item')
+    # obj = api.content.create(folder, type=type, title=title, **kwargs)
+    # api.content.transition(obj, 'publish')
 
     folder.setDefaultPage(object_id)
     logger.info(u'Visão padrão criada e estabelecida para {0}'.format(title))
-    #return obj
+    # return obj
 
 
 def miscelaneous_house_folder(site):
@@ -345,6 +350,18 @@ def create_feedback_poll(site):
     logger.debug(u'Enquete inicial criada e publicada')
 
 
+def set_comments_as_moderated(site):
+    """By default comments will be moderated."""
+    k = 'plone.app.discussion.interfaces.IDiscussionSettings.moderation_enabled'
+    api.portal.set_registry_record(
+        k, True
+    )
+    wt = api.portal.get_tool('portal_workflow')
+    wt.setChainForPortalTypes(('Discussion Item',),
+                              'comment_review_workflow')
+    logger.debug(u'Moderacao para Comentarios aplicada')
+
+
 def setup_various(context):
     marker_file = '{0}.txt'.format(PROJECTNAME)
     if context.readDataFile(marker_file) is None:
@@ -362,6 +379,7 @@ def setup_various(context):
     import_images(portal)
     populate_cover(portal)
     create_feedback_poll(portal)
+    set_comments_as_moderated(portal)
 
 
 def fix_image_links_in_static_portlet(context):
@@ -387,7 +405,10 @@ def fix_image_links_in_static_portlet(context):
 
     assert 'redes-sociais' in mapping
     portlet = mapping['redes-sociais']
-    images = ['ico-facebook.png', 'ico-twitter.png', 'ico-instagram.png', 'ico-youtube.png', 'ico-pinterest.png']
+    images = [
+        'ico-facebook.png', 'ico-twitter.png', 'ico-instagram.png',
+        'ico-youtube.png', 'ico-pinterest.png'
+    ]
     for i in images:
         uid = 'resolveuid/' + get_image_uid(i)
         portlet.text = portlet.text.replace(i, uid)
@@ -399,4 +420,3 @@ def fix_image_links_in_static_portlet(context):
     uid = 'resolveuid/' + get_image_uid(image) + '/image_mini'
     portlet.text = portlet.text.replace(image, uid)
     logger.debug(u'Link substituido no portlet de acesso a informacao')
-

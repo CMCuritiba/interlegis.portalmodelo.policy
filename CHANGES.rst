@@ -7,6 +7,15 @@ Changelog
 - Added Rádio Legislativa structure including a folder for audios and a portlet
   [jeanferri]
 
+- Fix Discussion Item workflow and settings
+  [ericof]
+
+- Add coveralls.io support
+  [ericof]
+
+- Fix Travis configuration for this package
+  [ericof]
+
 - Added collective.flowplayer to provide a player for MP3 and MP4 local files
   [jeanferri]
 
