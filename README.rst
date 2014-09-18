@@ -23,6 +23,7 @@ Dependências
 Este pacote instala as seguintes dependências do projeto:
 
 * `collective.cover`_
+* `collective.flowplayer`_
 * `collective.polls`_
 * `collective.upload`_
 * `collective.weather`_
@@ -50,6 +51,7 @@ instaladas:
 * `interlegis.intranetmodelo`_
 
 .. _`collective.cover`: https://pypi.python.org/pypi/collective.cover
+.. _`collective.flowplayer`: https://pypi.python.org/pypi/collective.flowplayer
 .. _`collective.polls`: https://pypi.python.org/pypi/collective.polls
 .. _`collective.upload`: https://pypi.python.org/pypi/collective.upload
 .. _`collective.weather`: https://pypi.python.org/pypi/collective.weather
