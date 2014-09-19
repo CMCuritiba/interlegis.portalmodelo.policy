@@ -175,7 +175,7 @@ def populate_cover(site):
     obj = site['institucional']['noticias']['agregador']
     assert obj.portal_type == 'Collection'
     uuid = IUUID(obj)
-    data = dict(header=u'Notícias', footer=u'Mais notícias…', uuid=uuid)
+    data = dict(header=u'Últimas Notícias', footer=u'Mais notícias…', uuid=uuid)
     cover.set_tile_data(tiles[0], **data)
     set_tile_configuration(
         cover,
