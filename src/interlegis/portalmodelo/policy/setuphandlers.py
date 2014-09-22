@@ -362,6 +362,13 @@ def set_comments_as_moderated(site):
     logger.debug(u'Moderacao para Comentarios aplicada')
 
 
+def set_enable_anon_name_plone_board(site):
+    """Set enable_anon_name to True on portal_ploneboard."""
+    pb = api.portal.get_tool('portal_ploneboard')
+    pb.enable_anon_name = True
+    logger.debug(u'Habilita nome de usuario ser exibido em Foruns')
+
+
 def setup_various(context):
     marker_file = '{0}.txt'.format(PROJECTNAME)
     if context.readDataFile(marker_file) is None:
@@ -380,6 +387,7 @@ def setup_various(context):
     populate_cover(portal)
     create_feedback_poll(portal)
     set_comments_as_moderated(portal)
+    set_enable_anon_name_plone_board(portal)
 
 
 def fix_image_links_in_static_portlet(context):

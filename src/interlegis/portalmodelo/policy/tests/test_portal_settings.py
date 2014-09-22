@@ -160,3 +160,14 @@ class HomePropertiesTestCase(unittest.TestCase):
         home_action = self.actions.index_html
         self.assertEqual(home_action.url_expr, 'string:${portal_url}')
 
+
+class PloneBoardTestCase(unittest.TestCase):
+
+    layer = INTEGRATION_TESTING
+
+    def setUp(self):
+        self.portal = self.layer['portal']
+        self.pb = self.portal['portal_ploneboard']
+
+    def test_enable_anon_name(self):
+        self.assertTrue(self.pb.enable_anon_name)
