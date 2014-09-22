@@ -50,6 +50,24 @@ instaladas:
 
 * `interlegis.intranetmodelo`_
 
+Estado deste pacote
+========================
+
+O **interlegis.portalmodelo.policy** tem testes automatizados e, a cada alteração em seu
+código os testes são executados pelo serviço Travis.
+
+O estado atual dos testes pode ser visto nas imagens a seguir:
+
+.. image:: https://secure.travis-ci.org/interlegis/interlegis.portalmodelo.policy.png?branch=master
+    :target: http://travis-ci.org/interlegis/interlegis.portalmodelo.policy
+
+.. image:: https://coveralls.io/repos/interlegis/interlegis.portalmodelo.policy/badge.png?branch=master
+    :target: https://coveralls.io/r/interlegis/interlegis.portalmodelo.policy
+
+.. image:: https://pypip.in/d/interlegis.portalmodelo.policy/badge.png
+    :target: https://pypi.python.org/pypi/interlegis.portalmodelo.policy/
+    :alt: Downloads
+
 .. _`collective.cover`: https://pypi.python.org/pypi/collective.cover
 .. _`collective.flowplayer`: https://pypi.python.org/pypi/collective.flowplayer
 .. _`collective.polls`: https://pypi.python.org/pypi/collective.polls
