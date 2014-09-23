@@ -70,6 +70,16 @@
   <property name="header">TV Legislativa</property>
   <property name="footer">Mais vídeos…</property>
  </assignment>
+ <assignment name="radio-legislativa" category="context" key="/"
+    manager="plone.rightcolumn" type="collective.flowplayer.Player"
+    visible="True">
+  <property name="show_more">True</property>
+  <property name="header">Rádio Legislativa</property>
+  <property name="splash">/imagens/audio-player.png</property>
+  <property name="limit"/>
+  <property name="target">/institucional/audios</property>
+  <property name="random">False</property>
+ </assignment>
  <assignment name="voting-portlet" category="context" key="/"
     manager="plone.rightcolumn" type="collective.polls.VotePortlet"
     visible="True">
