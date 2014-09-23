@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
+- Added a link to MP3 example file in /institucional/audio
+  [jeanferri]
+
 - Enabled Rádio Legislativa portlet
   [jeanferri]
 

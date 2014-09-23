@@ -215,6 +215,15 @@ SITE_STRUCTURE = [
                 title=u'Galeria de Áudios',
                 description=u'Acervo de áudios da Casa Legislativa sobre eventos ocorridos, sessões legislativas, promocionais, informativos, entre outros, em formato MP3 e/ou algum serviço de streaming de som pela Internet.',
                 _addable_types=['Collection', 'Folder', 'File', 'Link'],
+                _children=[
+                    dict(
+                        type='Link',
+                        title=u'Domínio .leg.br',
+                        description=u'Link para o áudio, em formato MP3, da campanha de uso do domínio do legislativo brasileiro na Internet. (este link é um conteúdo de exemplo e pode ser removido)',
+                        excludeFromNav=True,
+                        remoteUrl='http://ftp.interlegis.leg.br/interlegis/audio/dominio-legbr.mp3',
+                    ),
+                ],
             ),
         ],
     ),
