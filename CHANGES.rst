@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
+- Enabled Rádio Legislativa portlet
+  [jeanferri]
+
 - Enable name display for Anonymous users on Foruns (PloneBoard)
   [ericof]
 

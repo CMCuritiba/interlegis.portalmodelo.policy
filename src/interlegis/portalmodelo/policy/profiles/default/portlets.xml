@@ -76,7 +76,7 @@
   <property name="show_more">True</property>
   <property name="header">Rádio Legislativa</property>
   <property name="splash">/imagens/audio-player.png</property>
-  <property name="limit"/>
+  <property name="limit">0</property>
   <property name="target">/institucional/audios</property>
   <property name="random">False</property>
  </assignment>
