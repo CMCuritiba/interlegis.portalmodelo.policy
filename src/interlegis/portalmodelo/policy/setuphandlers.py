@@ -366,7 +366,7 @@ def set_enable_anon_name_plone_board(site):
     """Set enable_anon_name to True on portal_ploneboard."""
     pb = api.portal.get_tool('portal_ploneboard')
     pb.enable_anon_name = True
-    logger.debug(u'Habilita nome de usuario ser exibido em Foruns')
+    logger.debug(u'Habilitado nome de usuario para ser exibido em posts dos Foruns')
 
 
 def setup_various(context):
@@ -390,11 +390,10 @@ def setup_various(context):
     set_enable_anon_name_plone_board(portal)
 
 
-def fix_image_links_in_static_portlet(context):
+def fix_image_links_in_static_portlet(portal):
     """Fix image links in "redes-sociais" and "acesso-informacao" portlets. To
     make this independent portal site name we need to use `resolveuid/UID` as
-    source of images instead of using a fixed URL. This is called after import
-    of portlets.xml.
+    source of images instead of using a fixed URL.
     """
 
     def get_image_uid(image):
@@ -403,11 +402,6 @@ def fix_image_links_in_static_portlet(context):
         if image in folder:
             return folder[image].UID()
 
-    marker_file = '{0}.txt'.format(PROJECTNAME)
-    if context.readDataFile(marker_file) is None:
-        return
-
-    portal = api.portal.get()
     manager = getUtility(IPortletManager, name='plone.rightcolumn', context=portal)
     mapping = getMultiAdapter((portal, manager), IPortletAssignmentMapping)
 
@@ -428,3 +422,34 @@ def fix_image_links_in_static_portlet(context):
     uid = 'resolveuid/' + get_image_uid(image) + '/image_mini'
     portlet.text = portlet.text.replace(image, uid)
     logger.debug(u'Link substituido no portlet de acesso a informacao')
+
+
+def set_flowplayer_portlet(portal):
+    """Set target and splash objects in flowplayer radio-legislativa portlet."""
+    splash_path = 'imagens/audio-player.png'
+    target_path = 'institucional/audios'
+    manager = getUtility(IPortletManager, name='plone.rightcolumn', context=portal)
+    mapping = getMultiAdapter((portal, manager), IPortletAssignmentMapping)
+
+    assert 'radio-legislativa' in mapping
+    portlet = mapping['radio-legislativa']
+    #splash = portal.restrictedTraverse(splash_path, default=None)
+    #portlet.splash = splash
+    portlet.data.splash = '/'+splash_path
+    #target = portal.restrictedTraverse(target_path, default=None)
+    #portlet.target = target
+    portlet.data.target = '/'+target_path
+    logger.debug(u'Definidos os objetos em vez dos paths no portlet da radio')
+
+
+def setup_portlets(context):
+    """This is called after import of portlets.xml.
+    """
+    marker_file = '{0}.txt'.format(PROJECTNAME)
+    if context.readDataFile(marker_file) is None:
+        return
+
+    portal = api.portal.get()
+    fix_image_links_in_static_portlet(portal)
+    set_flowplayer_portlet(portal)
+

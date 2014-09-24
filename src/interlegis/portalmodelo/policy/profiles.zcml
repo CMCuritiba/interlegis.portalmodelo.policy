@@ -25,7 +25,7 @@
       name="interlegis.portalmodelo.policy:portlets_post_configuration"
       title="Portal Modelo (portlets post configuration)"
       description="Settings to be fixed after portlet assignments."
-      handler=".setuphandlers.fix_image_links_in_static_portlet">
+      handler=".setuphandlers.setup_portlets">
     <depends name="portlets" />
   </genericsetup:importStep>
 
