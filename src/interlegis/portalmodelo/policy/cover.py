@@ -101,3 +101,4 @@ def _reorder(configuration, field, new_index):
     old_index = order.index(field)
     order.insert(new_index, order.pop(old_index))
     _set_fields_in_order(configuration, order)
+

@@ -93,11 +93,12 @@ def create_site_structure(root, structure):
         description = item.get('description', u'')
         if id not in root:
             if 'creators' not in item:
-                item['creators'] = (u'Programa Interlegis', )
+                item['creators'] = (u'Interlegis', )
             obj = api.content.create(root, **item)
             # publish private content
             if api.content.get_state(obj) == 'private':
-                api.content.transition(obj, 'publish')
+                if not 'state' in item:
+                    api.content.transition(obj, 'publish')
             elif obj.portal_type == 'PloneboardForum':
                 api.content.transition(obj, 'make_freeforall')
             # constrain types in folder?
@@ -314,6 +315,7 @@ def miscelaneous_house_folder(site):
     set_default_view_on_folder(folder['estrutura'], object_id='pagina-padrao')
     set_default_view_on_folder(folder['noticias'], object_id='agregador')
     set_default_view_on_folder(folder['clipping'], object_id='agregador')
+    set_default_view_on_folder(folder['videos'], object_id='agregador')
 
     set_solgemafullcalendar_view(folder['eventos'])
     set_galleria_view(folder['fotos'])
@@ -426,19 +428,13 @@ def fix_image_links_in_static_portlet(portal):
 
 def set_flowplayer_portlet(portal):
     """Set target and splash objects in flowplayer radio-legislativa portlet."""
-    splash_path = 'imagens/audio-player.png'
-    target_path = 'institucional/audios'
     manager = getUtility(IPortletManager, name='plone.rightcolumn', context=portal)
     mapping = getMultiAdapter((portal, manager), IPortletAssignmentMapping)
 
     assert 'radio-legislativa' in mapping
     portlet = mapping['radio-legislativa']
-    #splash = portal.restrictedTraverse(splash_path, default=None)
-    #portlet.splash = splash
-    portlet.data.splash = '/'+splash_path
-    #target = portal.restrictedTraverse(target_path, default=None)
-    #portlet.target = target
-    portlet.data.target = '/'+target_path
+    portlet.data.splash = '/imagens/audio-player.png'
+    portlet.data.target = '/institucional/audios'
     logger.debug(u'Definidos os objetos em vez dos paths no portlet da radio')
 
 

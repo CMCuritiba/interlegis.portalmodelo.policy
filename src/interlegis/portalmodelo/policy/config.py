@@ -192,7 +192,7 @@ SITE_STRUCTURE = [
                 type='Folder',
                 id='eventos',
                 title=u'Agenda',
-                description=u'Agenda de eventos ocorridos nesta Casa Legislativa ou eventos relevantes que tenham participação de parlamentares, funcionários, cidadãos em destaque, entre outros.',
+                description=u'Agenda de eventos ocorridos nesta Casa Legislativa ou acontecimentos relevantes que tenham participação de parlamentares, funcionários, cidadãos em destaque, entre outros.',
                 _addable_types=['Collection', 'Event', 'Folder'],
             ),
             dict(
@@ -208,6 +208,43 @@ SITE_STRUCTURE = [
                 title=u'Galeria de Vídeos',
                 description=u'Acervo de vídeos da Casa Legislativa sobre eventos ocorridos, sessões legislativas, promocionais, informativos, entre outros, em formato MP4 e/ou serviços de streaming de multimídia pela Internet.',
                 _addable_types=['Collection', 'Folder', 'File', 'Link', 'sc.embedder'],
+                _children=[
+                    dict(
+                        type='Collection',
+                        id='agregador',
+                        title=u'Galeria de Vídeos',
+                        description=u'Acervo de vídeos da Casa Legislativa sobre eventos ocorridos, sessões legislativas, promocionais, informativos, entre outros, em formato MP4 e/ou serviços de streaming de multimídia pela Internet.',
+                        sort_reversed=True,
+                        sort_on=u'effective',
+                        limit=1000,
+                        query=[
+                            dict(
+                                i='portal_type',
+                                o='plone.app.querystring.operation.selection.is',
+                                v=['File', 'Link', 'sc.embedder'],
+                            ),
+                            dict(
+                                i='path',
+                                o='plone.app.querystring.operation.string.relativePath',
+                                v='../',
+                            ),
+                        ],
+                    ),
+                    dict(
+                        type='Link',
+                        title=u'Adesão à Rede Legislativa de TV e Rádio',
+                        description=u'Link para a página do projeto da Câmara dos Deputados que informa como as Casas Legislativas podem aderir à Rede Legislativa de TV Digital. (este link é apenas informativo e deve ser removido)',
+                        remoteUrl='http://www2.camara.leg.br/comunicacao/rede-legislativa-radio-tv',
+                        state='private',
+                    ),
+                    dict(
+                        type='Link',
+                        title=u'Rede Legislativa de TV Digital',
+                        description=u'Link para o vídeo em formato MP4, feito pela Câmara Municipal de São Paulo, que informa sobre o projeto da Câmara dos Deputados para disponibilizar canais de TV digital para as Casas Legislativas Brasileiras. (este link é um conteúdo de exemplo e pode ser removido)',
+                        excludeFromNav=True,
+                        remoteUrl='http://ftp.interlegis.leg.br/interlegis/video/rede-legislativa-de-tv-digital.mp4',
+                    ),
+                ],
             ),
             dict(
                 type='Folder',
@@ -219,7 +256,7 @@ SITE_STRUCTURE = [
                     dict(
                         type='Link',
                         title=u'Domínio .leg.br',
-                        description=u'Link para o áudio, em formato MP3, da campanha de uso do domínio do legislativo brasileiro na Internet. (este link é um conteúdo de exemplo e pode ser removido)',
+                        description=u'Link para o áudio em formato MP3, da campanha de uso do domínio do legislativo brasileiro na Internet. (este link é um conteúdo de exemplo e pode ser removido)',
                         excludeFromNav=True,
                         remoteUrl='http://ftp.interlegis.leg.br/interlegis/audio/dominio-legbr.mp3',
                     ),
