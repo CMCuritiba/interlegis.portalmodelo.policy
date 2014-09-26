@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from five import grok
+from interlegis.portalmodelo.policy.config import CREATORS
 from interlegis.portalmodelo.policy.config import DEFAULT_CONTENT
 from interlegis.portalmodelo.policy.config import IMAGE
 from interlegis.portalmodelo.policy.config import HOME_TILE_TEXT
@@ -93,7 +94,7 @@ def create_site_structure(root, structure):
         description = item.get('description', u'')
         if id not in root:
             if 'creators' not in item:
-                item['creators'] = (u'Interlegis', )
+                item['creators'] = CREATORS
             obj = api.content.create(root, **item)
             # publish private content
             if api.content.get_state(obj) == 'private':
@@ -271,7 +272,16 @@ def import_images(site):
     for name in os.listdir(path):
         with open(path + name) as f:
             image = StringIO(f.read())
-        api.content.create(image_bank, type='Image', id=name, image=image)
+        img_name = name.split('.')[0]
+        title = img_name.replace('-', ' ').title()
+        api.content.create(
+            image_bank,
+            type = 'Image',
+            id = name,
+            title = title,
+            image = image,
+            creators = CREATORS,
+        )
         logger.debug(u'    {0} importada'.format(name))
 
 
@@ -342,6 +352,7 @@ def create_feedback_poll(site):
         'collective.polls.poll',
         title=u'Gostou do novo portal?',
         description=u'O que você achou do novo portal desta Casa Legislativa?',
+        creators = CREATORS,
         options=[
             dict(option_id=0, description=u'Sim'),
             dict(option_id=1, description=u'Não'),
@@ -350,6 +361,26 @@ def create_feedback_poll(site):
     )
     api.content.transition(poll, 'open')
     logger.debug(u'Enquete inicial criada e publicada')
+
+
+def create_youtube_video_embedder(site):
+    """Create an embedder object to an Youtube video."""
+    folder = site['institucional']['videos']
+    embedder = api.content.create(
+        folder,
+        'sc.embedder',
+        url = u'https://www.youtube.com/watch?v=Sll8S1_ksfU',
+        title = u'Município Brasil',
+        description = u'O programa Município Brasil é desenvolvido pela TV Senado e conta com a participação das Casas Legislativas Brasileiras. (este embedder é um conteúdo de exemplo e pode ser removido)',
+        creators = CREATORS,
+        width = 459,
+        height = 344,
+        embed_html = u'<iframe width="459" height="344" src="http://www.youtube.com/embed/Sll8S1_ksfU?feature=oembed" frameborder="0" allowfullscreen></iframe>',
+    )
+    #embedder.image = 'http://i.ytimg.com/vi/Sll8S1_ksfU/hqdefault.jpg'
+    embedder.text = u'<p>O programa mensal mostra a repercussão de assuntos locais no Congresso Nacional e como as decisões do Legislativo impactam o dia a dia dos cidadãos. Com linguagem informal, o programa apresenta notícias, projetos, debates, serviços e um pouco de história dos 5.570 municípios brasileiros.</p>'
+    api.content.transition(embedder, 'publish')
+    logger.debug(u'Video embedder do youtube criado e publicado')
 
 
 def set_comments_as_moderated(site):
@@ -388,6 +419,7 @@ def setup_various(context):
     import_images(portal)
     populate_cover(portal)
     create_feedback_poll(portal)
+    create_youtube_video_embedder(portal)
     set_comments_as_moderated(portal)
     set_enable_anon_name_plone_board(portal)
 

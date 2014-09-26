@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
+- Added Youtube video embedder in /institucional/videos as an example
+  [jeanferri]
+
 - Added default video as a link to a MP4 file and videos default view
   [jeanferri]
 
