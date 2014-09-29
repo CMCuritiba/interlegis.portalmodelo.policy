@@ -202,6 +202,28 @@ SITE_STRUCTURE = [
                 title=u'Galeria de Fotos',
                 description=u'Galeria de fotos da Casa Legislativa, sessões, parlamentares, funcionários, eventos ocorridos, cidadãos colaboradores, entre outros.',
                 _addable_types=['Collection', 'Folder', 'Image', 'Link'],
+                _children=[
+                    dict(
+                        type='Collection',
+                        title=u'Todas as Fotos',
+                        description=u'Lista de todas as fotos armazenadas dentro desta pasta.',
+                        sort_reversed=True,
+                        sort_on=u'effective',
+                        limit=1000,
+                        query=[
+                            dict(
+                                i='portal_type',
+                                o='plone.app.querystring.operation.selection.is',
+                                v=['Image', 'Link'],
+                            ),
+                            dict(
+                                i='path',
+                                o='plone.app.querystring.operation.string.relativePath',
+                                v='../',
+                            ),
+                        ],
+                    ),
+                ],
             ),
             dict(
                 type='Folder',
@@ -254,6 +276,26 @@ SITE_STRUCTURE = [
                 description=u'Acervo de áudios e podcasts da Casa Legislativa sobre eventos ocorridos, sessões legislativas, promocionais, informativos, entre outros, em formato MP3 e/ou algum serviço de streaming de som pela Internet.',
                 _addable_types=['Collection', 'Folder', 'File', 'Link'],
                 _children=[
+                    dict(
+                        type='Collection',
+                        title=u'Todos os Áudios',
+                        description=u'Lista de todos os áudios armazenados dentro desta pasta.',
+                        sort_reversed=True,
+                        sort_on=u'effective',
+                        limit=1000,
+                        query=[
+                            dict(
+                                i='portal_type',
+                                o='plone.app.querystring.operation.selection.is',
+                                v=['File', 'Link'],
+                            ),
+                            dict(
+                                i='path',
+                                o='plone.app.querystring.operation.string.relativePath',
+                                v='../',
+                            ),
+                        ],
+                    ),
                     dict(
                         type='Link',
                         title=u'Domínio .leg.br',

@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
+- Added 2 collections to folders 'Galeria de Áudios' and 'Galeria de Fotos'
+  [jeanferri]
+
 - Imported some photos inside 'Banco de Imagens' as an example gallery
   [jeanferri]
 
