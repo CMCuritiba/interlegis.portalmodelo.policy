@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
+- Moved all importing images to browser/images directory
+  [jeanferri]
+
 - Added Youtube video embedder in /institucional/videos as an example
   [jeanferri]
 

@@ -261,15 +261,15 @@ def set_atct_album_view(obj):
 
 
 def import_images(site):
-    """Import all images inside the "static" folder of the package and import
-    them inside the "Banco de imagens" folder. We are assuming the folder
+    """Import all images inside the "import" folder of the package and import
+    them inside the "Banco de Imagens" folder. We are assuming the folder
     contains only valid image files so no validation is done.
     """
     from StringIO import StringIO
     import os
     image_bank = site['imagens']
     # look inside "static" folder and import all files
-    path = os.path.dirname(os.path.abspath(__file__)) + '/browser/static/'
+    path = os.path.dirname(os.path.abspath(__file__)) + '/browser/images/'
     logger.info(u'Importando imagens')
     for name in os.listdir(path):
         with open(path + name) as f:
