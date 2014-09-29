@@ -234,7 +234,7 @@ SITE_STRUCTURE = [
                     dict(
                         type='Link',
                         title=u'Adesão à Rede Legislativa de TV e Rádio',
-                        description=u'Link para a página do projeto da Câmara dos Deputados que informa como as Casas Legislativas podem aderir à Rede Legislativa de TV Digital. (este link é apenas informativo e deve ser removido)',
+                        description=u'Link para a página do projeto da Câmara dos Deputados que informa como as Casas Legislativas podem aderir à Rede Legislativa de TV Digital. (este link é apenas informativo, está privado e deve ser removido)',
                         remoteUrl='http://www2.camara.leg.br/comunicacao/rede-legislativa-radio-tv',
                         state='private',
                     ),

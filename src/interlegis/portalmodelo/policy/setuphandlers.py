@@ -7,6 +7,7 @@ from interlegis.portalmodelo.policy.config import HOME_TILE_TEXT
 from interlegis.portalmodelo.policy.config import PROJECTNAME
 from interlegis.portalmodelo.policy.config import SITE_STRUCTURE
 from plone import api
+from plone.namedfile.file import NamedBlobImage
 from plone.portlets.interfaces import IPortletAssignmentMapping
 from plone.portlets.interfaces import IPortletManager
 from Products.CMFPlone.interfaces import INonInstallable
@@ -16,6 +17,7 @@ from zope.component import getUtility
 from zope.interface import implements
 
 import logging
+import os
 
 logger = logging.getLogger(PROJECTNAME)
 
@@ -360,6 +362,7 @@ def create_feedback_poll(site):
         ]
     )
     api.content.transition(poll, 'open')
+    poll.reindexObject()
     logger.debug(u'Enquete inicial criada e publicada')
 
 
@@ -377,9 +380,13 @@ def create_youtube_video_embedder(site):
         height = 344,
         embed_html = u'<iframe width="459" height="344" src="http://www.youtube.com/embed/Sll8S1_ksfU?feature=oembed" frameborder="0" allowfullscreen></iframe>',
     )
-    #embedder.image = 'http://i.ytimg.com/vi/Sll8S1_ksfU/hqdefault.jpg'
     embedder.text = u'<p>O programa mensal mostra a repercussão de assuntos locais no Congresso Nacional e como as decisões do Legislativo impactam o dia a dia dos cidadãos. Com linguagem informal, o programa apresenta notícias, projetos, debates, serviços e um pouco de história dos 5.570 municípios brasileiros.</p>'
+    path = os.path.dirname(__file__)
+    data = open(os.path.join(path, 'browser/static', 'capa-video.jpg')).read()
+    image = NamedBlobImage(data, 'image/jpeg', u'hqdefault.jpg')
+    embedder.image = image
     api.content.transition(embedder, 'publish')
+    embedder.reindexObject()
     logger.debug(u'Video embedder do youtube criado e publicado')
 
 
