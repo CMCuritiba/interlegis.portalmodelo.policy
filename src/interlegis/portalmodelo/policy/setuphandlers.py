@@ -7,7 +7,6 @@ from interlegis.portalmodelo.policy.config import HOME_TILE_TEXT
 from interlegis.portalmodelo.policy.config import PROJECTNAME
 from interlegis.portalmodelo.policy.config import SITE_STRUCTURE
 from plone import api
-from plone.namedfile.file import NamedBlobImage
 from plone.portlets.interfaces import IPortletAssignmentMapping
 from plone.portlets.interfaces import IPortletManager
 from Products.CMFPlone.interfaces import INonInstallable
@@ -15,6 +14,7 @@ from Products.CMFQuickInstallerTool import interfaces as qi
 from zope.component import getMultiAdapter
 from zope.component import getUtility
 from zope.interface import implements
+from StringIO import StringIO
 
 import logging
 import os
@@ -265,10 +265,8 @@ def import_images(site):
     them inside the "Banco de Imagens" folder. We are assuming the folder
     contains only valid image files so no validation is done.
     """
-    from StringIO import StringIO
-    import os
     image_bank = site['imagens']
-    # look inside "static" folder and import all files
+    # look inside "images" folder and import all files
     path = os.path.dirname(os.path.abspath(__file__)) + '/browser/images/'
     logger.info(u'Importando imagens')
     for name in os.listdir(path):
@@ -281,6 +279,33 @@ def import_images(site):
             type = 'Image',
             id = name,
             title = title,
+            description = u'Esta imagem é referenciada nos conteúdos do portal.',
+            image = image,
+            creators = CREATORS,
+        )
+        logger.debug(u'    {0} importada'.format(name))
+
+
+def import_photos(site):
+    """Import some photos inside the "static" folder of the package and import
+    them inside the "Galeria de Fotos" folder.
+    """
+    image_bank = site['institucional']['fotos']
+    image_names = ['plenario-camara.jpg', 'plenario-senado.jpg', 'congresso-nacional.jpg']
+    # look inside "static" folder and import some files
+    path = os.path.dirname(os.path.abspath(__file__)) + '/browser/static/'
+    logger.info(u'Importando imagens')
+    for name in image_names:
+        with open(path + name) as f:
+            image = StringIO(f.read())
+        img_name = name.split('.')[0]
+        title = img_name.replace('-', ' ').title()
+        api.content.create(
+            image_bank,
+            type = 'Image',
+            id = name,
+            title = title,
+            description = u'Foto de demonstração, esta imagem pode ser removida.',
             image = image,
             creators = CREATORS,
         )
@@ -368,6 +393,7 @@ def create_feedback_poll(site):
 
 def create_youtube_video_embedder(site):
     """Create an embedder object to an Youtube video."""
+    from plone.namedfile.file import NamedBlobImage
     folder = site['institucional']['videos']
     embedder = api.content.create(
         folder,
@@ -424,6 +450,7 @@ def setup_various(context):
     set_site_default_page(portal)
     miscelaneous_house_folder(portal)
     import_images(portal)
+    import_photos(portal)
     populate_cover(portal)
     create_feedback_poll(portal)
     create_youtube_video_embedder(portal)

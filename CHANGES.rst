@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
+- Imported some photos inside 'Banco de Imagens' as an example gallery
+  [jeanferri]
+
 - Moved all importing images to browser/images directory
   [jeanferri]
 
