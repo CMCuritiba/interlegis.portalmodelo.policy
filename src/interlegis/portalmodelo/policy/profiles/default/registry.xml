@@ -121,7 +121,7 @@
       <description>help_syndication_max_items</description>
       <title>label_syndication_max_items</title>
     </field>
-    <value>15</value>
+    <value>25</value>
   </record>
   <record name="Products.CMFPlone.interfaces.syndication.ISiteSyndicationSettings.search_rss_enabled" interface="Products.CMFPlone.interfaces.syndication.ISiteSyndicationSettings" field="search_rss_enabled">
     <field type="plone.registry.field.Bool">
@@ -156,7 +156,7 @@
   <record name="Products.CMFPlone.interfaces.syndication.ISiteSyndicationSettings.site_rss_items" interface="Products.CMFPlone.interfaces.syndication.ISiteSyndicationSettings" field="site_rss_items">
     <field type="plone.registry.field.Tuple">
       <default>
-        <element>/news/aggregator</element>
+        <element>/institucional/noticias/agregador</element>
       </default>
       <description>Paths to folders and collections to link to at the portal root.</description>
       <required>False</required>
