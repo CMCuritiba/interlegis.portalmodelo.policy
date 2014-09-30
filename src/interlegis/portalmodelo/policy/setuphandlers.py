@@ -416,18 +416,6 @@ def create_youtube_video_embedder(site):
     logger.debug(u'Video embedder do youtube criado e publicado')
 
 
-def set_comments_as_moderated(site):
-    """By default comments will be moderated."""
-    k = 'plone.app.discussion.interfaces.IDiscussionSettings.moderation_enabled'
-    api.portal.set_registry_record(
-        k, True
-    )
-    wt = api.portal.get_tool('portal_workflow')
-    wt.setChainForPortalTypes(('Discussion Item',),
-                              'comment_review_workflow')
-    logger.debug(u'Moderacao para Comentarios aplicada')
-
-
 def set_enable_anon_name_plone_board(site):
     """Set enable_anon_name to True on portal_ploneboard."""
     pb = api.portal.get_tool('portal_ploneboard')
@@ -454,7 +442,6 @@ def setup_various(context):
     populate_cover(portal)
     create_feedback_poll(portal)
     create_youtube_video_embedder(portal)
-    set_comments_as_moderated(portal)
     set_enable_anon_name_plone_board(portal)
 
 

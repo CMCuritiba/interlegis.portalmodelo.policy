@@ -75,7 +75,10 @@ class SitePropertiesTestCase(unittest.TestCase):
             'OmbudsOffice',
             'Parliamentarian',
             'Ploneboard',
+            'PloneboardComment',
             'PloneboardForum',
+            'sc.embedder',
+            'Session',
             'Window',
         ]
         self.assertItemsEqual(types_searched, expected)
@@ -171,3 +174,4 @@ class PloneBoardTestCase(unittest.TestCase):
 
     def test_enable_anon_name(self):
         self.assertTrue(self.pb.enable_anon_name)
+

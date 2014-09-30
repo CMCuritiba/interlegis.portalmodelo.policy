@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
+- Disabled discussion moderation because Intranet conflict
+  [jeanferri]
+
 - Added 2 collections to folders 'Galeria de Áudios' and 'Galeria de Fotos'
   [jeanferri]
 
