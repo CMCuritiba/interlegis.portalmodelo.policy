@@ -22,7 +22,6 @@
       <element value="footer-page" />
     </property>
   </object>
-
   <object name="site_properties" meta_type="Plone Property Sheet" purge="False">
     <property name="allowAnonymousViewAbout" type="boolean">True</property>
     <property name="displayPublicationDateInByline" type="boolean">True</property>
@@ -37,9 +36,6 @@
       <element value="ENLIssue" />
       <element value="ENLSubscriber" />
       <element value="ENLTemplate" />
-      <element value="PloneboardComment" />
-      <element value="sc.embedder" />
-      <element value="Session" />
       <element value="Topic" />
     </property>
     <property name="icon_visibility" type="string">authenticated</property>
