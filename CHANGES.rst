@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
+- Removed collective.weather from default installation of Portal Modelo
+  [jeanferri]
+
 - Disabled discussion moderation because Intranet conflict
   [jeanferri]
 

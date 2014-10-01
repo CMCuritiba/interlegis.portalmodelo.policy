@@ -26,7 +26,6 @@ Este pacote instala as seguintes dependências do projeto:
 * `collective.flowplayer`_
 * `collective.polls`_
 * `collective.upload`_
-* `collective.weather`_
 * `interlegis.portalmodelo.api`_
 * `interlegis.portalmodelo.buscadores`_
 * `interlegis.portalmodelo.ombudsman`_
@@ -72,7 +71,6 @@ O estado atual dos testes pode ser visto nas imagens a seguir:
 .. _`collective.flowplayer`: https://pypi.python.org/pypi/collective.flowplayer
 .. _`collective.polls`: https://pypi.python.org/pypi/collective.polls
 .. _`collective.upload`: https://pypi.python.org/pypi/collective.upload
-.. _`collective.weather`: https://pypi.python.org/pypi/collective.weather
 .. _`interlegis.intranetmodelo`: https://pypi.python.org/pypi/interlegis.intranetmodelo
 .. _`interlegis.portalmodelo.api`: https://pypi.python.org/pypi/interlegis.portalmodelo.api
 .. _`interlegis.portalmodelo.buscadores`: https://pypi.python.org/pypi/interlegis.portalmodelo.buscadores

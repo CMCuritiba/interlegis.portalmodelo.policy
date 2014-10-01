@@ -13,12 +13,11 @@ AVAILABLE = [
 ]
 
 DEPENDENCIES = [
-    # 'brasil.gov.vcge',
+    #'brasil.gov.vcge',
     'collective.cover',
     'collective.flowplayer',
     'collective.polls',
     'collective.upload',
-    'collective.weather',
     'EasyNewsletter',
     'interlegis.portalmodelo.api',
     'interlegis.portalmodelo.buscadores',
@@ -93,12 +92,6 @@ class DependenciesSettingsTestCase(unittest.TestCase):
         self.assertEqual(settings.max_file_size, 10485760)
         self.assertEqual(settings.resize_max_width, 3872)
         self.assertEqual(settings.resize_max_height, 3872)
-
-    def test_collective_weather_settings(self):
-        from collective.weather.interfaces import IWeatherSettings
-        settings = self.registry.forInterface(IWeatherSettings)
-        expected = [u'455819|Brasília, DF']
-        self.assertEqual(settings.location_ids, expected)
 
     def test_plone_app_event_settings(self):
         self.assertEqual(

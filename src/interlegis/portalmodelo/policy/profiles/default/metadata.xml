@@ -7,7 +7,6 @@
     <dependency>profile-collective.flowplayer:default</dependency>
     <dependency>profile-collective.polls:default</dependency>
     <dependency>profile-collective.upload:default</dependency>
-    <dependency>profile-collective.weather:default</dependency>
     <dependency>profile-interlegis.portalmodelo.api:default</dependency>
     <dependency>profile-interlegis.portalmodelo.buscadores:default</dependency>
     <dependency>profile-interlegis.portalmodelo.ombudsman:default</dependency>
