@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
+- Added a link content referencing to Portal Modelo 3 user manual
+  [jeanferri]
+
 - Removed collective.weather from default installation of Portal Modelo
   [jeanferri]
 
