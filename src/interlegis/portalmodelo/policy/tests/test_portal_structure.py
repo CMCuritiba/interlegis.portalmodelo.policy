@@ -42,7 +42,8 @@ class PortalStructureTestCase(unittest.TestCase):
         for item in SITE_STRUCTURE:
             id = item['id']
             obj = self.portal[id]
-            self.assertEqual(api.content.get_state(obj), 'published')
+            if item.get('state', '') != 'private':
+                self.assertEqual(api.content.get_state(obj), 'published')
             if '_children' in item:
                 for child in item['_children']:
                     _id = child['id']
