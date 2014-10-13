@@ -446,14 +446,6 @@ SITE_STRUCTURE = [
         _addable_types=['Folder', 'Image', 'Link'],
     ),
     dict(
-        type='Blog',
-        id='blog',
-        title=u'Blog Legislativo',
-        description=u'Weblog sobre assuntos técnicos dos setores da Casa Legislativa.',
-        author=u'Funcionários da Casa Legislativa',
-        excludeFromNav=True,
-    ),
-    dict(
         type='Folder',
         title=u'Boletins',
         description=u'Boletins informativos da Casa Legislativa. Cadastre seu e-mail para ficar sabendo das nossas novidades.',
@@ -474,6 +466,14 @@ SITE_STRUCTURE = [
         description=u'Pesquisas de opinião feitas pela Casa Legislativa.',
         excludeFromNav=True,
         _addable_types=['collective.polls.poll'],
+    ),
+    dict(
+        type='Blog',
+        id='blog',
+        title=u'Blog Legislativo',
+        description=u'Weblog sobre assuntos técnicos dos setores da Casa Legislativa.',
+        author=u'Funcionários da Casa Legislativa',
+        excludeFromNav=True,
     ),
     dict(
         type='Ploneboard',
