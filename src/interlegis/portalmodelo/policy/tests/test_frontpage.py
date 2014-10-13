@@ -76,7 +76,7 @@ class FrontPageTestCase(unittest.TestCase):
         browser = Browser(self.layer['app'])
         portal_url = self.portal.absolute_url()
         browser.open(portal_url)
-        self.assertIn('Redes Sociais', browser.contents)
+        self.assertIn('Mídias Sociais', browser.contents)
 
     def test_video_portlet(self):
         browser = Browser(self.layer['app'])

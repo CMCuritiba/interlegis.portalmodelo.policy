@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
+- Change 'Redes Sociais' portlet name to 'Mídias Sociais'
+  [jeanferri]
+
 - Added a link content referencing to Portal Modelo 3 user manual
   [jeanferri]
 

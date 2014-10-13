@@ -446,7 +446,7 @@ def setup_various(context):
 
 
 def fix_image_links_in_static_portlet(portal):
-    """Fix image links in "redes-sociais" and "acesso-informacao" portlets. To
+    """Fix image links in "midias-sociais" and "acesso-informacao" portlets. To
     make this independent portal site name we need to use `resolveuid/UID` as
     source of images instead of using a fixed URL.
     """
@@ -460,8 +460,8 @@ def fix_image_links_in_static_portlet(portal):
     manager = getUtility(IPortletManager, name='plone.rightcolumn', context=portal)
     mapping = getMultiAdapter((portal, manager), IPortletAssignmentMapping)
 
-    assert 'redes-sociais' in mapping
-    portlet = mapping['redes-sociais']
+    assert 'midias-sociais' in mapping
+    portlet = mapping['midias-sociais']
     images = [
         'ico-facebook.png', 'ico-twitter.png', 'ico-instagram.png',
         'ico-youtube.png', 'ico-pinterest.png'
@@ -469,7 +469,7 @@ def fix_image_links_in_static_portlet(portal):
     for i in images:
         uid = 'resolveuid/' + get_image_uid(i)
         portlet.text = portlet.text.replace(i, uid)
-    logger.debug(u'Links substituidos no portlet de redes sociais')
+    logger.debug(u'Links substituidos no portlet de midias sociais')
 
     assert 'acesso-informacao' in mapping
     portlet = mapping['acesso-informacao']

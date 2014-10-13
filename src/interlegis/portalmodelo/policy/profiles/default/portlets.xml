@@ -45,7 +45,7 @@
   <property name="bottomLevel">0</property>
   <property name="root">/links-uteis</property>
  </assignment>
- <assignment name="redes-sociais" category="context" key="/"
+ <assignment name="midias-sociais" category="context" key="/"
     manager="plone.rightcolumn" type="plone.portlet.static.Static"
     visible="True">
   <property name="text">&lt;p&gt;
@@ -58,7 +58,7 @@
   </property>
   <property name="more_url"/>
   <property name="omit_border">False</property>
-  <property name="header">Redes Sociais</property>
+  <property name="header">Mídias Sociais</property>
   <property name="footer"/>
  </assignment>
  <assignment name="tv-legislativa" category="context" key="/"
