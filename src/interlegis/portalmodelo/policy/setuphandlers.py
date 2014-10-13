@@ -463,8 +463,8 @@ def fix_image_links_in_static_portlet(portal):
     assert 'midias-sociais' in mapping
     portlet = mapping['midias-sociais']
     images = [
-        'ico-facebook.png', 'ico-twitter.png', 'ico-instagram.png',
-        'ico-youtube.png', 'ico-pinterest.png'
+        'ico-facebook.png', 'ico-twitter.png', 'ico-linkedin.png',
+        'ico-youtube.png', 'ico-flickr.png'
     ]
     for i in images:
         uid = 'resolveuid/' + get_image_uid(i)

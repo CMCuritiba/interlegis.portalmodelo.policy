@@ -51,9 +51,9 @@
   <property name="text">&lt;p&gt;
       &lt;a href="https://facebook.com/facebook" title="Facebook"&gt;&lt;img class="image-inline" src="ico-facebook.png" alt="Facebook" /&gt;&lt;/a&gt;
       &lt;a href="https://twitter.com/twitter" title="Twitter"&gt;&lt;img class="image-inline" src="ico-twitter.png" alt="Twitter" /&gt;&lt;/a&gt;
-      &lt;a href="https://instagram.com/instagram" title="Instagram"&gt;&lt;img class="image-inline" src="ico-instagram.png" alt="Instagram" /&gt;&lt;/a&gt;
+      &lt;a href="https://linkedin.com/company/linkedin" title="Linkedin"&gt;&lt;img class="image-inline" src="ico-linkedin.png" alt="Linkedin" /&gt;&lt;/a&gt;
       &lt;a href="https://youtube.com/youtube" title="Youtube"&gt;&lt;img class="image-inline" src="ico-youtube.png" alt="Youtube" /&gt;&lt;/a&gt;
-      &lt;a href="https://pinterest.com/pinterest" title="Pinterest"&gt;&lt;img class="image-inline" src="ico-pinterest.png" alt="Pinterest" /&gt;&lt;/a&gt;
+      &lt;a href="https://flickr.com/flickr" title="Flickr"&gt;&lt;img class="image-inline" src="ico-flickr.png" alt="Flickr" /&gt;&lt;/a&gt;
       &lt;/p&gt;
   </property>
   <property name="more_url"/>

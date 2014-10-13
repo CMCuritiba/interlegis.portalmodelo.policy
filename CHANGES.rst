@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
+- Change social media icons
+  [jeanferri]
+
 - Change 'Redes Sociais' portlet name to 'Mídias Sociais'
   [jeanferri]
 
