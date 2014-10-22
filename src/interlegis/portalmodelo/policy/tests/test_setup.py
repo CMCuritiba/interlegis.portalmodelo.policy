@@ -9,11 +9,12 @@ import unittest
 
 # these packages must be available, but not installed
 AVAILABLE = [
+    'brasil.gov.vcge',
     'interlegis.intranetmodelo.policy',
+    'webcouturier.dropdownmenu',
 ]
 
 DEPENDENCIES = [
-    #'brasil.gov.vcge',
     'collective.cover',
     'collective.flowplayer',
     'collective.polls',

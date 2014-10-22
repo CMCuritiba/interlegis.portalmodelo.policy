@@ -7,7 +7,7 @@
   <five:registerPackage package="." />
   <i18n:registerTranslations directory="locales" />
 
-  <!--include package="brasil.gov.vcge" /-->
+  <include package="brasil.gov.vcge" />
   <include package="collective.contentrules.mailtogroup" />
   <include package="collective.cover" />
   <include package="collective.flowplayer" />
@@ -31,6 +31,7 @@
   <include package="sc.embedder" />
   <include package="sc.galleria.support" />
   <include package="sc.social.like" />
+  <include package="webcouturier.dropdownmenu" />
 
   <include package=".browser" />
 

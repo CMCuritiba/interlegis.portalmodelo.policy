@@ -4,6 +4,9 @@ Changelog
 1.0rc2 (unreleased)
 -------------------
 
+- Register some dependencies
+  [jeanferri]
+
 - Change social media icons
   [jeanferri]
 
