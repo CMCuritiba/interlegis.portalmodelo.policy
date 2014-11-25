@@ -471,8 +471,8 @@ def fix_image_links_in_static_portlet(portal):
         portlet.text = portlet.text.replace(i, uid)
     logger.debug(u'Links substituidos no portlet de midias sociais')
 
-    assert 'acesso-informacao' in mapping
-    portlet = mapping['acesso-informacao']
+    assert 'banners' in mapping
+    portlet = mapping['banners']
     image = 'acesso-a-informacao.png'
     uid = 'resolveuid/' + get_image_uid(image) + '/image_mini'
     portlet.text = portlet.text.replace(image, uid)
