@@ -95,15 +95,20 @@
    <element>published</element>
   </property>
  </assignment>
-  <assignment name="newsletter-subscriber-portlet" category="context" key="/"
-      manager="plone.rightcolumn" type="portlets.Subscriber" visible="True">
-    <property name="query_organization">False</property>
-    <property name="query_fullname">True</property>
-    <property name="portlet_title">Acompanhe a Câmara</property>
-    <property name="newsletter">/boletins/acompanhe</property>
-    <property name="portlet_description"/>
-    <property name="show_unsubscribe">True</property>
-  </assignment>
+ <assignment name="newsletter-subscriber-portlet" category="context" key="/"
+    manager="plone.rightcolumn" type="portlets.Subscriber" visible="True">
+  <property name="query_organization">False</property>
+  <property name="query_fullname">True</property>
+  <property name="portlet_title">Acompanhe a Câmara</property>
+  <property name="newsletter">/boletins/acompanhe</property>
+  <property name="portlet_description"/>
+  <property name="show_unsubscribe">True</property>
+ </assignment>
+ <assignment name="search-on-buscaleg" category="context" key="/"
+    manager="plone.rightcolumn"
+    type="interlegis.portalmodelo.buscadores.portlets.buscaleg"
+    visible="True">
+ </assignment>
  <assignment name="banners" category="context" key="/"
     manager="plone.rightcolumn" type="plone.portlet.static.Static"
     visible="True">

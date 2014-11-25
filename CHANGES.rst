@@ -4,6 +4,9 @@ Changelog
 1.0rc3 (unreleased)
 -------------------
 
+- Add portlet BuscaLeg as a default portlet
+  [jeanferri]
+
 - Change portlet name from 'Acesso à Informação' to 'Banners'
   [jeanferri]
 
