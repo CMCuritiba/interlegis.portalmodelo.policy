@@ -4,7 +4,8 @@ Changelog
 1.0rc3 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Change portlet name from 'Acesso à Informação' to 'Banners'
+  [jeanferri]
 
 
 1.0rc2 (2014-10-24)
