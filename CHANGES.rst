@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0rc3 (unreleased)
+1.0rc3 (2014-12-12)
 -------------------
 
 - Add portlet BuscaLeg as a default portlet
