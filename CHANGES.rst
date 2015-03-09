@@ -4,6 +4,9 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
+- Add the tag address to footer contact info
+  [jeanferri]
+
 - Replace the link 'Informações ao Cidadão' to 'e-SIC' in footer
   [jeanferri]
 
