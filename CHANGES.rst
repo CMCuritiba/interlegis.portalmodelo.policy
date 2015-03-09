@@ -4,7 +4,8 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Replace the link 'Informações ao Cidadão' to 'e-SIC' in footer
+  [jeanferri]
 
 
 1.0rc3 (2014-12-12)
