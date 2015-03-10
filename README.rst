@@ -24,6 +24,7 @@ Este pacote instala as seguintes dependências do projeto:
 
 * `collective.cover`_
 * `collective.flowplayer`_
+* `collective.oembed`_
 * `collective.polls`_
 * `collective.upload`_
 * `interlegis.portalmodelo.api`_
@@ -69,6 +70,7 @@ O estado atual dos testes pode ser visto nas imagens a seguir:
 
 .. _`collective.cover`: https://pypi.python.org/pypi/collective.cover
 .. _`collective.flowplayer`: https://pypi.python.org/pypi/collective.flowplayer
+.. _`collective.oembed`: https://pypi.python.org/pypi/collective.oembed
 .. _`collective.polls`: https://pypi.python.org/pypi/collective.polls
 .. _`collective.upload`: https://pypi.python.org/pypi/collective.upload
 .. _`interlegis.intranetmodelo`: https://pypi.python.org/pypi/interlegis.intranetmodelo

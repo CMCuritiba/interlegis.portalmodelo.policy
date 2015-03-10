@@ -4,6 +4,9 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
+- Install collective.oembed as default to provide new multimedia views
+  [jeanferri]
+
 - Enable sc.embedder as default addable content in /institucional/fotos and
   /intitucional/audios
   [jeanferri]

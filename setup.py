@@ -43,6 +43,7 @@ setup(
         'collective.contentrules.mailtogroup',
         'collective.cover',
         'collective.flowplayer',
+        'collective.oembed',
         'collective.polls',
         'collective.upload',
         'collective.weather',

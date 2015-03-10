@@ -17,6 +17,7 @@ AVAILABLE = [
 DEPENDENCIES = [
     'collective.cover',
     'collective.flowplayer',
+    'collective.oembed',
     'collective.polls',
     'collective.upload',
     'EasyNewsletter',

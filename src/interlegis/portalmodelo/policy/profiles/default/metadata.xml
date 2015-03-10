@@ -5,6 +5,7 @@
     <!--dependency>profile-brasil.gov.vcge:default</dependency-->
     <dependency>profile-collective.cover:default</dependency>
     <dependency>profile-collective.flowplayer:default</dependency>
+    <dependency>profile-collective.oembed:default</dependency>
     <dependency>profile-collective.polls:default</dependency>
     <dependency>profile-collective.upload:default</dependency>
     <dependency>profile-interlegis.portalmodelo.api:default</dependency>

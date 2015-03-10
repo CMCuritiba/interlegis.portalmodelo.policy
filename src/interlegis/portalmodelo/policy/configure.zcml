@@ -11,6 +11,7 @@
   <include package="collective.contentrules.mailtogroup" />
   <include package="collective.cover" />
   <include package="collective.flowplayer" />
+  <include package="collective.oembed" />
   <include package="collective.polls" />
   <include package="interlegis.intranetmodelo.policy" />
   <include package="interlegis.portalmodelo.api" />
