@@ -201,7 +201,7 @@ SITE_STRUCTURE = [
                 id='fotos',
                 title=u'Galeria de Fotos',
                 description=u'Galeria de fotos da Casa Legislativa, sessões, parlamentares, funcionários, eventos ocorridos, cidadãos colaboradores, entre outros.',
-                _addable_types=['Collection', 'Folder', 'Image', 'Link'],
+                _addable_types=['Collection', 'Folder', 'Image', 'Link', 'sc.embedder'],
                 _children=[
                     dict(
                         type='Collection',
@@ -274,7 +274,7 @@ SITE_STRUCTURE = [
                 id='audios',
                 title=u'Galeria de Áudios',
                 description=u'Acervo de áudios e podcasts da Casa Legislativa sobre eventos ocorridos, sessões legislativas, promocionais, informativos, entre outros, em formato MP3 e/ou algum serviço de streaming de som pela Internet.',
-                _addable_types=['Collection', 'Folder', 'File', 'Link'],
+                _addable_types=['Collection', 'Folder', 'File', 'Link', 'sc.embedder'],
                 _children=[
                     dict(
                         type='Collection',

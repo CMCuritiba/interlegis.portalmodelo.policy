@@ -4,6 +4,10 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
+- Enable sc.embedder as default addable content in /institucional/fotos and
+  /intitucional/audios
+  [jeanferri]
+
 - Add the tag address to footer contact info
   [jeanferri]
 
