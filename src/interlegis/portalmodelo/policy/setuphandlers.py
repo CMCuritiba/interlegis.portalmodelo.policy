@@ -254,6 +254,12 @@ def set_flowplayer_view(obj):
     logger.info(u'Visão de flowplayer estabelecida para {0}'.format(obj.title))
 
 
+def set_oembed_view(obj):
+    """Set link_oembed_view as default view on link object."""
+    obj.setLayout('link_oembed_view')
+    logger.info(u'Visão de oembed estabelecida para {0}'.format(obj.title))
+
+
 def set_atct_album_view(obj):
     """Set atct_album_view as default view on object."""
     obj.setLayout('atct_album_view')
@@ -358,6 +364,9 @@ def miscelaneous_house_folder(site):
     set_galleria_view(folder['fotos'])
     set_flowplayer_view(folder['audios'])
     set_atct_album_view(site['imagens'])
+
+    videos = folder['videos']
+    set_oembed_view(videos['portal-modelo-para-o-legislativo'])
 
 
 def import_registry_settings(site):

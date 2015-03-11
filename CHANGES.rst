@@ -4,6 +4,9 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
+- Add a new link to Portal Modelo video with collective.oembed view
+  [jeanferri]
+
 - Install collective.oembed as default to provide new multimedia views
   [jeanferri]
 
