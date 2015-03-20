@@ -4,6 +4,9 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
+- Add more 2 embedded videos to home
+  [jeanferri]
+
 - Add a new link to Portal Modelo video with collective.oembed view
   [jeanferri]
 

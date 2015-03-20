@@ -4,6 +4,8 @@ from interlegis.portalmodelo.policy.config import CREATORS
 from interlegis.portalmodelo.policy.config import DEFAULT_CONTENT
 from interlegis.portalmodelo.policy.config import IMAGE
 from interlegis.portalmodelo.policy.config import HOME_TILE_TEXT
+from interlegis.portalmodelo.policy.config import HOME_TILE_EMBED1
+from interlegis.portalmodelo.policy.config import HOME_TILE_EMBED2
 from interlegis.portalmodelo.policy.config import PROJECTNAME
 from interlegis.portalmodelo.policy.config import SITE_STRUCTURE
 from plone import api
@@ -192,6 +194,12 @@ def populate_cover(site):
     tiles = cover.list_tiles('collective.cover.richtext')
     data = dict(text=HOME_TILE_TEXT)
     cover.set_tile_data(tiles[0], **data)
+    # fourth row
+    tiles = cover.list_tiles('collective.cover.embed')
+    data = dict(embed=HOME_TILE_EMBED1)
+    cover.set_tile_data(tiles[0], **data)
+    data = dict(embed=HOME_TILE_EMBED2)
+    cover.set_tile_data(tiles[1], **data)
 
 
 def set_site_default_page(site):
