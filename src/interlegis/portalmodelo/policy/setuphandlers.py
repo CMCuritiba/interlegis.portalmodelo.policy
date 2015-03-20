@@ -155,11 +155,12 @@ def install_legislative_process_integration(self):
 
 
 def populate_cover(site):
-    """Populate site front page. The layout is composed by 3 rows:
+    """Populate site front page. The layout is composed by 4 rows:
 
     1. 1 carousel tile
-    2. 1 collection tiles
+    2. 1 collection tile
     3. 1 parlamientarians tile
+    4. 2 embed tiles
 
     Populate and configure those tiles.
     """

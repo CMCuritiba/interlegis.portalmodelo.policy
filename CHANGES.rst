@@ -4,6 +4,9 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
+- Fix home and portlet Youtube videos parameters
+  [jeanferri]
+
 - Add more 2 embedded videos to home
   [jeanferri]
 

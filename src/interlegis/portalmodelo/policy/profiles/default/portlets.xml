@@ -64,7 +64,7 @@
  <assignment name="tv-legislativa" category="context" key="/"
     manager="plone.rightcolumn" type="plone.portlet.static.Static"
     visible="True">
-  <property name="text">&lt;iframe src="http://www.youtube.com/embed/Sll8S1_ksfU?feature=oembed" width="200" height="150" allowfullscreen="" frameborder="0"&gt;&lt;/iframe&gt;</property>
+  <property name="text">&lt;iframe src="https://www.youtube.com/embed/Sll8S1_ksfU?rel=0&amp;showinfo=0" width="200" height="150" allowfullscreen="" frameborder="0"&gt;&lt;/iframe&gt;</property>
   <property name="more_url">institucional/videos</property>
   <property name="omit_border">False</property>
   <property name="header">TV Legislativa</property>
