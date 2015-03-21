@@ -16,9 +16,18 @@ HOME_TILE_EMBED1 = u'<iframe width="320" height="180" src="https://www.youtube.c
 HOME_TILE_EMBED2 = u'<iframe width="320" height="180" src="https://www.youtube.com/embed/DIMiGgms8rI?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>'
 CREATORS = (u'Interlegis', )
 
-IMAGE = open(
+IMAGE1 = open(
+    os.path.join(
+        os.path.dirname(__file__), 'browser/static', 'congresso-nacional.jpg')).read()
+IMAGE2 = open(
+    os.path.join(
+        os.path.dirname(__file__), 'browser/static', 'plenario-senado.jpg')).read()
+IMAGE3 = open(
     os.path.join(
         os.path.dirname(__file__), 'browser/static', 'bandeira-brasil.jpg')).read()
+IMAGE4 = open(
+    os.path.join(
+        os.path.dirname(__file__), 'browser/static', 'plenario-camara.jpg')).read()
 
 # new site structure; this dictionary defines the objects that are going to be
 # created on the root of the site; it also includes information about folder
@@ -141,24 +150,28 @@ SITE_STRUCTURE = [
                         title=u'Primeira Notícia',
                         description=LOREM_DESCRIPTION,
                         text=LOREM_TEXT,
+                        image=IMAGE1,
                     ),
                     dict(
                         type='News Item',
                         title=u'Segunda Notícia',
                         description=LOREM_DESCRIPTION,
                         text=LOREM_TEXT,
+                        image=IMAGE2,
                     ),
                     dict(
                         type='News Item',
                         title=u'Terceira Notícia',
                         description=LOREM_DESCRIPTION,
                         text=LOREM_TEXT,
+                        image=IMAGE3,
                     ),
                     dict(
                         type='News Item',
                         title=u'Quarta Notícia',
                         description=LOREM_DESCRIPTION,
                         text=LOREM_TEXT,
+                        image=IMAGE4,
                     ),
                 ],
             ),

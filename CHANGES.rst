@@ -4,6 +4,9 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
+- Put some diferent photos to home default news items
+  [jeanferri]
+
 - Fix home and portlet Youtube videos parameters
   [jeanferri]
 

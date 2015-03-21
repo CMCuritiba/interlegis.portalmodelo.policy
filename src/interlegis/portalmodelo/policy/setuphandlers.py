@@ -2,7 +2,6 @@
 from five import grok
 from interlegis.portalmodelo.policy.config import CREATORS
 from interlegis.portalmodelo.policy.config import DEFAULT_CONTENT
-from interlegis.portalmodelo.policy.config import IMAGE
 from interlegis.portalmodelo.policy.config import HOME_TILE_TEXT
 from interlegis.portalmodelo.policy.config import HOME_TILE_EMBED1
 from interlegis.portalmodelo.policy.config import HOME_TILE_EMBED2
@@ -114,7 +113,8 @@ def create_site_structure(root, structure):
                 create_site_structure(obj, item['_children'])
             # add an image to all news items
             if obj.portal_type == 'News Item':
-                obj.setImage(IMAGE)
+                if 'image' in item:
+                    obj.setImage(item['image'])
             # XXX: workaround for https://github.com/plone/plone.api/issues/99
             obj.setTitle(title)
             obj.setDescription(description)
