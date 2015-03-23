@@ -4,6 +4,9 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
+- Refactored the creation of default sc.embedder
+  [jeanferri]
+
 - Put some diferent photos to home default news items
   [jeanferri]
 

@@ -9,8 +9,9 @@ PROFILE_ID = '{0}:default'.format(PROJECTNAME)
 # content created at Plone's installation
 DEFAULT_CONTENT = ('front-page', 'news', 'events', 'Members')
 
-LOREM_DESCRIPTION = u'Este é um exemplo de notícia que pode ser criado e publicado no Portal Modelo. Você pode excluí-la e criar suas próprias notícias. Divirta-se! ;-)'
-LOREM_TEXT = u'<p>Este é um conteúdo padrão que deve ser editado pelo usuário editor do site. Para alterá-lo basta se autenticar no portal, e clicar na aba <em><a href="edit">Edição</a></em>, que fica logo acima do título da notícia, então, inserir o conteúdo real e clicar no botão <em>Salvar</em>.</p><p>Esta notícia está dentro da pasta <em>notícias</em> e foi criada como exemplo, logo, pode ser excluída. Dentro desta pasta você pode criar outras notícias através do menu <em>Adicionar item...</em>, e então publicá-as através do menu <em>Estado</em>. Elas irão aparecer automaticamente na página inicial do site e você poderá selecionar as notícias de destaque no carrossel da página inicial, clicando a aba <em>Compor</em> e arrastando-as para o carrossel.</p>'
+NEWS_DESCRIPTION = u'Este é um exemplo de notícia que pode ser criado e publicado no Portal Modelo. Você pode excluí-la e criar suas próprias notícias. Divirta-se! ;-)'
+NEWS_TEXT = u'<p>Este é um conteúdo padrão que deve ser editado pelo usuário editor do site. Para alterá-lo basta se autenticar no portal, e clicar na aba <em><a href="edit">Edição</a></em>, que fica logo acima do título da notícia, então, inserir o conteúdo real e clicar no botão <em>Salvar</em>.</p><p>Esta notícia está dentro da pasta <em>notícias</em> e foi criada como exemplo, logo, pode ser excluída. Dentro desta pasta você pode criar outras notícias através do menu <em>Adicionar item...</em>, e então publicá-as através do menu <em>Estado</em>. Elas irão aparecer automaticamente na página inicial do site e você poderá selecionar as notícias de destaque no carrossel da página inicial, clicando a aba <em>Compor</em> e arrastando-as para o carrossel.</p>'
+VIDEO_TEXT = u'<p>O programa mensal mostra a repercussão de assuntos locais no Congresso Nacional e como as decisões do Legislativo impactam o dia a dia dos cidadãos. Com linguagem informal, o programa apresenta notícias, projetos, debates, serviços e um pouco de história dos 5.570 municípios brasileiros.</p>'
 HOME_TILE_TEXT = u'<h2>Nossos Parlamentares</h2><table class="invisible"><tbody><tr><td style="text-align: center;"><a href="processo-legislativo/parlamentares"><img class="image-inline" src="imagens/rui-barbosa.jpg/image_tile" alt="Foto do Parlamentar" /><br/>Rui Barbosa</a></td><td style="text-align: center;"><a href="processo-legislativo/parlamentares"><img class="image-inline" src="imagens/rui-barbosa.jpg/image_tile" alt="Foto do Parlamentar" /><br/>Rui Barbosa</a></td><td style="text-align: center;"><a href="processo-legislativo/parlamentares"><img class="image-inline" src="imagens/rui-barbosa.jpg/image_tile" alt="Foto do Parlamentar" /><br/>Rui Barbosa</a></td><td style="text-align: center;"><a href="processo-legislativo/parlamentares"><img class="image-inline" src="imagens/rui-barbosa.jpg/image_tile" alt="Foto do Parlamentar" /><br/>Rui Barbosa</a></td><td style="text-align: center;"><a href="processo-legislativo/parlamentares"><img class="image-inline" src="imagens/rui-barbosa.jpg/image_tile" alt="Foto do Parlamentar" /><br/>Rui Barbosa</a></td></tr><tr><td style="text-align: center;"><a href="processo-legislativo/parlamentares"><img class="image-inline" src="imagens/rui-barbosa.jpg/image_tile" alt="Foto do Parlamentar" /><br/>Rui Barbosa</a></td><td style="text-align: center;"><a href="processo-legislativo/parlamentares"><img class="image-inline" src="imagens/rui-barbosa.jpg/image_tile" alt="Foto do Parlamentar" /><br/>Rui Barbosa</a></td><td style="text-align: center;"><a href="processo-legislativo/parlamentares"><img class="image-inline" src="imagens/rui-barbosa.jpg/image_tile" alt="Foto do Parlamentar" /><br/>Rui Barbosa</a></td><td style="text-align: center;"><a href="processo-legislativo/parlamentares"><img class="image-inline" src="imagens/rui-barbosa.jpg/image_tile" alt="Foto do Parlamentar" /><br/>Rui Barbosa</a></td><td style="text-align: center;"><a href="processo-legislativo/parlamentares"><img class="image-inline" src="imagens/rui-barbosa.jpg/image_tile" alt="Foto do Parlamentar" /><br/>Rui Barbosa</a></td></tr></tbody></table>'
 HOME_TILE_EMBED1 = u'<iframe width="320" height="180" src="https://www.youtube.com/embed/yjPwZ5rQ4RU?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>'
 HOME_TILE_EMBED2 = u'<iframe width="320" height="180" src="https://www.youtube.com/embed/DIMiGgms8rI?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>'
@@ -148,29 +149,29 @@ SITE_STRUCTURE = [
                     dict(
                         type='News Item',
                         title=u'Primeira Notícia',
-                        description=LOREM_DESCRIPTION,
-                        text=LOREM_TEXT,
+                        description=NEWS_DESCRIPTION,
+                        text=NEWS_TEXT,
                         image=IMAGE1,
                     ),
                     dict(
                         type='News Item',
                         title=u'Segunda Notícia',
-                        description=LOREM_DESCRIPTION,
-                        text=LOREM_TEXT,
+                        description=NEWS_DESCRIPTION,
+                        text=NEWS_TEXT,
                         image=IMAGE2,
                     ),
                     dict(
                         type='News Item',
                         title=u'Terceira Notícia',
-                        description=LOREM_DESCRIPTION,
-                        text=LOREM_TEXT,
+                        description=NEWS_DESCRIPTION,
+                        text=NEWS_TEXT,
                         image=IMAGE3,
                     ),
                     dict(
                         type='News Item',
                         title=u'Quarta Notícia',
-                        description=LOREM_DESCRIPTION,
-                        text=LOREM_TEXT,
+                        description=NEWS_DESCRIPTION,
+                        text=NEWS_TEXT,
                         image=IMAGE4,
                     ),
                 ],
@@ -288,6 +289,15 @@ SITE_STRUCTURE = [
                         description=u'Link para o vídeo no YouTube, feito pelo programa Município Brasil da TV Senado, sobre a ferramenta feita pelo Interlegis que oferece sites com tecnologias abertas e sem custos para as Casas Legislativas Brasileiras. (este link é um conteúdo de exemplo e pode ser removido)',
                         excludeFromNav=True,
                         remoteUrl='https://www.youtube.com/watch?v=f1vAZ5cp-sc',
+                    ),
+                    dict(
+                        type='sc.embedder',
+                        title=u'Município Brasil',
+                        description=u'O programa Município Brasil é desenvolvido pela TV Senado e conta com a participação das Casas Legislativas Brasileiras. (este embedder é um conteúdo de exemplo e pode ser removido)',
+                        url=u'https://www.youtube.com/watch?v=Sll8S1_ksfU',
+                        embed_html=u'<iframe width="459" height="344" src="http://www.youtube.com/embed/Sll8S1_ksfU?feature=oembed" frameborder="0" allowfullscreen></iframe>',
+                        width=459,
+                        height=344,
                     ),
                 ],
             ),

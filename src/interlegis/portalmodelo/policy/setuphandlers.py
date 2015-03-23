@@ -2,11 +2,12 @@
 from five import grok
 from interlegis.portalmodelo.policy.config import CREATORS
 from interlegis.portalmodelo.policy.config import DEFAULT_CONTENT
-from interlegis.portalmodelo.policy.config import HOME_TILE_TEXT
 from interlegis.portalmodelo.policy.config import HOME_TILE_EMBED1
 from interlegis.portalmodelo.policy.config import HOME_TILE_EMBED2
+from interlegis.portalmodelo.policy.config import HOME_TILE_TEXT
 from interlegis.portalmodelo.policy.config import PROJECTNAME
 from interlegis.portalmodelo.policy.config import SITE_STRUCTURE
+from interlegis.portalmodelo.policy.config import VIDEO_TEXT
 from plone import api
 from plone.portlets.interfaces import IPortletAssignmentMapping
 from plone.portlets.interfaces import IPortletManager
@@ -409,27 +410,16 @@ def create_feedback_poll(site):
     logger.debug(u'Enquete inicial criada e publicada')
 
 
-def create_youtube_video_embedder(site):
-    """Create an embedder object to an Youtube video."""
+def setup_youtube_video_embedder(site):
+    """Set a few properties on Youtube video embedder."""
     from plone.namedfile.file import NamedBlobImage
     folder = site['institucional']['videos']
-    embedder = api.content.create(
-        folder,
-        'sc.embedder',
-        url = u'https://www.youtube.com/watch?v=Sll8S1_ksfU',
-        title = u'Município Brasil',
-        description = u'O programa Município Brasil é desenvolvido pela TV Senado e conta com a participação das Casas Legislativas Brasileiras. (este embedder é um conteúdo de exemplo e pode ser removido)',
-        creators = CREATORS,
-        width = 459,
-        height = 344,
-        embed_html = u'<iframe width="459" height="344" src="http://www.youtube.com/embed/Sll8S1_ksfU?feature=oembed" frameborder="0" allowfullscreen></iframe>',
-    )
-    embedder.text = u'<p>O programa mensal mostra a repercussão de assuntos locais no Congresso Nacional e como as decisões do Legislativo impactam o dia a dia dos cidadãos. Com linguagem informal, o programa apresenta notícias, projetos, debates, serviços e um pouco de história dos 5.570 municípios brasileiros.</p>'
+    embedder = folder['municipio-brasil']
+    embedder.text = VIDEO_TEXT
     path = os.path.dirname(__file__)
     data = open(os.path.join(path, 'browser/static', 'capa-video.jpg')).read()
     image = NamedBlobImage(data, 'image/jpeg', u'hqdefault.jpg')
     embedder.image = image
-    api.content.transition(embedder, 'publish')
     embedder.reindexObject()
     logger.debug(u'Video embedder do youtube criado e publicado')
 
@@ -459,7 +449,7 @@ def setup_various(context):
     import_photos(portal)
     populate_cover(portal)
     create_feedback_poll(portal)
-    create_youtube_video_embedder(portal)
+    setup_youtube_video_embedder(portal)
     set_enable_anon_name_plone_board(portal)
 
 
