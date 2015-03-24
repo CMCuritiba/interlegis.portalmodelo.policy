@@ -376,7 +376,8 @@ def miscelaneous_house_folder(site):
     set_atct_album_view(site['imagens'])
 
     videos = folder['videos']
-    set_oembed_view(videos['portal-modelo-para-o-legislativo'])
+    set_oembed_view(videos['portal-modelo-proporciona-transparencia'])
+    set_galleria_view(videos['o-portal-para-o-legislativo-brasileiro'])
 
 
 def import_registry_settings(site):
@@ -410,18 +411,25 @@ def create_feedback_poll(site):
     logger.debug(u'Enquete inicial criada e publicada')
 
 
-def setup_youtube_video_embedder(site):
-    """Set a few properties on Youtube video embedder."""
+def setup_embedder_video(site):
+    """Set a few properties on Youtube video embedders."""
     from plone.namedfile.file import NamedBlobImage
     folder = site['institucional']['videos']
-    embedder = folder['municipio-brasil']
-    embedder.text = VIDEO_TEXT
-    path = os.path.dirname(__file__)
-    data = open(os.path.join(path, 'browser/static', 'capa-video.jpg')).read()
-    image = NamedBlobImage(data, 'image/jpeg', u'hqdefault.jpg')
-    embedder.image = image
-    embedder.reindexObject()
-    logger.debug(u'Video embedder do youtube criado e publicado')
+    videos = [
+        {'id': 'municipio-brasil', 'img': 'capa-video1.jpg', 'text': VIDEO_TEXT},
+        {'id': 'por-que-utilizar-o-portal-modelo', 'img': 'capa-video2.jpg'}
+    ]
+
+    for v in videos:
+        embedder = folder[v['id']]
+        if v.get('text'):
+            embedder.text = v['text']
+        path = os.path.dirname(__file__)
+        data = open(os.path.join(path, 'browser/static', v['img'])).read()
+        image = NamedBlobImage(data, 'image/jpeg', u'hqdefault.jpg')
+        embedder.image = image
+        embedder.reindexObject()
+        logger.debug(u'Video embedder {0} configurado'.format(v['id']))
 
 
 def set_enable_anon_name_plone_board(site):
@@ -449,7 +457,7 @@ def setup_various(context):
     import_photos(portal)
     populate_cover(portal)
     create_feedback_poll(portal)
-    setup_youtube_video_embedder(portal)
+    setup_embedder_video(portal)
     set_enable_anon_name_plone_board(portal)
 
 

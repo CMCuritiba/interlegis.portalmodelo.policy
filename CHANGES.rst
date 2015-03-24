@@ -4,6 +4,9 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
+- Add more videos in /institucional/videos with alternative views
+  [jeanferri]
+
 - Refactored the creation of default sc.embedder
   [jeanferri]
 
