@@ -47,7 +47,7 @@ SITE_STRUCTURE = [
         id='footer-page',
         title=u'Rodapé do Portal',
         description=u'Conteúdo editável do rodapé do site. (atenção: este objeto não deve ser excluído))',
-        text=u'<table class="invisible"><tbody><tr><th style="text-align:left">Institucional</th><th style="text-align:left">Atividade Legislativa</th><th style="text-align:left">Serviços</th><th style="text-align:left">Atendimento</th></tr><tr><td><ul><li><a href="institucional/acesso">Acesso</a></li><li><a href="institucional/historia">História</a></li><li><a href="institucional/funcao-e-definicao">Função e Definição</a></li><li><a href="institucional/estrutura">Estrutura</a></li><li><a href="institucional/noticias">Notícias</a></li><li><a href="institucional/eventos">Eventos</a></li><li><a href="blog">Blog</a></li></ul></td><td><ul><li><a href="processo-legislativo/parlamentares">Parlamentares</a></li><li><a href="processo-legislativo/legislaturas">Legislaturas</a></li><li><a href="processo-legislativo/@@mesa-diretora">Mesa Diretora</a></li><li><a href="processo-legislativo/comissoes">Comissões</a></li><li><a href="institucional/regimento-interno">Regimento Interno</a></li><li><a href="leis/lei-organica-municipal">Lei Orgância Municipal</a></li><li><a href="leis/legislacao-municipal">Legislação Municipal</a></li></ul></td><td><ul><li><a href="transparencia">Transparência</a></li><li><a href="ouvidoria">e-SIC</a></li><li><a href="foruns">Fóruns</a></li><li><a href="transparencia/dados-abertos">Dados Abertos</a></li><li><a href="boletins">Boletim Informativo</a></li><li><a href="perguntas-frequentes">FAQ</a></li><li><a href="rss-info">RSS</a></li></ul></td><td><address>Endereço da Casa Legislativa, nº do prédio<br />Município, UF - CEP: 12345-678<br />Fone: +55 12 3456-7890 - Fax: (09) 8765-4321<br />E-mail: <a href="mailto:atendimento@dominio.leg.br">atendimento@dominio.leg.br</a></address><br /><br /><strong>Expediente</strong><br /><br />De segunda a sexta:<br />- manhã das 08hs às 12hs<br />- tarde das 14hs às 18hs</td></tr></tbody></table>',
+        text=u'<table class="invisible"><tbody><tr><th style="text-align:left">Institucional</th><th style="text-align:left">Atividade Legislativa</th><th style="text-align:left">Serviços</th><th style="text-align:left">Atendimento</th></tr><tr><td><ul><li><a href="institucional/acesso">Acesso</a></li><li><a href="institucional/historia">História</a></li><li><a href="institucional/funcao-e-definicao">Função e Definição</a></li><li><a href="institucional/estrutura">Estrutura</a></li><li><a href="institucional/noticias">Notícias</a></li><li><a href="institucional/eventos">Eventos</a></li><li><a href="blog">Blog</a></li></ul></td><td><ul><li><a href="processo-legislativo/parlamentares">Parlamentares</a></li><li><a href="processo-legislativo/legislaturas">Legislaturas</a></li><li><a href="processo-legislativo/@@mesa-diretora">Mesa Diretora</a></li><li><a href="processo-legislativo/comissoes">Comissões</a></li><li><a href="institucional/regimento-interno">Regimento Interno</a></li><li><a href="leis/lei-organica-municipal">Lei Orgância Municipal</a></li><li><a href="leis/legislacao-municipal">Legislação Municipal</a></li></ul></td><td><ul><li><a href="transparencia">Transparência</a></li><li><a href="ouvidoria">e-SIC</a></li><li><a href="foruns">Fóruns</a></li><li><a href="transparencia/dados-abertos">Dados Abertos</a></li><li><a href="boletins">Boletim Informativo</a></li><li><a href="perguntas-frequentes">FAQ</a></li><li><a href="rss-info">RSS</a></li></ul></td><td><address>Endereço da Casa Legislativa, nº do prédio<br />Município, UF - CEP: 12345-678<br />Fone: +55 12 3456-7890 - Fax: (09) 8765-4321<br />E-mail: <a href="mailto:atendimento@dominio.leg.br">atendimento@dominio.leg.br</a></address><br /><br /><strong>Expediente</strong><br /><br />De segunda a sexta:<br />- manhã das 8hs às 12hs<br />- tarde das 14hs às 18hs</td></tr></tbody></table>',
         excludeFromNav=True,
     ),
     dict(
@@ -282,7 +282,7 @@ SITE_STRUCTURE = [
                         title=u'Adesão à Rede Legislativa de TV e Rádio',
                         description=u'Link para a página do projeto da Câmara dos Deputados que informa como as Casas Legislativas podem aderir à Rede Legislativa de TV Digital. (este link é apenas informativo, está privado e deve ser removido)',
                         remoteUrl='http://www2.camara.leg.br/comunicacao/rede-legislativa-radio-tv',
-                        state='private',
+                        transition=None,
                     ),
                     dict(
                         type='Link',
@@ -439,7 +439,7 @@ SITE_STRUCTURE = [
                 type='Document',
                 title=u'Acesso à Informação',
                 description=u'Instruções sobre como fazer solicitações com base na Lei de Acesso à Informação a esta Casa Legislativa.',
-                text=u'<p><a href="http://www.acessoainformacao.gov.br"><img class="image-right" src="../imagens/acesso-a-informacao.png/image_mini" alt="Acesso à Informação" /></a>A Lei de Acesso à Informação (LAI) - <a href="http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:2011-11-18;12527">lei nº 12.527/2011</a> - regulamenta o direito constitucional de obter informações públicas. Essa norma entrou em vigor em 16 de maio de 2012 e criou mecanismos que possibilitam a qualquer pessoa, física ou jurídica, sem necessidade de apresentar motivo, o recebimento de informações públicas dos órgãos e entidades.</p><p>Os pedidos de informações devem ser realizados nas <a href="../institucional/acesso">instalações físicas</a> desta Casa Legislativa ou <a href="../ouvidoria/++add++Claim?form.widgets.kind=pedido-de-acesso-a-informaassapso&form.widgets.area=ouvidoria">através deste site</a>. Preenchendo o formulário o cidadão receberá um número de protocolo e poderá acompanhar a tramitação do seu pedido de informação.</p><p>A LAI estabelece também um conjunto mínimo de informações que devem ser publicadas nas seções de acesso à informação dos sites dos órgãos e entidades públicas. Além da publicação das informações exigidas, os órgãos podem divulgar outros dados de interesse público por iniciativa própria, ou seja, de forma proativa.</p><p>Portanto, antes de apresentar um pedido de acesso à informação, é importante que você verifique se a informação desejada já está disponível na seção de <a href="./">Transparência</a> deste site ou se ela já foi publicada como resposta a uma outra solicitação de informações realizada anteriormente através da <a href="../ouvidoria">Ouvidoria</a> deste site, que é caracterizada também como o e-SIC (Sistema Eletrônico de Informações ao Cidadão) desta Casa Legislativa.</p><iframe width="560" height="315" src="https://www.youtube.com/embed/HiVKTKkI3nE?list=PLfcgNxuoKmUFWcqVOu--1aZJGfU97m0tG" frameborder="0" allowfullscreen></iframe>',
+                text=u'<p><a href="http://www.acessoainformacao.gov.br"><img class="image-right" src="../imagens/acesso-a-informacao.png/image_mini" alt="Acesso à Informação" /></a>A Lei de Acesso à Informação (LAI) - <a href="http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:2011-11-18;12527">lei nº 12.527/2011</a> - regulamenta o direito constitucional de obter informações públicas. Essa norma entrou em vigor em 16 de maio de 2012 e criou mecanismos que possibilitam a qualquer pessoa, física ou jurídica, sem necessidade de apresentar motivo, o recebimento de informações públicas dos órgãos e entidades.</p><p>Os pedidos de informações devem ser realizados nas <a href="../institucional/acesso">instalações físicas</a> desta Casa Legislativa ou <a href="../ouvidoria/++add++Claim?form.widgets.kind=pedido-de-acesso-a-informaassapso&form.widgets.area=ouvidoria">através do formulário neste site</a>. Preenchendo o formulário o cidadão receberá um número de protocolo e poderá acompanhar a tramitação do seu pedido de informação.</p><p>A LAI estabelece também um conjunto mínimo de informações que devem ser publicadas nas seções de acesso à informação dos sites dos órgãos e entidades públicas. Além da publicação das informações exigidas, os órgãos podem divulgar outros dados de interesse público por iniciativa própria, ou seja, de forma proativa.</p><p>Portanto, antes de apresentar um pedido de acesso à informação, é importante que você verifique se a informação desejada já está disponível na seção de <a href="./">Transparência</a> deste site ou se ela já foi publicada como resposta a uma outra solicitação de informações realizada anteriormente através da <a href="../ouvidoria">Ouvidoria</a> deste site, que é caracterizada também como o e-SIC (Sistema Eletrônico de Informações ao Cidadão) desta Casa Legislativa.</p><iframe width="560" height="315" src="https://www.youtube.com/embed/HiVKTKkI3nE?list=PLfcgNxuoKmUFWcqVOu--1aZJGfU97m0tG" frameborder="0" allowfullscreen></iframe>',
             ),
             dict(
                 type='Document',
@@ -523,6 +523,19 @@ SITE_STRUCTURE = [
         description=u'Pesquisas de opinião feitas pela Casa Legislativa.',
         excludeFromNav=True,
         _addable_types=['collective.polls.poll'],
+        _children=[
+            dict(
+                type='collective.polls.poll',
+                title=u'Gostou do novo site?',
+                description=u'O que você achou do novo portal desta Casa Legislativa?',
+                options=[
+                    dict(option_id=0, description=u'Sim, gostei'),
+                    dict(option_id=1, description=u'Não gostei'),
+                    dict(option_id=2, description=u'Pode melhorar'),
+                ],
+                transition='open',
+            ),
+        ],
     ),
     dict(
         type='Blog',
@@ -629,7 +642,7 @@ SITE_STRUCTURE = [
         title=u'Manual de Uso',
         description=u'Link para o arquivo PDF do Manual do Portal Modelo 3 para Gestores de Conteúdo. (este link é apenas uma referência, está privado e pode ser removido)',
         remoteUrl='http://colab.interlegis.leg.br/raw-attachment/wiki/ProjetoPortalModelo/ManualPortalModelo3.pdf',
-        state='private',
+        transition=None,
     ),
 ]
 

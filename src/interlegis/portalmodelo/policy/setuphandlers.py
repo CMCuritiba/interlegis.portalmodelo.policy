@@ -107,8 +107,10 @@ def create_site_structure(root, structure):
             obj = api.content.create(root, **item)
             # publish private content
             if api.content.get_state(obj) == 'private':
-                if not 'state' in item:
+                if not 'transition' in item:
                     api.content.transition(obj, 'publish')
+                elif item['transition'] is not None:
+                    api.content.transition(obj, item['transition'])
             elif obj.portal_type == 'PloneboardForum':
                 api.content.transition(obj, 'make_freeforall')
             # constrain types in folder?
@@ -326,7 +328,7 @@ def import_photos(site):
             type = 'Image',
             id = name,
             title = title,
-            description = u'Foto de demonstração, esta imagem pode ser removida.',
+            description = u'Foto de demonstração no tamanho 3x2. (esta imagem é um conteúdo de exemplo e pode ser removida)',
             image = image,
             creators = CREATORS,
         )
@@ -341,17 +343,6 @@ def set_default_view_on_folder(folder, object_id=''):
     id = folder.id
     title = folder.title
     object_id = object_id or id
-
-    # kwargs = {
-    #     'description': u'',
-    #     'creators': (u'Programa Interlegis', ),
-    # }
-    # if type == 'Collection':
-    #     assert portal_type is not None
-    #     kwargs = get_collection_default_kwargs('News Item')
-    # obj = api.content.create(folder, type=type, title=title, **kwargs)
-    # api.content.transition(obj, 'publish')
-
     folder.setDefaultPage(object_id)
     logger.info(u'Visão padrão criada e estabelecida para {0}'.format(title))
     # return obj
@@ -394,26 +385,6 @@ def import_registry_settings(site):
     PROFILE_ID = 'profile-interlegis.portalmodelo.policy:default'
     setup = api.portal.get_tool('portal_setup')
     setup.runImportStepFromProfile(PROFILE_ID, 'plone.app.registry')
-
-
-def create_feedback_poll(site):
-    """Create a feedback poll."""
-    folder = site['enquetes']
-    poll = api.content.create(
-        folder,
-        'collective.polls.poll',
-        title=u'Gostou do novo portal?',
-        description=u'O que você achou do novo portal desta Casa Legislativa?',
-        creators = CREATORS,
-        options=[
-            dict(option_id=0, description=u'Sim'),
-            dict(option_id=1, description=u'Não'),
-            dict(option_id=2, description=u'Pode melhorar'),
-        ]
-    )
-    api.content.transition(poll, 'open')
-    poll.reindexObject()
-    logger.debug(u'Enquete inicial criada e publicada')
 
 
 def setup_event(site):
@@ -477,7 +448,6 @@ def setup_various(context):
     import_images(portal)
     import_photos(portal)
     populate_cover(portal)
-    create_feedback_poll(portal)
     setup_event(portal)
     setup_embedder_video(portal)
     set_enable_anon_name_plone_board(portal)

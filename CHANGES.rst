@@ -4,6 +4,9 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
+- Make poll creation more accurate and other minor fixes
+  [jeanferri]
+
 - Change footer address info
   [jeanferri]
 
