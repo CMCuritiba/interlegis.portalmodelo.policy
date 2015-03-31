@@ -4,6 +4,9 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
+- Change footer address info
+  [jeanferri]
+
 - Add an Youtube video and to 'Acesso à Informação' page and a form link
   [jeanferri]
 
