@@ -4,6 +4,9 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
+- Add a default event to agenda
+  [jeanferri]
+
 - Add more videos in /institucional/videos with alternative views
   [jeanferri]
 

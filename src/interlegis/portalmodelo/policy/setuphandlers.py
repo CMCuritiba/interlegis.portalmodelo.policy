@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from dateutil.relativedelta import relativedelta
 from five import grok
 from interlegis.portalmodelo.policy.config import CREATORS
 from interlegis.portalmodelo.policy.config import DEFAULT_CONTENT
@@ -9,13 +10,17 @@ from interlegis.portalmodelo.policy.config import PROJECTNAME
 from interlegis.portalmodelo.policy.config import SITE_STRUCTURE
 from interlegis.portalmodelo.policy.config import VIDEO_TEXT
 from plone import api
+from plone.event.interfaces import IEventAccessor
 from plone.portlets.interfaces import IPortletAssignmentMapping
 from plone.portlets.interfaces import IPortletManager
 from Products.CMFPlone.interfaces import INonInstallable
 from Products.CMFQuickInstallerTool import interfaces as qi
 from zope.component import getMultiAdapter
 from zope.component import getUtility
+from zope.event import notify
 from zope.interface import implements
+from zope.lifecycleevent import ObjectModifiedEvent
+from datetime import datetime
 from StringIO import StringIO
 
 import logging
@@ -411,6 +416,22 @@ def create_feedback_poll(site):
     logger.debug(u'Enquete inicial criada e publicada')
 
 
+def setup_event(site):
+    """Set the default start and end event properties."""
+    folder = site['institucional']['eventos']
+    event = folder['1o-ano-do-site']
+    acc = IEventAccessor(event)
+    future = datetime.now() + relativedelta(years=1)
+    year = future.year
+    month = future.month
+    day = future.day
+    acc.start = datetime(year, month, day, 0, 0, 0)
+    acc.end = datetime(year, month, day, 23, 59, 59)
+    notify(ObjectModifiedEvent(event))
+    event.reindexObject()
+    logger.debug(u'Evento padrao configurado')
+
+
 def setup_embedder_video(site):
     """Set a few properties on Youtube video embedders."""
     from plone.namedfile.file import NamedBlobImage
@@ -457,6 +478,7 @@ def setup_various(context):
     import_photos(portal)
     populate_cover(portal)
     create_feedback_poll(portal)
+    setup_event(portal)
     setup_embedder_video(portal)
     set_enable_anon_name_plone_board(portal)
 

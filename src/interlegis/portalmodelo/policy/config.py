@@ -211,6 +211,14 @@ SITE_STRUCTURE = [
                 title=u'Agenda de Eventos',
                 description=u'Calendário de eventos ocorridos nesta Casa Legislativa ou acontecimentos relevantes que tenham participação de parlamentares, funcionários, cidadãos em destaque, entre outros.',
                 _addable_types=['Collection', 'Event', 'Folder'],
+                _children=[
+                    dict(
+                        type='Event',
+                        title=u'1º Ano do Site',
+                        description=u'Aniversário de primeiro ano do portal desta Casa Legislativa. (este evento é um conteúdo de exemplo e pode ser removido)',
+                        text=u'<strong>Parabéns para esta Casa Legislativa!</strong><p>Já passou um ano desde a disponibilização do seu <a href="http://www.interlegis.leg.br/solucaoweb">Portal Modelo</a> na web. Isso significa mais transparência, diálogo com os cidadãos, aderência às leis nacionais e padrões internacionais. Veja por que é importante utilizar o portal:</p><iframe src="http://www.youtube.com/embed/D_Sm7R1yY8g?feature=oembed" width="400" height="300" allowfullscreen="" frameborder="0"></iframe>',
+                    ),
+                ],
             ),
             dict(
                 type='Folder',
@@ -245,7 +253,7 @@ SITE_STRUCTURE = [
                 type='Folder',
                 id='videos',
                 title=u'Galeria de Vídeos',
-                description=u'Acervo de vídeos da Casa Legislativa sobre eventos ocorridos, sessões legislativas, promocionais, informativos, entre outros, em formato MP4 e/ou serviços de streaming de multimídia pela Internet.',
+                description=u'Acervo de vídeos da Casa Legislativa sobre eventos ocorridos, sessões legislativas, promocionais, informativos, entre outros, em formato MP4 e/ou streaming de serviços multimídia pela Internet.',
                 _addable_types=['Collection', 'Folder', 'File', 'Link', 'sc.embedder'],
                 _children=[
                     dict(
