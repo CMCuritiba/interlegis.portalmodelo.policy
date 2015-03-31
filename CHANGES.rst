@@ -4,6 +4,9 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
+- Add an Youtube video and to 'Acesso à Informação' page and a form link
+  [jeanferri]
+
 - Add a default event to agenda
   [jeanferri]
 
