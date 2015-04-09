@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+from collective.flowplayer.interfaces import IAudio
+from collective.flowplayer.interfaces import IVideo
 from dateutil.relativedelta import relativedelta
 from five import grok
 from interlegis.portalmodelo.policy.config import CREATORS
@@ -18,6 +20,7 @@ from Products.CMFQuickInstallerTool import interfaces as qi
 from zope.component import getMultiAdapter
 from zope.component import getUtility
 from zope.event import notify
+from zope.interface import alsoProvides
 from zope.interface import implements
 from zope.lifecycleevent import ObjectModifiedEvent
 from datetime import datetime
@@ -105,14 +108,12 @@ def create_site_structure(root, structure):
             if 'creators' not in item:
                 item['creators'] = CREATORS
             obj = api.content.create(root, **item)
-            # publish private content
-            if api.content.get_state(obj) == 'private':
-                if not 'transition' in item:
+            # publish private content or make a workflow transition
+            if item['type'] not in ['Image', 'File']:
+                if not 'transition' in item and api.content.get_state(obj) == 'private':
                     api.content.transition(obj, 'publish')
-                elif item['transition'] is not None:
+                elif item.get('transition', None):
                     api.content.transition(obj, item['transition'])
-            elif obj.portal_type == 'PloneboardForum':
-                api.content.transition(obj, 'make_freeforall')
             # constrain types in folder?
             if '_addable_types' in item:
                 constrain_types(obj, item['_addable_types'])
@@ -211,12 +212,6 @@ def populate_cover(site):
     cover.set_tile_data(tiles[1], **data)
 
 
-def set_site_default_page(site):
-    """Set front page as site default page."""
-    site.setDefaultPage('front-page')
-    logger.info(u'Visão padrão do site estabelecida')
-
-
 def get_collection_default_kwargs(portal_type):
     """Return default values used to create a collection with a query
     for certain portal types specified.
@@ -253,6 +248,12 @@ def get_collection_default_kwargs(portal_type):
     return defaults
 
 
+def set_site_default_page(site):
+    """Set front page as site default page."""
+    site.setDefaultPage('front-page')
+    logger.info(u'Visão padrão do site estabelecida')
+
+
 def set_solgemafullcalendar_view(obj):
     """Set solgemafullcalendar_view as default view on object."""
     obj.setLayout('solgemafullcalendar_view')
@@ -266,9 +267,15 @@ def set_galleria_view(obj):
 
 
 def set_flowplayer_view(obj):
-    """Set flowplayer as default view on object."""
+    """Set flowplayer as default view on object or folder."""
+    if obj.id.endswith('mp3'):
+        alsoProvides(obj, IAudio)
+        obj.reindexObject(idxs=['object_provides'])
+    elif obj.id.endswith('mp4'):
+        alsoProvides(obj, IVideo)
+        obj.reindexObject(idxs=['object_provides'])
     obj.setLayout('flowplayer')
-    logger.info(u'Visão de flowplayer estabelecida para {0}'.format(obj.title))
+    logger.info(u'Visão de flowplayer estabelecida')
 
 
 def set_oembed_view(obj):
@@ -372,8 +379,12 @@ def miscelaneous_house_folder(site):
     set_atct_album_view(site['imagens'])
 
     videos = folder['videos']
+    set_flowplayer_view(videos['solucao-web-interlegis.mp4'])
     set_oembed_view(videos['portal-modelo-proporciona-transparencia'])
     set_galleria_view(videos['o-portal-para-o-legislativo-brasileiro'])
+
+    audios = folder['audios']
+    set_flowplayer_view(audios['solucao-web-interlegis.mp3'])
 
 
 def import_registry_settings(site):

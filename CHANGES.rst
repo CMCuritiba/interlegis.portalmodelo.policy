@@ -4,6 +4,9 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
+- Add MP3 and MP4 files for audio and video sections with flowplayer view
+  [jeanferri]
+
 - Make poll creation more accurate and other minor fixes
   [jeanferri]
 

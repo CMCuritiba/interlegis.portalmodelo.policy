@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 from interlegis.intranetmodelo.policy.utils import _add_id
+from StringIO import StringIO
 
 import os
 
@@ -29,6 +30,12 @@ IMAGE3 = open(
 IMAGE4 = open(
     os.path.join(
         os.path.dirname(__file__), 'browser/static', 'plenario-camara.jpg')).read()
+VIDEO1 = StringIO(open(
+    os.path.join(
+        os.path.dirname(__file__), 'browser/static', 'solucao-web-interlegis.mp4')).read())
+AUDIO1 = StringIO(open(
+    os.path.join(
+        os.path.dirname(__file__), 'browser/static', 'solucao-web-interlegis.mp3')).read())
 
 # new site structure; this dictionary defines the objects that are going to be
 # created on the root of the site; it also includes information about folder
@@ -238,7 +245,7 @@ SITE_STRUCTURE = [
                             dict(
                                 i='portal_type',
                                 o='plone.app.querystring.operation.selection.is',
-                                v=['Image', 'Link'],
+                                v=['Image', 'Link', 'sc.embedder'],
                             ),
                             dict(
                                 i='path',
@@ -310,10 +317,10 @@ SITE_STRUCTURE = [
                         type='sc.embedder',
                         title=u'Por que utilizar o Portal Modelo?',
                         description=u'Vídeo hospedado no Vimeo sobre as exigências da Lei da Transparência e os benefícios no uso gratuito do Portal Modelo pelas Casas Legislativas Brasileiras para cumprir a legislação. (este embedder é um conteúdo de exemplo e pode ser removido)',
-                        url=u'https://www.youtube.com/watch?v=D_Sm7R1yY8g',
-                        embed_html=u'<iframe width="459" height="344" src="http://www.youtube.com/embed/D_Sm7R1yY8g?feature=oembed" frameborder="0" allowfullscreen></iframe>',
-                        width=459,
-                        height=344,
+                        url=u'https://vimeo.com/123851431',
+                        embed_html=u'<iframe src="https://player.vimeo.com/video/123851431?title=0&byline=0" width="500" height="375" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>',
+                        width=500,
+                        height=375,
                     ),
                     dict(
                         type='sc.embedder',
@@ -323,6 +330,13 @@ SITE_STRUCTURE = [
                         embed_html=u'<iframe width="459" height="344" src="http://www.youtube.com/embed/Sll8S1_ksfU?feature=oembed" frameborder="0" allowfullscreen></iframe>',
                         width=459,
                         height=344,
+                    ),
+                    dict(
+                        type='File',
+                        id='solucao-web-interlegis.mp4',
+                        title=u'Solução Web Interlegis',
+                        description=u'Arquivo em formato MP4, hospedado localmente neste site, sobre a campanha da Solução Web Interlegis que visa disponibilizar gratuitamente um site para cada Câmara Municipal que ainda não possui. (este arquivo é um conteúdo de exemplo e pode ser removido)',
+                        file=VIDEO1,
                     ),
                 ],
             ),
@@ -344,7 +358,7 @@ SITE_STRUCTURE = [
                             dict(
                                 i='portal_type',
                                 o='plone.app.querystring.operation.selection.is',
-                                v=['File', 'Link'],
+                                v=['File', 'Link', 'sc.embedder'],
                             ),
                             dict(
                                 i='path',
@@ -352,6 +366,13 @@ SITE_STRUCTURE = [
                                 v='../',
                             ),
                         ],
+                    ),
+                    dict(
+                        type='File',
+                        id='solucao-web-interlegis.mp3',
+                        title=u'Solução Web Interlegis',
+                        description=u'Arquivo em formato MP3, hospedado localmente neste site, sobre a campanha da Solução Web Interlegis que visa disponibilizar gratuitamente um site para cada Câmara Municipal que ainda não possui. (este arquivo é um conteúdo de exemplo e pode ser removido)',
+                        file=AUDIO1,
                     ),
                     dict(
                         type='Link',
@@ -439,7 +460,7 @@ SITE_STRUCTURE = [
                 type='Document',
                 title=u'Acesso à Informação',
                 description=u'Instruções sobre como fazer solicitações com base na Lei de Acesso à Informação a esta Casa Legislativa.',
-                text=u'<p><a href="http://www.acessoainformacao.gov.br"><img class="image-right" src="../imagens/acesso-a-informacao.png/image_mini" alt="Acesso à Informação" /></a>A Lei de Acesso à Informação (LAI) - <a href="http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:2011-11-18;12527">lei nº 12.527/2011</a> - regulamenta o direito constitucional de obter informações públicas. Essa norma entrou em vigor em 16 de maio de 2012 e criou mecanismos que possibilitam a qualquer pessoa, física ou jurídica, sem necessidade de apresentar motivo, o recebimento de informações públicas dos órgãos e entidades.</p><p>Os pedidos de informações devem ser realizados nas <a href="../institucional/acesso">instalações físicas</a> desta Casa Legislativa ou <a href="../ouvidoria/++add++Claim?form.widgets.kind=pedido-de-acesso-a-informaassapso&form.widgets.area=ouvidoria">através do formulário neste site</a>. Preenchendo o formulário o cidadão receberá um número de protocolo e poderá acompanhar a tramitação do seu pedido de informação.</p><p>A LAI estabelece também um conjunto mínimo de informações que devem ser publicadas nas seções de acesso à informação dos sites dos órgãos e entidades públicas. Além da publicação das informações exigidas, os órgãos podem divulgar outros dados de interesse público por iniciativa própria, ou seja, de forma proativa.</p><p>Portanto, antes de apresentar um pedido de acesso à informação, é importante que você verifique se a informação desejada já está disponível na seção de <a href="./">Transparência</a> deste site ou se ela já foi publicada como resposta a uma outra solicitação de informações realizada anteriormente através da <a href="../ouvidoria">Ouvidoria</a> deste site, que é caracterizada também como o e-SIC (Sistema Eletrônico de Informações ao Cidadão) desta Casa Legislativa.</p><iframe width="560" height="315" src="https://www.youtube.com/embed/HiVKTKkI3nE?list=PLfcgNxuoKmUFWcqVOu--1aZJGfU97m0tG" frameborder="0" allowfullscreen></iframe>',
+                text=u'<p><a href="http://www.acessoainformacao.gov.br"><img class="image-right" src="../imagens/acesso-a-informacao.png/image_mini" alt="Acesso à Informação" /></a>A Lei de Acesso à Informação (LAI) - <a href="http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:2011-11-18;12527">lei nº 12.527/2011</a> - regulamenta o direito constitucional de obter informações públicas. Essa norma entrou em vigor em 16 de maio de 2012 e criou mecanismos que possibilitam a qualquer pessoa, física ou jurídica, sem necessidade de apresentar motivo, o recebimento de informações públicas dos órgãos e entidades.</p><p>Os pedidos de informações devem ser realizados nas <a href="../institucional/acesso">instalações físicas</a> desta Casa Legislativa ou através do <a href="../ouvidoria/++add++Claim?form.widgets.kind=pedido-de-acesso-a-informaassapso&form.widgets.area=ouvidoria">formulário de solicitação de informações</a> no site. Preenchendo este formulário o cidadão receberá um número de protocolo e poderá acompanhar a tramitação do seu pedido de informação.</p><p>A LAI estabelece também um conjunto mínimo de informações que devem ser publicadas nas seções de acesso à informação dos sites dos órgãos e entidades públicas. Além da publicação das informações exigidas, os órgãos podem divulgar outros dados de interesse público por iniciativa própria, ou seja, de forma proativa.</p><p>Portanto, antes de apresentar um pedido de acesso à informação, é importante que você verifique se a informação desejada já está disponível na seção de <a href="./">Transparência</a> deste site ou se ela já foi publicada como resposta a uma outra solicitação de informações realizada anteriormente através da <a href="../ouvidoria">Ouvidoria</a> deste site, que é caracterizada também como o e-SIC (Sistema Eletrônico de Informações ao Cidadão) desta Casa Legislativa.</p><iframe width="560" height="315" src="https://www.youtube.com/embed/HiVKTKkI3nE?list=PLfcgNxuoKmUFWcqVOu--1aZJGfU97m0tG" frameborder="0" allowfullscreen></iframe>',
             ),
             dict(
                 type='Document',
@@ -554,51 +575,61 @@ SITE_STRUCTURE = [
                 type='PloneboardForum',
                 title=u'Corrupção',
                 description=u'Debates sobre corrupção pública e privada em nosso município.',
+                transition='make_freeforall',
             ),
             dict(
                 type='PloneboardForum',
                 title=u'Educação',
                 description=u'Debates sobre o ensino público em nosso município.',
+                transition='make_freeforall',
             ),
             dict(
                 type='PloneboardForum',
                 title=u'Habitação',
                 description=u'Debates sobre moradia e habitação em nosso município.',
+                transition='make_freeforall',
             ),
             dict(
                 type='PloneboardForum',
                 title=u'Infraestrutura',
                 description=u'Debates sobre infraestrutura urbana em nosso município.',
+                transition='make_freeforall',
             ),
             dict(
                 type='PloneboardForum',
                 title=u'Meio Ambiente',
                 description=u'Debates sobre ecologia e meio ambiente em nosso município.',
+                transition='make_freeforall',
             ),
             dict(
                 type='PloneboardForum',
                 title=u'Saneamento',
                 description=u'Debates sobre saneamento básico urbana em nosso município.',
+                transition='make_freeforall',
             ),
             dict(
                 type='PloneboardForum',
                 title=u'Saúde',
                 description=u'Debates sobre saúde pública em nosso município.',
+                transition='make_freeforall',
             ),
             dict(
                 type='PloneboardForum',
                 title=u'Segurança',
                 description=u'Debates sobre segurança pública em nosso município.',
+                transition='make_freeforall',
             ),
             dict(
                 type='PloneboardForum',
                 title=u'Transporte',
                 description=u'Debates sobre mobilidade urbana em nosso município.',
+                transition='make_freeforall',
             ),
             dict(
                 type='PloneboardForum',
                 title=u'Tributação',
                 description=u'Debates sobre tributação em nosso município.',
+                transition='make_freeforall',
             ),
         ],
     ),
