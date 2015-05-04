@@ -4,6 +4,9 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
+- Add 29 learning videos about Portal Modelo produced by ILB
+  [jeanferri]
+
 - Add MP3 and MP4 files for audio and video sections with flowplayer view
   [jeanferri]
 
