@@ -127,6 +127,8 @@ def create_site_structure(root, structure):
             # XXX: workaround for https://github.com/plone/plone.api/issues/99
             obj.setTitle(title)
             obj.setDescription(description)
+            if 'layout' in item:
+                obj.setLayout(item['layout'])
             obj.reindexObject()
             logger.debug(u'    {0} criado e publicado'.format(title))
         else:

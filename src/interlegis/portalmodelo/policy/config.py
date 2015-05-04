@@ -345,6 +345,7 @@ SITE_STRUCTURE = [
                         description=u'Curso de Portal Modelo em formato de videoaulas que explicam como usar os principais recursos dessa ferramenta. (esta pasta é apenas uma referência, está privada e pode ser removida)',
                         _addable_types=['Link'],
                         transition=None,
+                        layout='folder_tabular_view',
                         _children=[
                             dict(
                                 type='Link',
@@ -353,6 +354,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=lxOxJoPR4iI',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -361,6 +363,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=M9x1P2Oo9MI',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -369,6 +372,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=Xy_fm9FEGio',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -377,6 +381,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=M3Yn1EXa6k4',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -385,6 +390,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=7hk6G8H0TM4',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -393,22 +399,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=vniM-_wDsV0',
                                 transition=None,
-                            ),
-                            dict(
-                                type='Link',
-                                title=u'Inserindo notícias (parte 1)',
-                                description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
-                                excludeFromNav=True,
-                                remoteUrl='https://www.youtube.com/watch?v=fcSN3n0-qqA',
-                                transition=None,
-                            ),
-                            dict(
-                                type='Link',
-                                title=u'Inserindo notícias (parte 2)',
-                                description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
-                                excludeFromNav=True,
-                                remoteUrl='https://www.youtube.com/watch?v=hHYgs0BfrCE',
-                                transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -417,6 +408,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=qX2ZXnwZyWQ',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -425,6 +417,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=1HXhfXRPGRw',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -433,6 +426,25 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=Y70k2KwVRuM',
                                 transition=None,
+                                layout='link_oembed_view',
+                            ),
+                            dict(
+                                type='Link',
+                                title=u'Inserindo notícias',
+                                description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
+                                excludeFromNav=True,
+                                remoteUrl='https://www.youtube.com/watch?v=fcSN3n0-qqA',
+                                transition=None,
+                                layout='link_oembed_view',
+                            ),
+                            dict(
+                                type='Link',
+                                title=u'Apresentação das notícias',
+                                description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
+                                excludeFromNav=True,
+                                remoteUrl='https://www.youtube.com/watch?v=hHYgs0BfrCE',
+                                transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -441,6 +453,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=h8p-d8MEl2g',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -449,6 +462,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=oJ0V7sKluRs',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -457,6 +471,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=z1sysHEld6w',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -465,6 +480,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=V_orVJDFUzY',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -473,6 +489,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=Wpul5HvW32s',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -481,6 +498,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=P3Gh2neJ7kI',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -489,6 +507,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=ihcVlF05M-A',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -497,6 +516,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=bW2wuxJGpGc',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -505,6 +525,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=ss2vYlI8LqE',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -513,6 +534,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=Dj-M6VRBUmA',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -521,6 +543,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=ALiH-P2JkZE',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -529,6 +552,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=GpnjV5B-SR0',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -537,6 +561,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=xf1SbM6jc0o',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -545,6 +570,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=6yJqVee53m8',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -553,6 +579,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=7XCgu4bmhzA',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -561,6 +588,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=lAXwLxhC5t8',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -569,6 +597,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=9eNdvfhCs5E',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                             dict(
                                 type='Link',
@@ -577,6 +606,7 @@ SITE_STRUCTURE = [
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=R9SA7Rh6HB4',
                                 transition=None,
+                                layout='link_oembed_view',
                             ),
                         ],
                     ),

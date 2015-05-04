@@ -4,6 +4,9 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
+- Set object layout in default object structure creation engine
+  [jeanferri]
+
 - Add 29 learning videos about Portal Modelo produced by ILB
   [jeanferri]
 
