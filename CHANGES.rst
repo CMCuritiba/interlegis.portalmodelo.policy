@@ -4,6 +4,9 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
+- Refactoring set of default views for objects
+  [jeanferri]
+
 - Set object layout in default object structure creation engine
   [jeanferri]
 

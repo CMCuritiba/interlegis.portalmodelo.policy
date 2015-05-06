@@ -124,11 +124,12 @@ def create_site_structure(root, structure):
             if obj.portal_type == 'News Item':
                 if 'image' in item:
                     obj.setImage(item['image'])
+            # set the default view to object
+            if '_layout' in item:
+                obj.setLayout(item['_layout'])
             # XXX: workaround for https://github.com/plone/plone.api/issues/99
             obj.setTitle(title)
             obj.setDescription(description)
-            if 'layout' in item:
-                obj.setLayout(item['layout'])
             obj.reindexObject()
             logger.debug(u'    {0} criado e publicado'.format(title))
         else:
@@ -256,19 +257,7 @@ def set_site_default_page(site):
     logger.info(u'Visão padrão do site estabelecida')
 
 
-def set_solgemafullcalendar_view(obj):
-    """Set solgemafullcalendar_view as default view on object."""
-    obj.setLayout('solgemafullcalendar_view')
-    logger.info(u'Visão de calendario estabelecida para {0}'.format(obj.title))
-
-
-def set_galleria_view(obj):
-    """Set galleria_view as default view on object."""
-    obj.setLayout('galleria_view')
-    logger.info(u'Visão de galeria estabelecida para {0}'.format(obj.title))
-
-
-def set_flowplayer_view(obj):
+def set_flowplayer_file_type(obj):
     """Set flowplayer as default view on object or folder."""
     if obj.id.endswith('mp3'):
         alsoProvides(obj, IAudio)
@@ -276,20 +265,7 @@ def set_flowplayer_view(obj):
     elif obj.id.endswith('mp4'):
         alsoProvides(obj, IVideo)
         obj.reindexObject(idxs=['object_provides'])
-    obj.setLayout('flowplayer')
     logger.info(u'Visão de flowplayer estabelecida')
-
-
-def set_oembed_view(obj):
-    """Set link_oembed_view as default view on link object."""
-    obj.setLayout('link_oembed_view')
-    logger.info(u'Visão de oembed estabelecida para {0}'.format(obj.title))
-
-
-def set_atct_album_view(obj):
-    """Set atct_album_view as default view on object."""
-    obj.setLayout('atct_album_view')
-    logger.info(u'Visão de miniaturas estabelecida para {0}'.format(obj.title))
 
 
 def import_images(site):
@@ -354,17 +330,13 @@ def set_default_view_on_folder(folder, object_id=''):
     object_id = object_id or id
     folder.setDefaultPage(object_id)
     logger.info(u'Visão padrão criada e estabelecida para {0}'.format(title))
-    # return obj
 
 
 def miscelaneous_house_folder(site):
     """Set various adjustments on site content on "Sobre a Câmara" folder:
 
     - Set default views on subfolders
-    - Set solgemafullcalendar_view view on "Eventos"
-    - Set galleria_view view on "Fotos"
-    - Set flowplayer view on "Áudios"
-    - Set atct_album_view view on "Banco de Imagens"
+    - Set flowplayer file types on "Áudios" and "Vídeos"
     """
     folder = site['institucional']
     set_default_view_on_folder(folder['acesso'], object_id='pagina-padrao')
@@ -375,18 +347,11 @@ def miscelaneous_house_folder(site):
     set_default_view_on_folder(folder['clipping'], object_id='agregador')
     set_default_view_on_folder(folder['videos'], object_id='agregador')
 
-    set_solgemafullcalendar_view(folder['eventos'])
-    set_galleria_view(folder['fotos'])
-    set_flowplayer_view(folder['audios'])
-    set_atct_album_view(site['imagens'])
-
     videos = folder['videos']
-    set_flowplayer_view(videos['solucao-web-interlegis.mp4'])
-    set_oembed_view(videos['portal-modelo-proporciona-transparencia'])
-    set_galleria_view(videos['o-portal-para-o-legislativo-brasileiro'])
+    set_flowplayer_file_type(videos['solucao-web-interlegis.mp4'])
 
     audios = folder['audios']
-    set_flowplayer_view(audios['solucao-web-interlegis.mp3'])
+    set_flowplayer_file_type(audios['solucao-web-interlegis.mp3'])
 
 
 def import_registry_settings(site):
