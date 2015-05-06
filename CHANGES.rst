@@ -4,6 +4,9 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
+- Refactoring set of workflow transitions for objects
+  [jeanferri]
+
 - Refactoring set of default views for objects
   [jeanferri]
 

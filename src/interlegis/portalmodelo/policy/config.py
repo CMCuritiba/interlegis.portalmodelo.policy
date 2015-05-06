@@ -291,7 +291,7 @@ SITE_STRUCTURE = [
                         title=u'Adesão à Rede Legislativa de TV e Rádio',
                         description=u'Link para a página do projeto da Câmara dos Deputados que informa como as Casas Legislativas podem aderir à Rede Legislativa de TV Digital. (este link é apenas informativo, está privado e deve ser removido)',
                         remoteUrl='http://www2.camara.leg.br/comunicacao/rede-legislativa-radio-tv',
-                        transition=None,
+                        _transition=None,
                     ),
                     dict(
                         type='Link',
@@ -349,7 +349,7 @@ SITE_STRUCTURE = [
                         title=u'Videoaulas de Portal Modelo',
                         description=u'Curso de Portal Modelo em formato de videoaulas que explicam como usar os principais recursos dessa ferramenta. (esta pasta é apenas uma referência, está privada e pode ser removida)',
                         _addable_types=['Link'],
-                        transition=None,
+                        _transition=None,
                         _layout='folder_tabular_view',
                         _children=[
                             dict(
@@ -358,7 +358,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=lxOxJoPR4iI',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -367,7 +367,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=M9x1P2Oo9MI',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -376,7 +376,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=Xy_fm9FEGio',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -385,7 +385,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=M3Yn1EXa6k4',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -394,7 +394,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=7hk6G8H0TM4',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -403,7 +403,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=vniM-_wDsV0',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -412,7 +412,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=qX2ZXnwZyWQ',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -421,7 +421,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=1HXhfXRPGRw',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -430,7 +430,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=Y70k2KwVRuM',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -439,7 +439,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=fcSN3n0-qqA',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -448,7 +448,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=hHYgs0BfrCE',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -457,7 +457,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=h8p-d8MEl2g',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -466,7 +466,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=oJ0V7sKluRs',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -475,7 +475,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=z1sysHEld6w',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -484,7 +484,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=V_orVJDFUzY',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -493,7 +493,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=Wpul5HvW32s',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -502,7 +502,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=P3Gh2neJ7kI',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -511,7 +511,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=ihcVlF05M-A',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -520,7 +520,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=bW2wuxJGpGc',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -529,7 +529,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=ss2vYlI8LqE',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -538,7 +538,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=Dj-M6VRBUmA',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -547,7 +547,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=ALiH-P2JkZE',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -556,7 +556,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=GpnjV5B-SR0',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -565,7 +565,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=xf1SbM6jc0o',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -574,7 +574,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=6yJqVee53m8',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -583,7 +583,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=7XCgu4bmhzA',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -592,7 +592,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=lAXwLxhC5t8',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -601,7 +601,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=9eNdvfhCs5E',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                             dict(
@@ -610,7 +610,7 @@ SITE_STRUCTURE = [
                                 description=u'Vídeoaula sobre o Portal Modelo feita pelo Instituto Legislativo Brasileiro e hospedada no YouTube. (este link é um conteúdo de exemplo e pode ser removido)',
                                 excludeFromNav=True,
                                 remoteUrl='https://www.youtube.com/watch?v=R9SA7Rh6HB4',
-                                transition=None,
+                                _transition=None,
                                 _layout='link_oembed_view',
                             ),
                         ],
@@ -834,7 +834,7 @@ SITE_STRUCTURE = [
                     dict(option_id=1, description=u'Não gostei'),
                     dict(option_id=2, description=u'Pode melhorar'),
                 ],
-                transition='open',
+                _transition='open',
             ),
         ],
     ),
@@ -855,61 +855,61 @@ SITE_STRUCTURE = [
                 type='PloneboardForum',
                 title=u'Corrupção',
                 description=u'Debates sobre corrupção pública e privada em nosso município.',
-                transition='make_freeforall',
+                _transition='make_freeforall',
             ),
             dict(
                 type='PloneboardForum',
                 title=u'Educação',
                 description=u'Debates sobre o ensino público em nosso município.',
-                transition='make_freeforall',
+                _transition='make_freeforall',
             ),
             dict(
                 type='PloneboardForum',
                 title=u'Habitação',
                 description=u'Debates sobre moradia e habitação em nosso município.',
-                transition='make_freeforall',
+                _transition='make_freeforall',
             ),
             dict(
                 type='PloneboardForum',
                 title=u'Infraestrutura',
                 description=u'Debates sobre infraestrutura urbana em nosso município.',
-                transition='make_freeforall',
+                _transition='make_freeforall',
             ),
             dict(
                 type='PloneboardForum',
                 title=u'Meio Ambiente',
                 description=u'Debates sobre ecologia e meio ambiente em nosso município.',
-                transition='make_freeforall',
+                _transition='make_freeforall',
             ),
             dict(
                 type='PloneboardForum',
                 title=u'Saneamento',
                 description=u'Debates sobre saneamento básico urbana em nosso município.',
-                transition='make_freeforall',
+                _transition='make_freeforall',
             ),
             dict(
                 type='PloneboardForum',
                 title=u'Saúde',
                 description=u'Debates sobre saúde pública em nosso município.',
-                transition='make_freeforall',
+                _transition='make_freeforall',
             ),
             dict(
                 type='PloneboardForum',
                 title=u'Segurança',
                 description=u'Debates sobre segurança pública em nosso município.',
-                transition='make_freeforall',
+                _transition='make_freeforall',
             ),
             dict(
                 type='PloneboardForum',
                 title=u'Transporte',
                 description=u'Debates sobre mobilidade urbana em nosso município.',
-                transition='make_freeforall',
+                _transition='make_freeforall',
             ),
             dict(
                 type='PloneboardForum',
                 title=u'Tributação',
                 description=u'Debates sobre tributação em nosso município.',
-                transition='make_freeforall',
+                _transition='make_freeforall',
             ),
         ],
     ),
@@ -953,7 +953,7 @@ SITE_STRUCTURE = [
         title=u'Manual de Uso',
         description=u'Link para o arquivo PDF do Manual do Portal Modelo 3 para Gestores de Conteúdo. (este link é apenas uma referência, está privado e pode ser removido)',
         remoteUrl='http://colab.interlegis.leg.br/raw-attachment/wiki/ProjetoPortalModelo/ManualPortalModelo3.pdf',
-        transition=None,
+        _transition=None,
     ),
 ]
 
