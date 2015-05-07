@@ -215,46 +215,22 @@ def populate_cover(site):
     cover.set_tile_data(tiles[1], **data)
 
 
-def get_collection_default_kwargs(portal_type):
-    """Return default values used to create a collection with a query
-    for certain portal types specified.
-
-    :param portal_type: portal types to be listed in the collection
-    :type portal_type: a string or a list of strings
-    :returns: dictionary with defaults
-    """
-    assert isinstance(portal_type, str) or isinstance(portal_type, list)
-    defaults = dict(
-        sort_reversed=True,
-        sort_on=u'created',
-        limit=100,
-        tableContents=False,
-        customViewFields=(
-            u'CreationDate',
-            u'Title',
-            u'review_state',
-            u'EffectiveDate',
-        ),
-        query=[
-            dict(
-                i='portal_type',
-                o='plone.app.querystring.operation.selection.is',
-                v=portal_type,
-            ),
-            dict(
-                i='path',
-                o='plone.app.querystring.operation.string.relativePath',
-                v='../',
-            ),
-        ],
-    )
-    return defaults
-
-
 def set_site_default_page(site):
     """Set front page as site default page."""
     site.setDefaultPage('front-page')
     logger.info(u'Visão padrão do site estabelecida')
+
+
+def set_default_view_on_folder(folder, object_id=''):
+    """Create and publish a Document (or other content type) inside a folder
+    and set it as the default view of that folder.
+    """
+    assert folder.portal_type == 'Folder'
+    id = folder.id
+    title = folder.title
+    object_id = object_id or id
+    folder.setDefaultPage(object_id)
+    logger.info(u'Visão padrão criada e estabelecida para {0}'.format(title))
 
 
 def set_flowplayer_file_type(obj):
@@ -265,7 +241,7 @@ def set_flowplayer_file_type(obj):
     elif obj.id.endswith('mp4'):
         alsoProvides(obj, IVideo)
         obj.reindexObject(idxs=['object_provides'])
-    logger.info(u'Visão de flowplayer estabelecida')
+    logger.info(u'Tipo de arquivo estabelecido')
 
 
 def import_images(site):
@@ -318,18 +294,6 @@ def import_photos(site):
             creators = CREATORS,
         )
         logger.debug(u'    {0} importada'.format(name))
-
-
-def set_default_view_on_folder(folder, object_id=''):
-    """Create and publish a Document (or other content type) inside a folder
-    and set it as the default view of that folder.
-    """
-    assert folder.portal_type == 'Folder'
-    id = folder.id
-    title = folder.title
-    object_id = object_id or id
-    folder.setDefaultPage(object_id)
-    logger.info(u'Visão padrão criada e estabelecida para {0}'.format(title))
 
 
 def miscelaneous_house_folder(site):

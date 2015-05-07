@@ -4,6 +4,9 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
+- Setup code reorganizing
+  [jeanferri]
+
 - Refactoring set of workflow transitions for objects
   [jeanferri]
 
