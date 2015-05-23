@@ -110,7 +110,7 @@ def create_site_structure(root, structure):
             obj = api.content.create(root, **item)
             # publish private content or make a workflow transition
             if item['type'] not in ['Image', 'File']:
-                if not '_transition' in item and api.content.get_state(obj) == 'private':
+                if '_transition' not in item and api.content.get_state(obj) == 'private':
                     api.content.transition(obj, 'publish')
                 elif item.get('_transition', None):
                     api.content.transition(obj, item['_transition'])

@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
+import unittest
 
-from interlegis.portalmodelo.policy.config import DEFAULT_CONTENT
-from interlegis.portalmodelo.policy.config import SITE_STRUCTURE
+from Products.Ploneboard.content.PloneboardForum import PloneboardForum
+from collective.polls.content.poll import Poll
+from interlegis.portalmodelo.policy.config import DEFAULT_CONTENT, SITE_STRUCTURE
 from interlegis.portalmodelo.policy.testing import INTEGRATION_TESTING
 from plone import api
-
-import unittest
 
 
 class PortalStructureTestCase(unittest.TestCase):
@@ -39,17 +39,28 @@ class PortalStructureTestCase(unittest.TestCase):
                     )
 
     def test_content_was_published(self):
-        for item in SITE_STRUCTURE:
-            id = item['id']
-            obj = self.portal[id]
-            if item.get('state', '') != 'private':
-                self.assertEqual(api.content.get_state(obj), 'published')
+
+        def check_published(root, item):
+            if item['type'] in ['Image', 'File']:
+                return
+            obj = root[item['id']]
+            if '_transition' in item and item['_transition'] is None:
+                # is private
+                self.assertEqual(api.content.get_state(obj), 'private')
+            else:
+                # is published or equivalent
+                if isinstance(obj, Poll):
+                    self.assertEqual(api.content.get_state(obj), 'open')
+                elif isinstance(obj, PloneboardForum):
+                    self.assertEqual(api.content.get_state(obj), 'freeforall')
+                else:
+                    self.assertEqual(api.content.get_state(obj), 'published')
             if '_children' in item:
                 for child in item['_children']:
-                    _id = child['id']
-                    obj = self.portal[id][_id]
-                    expected_states = ['freeforall', 'published']
-                    self.assertIn(api.content.get_state(obj), expected_states)
+                    check_published(obj, child)
+
+        for item in SITE_STRUCTURE:
+            check_published(self.portal, item)
 
     def test_content_constrains(self):
         for item in SITE_STRUCTURE:
