@@ -28,6 +28,7 @@ class Fixture(PloneSandboxLayer):
         import interlegis.portalmodelo.policy
         self.loadZCML(package=interlegis.portalmodelo.policy)
 
+        z2.installProduct(app, 'plone.app.event.at')
         z2.installProduct(app, 'Products.AROfficeTransforms')
         z2.installProduct(app, 'Products.DateRecurringIndex')
         z2.installProduct(app, 'Products.EasyNewsletter')
