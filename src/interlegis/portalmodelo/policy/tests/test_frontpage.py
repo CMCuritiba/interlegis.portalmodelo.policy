@@ -94,7 +94,7 @@ class FrontPageTestCase(unittest.TestCase):
         browser = Browser(self.layer['app'])
         portal_url = self.portal.absolute_url()
         browser.open(portal_url)
-        self.assertIn('Gostou do novo portal?', browser.contents)
+        self.assertIn('Gostou do novo site?', browser.contents)
 
     def test_newsletter_portlet(self):
         browser = Browser(self.layer['app'])

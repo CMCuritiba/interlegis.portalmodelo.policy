@@ -89,9 +89,9 @@ class PortalStructureTestCase(unittest.TestCase):
 
     def test_feedback_poll(self):
         folder = self.portal['enquetes']
-        poll = getattr(folder, 'gostou-do-novo-portal', None)
+        poll = getattr(folder, 'gostou-do-novo-site', None)
         self.assertIsNotNone(poll)
-        self.assertEqual(poll.title, u'Gostou do novo portal?')
+        self.assertEqual(poll.title, u'Gostou do novo site?')
         self.assertEqual(len(poll.options), 3)
         self.assertEqual(api.content.get_state(poll), 'open')
 
