@@ -7,6 +7,9 @@ Changelog
 - Setup code reorganizing
   [jeanferri]
 
+- Fix tests and content creation
+  [marciomazza]
+
 - Refactoring set of workflow transitions for objects
   [jeanferri]
 
