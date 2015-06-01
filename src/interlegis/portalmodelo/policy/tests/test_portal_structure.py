@@ -62,7 +62,7 @@ class PortalStructureTestCase(unittest.TestCase):
         for item in SITE_STRUCTURE:
             check_published(self.portal, item)
 
-    def test_content_constrains(self):
+    def test_content_constraints(self):
         for item in SITE_STRUCTURE:
             if '_addable_types' in item:
                 id = item['id']
@@ -72,7 +72,7 @@ class PortalStructureTestCase(unittest.TestCase):
                 self.assertItemsEqual(
                     addable_types,
                     item['_addable_types'],
-                    u'constrains not set on {0}'.format(path)
+                    u'constraints not set on {0}'.format(path)
                 )
                 if '_children' in item:
                     for child in item['_children']:
@@ -84,7 +84,7 @@ class PortalStructureTestCase(unittest.TestCase):
                             self.assertItemsEqual(
                                 addable_types,
                                 child['_addable_types'],
-                                u'constrains not set on {0}'.format(path)
+                                u'constraints not set on {0}'.format(path)
                             )
 
     def test_cover_is_site_default_page(self):
