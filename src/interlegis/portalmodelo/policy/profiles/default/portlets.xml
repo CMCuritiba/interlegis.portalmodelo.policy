@@ -45,6 +45,16 @@
   <property name="bottomLevel">0</property>
   <property name="root">/links-uteis</property>
  </assignment>
+ <assignment name="banners" category="context" key="/"
+    manager="plone.rightcolumn" type="plone.portlet.static.Static"
+    visible="True">
+  <property
+     name="text">&lt;a href="transparencia/acesso-a-informacao" title="Acesso à Informação"&gt;&lt;img class="image-inline" src="acesso-a-informacao.png" alt="Acesso à Informação" /&gt;&lt;/a&gt;&lt;br /&gt;&lt;br /&gt;</property>
+  <property name="more_url"/>
+  <property name="omit_border">True</property>
+  <property name="header">Banners</property>
+  <property name="footer"/>
+ </assignment>
  <assignment name="midias-sociais" category="context" key="/"
     manager="plone.rightcolumn" type="plone.portlet.static.Static"
     visible="True">
@@ -108,15 +118,5 @@
     manager="plone.rightcolumn"
     type="interlegis.portalmodelo.buscadores.portlets.buscaleg"
     visible="True">
- </assignment>
- <assignment name="banners" category="context" key="/"
-    manager="plone.rightcolumn" type="plone.portlet.static.Static"
-    visible="True">
-  <property
-     name="text">&lt;a href="transparencia/acesso-a-informacao" title="Acesso à Informação"&gt;&lt;img class="image-inline" src="acesso-a-informacao.png" alt="Acesso à Informação" /&gt;&lt;/a&gt;</property>
-  <property name="more_url"/>
-  <property name="omit_border">True</property>
-  <property name="header">Banners</property>
-  <property name="footer"/>
  </assignment>
 </portlets>

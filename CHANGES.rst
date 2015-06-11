@@ -4,6 +4,9 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
+- Up the banner 'Acesso à Informação'
+  [jeanferri]
+
 - Setup code reorganizing
   [jeanferri]
 
