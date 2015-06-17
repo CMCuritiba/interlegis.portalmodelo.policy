@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0rc4 (unreleased)
+1.0rc4 (2015-06-17)
 -------------------
 
 - Add 'Índice de Transparência' and 'Atos Administrativos' to Transparência folder

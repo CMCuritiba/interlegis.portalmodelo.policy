@@ -1,11 +1,12 @@
 Contributors
 ============
 
-* Karyn Nassif
-* Héctor Velarde
-* `Diogo Garcia`_ (photo of Brasil flag, under licence `CC BY-NC 3.0`_)
-* Jean Ferri
 * Érico Andrei
+* Héctor Velarde
+* Jean Ferri
+* Karyn Nassif
+* Marcio Mazza
+* `Diogo Garcia`_ (photo of Brasil flag, under licence `CC BY-NC 3.0`_)
 * `CGU`_ (Acesso à Informação image)
 * `Wikipedia`_ (RSS icon, OpenData and Coat of Arms of Brazil images)
 * `Peter D`_ (FAQ icon)
