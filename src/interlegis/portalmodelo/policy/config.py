@@ -716,6 +716,13 @@ SITE_STRUCTURE = [
         _addable_types=['CSVData', 'Folder', 'File', 'Link', 'Document', 'Window'],
         _children=[
             dict(
+                type='Link',
+                title=u'Índice de Transparência',
+                description=u'Índice de transparência do poder legislativo, criado para classificar e avaliar as Casas Legislativas por sua adesão à Lei da Transparência e à Lei de Acesso à Informação.',
+                remoteUrl='https://colab.interlegis.leg.br/wiki/IndiceTransparencia',
+                _transition=None,
+            ),
+            dict(
                 type='Folder',
                 title=u'Orçamento e Finanças',
                 description=u'Prestação de contas das receitas, despesas, repasses e transferências da Casa Legislativa e relatórios do controle interno.',
@@ -734,6 +741,11 @@ SITE_STRUCTURE = [
                 type='Folder',
                 title=u'Parlamentares e Gabinetes',
                 description=u'Repasses, verbas indenizatórias, cotas, subsídios, viagens e demais despesas dos parlamentares e seus gabinetes.',
+            ),
+            dict(
+                type='Folder',
+                title=u'Atos Administrativos',
+                description=u'Publicação dos atos administrativos e outros documentos referentes à atividade administrativa da Casa Legislativa.',
             ),
             dict(
                 type='Document',
@@ -939,7 +951,7 @@ SITE_STRUCTURE = [
         type='Document',
         title=u'Perguntas Frequentes',
         description=u'Relação de perguntas que são feitas com frequência para a Casa Legislativa e suas respostas.',
-        text=u'<img class="image-right" src="imagens/faq-logo.png/image_thumb" alt="FAQ" /><h2>Perguntas</h2><ol><li><a href="#p1">Este é um conteúdo padrão?</a></li><li><a href="#p2">Como alterar este conteúdo e compor a FAQ?</a></li></ol><br/><h2>Respostas</h2><h3>Este é um conteúdo padrão?<a name="p1"></a></h3><p>Sim, este é um conteúdo padrão que foi criado automaticamente junto com o Portal Modelo. O objetivo dele é lhe orientar a formatar a seção de perguntas e respostas do seu portal.</p><h3>Como alterar este conteúdo e compor a FAQ?<a name="p2"></a></h3><p>Para alterá-lo basta se autenticar no portal, e clicar na aba <em><a href="edit">Edição</a></em>, que fica logo acima do título desta página, então, inserir o conteúdo real e clicar no botão <em>Salvar</em>. Preste atenção na formatação, cada pergunta acima tem um link para a sua respectiva âncora aqui embaixo na resposta.</p>',
+        text=u'<img class="image-right" src="imagens/faq-logo.png/image_thumb" alt="FAQ" /><h2>Perguntas</h2><ol><li><a href="#p1">Esta FAQ é um conteúdo padrão?</a></li><li><a href="#p2">Como posso alterar este conteúdo e compor a FAQ?</a></li></ol><br/><h2>Respostas</h2><h3>Esta FAQ é um conteúdo padrão?<a name="p1"></a></h3><p>Sim, este é um conteúdo padrão que foi criado automaticamente junto com o Portal Modelo. O objetivo dele é lhe orientar a formatar a seção de perguntas e respostas do seu portal. Edite-o!</p><h3>Como posso alterar este conteúdo e compor a FAQ?<a name="p2"></a></h3><p>Para alterá-lo basta se autenticar no portal, e clicar na aba <em><a href="edit">Edição</a></em>, que fica logo acima do título desta página, então, inserir o conteúdo real e clicar no botão <em>Salvar</em>. Preste atenção na formatação, cada pergunta acima tem um link para a sua respectiva âncora aqui embaixo na resposta.</p>',
     ),
     dict(
         type='Document',

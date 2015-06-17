@@ -4,6 +4,9 @@ Changelog
 1.0rc4 (unreleased)
 -------------------
 
+- Add 'Índice de Transparência' and 'Atos Administrativos' to Transparência folder
+  [jeanferri]
+
 - Up the banner 'Acesso à Informação'
   [jeanferri]
 
