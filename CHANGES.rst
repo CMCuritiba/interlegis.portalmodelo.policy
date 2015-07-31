@@ -4,7 +4,8 @@ Changelog
 1.0rc5 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Change home video for the campaign of .leg.br
+  [jeanferri]
 
 
 1.0rc4 (2015-06-17)
