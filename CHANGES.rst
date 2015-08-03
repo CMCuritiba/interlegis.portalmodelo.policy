@@ -4,6 +4,9 @@ Changelog
 1.0rc5 (unreleased)
 -------------------
 
+- Add more 9 parlamentar photos inspired in brazilian writers
+  [jeanferri]
+
 - Change home video for the campaign of .leg.br
   [jeanferri]
 
