@@ -4,6 +4,9 @@ Changelog
 1.0rc5 (unreleased)
 -------------------
 
+- Add an infographic to the LAI transparency page
+  [jeanferri]
+
 - Add 2 more audios inside Audio Gallery
   [jeanferri]
 
