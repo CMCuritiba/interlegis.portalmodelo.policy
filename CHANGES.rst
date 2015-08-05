@@ -4,6 +4,9 @@ Changelog
 1.0rc5 (unreleased)
 -------------------
 
+- Add 2 more audios inside Audio Gallery
+  [jeanferri]
+
 - Add more 9 parlamentar photos inspired in brazilian writers
   [jeanferri]
 
