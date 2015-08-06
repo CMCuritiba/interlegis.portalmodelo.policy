@@ -35,6 +35,9 @@ VIDEO1 = StringIO(open(
         os.path.dirname(__file__), 'browser/static', 'solucao-web-interlegis.mp4')).read())
 AUDIO1 = StringIO(open(
     os.path.join(
+        os.path.dirname(__file__), 'browser/static', 'campanha-legbr.mp3')).read())
+AUDIO2 = StringIO(open(
+    os.path.join(
         os.path.dirname(__file__), 'browser/static', 'solucao-web-interlegis.mp3')).read())
 
 # new site structure; this dictionary defines the objects that are going to be
@@ -647,18 +650,26 @@ SITE_STRUCTURE = [
                     ),
                     dict(
                         type='File',
-                        id='solucao-web-interlegis.mp3',
-                        title=u'Solução Web Interlegis',
-                        description=u'Arquivo em formato MP3 hospedado localmente neste site, sobre a campanha da Solução Web Interlegis que visa disponibilizar gratuitamente um site para cada Câmara Municipal que ainda não possui. (este arquivo é um conteúdo de exemplo e pode ser removido)',
+                        id='campanha-legbr.mp3',
+                        title=u'Campanha para o cidadão usar o domínio leg.br',
+                        description=u'Arquivo em formato MP3 hospedado localmente neste site sobre a campanha para orientar os cidadãos a usar o domínio do legislativo brasileiro na internet. (este arquivo é um conteúdo de exemplo e pode ser removido)',
                         file=AUDIO1,
                         _layout='flowplayer',
                     ),
                     dict(
+                        type='File',
+                        id='solucao-web-interlegis.mp3',
+                        title=u'Solução Web Interlegis',
+                        description=u'Arquivo em formato MP3 hospedado localmente neste site sobre a campanha da Solução Web Interlegis que visa disponibilizar gratuitamente um site para cada Câmara Municipal que ainda não possui. (este arquivo é um conteúdo de exemplo e pode ser removido)',
+                        file=AUDIO2,
+                        _layout='flowplayer',
+                    ),
+                    dict(
                         type='Link',
-                        title=u'Campanha para uso do domínio leg.br',
-                        description=u'Link para o áudio em formato MP3 da campanha de uso do domínio do legislativo brasileiro na Internet. (este link é um conteúdo de exemplo e pode ser removido)',
+                        title=u'Sobre o domínio .leg.br',
+                        description=u'Link para o áudio em formato MP3 sobre o domínio do legislativo brasileiro. (este link é um conteúdo de exemplo e pode ser removido)',
                         excludeFromNav=True,
-                        remoteUrl='http://arquivos.interlegis.leg.br/interlegis/audio/campanha-legbr.mp3',
+                        remoteUrl='http://arquivos.interlegis.leg.br/interlegis/audio/dominio-legbr.mp3',
                     ),
                     dict(
                         type='Link',
@@ -666,13 +677,6 @@ SITE_STRUCTURE = [
                         description=u'Link para o áudio em formato MP3 do Hino Nacional Brasileiro. (este link é um conteúdo de exemplo e pode ser removido)',
                         excludeFromNav=True,
                         remoteUrl='http://arquivos.interlegis.leg.br/interlegis/audio/hino-nacional-brasileiro.mp3',
-                    ),
-                    dict(
-                        type='Link',
-                        title=u'Domínio .leg.br',
-                        description=u'Link para o áudio em formato MP3 sobre o domínio do legislativo brasileiro. (este link é um conteúdo de exemplo e pode ser removido)',
-                        excludeFromNav=True,
-                        remoteUrl='http://arquivos.interlegis.leg.br/interlegis/audio/dominio-legbr.mp3',
                     ),
                 ],
             ),

@@ -315,6 +315,7 @@ def miscelaneous_house_folder(site):
     set_flowplayer_file_type(videos['solucao-web-interlegis.mp4'])
 
     audios = folder['audios']
+    set_flowplayer_file_type(audios['campanha-legbr.mp3'])
     set_flowplayer_file_type(audios['solucao-web-interlegis.mp3'])
 
 
