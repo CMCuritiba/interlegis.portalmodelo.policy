@@ -312,6 +312,7 @@ def miscelaneous_house_folder(site):
     set_default_view_on_folder(folder['videos'], object_id='agregador')
 
     videos = folder['videos']
+    set_flowplayer_file_type(videos['campanha-legbr.mp4'])
     set_flowplayer_file_type(videos['solucao-web-interlegis.mp4'])
 
     audios = folder['audios']

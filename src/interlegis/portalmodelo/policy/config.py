@@ -32,6 +32,9 @@ IMAGE4 = open(
         os.path.dirname(__file__), 'browser/static', 'plenario-camara.jpg')).read()
 VIDEO1 = StringIO(open(
     os.path.join(
+        os.path.dirname(__file__), 'browser/static', 'campanha-legbr.mp4')).read())
+VIDEO2 = StringIO(open(
+    os.path.join(
         os.path.dirname(__file__), 'browser/static', 'solucao-web-interlegis.mp4')).read())
 AUDIO1 = StringIO(open(
     os.path.join(
@@ -577,6 +580,13 @@ SITE_STRUCTURE = [
                     ),
                     dict(
                         type='Link',
+                        title=u'Domínio .leg.br',
+                        description=u'Vídeo em formato MP4 e hospedado pelo Interlegis, que informa sobre o domínio do legislativo brasileiro .leg.br. (este link é um conteúdo de exemplo e pode ser removido)',
+                        excludeFromNav=True,
+                        remoteUrl='http://ftp.interlegis.gov.br/interlegis/video/dominio-legbr.mp4',
+                    ),
+                    dict(
+                        type='Link',
                         title=u'O Portal para o Legislativo Brasileiro',
                         description=u'Vídeo hospedado no YouTube, feito pelo programa Município Brasil da TV Senado, falando sobre a ferramenta feita pelo Interlegis que oferece sites com tecnologias abertas e sem custos para as Casas Legislativas Brasileiras. (este link é um conteúdo de exemplo e pode ser removido)',
                         excludeFromNav=True,
@@ -613,8 +623,16 @@ SITE_STRUCTURE = [
                     dict(
                         type='File',
                         id='solucao-web-interlegis.mp4',
-                        title=u'Solução Web Interlegis',
-                        description=u'Arquivo em formato MP4, hospedado localmente neste site, sobre a campanha da Solução Web Interlegis que visa disponibilizar gratuitamente um site para cada Câmara Municipal que ainda não possui. (este arquivo é um conteúdo de exemplo e pode ser removido)',
+                        title=u'Todas as Casas Legislativas podem ter um site na Internet',
+                        description=u'Arquivo em formato MP4 hospedado localmente neste site sobre a campanha da Solução Web Interlegis que visa disponibilizar gratuitamente um site para cada Câmara Municipal que ainda não possui. (este arquivo é um conteúdo de exemplo e pode ser removido)',
+                        file=VIDEO2,
+                        _layout='flowplayer',
+                    ),
+                    dict(
+                        type='File',
+                        id='campanha-legbr.mp4',
+                        title=u'Como acessar os sites do Legislativo',
+                        description=u'Arquivo em formato MP4 hospedado localmente neste site com a campanha para informar os cidadãos sobre como usar o domínio do legislativo brasileiro .leg.br para acessar os sites do poder legislativo. (este arquivo é um conteúdo de exemplo e pode ser removido)',
                         file=VIDEO1,
                         _layout='flowplayer',
                     ),

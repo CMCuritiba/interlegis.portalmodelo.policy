@@ -4,6 +4,9 @@ Changelog
 1.0rc5 (unreleased)
 -------------------
 
+- Add a MP4 video to video gallery
+  [jeanferri]
+
 - Add a MP3 audio to audio gallery
   [jeanferri]
 
