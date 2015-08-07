@@ -4,6 +4,9 @@ Changelog
 1.0rc5 (unreleased)
 -------------------
 
+- Small fixes in contents
+  [jeanferri]
+
 - Add a MP4 video to video gallery
   [jeanferri]
 
