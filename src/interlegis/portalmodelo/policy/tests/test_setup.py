@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 from interlegis.portalmodelo.policy.config import PROFILE_ID
 from interlegis.portalmodelo.policy.config import PROJECTNAME
+from interlegis.portalmodelo.policy.testing import FUNCTIONAL_TESTING
 from interlegis.portalmodelo.policy.testing import INTEGRATION_TESTING
 from plone.registry.interfaces import IRegistry
+from plone.testing.z2 import Browser
 from zope.component import getUtility
 
 import unittest
@@ -103,4 +105,25 @@ class DependenciesSettingsTestCase(unittest.TestCase):
             [u'Brazil/Acre', u'Brazil/DeNoronha', u'Brazil/East', u'Brazil/West']
         )
         self.assertEqual(self.registry['plone.app.event.first_weekday'], u'6')
+
+
+class NonInstallableTestCase(unittest.TestCase):
+    """Ensure non installable packages are available."""
+
+    layer = FUNCTIONAL_TESTING
+
+    def setUp(self):
+        self.portal = self.layer['portal']
+
+    def test_opendata_available(self):
+        portal_url = self.portal.absolute_url()
+        browser = Browser(self.layer['app'])
+
+        opendata_url = '{0}/{1}'.format(portal_url, '/open-data')
+        browser.open(opendata_url)
+        self.assertIn('Open Data', browser.contents)
+
+        apidata_url = '{0}/{1}'.format(portal_url, '/apidata/cms/site_info')
+        browser.open(apidata_url)
+        self.assertIn('Portal Modelo', browser.contents)
 

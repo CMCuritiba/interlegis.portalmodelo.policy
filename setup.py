@@ -44,6 +44,7 @@ setup(
         'collective.cover',
         'collective.flowplayer',
         'collective.oembed',
+        'collective.opendata',
         'collective.polls',
         'collective.upload',
         'collective.weather',

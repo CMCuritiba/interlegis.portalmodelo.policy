@@ -4,6 +4,9 @@ Changelog
 1.0rc5 (unreleased)
 -------------------
 
+- Enable collective.opendata to provide an OpenData API to contents
+  [jeanferri]
+
 - Small fixes in contents
   [jeanferri]
 
