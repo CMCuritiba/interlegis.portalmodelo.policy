@@ -4,6 +4,9 @@ Changelog
 1.0rc5 (unreleased)
 -------------------
 
+- Change 'Acesso à informação' image with the original one from CGU
+  [jeanferri]
+
 - Enable collective.opendata to provide an OpenData API to contents
   [jeanferri]
 
