@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0rc5 (unreleased)
+1.0rc5 (2015-08-26)
 -------------------
 
 - Change 'Acesso à informação' image with the original one from CGU
