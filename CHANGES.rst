@@ -4,7 +4,8 @@ Changelog
 1.0rc6 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Add Embedder and FormGen tiles to default cover setup
+  [jeanferri]
 
 
 1.0rc5 (2015-08-26)
