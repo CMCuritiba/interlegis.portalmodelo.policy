@@ -4,6 +4,9 @@ Changelog
 1.0rc6 (unreleased)
 -------------------
 
+- Add Parlamentares CSS class to default cover setup
+  [jeanferri]
+
 - Add Embedder and FormGen tiles to default cover setup
   [jeanferri]
 
