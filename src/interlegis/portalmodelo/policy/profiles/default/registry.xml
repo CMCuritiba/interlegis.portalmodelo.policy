@@ -51,8 +51,8 @@
         <element>collective.cover.list</element>
         <element>collective.cover.richtext</element>
       </default>
-      <description xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="collective.cover" ns0:translate="">This tiles will be available for layout creation.</description>
-      <title xmlns:ns0="http://xml.zope.org/namespaces/i18n" ns0:domain="collective.cover" ns0:translate="">Available tiles</title>
+      <description>This tiles will be available for layout creation.</description>
+      <title>Available tiles</title>
       <value_type type="plone.registry.field.Choice">
         <vocabulary>collective.cover.EnabledTiles</vocabulary>
       </value_type>
@@ -69,6 +69,7 @@
       <element>collective.cover.richtext</element>
       <element>collective.cover.pfg</element>
       <element>sc.embedder</element>
+      <element>collective.polls</element>
     </value>
   </record>
   <record name="collective.cover.controlpanel.ICoverSettings.styles" interface="collective.cover.controlpanel.ICoverSettings" field="styles">
