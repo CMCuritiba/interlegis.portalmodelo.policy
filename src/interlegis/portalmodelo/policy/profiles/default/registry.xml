@@ -85,6 +85,7 @@
       <element>-Default-|tile-default</element>
       <element>Dark Background|tile-dark</element>
       <element>Border|tile-edge</element>
+      <element>Noticias|tile-noticias</element>
       <element>Parlamentares|tile-parlamentares</element>
       <element>Shadow|tile-shadow</element>
     </value>

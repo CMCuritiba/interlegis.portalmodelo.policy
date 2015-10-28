@@ -4,6 +4,9 @@ Changelog
 1.0rc6 (unreleased)
 -------------------
 
+- Add Noticias CSS class to default cover setup
+  [cfviotti]
+
 - Add collective.polls tile to default cover setup
   [jeanferri]
 
