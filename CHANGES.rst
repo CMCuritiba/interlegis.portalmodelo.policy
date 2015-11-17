@@ -7,6 +7,9 @@ Changelog
 - Change some terms in default content
   [jeanferri]
 
+- Add Noticias CSS class to default cover setup
+  [cfviotti]
+
 - Add collective.polls tile to default cover setup
   [jeanferri]
 
