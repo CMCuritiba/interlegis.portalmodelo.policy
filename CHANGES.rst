@@ -4,6 +4,9 @@ Changelog
 1.0rc6 (unreleased)
 -------------------
 
+- Change some terms in default content
+  [jeanferri]
+
 - Add collective.polls tile to default cover setup
   [jeanferri]
 

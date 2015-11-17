@@ -11,7 +11,7 @@ PROFILE_ID = '{0}:default'.format(PROJECTNAME)
 DEFAULT_CONTENT = ('front-page', 'news', 'events', 'Members')
 
 NEWS_DESCRIPTION = u'Este é um exemplo de notícia que pode ser criado e publicado no Portal Modelo. Você pode excluí-la e criar suas próprias notícias. Divirta-se! ;-)'
-NEWS_TEXT = u'<p>Este é um conteúdo padrão que deve ser editado pelo usuário editor do site. Para alterá-lo basta se autenticar no portal, e clicar na aba <em><a href="edit">Edição</a></em>, que fica logo acima do título da notícia, então, inserir o conteúdo real e clicar no botão <em>Salvar</em>.</p><p>Esta notícia está dentro da pasta <em>notícias</em> e foi criada como exemplo, logo, pode ser excluída. Dentro desta pasta você pode criar outras notícias através do menu <em>Adicionar item...</em>, e então publicá-as através do menu <em>Estado</em>. Elas irão aparecer automaticamente na página inicial do site e você poderá selecionar as notícias de destaque no carrossel da página inicial, clicando a aba <em>Compor</em> e arrastando-as para o carrossel.</p>'
+NEWS_TEXT = u'<p>Este é um conteúdo padrão que deve ser editado pelo usuário editor do site. Para alterá-lo basta se autenticar no site, e clicar na aba <em><a href="edit">Edição</a></em>, que fica logo acima do título da notícia, então, inserir o conteúdo real e clicar no botão <em>Salvar</em>.</p><p>Esta notícia está dentro da pasta <em>notícias</em> e foi criada como exemplo, logo, pode ser excluída. Dentro desta pasta você pode criar outras notícias através do menu <em>Adicionar item...</em>, e então publicá-as através do menu <em>Estado</em>. Elas irão aparecer automaticamente na página inicial do site e você poderá selecionar as notícias de destaque no carrossel da página inicial, clicando a aba <em>Compor</em> e arrastando-as para o carrossel.</p>'
 VIDEO_TEXT = u'<p>O programa mensal mostra a repercussão de assuntos locais no Congresso Nacional e como as decisões do Legislativo impactam o dia a dia dos cidadãos. Com linguagem informal, o programa apresenta notícias, projetos, debates, serviços e um pouco de história dos 5.570 municípios brasileiros.</p>'
 HOME_TILE_TEXT = u'<h2>Nossos Parlamentares</h2><table class="invisible"><tbody><tr><td style="text-align: center;"><a href="processo-legislativo/parlamentares"><img class="image-inline" src="imagens/carlos-drummond-de-andrade.jpg/image_tile" alt="Foto do Carlos Drummond de Andrade" /><br/>Carlos Drummond</a></td><td style="text-align: center;"><a href="processo-legislativo/parlamentares"><img class="image-inline" src="imagens/clarice-lispector.jpg/image_tile" alt="Foto da Clarice Lispector" /><br/>Clarice Lispector</a></td><td style="text-align: center;"><a href="processo-legislativo/parlamentares"><img class="image-inline" src="imagens/erico-verissimo.jpg/image_tile" alt="Foto do Érico Veríssimo" /><br/>Érico Veríssimo</a></td><td style="text-align: center;"><a href="processo-legislativo/parlamentares"><img class="image-inline" src="imagens/euclides-da-cunha.jpg/image_tile" alt="Foto do Euclides da Cunha" /><br/>Euclides da Cunha</a></td><td style="text-align: center;"><a href="processo-legislativo/parlamentares"><img class="image-inline" src="imagens/gilberto-freyre.jpg/image_tile" alt="Foto do Gilberto Freyre" /><br/>Gilberto Freyre</a></td></tr><tr><td style="text-align: center;"><a href="processo-legislativo/parlamentares"><img class="image-inline" src="imagens/guimaraes-rosa.jpg/image_tile" alt="Foto do Guimarães Rosa" /><br/>Guimarães Rosa</a></td><td style="text-align: center;"><a href="processo-legislativo/parlamentares"><img class="image-inline" src="imagens/jorge-amado.jpg/image_tile" alt="Foto do Jorge Amado" /><br/>Jorge Amado</a></td><td style="text-align: center;"><a href="processo-legislativo/parlamentares"><img class="image-inline" src="imagens/machado-de-assis.jpg/image_tile" alt="Foto do Machado de Assis" /><br/>Machado de Assis</a></td><td style="text-align: center;"><a href="processo-legislativo/parlamentares"><img class="image-inline" src="imagens/monteiro-lobato.jpg/image_tile" alt="Foto do Monteiro Lobato" /><br/>Monteiro Lobato</a></td><td style="text-align: center;"><a href="processo-legislativo/parlamentares"><img class="image-inline" src="imagens/rui-barbosa.jpg/image_tile" alt="Foto do Parlamentar" /><br/>Rui Barbosa</a></td></tr></tbody></table>'
 HOME_TILE_EMBED1 = u'<iframe width="320" height="180" src="https://www.youtube.com/embed/yjPwZ5rQ4RU?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" allowfullscreen></iframe>'
@@ -69,7 +69,7 @@ SITE_STRUCTURE = [
         title=u'Sobre a Câmara',
         description=u'Seção que contém as informações básicas relacionadas à Casa Legislativa, como sua história, estrutura, eventos e notícias.',
         excludeFromNav=True,
-        _addable_types=['Folder', 'File', 'Link', 'Document', 'Window'],
+        _addable_types=['Folder', 'FormFolder', 'File', 'Link', 'Document', 'Window'],
         _children=[
             dict(
                 type='Folder',
@@ -81,7 +81,7 @@ SITE_STRUCTURE = [
                         id='pagina-padrao',
                         title=u'Acesso',
                         description=u'Informações gerais de como interagir com a Casa Legislativa, presencialmente ou por qualquer meio de comunicação, tais como, fotos da sede, mapa de como chegar, endereço completo, horários de atendimento, telefones de contato, endereços de e-mail relevantes, links para serviços e o que mais for importante.',
-                        text=u'<p>Este é um conteúdo padrão que deve ser editado pelo usuário editor do site. Para alterá-lo basta se autenticar no portal, e clicar na aba <em><a href="pagina-padrao/edit">Edição</a></em>, que fica logo acima do título da página, então, inserir o conteúdo real e clicar no botão <em>Salvar</em>.</p><p>Esta página está dentro de uma pasta e foi selecionada como sua visão padrão. Na pasta você também pode criar outros conteúdos através do menu <em>Adicionar item...</em>, e conectá-los nesta página através de links internos com o editor visual.</p><p>Nesta página você deve publicar informações gerais de como interagir com a Casa Legislativa, presencialmente ou por qualquer meio de comunicação, tais como, fotos da sede, mapa de como chegar, endereço completo, horários de atendimento, telefones de contato, endereços de e-mail relevantes, links para serviços e o que mais for importante.</p>',
+                        text=u'<p>Este é um conteúdo padrão que deve ser editado pelo usuário editor do site. Para alterá-lo basta se autenticar no site, e clicar na aba <em><a href="pagina-padrao/edit">Edição</a></em>, que fica logo acima do título da página, então, inserir o conteúdo real e clicar no botão <em>Salvar</em>.</p><p>Esta página está dentro de uma pasta e foi selecionada como sua visão padrão. Na pasta você também pode criar outros conteúdos através do menu <em>Adicionar item...</em>, e conectá-los nesta página através de links internos com o editor visual.</p><p>Nesta página você deve publicar informações gerais de como interagir com a Casa Legislativa, presencialmente ou por qualquer meio de comunicação, tais como, fotos da sede, mapa de como chegar, endereço completo, horários de atendimento, telefones de contato, endereços de e-mail relevantes, links para serviços e o que mais for importante.</p>',
                     ),
                 ],
             ),
@@ -95,7 +95,7 @@ SITE_STRUCTURE = [
                         id='pagina-padrao',
                         title=u'História',
                         description=u'Textos sobre a história da Casa Legislativa, desde sua criação, bem como, fotos, vídeos, áudios, entre outras.',
-                        text=u'<p>Este é um conteúdo padrão que deve ser editado pelo usuário editor do site. Para alterá-lo basta se autenticar no portal, e clicar na aba <em><a href="pagina-padrao/edit">Edição</a></em>, que fica logo acima do título da página, então, inserir o conteúdo real e clicar no botão <em>Salvar</em>.</p><p>Esta página está dentro de uma pasta e foi selecionada como sua visão padrão. Na pasta você também pode criar outros conteúdos através do menu <em>Adicionar item...</em>, e conectá-los nesta página através de links internos com o editor visual.</p><p>Nesta página você deve publicar textos sobre a história da Casa Legislativa, desde sua criação, bem como, fotos, vídeos, áudios, etc, que permitam às pessoas conhecer o seu legislativo.</p>',
+                        text=u'<p>Este é um conteúdo padrão que deve ser editado pelo usuário editor do site. Para alterá-lo basta se autenticar no site, e clicar na aba <em><a href="pagina-padrao/edit">Edição</a></em>, que fica logo acima do título da página, então, inserir o conteúdo real e clicar no botão <em>Salvar</em>.</p><p>Esta página está dentro de uma pasta e foi selecionada como sua visão padrão. Na pasta você também pode criar outros conteúdos através do menu <em>Adicionar item...</em>, e conectá-los nesta página através de links internos com o editor visual.</p><p>Nesta página você deve publicar textos sobre a história da Casa Legislativa, desde sua criação, bem como, fotos, vídeos, áudios, etc, que permitam às pessoas conhecer o seu legislativo.</p>',
                     ),
                 ],
             ),
@@ -109,7 +109,7 @@ SITE_STRUCTURE = [
                         id='pagina-padrao',
                         title=u'Função e Definição',
                         description=u'Informações sobre as funções da Casa Legislativa e definições sobre como ela funciona, bem como, sobre o Processo Legislativo, plenário, número de parlamentares, entre outras.',
-                        text=u'<p>Este é um conteúdo padrão que deve ser editado pelo usuário editor do site. Para alterá-lo basta se autenticar no portal, e clicar na aba <em><a href="pagina-padrao/edit">Edição</a></em>, que fica logo acima do título da página, então, inserir o conteúdo real e clicar no botão <em>Salvar</em>.</p><p>Esta página está dentro de uma pasta e foi selecionada como sua visão padrão. Na pasta você também pode criar outros conteúdos através do menu <em>Adicionar item...</em>, e conectá-los nesta página através de links internos com o editor visual.</p><p>Nesta página você deve publicar informações sobre as funções da Casa Legislativa e definições sobre como ela funciona, bem como, sobre o Processo Legislativo, plenário, número de parlamentares, etc.</p>',
+                        text=u'<p>Este é um conteúdo padrão que deve ser editado pelo usuário editor do site. Para alterá-lo basta se autenticar no site, e clicar na aba <em><a href="pagina-padrao/edit">Edição</a></em>, que fica logo acima do título da página, então, inserir o conteúdo real e clicar no botão <em>Salvar</em>.</p><p>Esta página está dentro de uma pasta e foi selecionada como sua visão padrão. Na pasta você também pode criar outros conteúdos através do menu <em>Adicionar item...</em>, e conectá-los nesta página através de links internos com o editor visual.</p><p>Nesta página você deve publicar informações sobre as funções da Casa Legislativa e definições sobre como ela funciona, bem como, sobre o Processo Legislativo, plenário, número de parlamentares, etc.</p>',
                     ),
                 ],
             ),
@@ -123,7 +123,7 @@ SITE_STRUCTURE = [
                         id='pagina-padrao',
                         title=u'Estrutura',
                         description=u'Informações sobre a estrutura organizacional da Casa Legislativa, tais como, organograma, setores, chefias e responsáveis com fotos e seus respectivos contatos.',
-                        text=u'<p>Este é um conteúdo padrão que deve ser editado pelo usuário editor do site. Para alterá-lo basta se autenticar no portal, e clicar na aba <em><a href="pagina-padrao/edit">Edição</a></em>, que fica logo acima do título da página, então, inserir o conteúdo real e clicar no botão <em>Salvar</em>.</p><p>Esta página está dentro de uma pasta e foi selecionada como sua visão padrão. Na pasta você também pode criar outros conteúdos através do menu <em>Adicionar item...</em>, e conectá-los nesta página através de links internos com o editor visual.</p><p>Nesta página você deve publicar informações sobre a estrutura organizacional da Casa Legislativa, tais como, organograma, setores, chefias e responsáveis com fotos e seus contatos, para que os cidadãos os conheçam e possam contactá-los.</p>',
+                        text=u'<p>Este é um conteúdo padrão que deve ser editado pelo usuário editor do site. Para alterá-lo basta se autenticar no site, e clicar na aba <em><a href="pagina-padrao/edit">Edição</a></em>, que fica logo acima do título da página, então, inserir o conteúdo real e clicar no botão <em>Salvar</em>.</p><p>Esta página está dentro de uma pasta e foi selecionada como sua visão padrão. Na pasta você também pode criar outros conteúdos através do menu <em>Adicionar item...</em>, e conectá-los nesta página através de links internos com o editor visual.</p><p>Nesta página você deve publicar informações sobre a estrutura organizacional da Casa Legislativa, tais como, organograma, setores, chefias e responsáveis com fotos e seus contatos, para que os cidadãos os conheçam e possam contactá-los.</p>',
                     ),
                 ],
             ),
@@ -193,7 +193,7 @@ SITE_STRUCTURE = [
                 type='Folder',
                 title=u'Clipping',
                 description=u'Coleção de notícias publicadas por terceiros, relacionadas a esta Casa Legislativa.',
-                _addable_types=['Collection', 'Folder', 'News Item'],
+                _addable_types=['Collection', 'Folder', 'Link', 'News Item'],
                 _children=[
                     dict(
                         type='Collection',
@@ -229,7 +229,7 @@ SITE_STRUCTURE = [
                     dict(
                         type='Event',
                         title=u'1º Ano do Site',
-                        description=u'Aniversário de primeiro ano do portal desta Casa Legislativa. (este evento é um conteúdo de exemplo e pode ser removido)',
+                        description=u'Aniversário de primeiro ano do site desta Casa Legislativa. (este evento é um conteúdo de exemplo e pode ser removido)',
                         text=u'<strong>Parabéns para esta Casa Legislativa!</strong><p>Já passou um ano desde a disponibilização do seu <a href="http://www.interlegis.leg.br/solucaoweb">Portal Modelo</a> na web. Isso significa mais transparência, diálogo com os cidadãos, aderência às leis nacionais e padrões internacionais. Veja por que é importante utilizar o portal:</p><iframe src="http://www.youtube.com/embed/D_Sm7R1yY8g?feature=oembed" width="400" height="300" allowfullscreen="" frameborder="0"></iframe>',
                     ),
                 ],
@@ -792,7 +792,7 @@ SITE_STRUCTURE = [
             dict(
                 type='Document',
                 title=u'Dados Abertos',
-                description=u'Informações sobre os dados disponíveis neste portal em formato aberto e legível por máquinas.',
+                description=u'Informações sobre os dados disponíveis neste site em formato aberto e legível por máquinas.',
                 text=u'<p><a href="http://commons.wikimedia.org/wiki/File:Open_Data_stickers.jpg#mediaviewer/File:Open_Data_stickers.jpg"><img class="image-right" alt="Selos de Dados Abertos" width="193" height="145" src="http://upload.wikimedia.org/wikipedia/commons/c/cc/Open_Data_stickers.jpg" /></a></p><p>De acordo com o portal de <a href="http://dados.gov.br">Dados Abertos</a> do Governo Federal e segundo a <a href="http://opendefinition.org/">definição</a> da <a href="http://okfn.org">Open Knowledge Foundation</a>, dados ou conteúdos são abertos quando qualquer pessoa pode livremente usá-los, reutilizá-los e redistribuí-los, estando sujeito a, no máximo, a exigência de creditar a sua autoria e compartilhar pela mesma licença. Isso geralmente é satisfeito pela publicação dos dados em formato aberto e sob uma <a href="http://opendefinition.org/licenses/">licença aberta</a>, como a que está declarada no rodapé deste site.</p><p>Publicamos 4 conjuntos de dados abertos em formato <a href="http://json.org/json-pt.html">JSON</a>, que podem ser acessados a partir das seguintes APIs:</p><ul><li><a href="../@@portalmodelo-json">Dados da Instituição</a></li><li><a href="../@@ombudsman-json">Dados da Ouvidoria (e-SIC)</a></li><li><a href="../@@pl-json">Dados do Processo Legislativo</a></li><li><a href="../@@transparency-json">Dados de Transparência</a></li></ul><p>Disponibilizamos ainda uma API em <a href="../apidata">/apidata</a> que fornece no mesmo formato, além dos dados já citados, todos os conteúdos padrão publicados no site. Veja a documentação dessa API em <a href="../open-data">/open-data</a>.</p><p>Além disso, cada seção do site têm um link <a href="../rss-info">RSS</a> que publica seus conteúdos disponíveis em formato RSS (RDF Site Summary 1.0).</p>',
             ),
         ],
@@ -800,14 +800,14 @@ SITE_STRUCTURE = [
     dict(
         type='Folder',
         title=u'Links Úteis',
-        description=u'Seção que contém os links para portais externos.',
+        description=u'Seção que contém os links para sites externos.',
         excludeFromNav=True,
         _addable_types=['Folder', 'Link'],
         _children=[
             dict(
                 type='Link',
                 title=u'Prefeitura Municipal',
-                description=u'Portal da Prefeitura Municipal. (este link deve ser editado)',
+                description=u'Site da Prefeitura Municipal. (este link deve ser editado)',
                 remoteUrl='http://www.municipio.uf.gov.br',
             ),
             dict(
@@ -819,25 +819,25 @@ SITE_STRUCTURE = [
             dict(
                 type='Link',
                 title=u'Assembleia Legislativa',
-                description=u'Portal da Assembleia Legislativa do Estado. (este link deve ser editado)',
+                description=u'Site da Assembleia Legislativa do Estado. (este link deve ser editado)',
                 remoteUrl='http://www.al.uf.leg.br',
             ),
             dict(
                 type='Link',
                 title=u'Câmara dos Deputados',
-                description=u'Portal da Câmara dos Deputados Federal.',
+                description=u'Site da Câmara dos Deputados Federal.',
                 remoteUrl='http://www.camara.leg.br',
             ),
             dict(
                 type='Link',
                 title=u'Senado Federal',
-                description=u'Portal do Senado Federal do Brasil.',
+                description=u'Site do Senado Federal do Brasil.',
                 remoteUrl='http://www.senado.leg.br',
             ),
             dict(
                 type='Link',
                 title=u'Programa Interlegis',
-                description=u'Portal do Programa de Integração e Modernização do Legislativo Brasileiro.',
+                description=u'Site do Programa de Integração e Modernização do Legislativo Brasileiro.',
                 remoteUrl='http://www.interlegis.leg.br',
             ),
         ],
@@ -846,7 +846,7 @@ SITE_STRUCTURE = [
         type='Folder',
         id='imagens',
         title=u'Banco de Imagens',
-        description=u'Banco de imagens usadas e referenciadas nos conteúdos do portal.',
+        description=u'Banco de imagens usadas e referenciadas nos conteúdos do site.',
         excludeFromNav=True,
         _addable_types=['Folder', 'Image', 'Link'],
         _layout='atct_album_view',
@@ -876,7 +876,7 @@ SITE_STRUCTURE = [
             dict(
                 type='collective.polls.poll',
                 title=u'Gostou do novo site?',
-                description=u'O que você achou do novo portal desta Casa Legislativa?',
+                description=u'O que você achou do novo site desta Casa Legislativa?',
                 options=[
                     dict(option_id=0, description=u'Sim, gostei'),
                     dict(option_id=1, description=u'Não gostei'),
@@ -988,7 +988,7 @@ SITE_STRUCTURE = [
         id='faq',
         title=u'Perguntas Frequentes',
         description=u'Esta é a FAQ do site, uma relação de perguntas que são feitas com frequência para a Casa Legislativa e suas respectivas respostas.',
-        text=u'<img class="image-right" src="imagens/faq-logo.png/image_thumb" alt="FAQ" /><h2>Perguntas</h2><ol><li><a href="#p1">O conteúdo desta FAQ deve ser modificado?</a></li><li><a href="#p2">Como posso modificar este conteúdo e compor a FAQ real deste site?</a></li></ol><br/><h2>Respostas</h2><h3>O conteúdo desta FAQ deve ser modificado?<a name="p1"></a></h3><p>Sim, este é um conteúdo padrão que foi criado automaticamente junto com o Portal Modelo. O objetivo dele é lhe orientar a formatar a seção de perguntas e respostas do seu site. <a href="edit">Edite-o</a> e crie sua FAQ real!</p><h3>Como posso modificar este conteúdo e compor a FAQ real deste site?<a name="p2"></a></h3><p>Para alterá-lo basta <a href="login">se autenticar</a> no portal, e clicar na aba <em><a href="edit">Edição</a></em>, que fica logo acima do título desta página. Então inserir o conteúdo real e clicar no botão <em>Salvar</em>. Preste atenção na formatação, cada pergunta acima tem um link para a sua respectiva âncora aqui embaixo na resposta.</p>',
+        text=u'<img class="image-right" src="imagens/faq-logo.png/image_thumb" alt="FAQ" /><h2>Perguntas</h2><ol><li><a href="#p1">O conteúdo desta FAQ deve ser modificado?</a></li><li><a href="#p2">Como posso modificar este conteúdo e compor a FAQ real deste site?</a></li></ol><br/><h2>Respostas</h2><h3>O conteúdo desta FAQ deve ser modificado?<a name="p1"></a></h3><p>Sim, este é um conteúdo padrão que foi criado automaticamente junto com o Portal Modelo. O objetivo dele é lhe orientar a formatar a seção de perguntas e respostas do seu site. <a href="edit">Edite-o</a> e crie sua FAQ real!</p><h3>Como posso modificar este conteúdo e compor a FAQ real deste site?<a name="p2"></a></h3><p>Para alterá-lo basta <a href="login">se autenticar</a> no site, e clicar na aba <em><a href="edit">Edição</a></em>, que fica logo acima do título desta página. Então inserir o conteúdo real e clicar no botão <em>Salvar</em>. Preste atenção na formatação, cada pergunta acima tem um link para a sua respectiva âncora aqui embaixo na resposta.</p>',
     ),
     dict(
         type='Document',
