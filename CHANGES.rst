@@ -4,6 +4,12 @@ Changelog
 1.0rc6 (unreleased)
 -------------------
 
+- Add recaptcha to provide captcha to Ombudsman and Ploneboard
+  [jeanferri]
+
+- Add captcha to the instanced foruns
+  [jeanferri]
+
 - Change some terms in default content
   [jeanferri]
 
