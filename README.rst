@@ -33,6 +33,7 @@ Este pacote instala as seguintes dependências do projeto:
 * `interlegis.portalmodelo.pl`_
 * `interlegis.portalmodelo.theme`_
 * `plone.formwidget.captcha`_
+* `plone.formwidget.recaptcha`_
 * `Products.AROfficeTransforms`_
 * `Products.EasyNewsletter`_
 * `Products.OpenXml`_
@@ -80,6 +81,7 @@ O estado atual dos testes pode ser visto nas imagens a seguir:
 .. _`interlegis.portalmodelo.pl`: https://pypi.python.org/pypi/interlegis.portalmodelo.pl
 .. _`interlegis.portalmodelo.theme`: https://pypi.python.org/pypi/interlegis.portalmodelo.theme
 .. _`plone.formwidget.captcha`: https://pypi.python.org/pypi/plone.formwidget.captcha
+.. _`plone.formwidget.recaptcha`: https://pypi.python.org/pypi/plone.formwidget.recaptcha
 .. _`Products.AROfficeTransforms`: https://pypi.python.org/pypi/Products.AROfficeTransforms
 .. _`Products.EasyNewsletter`: https://pypi.python.org/pypi/Products.EasyNewsletter
 .. _`Products.OpenXml`: https://pypi.python.org/pypi/Products.OpenXml

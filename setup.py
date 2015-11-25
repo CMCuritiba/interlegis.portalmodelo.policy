@@ -63,6 +63,7 @@ setup(
         'plone.app.event [archetypes] <1.2',
         'plone.app.upgrade',
         'plone.formwidget.captcha',
+        'plone.formwidget.recaptcha',
         'plone.i18n',
         'plone.portlets',
         'plone.registry',
