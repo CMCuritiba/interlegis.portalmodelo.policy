@@ -4,6 +4,12 @@ Changelog
 1.0rc6 (unreleased)
 -------------------
 
+- Add sc.contentrules.groupbydate to provide same behavior as Interlegis site
+  [jeanferri]
+
+- Add interlegis.portalmodelo.migrator to provide migration from old PM
+  [jeanferri]
+
 - Add recaptcha to provide captcha to Ombudsman and Ploneboard
   [jeanferri]
 
