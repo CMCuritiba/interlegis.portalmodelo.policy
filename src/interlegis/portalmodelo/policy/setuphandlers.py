@@ -310,6 +310,7 @@ def miscelaneous_house_folder(site):
     set_default_view_on_folder(folder['noticias'], object_id='agregador')
     set_default_view_on_folder(folder['clipping'], object_id='agregador')
     set_default_view_on_folder(folder['videos'], object_id='agregador')
+    set_default_view_on_folder(site['transparencia'], object_id='pagina-padrao')
 
     videos = folder['videos']
     set_flowplayer_file_type(videos['campanha-legbr.mp4'])
