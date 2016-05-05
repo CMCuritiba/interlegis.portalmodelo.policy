@@ -4,6 +4,12 @@ Changelog
 1.0rc6 (unreleased)
 -------------------
 
+- Add Índice de Transparência page to transparency section
+  [jeanferri]
+
+- Add default page to transparency section
+  [jeanferri]
+
 - Add sc.contentrules.groupbydate to provide same behavior as Interlegis site
   [jeanferri]
 
