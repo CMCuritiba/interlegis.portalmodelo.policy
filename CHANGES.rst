@@ -4,6 +4,9 @@ Changelog
 1.0rc6 (unreleased)
 -------------------
 
+- Change HTML structure for 'Nossos Parlamentares' tile in home page
+  [jeanferri]
+
 - Add Índice de Transparência page to transparency section
   [jeanferri]
 
