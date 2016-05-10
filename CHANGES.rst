@@ -4,6 +4,9 @@ Changelog
 1.0rc6 (unreleased)
 -------------------
 
+- Move login action to site_actions
+  [jeanferri]
+
 - Change HTML structure for 'Nossos Parlamentares' tile in home page
   [jeanferri]
 
