@@ -170,49 +170,53 @@ def populate_cover(site):
     """Populate site front page. The layout is composed by 4 rows:
 
     1. 1 carousel tile
-    2. 1 collection tile
-    3. 1 parlamientarians tile
-    4. 2 embed tiles
+    2. 1 banner tile
+    3. 1 collection tile
+    4. 1 parlamientarians tile
+    5. 2 embed tiles
 
     Populate and configure those tiles.
     """
     from cover import set_tile_configuration
     from plone.uuid.interfaces import IUUID
 
-    cover = site['front-page']
+    frontpage = site['front-page']
     # first row
-    tiles = cover.list_tiles('collective.cover.carousel')
+    tiles = frontpage.list_tiles('collective.cover.carousel')
     obj1 = site['institucional']['noticias']['terceira-noticia']
     obj2 = site['institucional']['noticias']['primeira-noticia']
     uuid1 = IUUID(obj1)
     uuid2 = IUUID(obj2)
     data = dict(uuids=[uuid1, uuid2])
-    cover.set_tile_data(tiles[0], **data)
-    set_tile_configuration(cover, tiles[0], image={'scale': 'large'})
+    frontpage.set_tile_data(tiles[0], **data)
+    set_tile_configuration(frontpage, tiles[0], image={'scale': 'large'})
     # second row
-    tiles = cover.list_tiles('collective.cover.collection')
+    #tiles = frontpage.list_tiles('collective.cover.banner')
+    #set_tile_configuration(frontpage, tiles[0], image={'scale': 'large'})
+    # third row
+    tiles = frontpage.list_tiles('collective.cover.collection')
     obj = site['institucional']['noticias']['agregador']
     assert obj.portal_type == 'Collection'
     uuid = IUUID(obj)
     data = dict(header=u'Últimas Notícias', footer=u'Mais notícias…', uuid=uuid)
-    cover.set_tile_data(tiles[0], **data)
+    frontpage.set_tile_data(tiles[0], **data)
     set_tile_configuration(
-        cover,
+        frontpage,
         tiles[0],
         image=dict(order=0, scale='thumb'),
         date=dict(order=1),
         title=dict(htmltag='h3')
     )
-    # third row
-    tiles = cover.list_tiles('collective.cover.richtext')
-    data = dict(text=HOME_TILE_TEXT)
-    cover.set_tile_data(tiles[0], **data)
     # fourth row
-    tiles = cover.list_tiles('collective.cover.embed')
+    tiles = frontpage.list_tiles('collective.cover.richtext')
+    data = dict(text=HOME_TILE_TEXT)
+    frontpage.set_tile_data(tiles[0], **data)
+    # fifth row
+    tiles = frontpage.list_tiles('collective.cover.embed')
     data = dict(embed=HOME_TILE_EMBED1)
-    cover.set_tile_data(tiles[0], **data)
+    frontpage.set_tile_data(tiles[0], **data)
     data = dict(embed=HOME_TILE_EMBED2)
-    cover.set_tile_data(tiles[1], **data)
+    frontpage.set_tile_data(tiles[1], **data)
 
 
 def set_site_default_page(site):

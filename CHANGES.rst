@@ -4,6 +4,9 @@ Changelog
 1.0rc6 (unreleased)
 -------------------
 
+- Add Banner tile to front-page cover object
+  [jeanferri]
+
 - Move login action to site_actions
   [jeanferri]
 
