@@ -8,11 +8,13 @@ from interlegis.portalmodelo.policy.config import DEFAULT_CONTENT
 from interlegis.portalmodelo.policy.config import HOME_TILE_EMBED1
 from interlegis.portalmodelo.policy.config import HOME_TILE_EMBED2
 from interlegis.portalmodelo.policy.config import HOME_TILE_TEXT
+from interlegis.portalmodelo.policy.config import HOME_TILE_BANNER_URL
 from interlegis.portalmodelo.policy.config import PROJECTNAME
 from interlegis.portalmodelo.policy.config import SITE_STRUCTURE
 from interlegis.portalmodelo.policy.config import VIDEO_TEXT
 from plone import api
 from plone.event.interfaces import IEventAccessor
+from plone.namedfile.file import NamedBlobImage
 from plone.portlets.interfaces import IPortletAssignmentMapping
 from plone.portlets.interfaces import IPortletManager
 from Products.CMFPlone.interfaces import INonInstallable
@@ -191,8 +193,18 @@ def populate_cover(site):
     frontpage.set_tile_data(tiles[0], **data)
     set_tile_configuration(frontpage, tiles[0], image={'scale': 'large'})
     # second row
-    #tiles = frontpage.list_tiles('collective.cover.banner')
-    #set_tile_configuration(frontpage, tiles[0], image={'scale': 'large'})
+    tiles = frontpage.list_tiles('collective.cover.banner')
+    path = os.path.dirname(__file__)
+    banner_name = u'banner.jpg'
+    banner_file = open(os.path.join(path, 'browser/static', banner_name)).read()
+    banner_image = NamedBlobImage(banner_file, 'image/jpeg', banner_name)
+    data = dict(
+        title=u'Banner de Exemplo',
+        image=banner_image,
+        remote_url=HOME_TILE_BANNER_URL
+    )
+    frontpage.set_tile_data(tiles[0], **data)
+    set_tile_configuration(frontpage, tiles[0], image={'scale': 'large'})
     # third row
     tiles = frontpage.list_tiles('collective.cover.collection')
     obj = site['institucional']['noticias']['agregador']
@@ -354,7 +366,6 @@ def setup_event(site):
 
 def setup_embedder_video(site):
     """Set a few properties on Youtube video embedders."""
-    from plone.namedfile.file import NamedBlobImage
     folder = site['institucional']['videos']
     videos = [
         {'id': 'municipio-brasil', 'img': 'capa-video1.jpg', 'text': VIDEO_TEXT},
