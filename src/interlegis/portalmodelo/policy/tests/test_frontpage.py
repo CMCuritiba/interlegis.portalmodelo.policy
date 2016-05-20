@@ -48,6 +48,7 @@ class FrontPageTestCase(unittest.TestCase):
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-parlamentares', browser.contents)
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-legislaturas', browser.contents)
         self.assertIn('navTreeItem visualNoMarker section-mesa-diretora', browser.contents)
+        self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-comissoes', browser.contents)
 
         # Leis
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-lei-organica-municipal', browser.contents)
@@ -57,7 +58,6 @@ class FrontPageTestCase(unittest.TestCase):
         self.assertIn('navTreeItem visualNoMarker section-pesquisar-no-lexml', browser.contents)
 
         # Transparência
-#        self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-indice-de-transparencia', browser.contents)
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-orcamento-e-financas', browser.contents)
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-licitacoes-e-contratos', browser.contents)
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-recursos-humanos', browser.contents)
@@ -65,6 +65,7 @@ class FrontPageTestCase(unittest.TestCase):
         self.assertIn('navTreeItem visualNoMarker navTreeFolderish section-atos-administrativos', browser.contents)
         self.assertIn('navTreeItem visualNoMarker section-acesso-a-informacao', browser.contents)
         self.assertIn('navTreeItem visualNoMarker section-dados-abertos', browser.contents)
+        self.assertIn('navTreeItem visualNoMarker section-indice-de-transparencia', browser.contents)
 
         # Links úteis
         self.assertIn('navTreeItem visualNoMarker section-prefeitura-municipal', browser.contents)

@@ -167,7 +167,7 @@ class HomePropertiesTestCase(unittest.TestCase):
         self.portal = self.layer['portal']
         self.actions = api.portal.get_tool('portal_actions').site_actions
         login_action = self.actions.login
-        self.assertEqual(login_action.url_expr, 'string:${globals_view/navigationRootUrl}/login}')
+        self.assertEqual(login_action.url_expr, 'string:${globals_view/navigationRootUrl}/login')
 
 
 class PloneBoardTestCase(unittest.TestCase):
