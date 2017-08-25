@@ -3,6 +3,8 @@ Changelog
 
 1.0rc6 (unreleased)
 -------------------
+- Add Tiny configuration
+  [rafahela]
 
 - Add Banner tile to front-page cover object
   [jeanferri]
