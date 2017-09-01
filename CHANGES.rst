@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0rc6 (unreleased)
+1.0rc6 (2017-09-01)
 -------------------
 
 - Add Banner tile to front-page cover object
