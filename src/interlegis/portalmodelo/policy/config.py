@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-from interlegis.intranetmodelo.policy.utils import _add_id
+from interlegis.portalmodelo.policy.utils import _add_id
 from StringIO import StringIO
 
 import os
@@ -61,7 +61,7 @@ SITE_STRUCTURE = [
         id='footer-page',
         title=u'Rodapé do Portal',
         description=u'Conteúdo editável do rodapé do site. (atenção: este objeto não deve ser excluído e nem tornado privado)',
-        text=u'<table class="invisible"><tbody><tr><th style="text-align:left">Institucional</th><th style="text-align:left">Atividade Legislativa</th><th style="text-align:left">Serviços</th><th style="text-align:left">Atendimento</th></tr><tr><td><ul><li><a href="institucional/acesso">Acesso</a></li><li><a href="institucional/historia">História</a></li><li><a href="institucional/funcao-e-definicao">Função e Definição</a></li><li><a href="institucional/estrutura">Estrutura</a></li><li><a href="institucional/noticias">Notícias</a></li><li><a href="institucional/eventos/event_listing">Eventos</a></li><li><a href="blog">Blog</a></li></ul></td><td><ul><li><a href="processo-legislativo/parlamentares">Parlamentares</a></li><li><a href="processo-legislativo/legislaturas">Legislaturas</a></li><li><a href="processo-legislativo/@@mesa-diretora">Mesa Diretora</a></li><li><a href="processo-legislativo/comissoes">Comissões</a></li><li><a href="institucional/regimento-interno">Regimento Interno</a></li><li><a href="leis/lei-organica-municipal">Lei Orgância Municipal</a></li><li><a href="leis/legislacao-municipal">Legislação Municipal</a></li></ul></td><td><ul><li><a href="transparencia">Transparência</a></li><li><a href="ouvidoria">e-SIC</a></li><li><a href="foruns">Fóruns</a></li><li><a href="transparencia/dados-abertos">Dados Abertos</a></li><li><a href="boletins">Boletim Informativo</a></li><li><a href="faq">FAQ</a></li><li><a href="rss-info">RSS</a></li></ul></td><td><address>Endereço da Casa Legislativa, nº do prédio<br />Município, UF &#8212; CEP: 12345-678<br />CNPJ: 00.000.000/0001-00<br />Fone: +55 12 3456-7890 &#8212; Fax: +55 09 8765-4321<br />E-mail: <a href="mailto:atendimento@dominio.leg.br">atendimento@dominio.leg.br</a></address><br /><br /><strong>Expediente</strong><br /><br />De segunda-feira a sexta-feira:<br />&#8226; manhã das 8hs às 12hs<br />&#8226; tarde das 14hs às 18hs</td></tr></tbody></table>',
+        text=u'<table class="invisible"><tbody><tr><th style="text-align:left">Institucional</th><th style="text-align:left">Atividade Legislativa</th><th style="text-align:left">Serviços</th><th style="text-align:left">Atendimento</th></tr><tr><td><ul><li><a href="institucional/acesso">Acesso</a></li><li><a href="institucional/historia">História</a></li><li><a href="institucional/funcao-e-definicao">Função e Definição</a></li><li><a href="institucional/estrutura">Estrutura</a></li><li><a href="institucional/noticias">Notícias</a></li><li><a href="institucional/eventos/event_listing">Eventos</a></li></ul></td><td><ul><li><a href="processo-legislativo/parlamentares">Parlamentares</a></li><li><a href="processo-legislativo/legislaturas">Legislaturas</a></li><li><a href="processo-legislativo/@@mesa-diretora">Mesa Diretora</a></li><li><a href="processo-legislativo/comissoes">Comissões</a></li><li><a href="institucional/regimento-interno">Regimento Interno</a></li><li><a href="leis/lei-organica-municipal">Lei Orgância Municipal</a></li><li><a href="leis/legislacao-municipal">Legislação Municipal</a></li></ul></td><td><ul><li><a href="transparencia">Transparência</a></li><li><a href="ouvidoria">e-SIC</a></li><li><a href="transparencia/dados-abertos">Dados Abertos</a></li><li><a href="boletins">Boletim Informativo</a></li><li><a href="faq">FAQ</a></li><li><a href="rss-info">RSS</a></li></ul></td><td><address>Endereço da Casa Legislativa, nº do prédio<br />Município, UF &#8212; CEP: 12345-678<br />CNPJ: 00.000.000/0001-00<br />Fone: +55 12 3456-7890 &#8212; Fax: +55 09 8765-4321<br />E-mail: <a href="mailto:atendimento@dominio.leg.br">atendimento@dominio.leg.br</a></address><br /><br /><strong>Expediente</strong><br /><br />De segunda-feira a sexta-feira:<br />&#8226; manhã das 8hs às 12hs<br />&#8226; tarde das 14hs às 18hs</td></tr></tbody></table>',
         excludeFromNav=True,
     ),
     dict(
@@ -240,30 +240,30 @@ SITE_STRUCTURE = [
                 id='fotos',
                 title=u'Galeria de Fotos',
                 description=u'Galeria de fotos da Casa Legislativa, sessões, parlamentares, funcionários, eventos ocorridos, cidadãos colaboradores, entre outros.',
-                _addable_types=['Collection', 'Folder', 'Image', 'Link', 'sc.embedder'],
-                _layout='galleria_view',
-                _children=[
-                    dict(
-                        type='Collection',
-                        title=u'Todas as Fotos',
-                        description=u'Lista de todas as fotos armazenadas dentro desta pasta.',
-                        sort_reversed=True,
-                        sort_on=u'effective',
-                        limit=1000,
-                        query=[
-                            dict(
-                                i='portal_type',
-                                o='plone.app.querystring.operation.selection.is',
-                                v=['Image', 'Link', 'sc.embedder'],
-                            ),
-                            dict(
-                                i='path',
-                                o='plone.app.querystring.operation.string.relativePath',
-                                v='../',
-                            ),
-                        ],
-                    ),
-                ],
+                _addable_types=['Image', 'Folder'],
+                _layout='galleryview',
+                #_children=[
+                #    dict(
+                #        type='Collection',
+                #        title=u'Todas as Fotos',
+                #        description=u'Lista de todas as fotos armazenadas dentro desta pasta.',
+                #        sort_reversed=True,
+                #        sort_on=u'effective',
+                #        limit=1000,
+                #        query=[
+                #            dict(
+                #                i='portal_type',
+                #                o='plone.app.querystring.operation.selection.is',
+                #                v=['Image', 'Link', 'sc.embedder'],
+                #            ),
+                #            dict(
+                #                i='path',
+                #                o='plone.app.querystring.operation.string.relativePath',
+                #                v='../',
+                #            ),
+                #        ],
+                #    ),
+                #],
             ),
             dict(
                 type='Folder',
@@ -592,7 +592,7 @@ SITE_STRUCTURE = [
                         description=u'Vídeo hospedado no YouTube, feito pelo programa Município Brasil da TV Senado, falando sobre a ferramenta feita pelo Interlegis que oferece sites com tecnologias abertas e sem custos para as Casas Legislativas Brasileiras. (este link é um conteúdo de exemplo e pode ser removido)',
                         excludeFromNav=True,
                         remoteUrl='https://www.youtube.com/watch?v=f1vAZ5cp-sc',
-                        _layout='galleria_view',
+                        _layout='folder_summary_view',
                     ),
                     dict(
                         type='Link',
@@ -899,91 +899,6 @@ SITE_STRUCTURE = [
         ],
     ),
     dict(
-        type='Blog',
-        id='blog',
-        title=u'Blog Legislativo',
-        description=u'Weblog sobre assuntos técnicos dos setores da Casa Legislativa.',
-        author=u'Funcionários da Casa Legislativa',
-        excludeFromNav=True,
-    ),
-    dict(
-        type='Ploneboard',
-        title=u'Fóruns',
-        description=u'Fóruns de debates sobre temas importantes para o município. Exerça sua cidadania! Participe!',
-        _children=[
-            dict(
-                type='PloneboardForum',
-                title=u'Corrupção',
-                description=u'Debates sobre corrupção pública e privada em nosso município.',
-                showCaptcha=True,
-                _transition='make_freeforall',
-            ),
-            dict(
-                type='PloneboardForum',
-                title=u'Educação',
-                description=u'Debates sobre o ensino público em nosso município.',
-                showCaptcha=True,
-                _transition='make_freeforall',
-            ),
-            dict(
-                type='PloneboardForum',
-                title=u'Habitação',
-                description=u'Debates sobre moradia e habitação em nosso município.',
-                showCaptcha=True,
-                _transition='make_freeforall',
-            ),
-            dict(
-                type='PloneboardForum',
-                title=u'Infraestrutura',
-                description=u'Debates sobre infraestrutura urbana em nosso município.',
-                showCaptcha=True,
-                _transition='make_freeforall',
-            ),
-            dict(
-                type='PloneboardForum',
-                title=u'Meio Ambiente',
-                description=u'Debates sobre ecologia e meio ambiente em nosso município.',
-                showCaptcha=True,
-                _transition='make_freeforall',
-            ),
-            dict(
-                type='PloneboardForum',
-                title=u'Saneamento',
-                description=u'Debates sobre saneamento básico urbana em nosso município.',
-                showCaptcha=True,
-                _transition='make_freeforall',
-            ),
-            dict(
-                type='PloneboardForum',
-                title=u'Saúde',
-                description=u'Debates sobre saúde pública em nosso município.',
-                showCaptcha=True,
-                _transition='make_freeforall',
-            ),
-            dict(
-                type='PloneboardForum',
-                title=u'Segurança',
-                description=u'Debates sobre segurança pública em nosso município.',
-                showCaptcha=True,
-                _transition='make_freeforall',
-            ),
-            dict(
-                type='PloneboardForum',
-                title=u'Transporte',
-                description=u'Debates sobre mobilidade urbana em nosso município.',
-                showCaptcha=True,
-                _transition='make_freeforall',
-            ),
-            dict(
-                type='PloneboardForum',
-                title=u'Tributação',
-                description=u'Debates sobre tributação em nosso município.',
-                showCaptcha=True,
-                _transition='make_freeforall',
-            ),
-        ],
-    ),
-    dict(
         type='OmbudsOffice',
         title=u'Ouvidoria',
         description=u'Sistema Eletrônico de Informações ao Cidadão (e-SIC), que controla as demandas dos cidadãos à Casa Legislativa, permitindo seu acompanhamento e pesquisas.',
@@ -1017,7 +932,7 @@ SITE_STRUCTURE = [
         id='rss-info',
         title=u'RSS',
         description=u'Assine os canais RSS disponíveis em cada seção do site e receba automaticamente todas as suas atualizações.',
-        text=u'<p><img class="image-right" src="imagens/rss-logo.png" alt="RSS" />RSS é um recurso que serve para agregar conteúdos da web, podendo ser acessados por programas ou sites agregadores, facilitando o intercâmbio de informação e sua atualização. Uma descrição mais abrangente sobre essa tecnologia está disponível na <a href="http://pt.wikipedia.org/wiki/RSS">Wikipédia</a>.</p><p>Este site possui vários canais RSS (RDF Site Summary 1.0) habilitados. Basicamente, cada seção do site tem seu canal RSS que você pode assinar para receber automaticamente suas atualizações. Quando um novo conteúdo é publicado em um desses canais, ele é automaticamente transferido para os dispositivos que estiverem usando-o. Os principais canais são:</p><ul><li><a href="RSS">Geral (todos os conteúdos do site)</a></li><li><a href="institucional/noticias/RSS">Notícias</a></li><li><a href="institucional/eventos/RSS">Agenda</a></li><li><a href="foruns/RSS">Fóruns</a></li><li><a href="ouvidoria/RSS">Ouvidoria (e-SIC)</a></li><li><a href="blog/RSS">Blog</a></li><li><a href="enquetes/RSS">Enquetes</a></li></ul><p>Além disso, a busca do site também pode ser retornada como um canal RSS. Por exemplo, se você fizer uma busca pela palavra <em>lei</em>, mesmo após usar os filtros para melhorar o resultado, é possível usar sua URL como resposta em formato RSS, apenas trocando sua base de <a href="@@search?SearchableText=lei">@@search</a> para <a href="@@search_rss?SearchableText=lei">@@search_rss</a>.</p>',
+        text=u'<p><img class="image-right" src="imagens/rss-logo.png" alt="RSS" />RSS é um recurso que serve para agregar conteúdos da web, podendo ser acessados por programas ou sites agregadores, facilitando o intercâmbio de informação e sua atualização. Uma descrição mais abrangente sobre essa tecnologia está disponível na <a href="http://pt.wikipedia.org/wiki/RSS">Wikipédia</a>.</p><p>Este site possui vários canais RSS (RDF Site Summary 1.0) habilitados. Basicamente, cada seção do site tem seu canal RSS que você pode assinar para receber automaticamente suas atualizações. Quando um novo conteúdo é publicado em um desses canais, ele é automaticamente transferido para os dispositivos que estiverem usando-o. Os principais canais são:</p><ul><li><a href="RSS">Geral (todos os conteúdos do site)</a></li><li><a href="institucional/noticias/RSS">Notícias</a></li><li><a href="institucional/eventos/RSS">Agenda</a></li><li><a href="ouvidoria/RSS">Ouvidoria (e-SIC)</a></li><li><a href="enquetes/RSS">Enquetes</a></li></ul><p>Além disso, a busca do site também pode ser retornada como um canal RSS. Por exemplo, se você fizer uma busca pela palavra <em>lei</em>, mesmo após usar os filtros para melhorar o resultado, é possível usar sua URL como resposta em formato RSS, apenas trocando sua base de <a href="@@search?SearchableText=lei">@@search</a> para <a href="@@search_rss?SearchableText=lei">@@search_rss</a>.</p>',
     ),
     dict(
         type='Link',
@@ -1029,3 +944,4 @@ SITE_STRUCTURE = [
 ]
 
 SITE_STRUCTURE = _add_id(SITE_STRUCTURE)
+
