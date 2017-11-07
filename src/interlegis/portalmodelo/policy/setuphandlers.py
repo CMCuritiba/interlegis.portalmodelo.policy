@@ -42,7 +42,6 @@ class HiddenProducts(grok.GlobalUtility):
 
     def getNonInstallableProducts(self):
         return [
-            u'Products.Ploneboard'
             u'Products.windowZ'
         ]
 
@@ -53,12 +52,6 @@ class HiddenProfiles(object):
     def getNonInstallableProfiles(self):
         return [
             u'interlegis.portalmodelo.policy.upgrades.v2000:default'
-            u'Products.Ploneboard:default'
-            u'Products.Ploneboard:intranet'
-            u'Products.Ploneboard:ploneboard'
-            u'Products.Ploneboard:uninstall'
-            u'Products.Ploneboard:zbasicboard'
-            u'Products.Ploneboard:zlotsofposts'
             u'Products.windowZ:default'
         ]
 
@@ -384,12 +377,6 @@ def setup_embedder_video(site):
         logger.debug(u'Video embedder {0} configurado'.format(v['id']))
 
 
-def set_enable_anon_name_plone_board(site):
-    """Set enable_anon_name to True on portal_ploneboard."""
-    pb = api.portal.get_tool('portal_ploneboard')
-    pb.enable_anon_name = True
-    logger.debug(u'Habilitado nome de usuario para ser exibido em posts dos Foruns')
-
 
 def setup_various(context):
     marker_file = '{0}.txt'.format(PROJECTNAME)
@@ -410,7 +397,6 @@ def setup_various(context):
     populate_cover(portal)
     setup_event(portal)
     setup_embedder_video(portal)
-    set_enable_anon_name_plone_board(portal)
 
 
 def fix_image_links_in_static_portlet(portal):
@@ -469,4 +455,5 @@ def setup_portlets(context):
     portal = api.portal.get()
     fix_image_links_in_static_portlet(portal)
     set_flowplayer_portlet(portal)
+
 
