@@ -4,7 +4,23 @@ Changelog
 1.0rc7 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- Remove interlegis.intranet packages as dependency
+  [rafahela]
+
+- Remove Products.Ploneboard as dependency
+  [rafahela]
+
+- Remove sc.blog as dependency
+  [rafahela]
+
+- Remove brasil.gov.vcge as dependency
+  [rafahela]
+
+- Remove plone.formwidget.captcha as dependency
+  [rafahela]
+
+- Configure recaptcha in discussion form
+  [rafahela]
 
 
 1.0rc6 (2017-09-01)
