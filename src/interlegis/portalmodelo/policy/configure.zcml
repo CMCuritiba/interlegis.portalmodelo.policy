@@ -7,14 +7,13 @@
   <five:registerPackage package="." />
   <i18n:registerTranslations directory="locales" />
 
-  <include package="brasil.gov.vcge" />
   <include package="collective.contentrules.mailtogroup" />
   <include package="collective.cover" />
   <include package="collective.flowplayer" />
   <include package="collective.opendata" />
   <include package="collective.oembed" />
+  <include package="collective.plonetruegallery" />
   <include package="collective.polls" />
-  <include package="interlegis.intranetmodelo.policy" />
   <include package="interlegis.portalmodelo.api" />
   <include package="interlegis.portalmodelo.buscadores" />
   <include package="interlegis.portalmodelo.ombudsman" />
@@ -26,12 +25,9 @@
   <include package="Products.CMFPlacefulWorkflow" />
   <include package="Products.EasyNewsletter" />
   <include package="Products.OpenXml" />
-  <include package="Products.Ploneboard" />
   <include package="Products.PloneFormGen" />
   <include package="Products.windowZ" />
-  <include package="sc.blog" />
   <include package="sc.embedder" />
-  <include package="sc.galleria.support" />
   <include package="sc.social.like" />
   <include package="webcouturier.dropdownmenu" />
 
