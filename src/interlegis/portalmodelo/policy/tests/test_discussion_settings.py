@@ -19,7 +19,7 @@ class DiscussionTestCase(unittest.TestCase):
         self.assertTrue(settings.anonymous_comments)
         self.assertTrue(settings.anonymous_email_enabled)
         self.assertFalse(settings.moderation_enabled)
-        self.assertEqual(settings.captcha, u'captcha')
+        self.assertEqual(settings.captcha, u'recaptcha')
         self.assertTrue(settings.globally_enabled)
         self.assertTrue(settings.show_commenter_image)
         self.assertTrue(settings.user_notification_enabled)
