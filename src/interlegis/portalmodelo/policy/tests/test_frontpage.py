@@ -20,8 +20,6 @@ class FrontPageTestCase(unittest.TestCase):
 
         browser.open(portal_url)
         self.assertIn('Página Inicial', browser.contents)
-        self.assertIn('Blog Legislativo', browser.contents)
-        self.assertIn('Fóruns', browser.contents)
         self.assertIn('Ouvidoria', browser.contents)
         self.assertIn('Perguntas Frequentes', browser.contents)
         self.assertIn('RSS', browser.contents)
