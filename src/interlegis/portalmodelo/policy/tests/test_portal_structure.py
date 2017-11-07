@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import unittest
 
-from Products.Ploneboard.content.PloneboardForum import PloneboardForum
 from collective.polls.content.poll import Poll
 from interlegis.portalmodelo.policy.config import DEFAULT_CONTENT, SITE_STRUCTURE
 from interlegis.portalmodelo.policy.testing import INTEGRATION_TESTING
@@ -51,8 +50,6 @@ class PortalStructureTestCase(unittest.TestCase):
                 # is published or equivalent
                 if isinstance(obj, Poll):
                     self.assertEqual(api.content.get_state(obj), 'open')
-                elif isinstance(obj, PloneboardForum):
-                    self.assertEqual(api.content.get_state(obj), 'freeforall')
                 else:
                     self.assertEqual(api.content.get_state(obj), 'published')
             if '_children' in item:
@@ -112,21 +109,6 @@ class PortalStructureTestCase(unittest.TestCase):
         for f in forums:
             self.assertIn(f, folder)
             self.assertEqual(api.content.get_state(folder[f]), 'freeforall')
-
-    def test_blog(self):
-        blog = getattr(self.portal, 'blog', None)
-        self.assertIsNotNone(blog)
-        self.assertEqual(blog.title, u'Blog Legislativo')
-        self.assertEqual(blog.author, u'Funcionários da Casa Legislativa')
-        self.assertEqual(api.content.get_state(blog), 'published')
-
-        # we just allow the following content types; see Blog.xml
-        type_info = blog.getTypeInfo()
-        self.assertTrue(type_info.filter_content_types)
-        self.assertTupleEqual(
-            type_info.allowed_content_types,
-            ('File', 'Folder', 'Image', 'News Item')
-        )
 
     def test_add_csvdata(self):
         permission = 'interlegis.portalmodelo.transparency: Add CSVData'
