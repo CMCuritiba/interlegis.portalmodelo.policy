@@ -57,7 +57,6 @@ class SitePropertiesTestCase(unittest.TestCase):
         types_not_searched = set(self.properties.types_not_searched)
         types_searched = all_types - types_not_searched
         expected = [
-            'Blog',
             'Claim',
             'Collection',
             'collective.polls.poll',
@@ -74,9 +73,6 @@ class SitePropertiesTestCase(unittest.TestCase):
             'News Item',
             'OmbudsOffice',
             'Parliamentarian',
-            'Ploneboard',
-            'PloneboardComment',
-            'PloneboardForum',
             'sc.embedder',
             'Session',
             'Window',
@@ -102,7 +98,6 @@ class NavtreePropertiesTestCase(unittest.TestCase):
         metaTypesNotToList = set(self.navtree.metaTypesNotToList)
         content_types_displayed = all_types - metaTypesNotToList
         expected = [
-            'Blog',
             'Collection',
             'Document',
             'EasyNewsletter',
@@ -110,8 +105,6 @@ class NavtreePropertiesTestCase(unittest.TestCase):
             'FormFolder',
             'Link',
             'OmbudsOffice',
-            'Ploneboard',
-            'PloneboardForum',
             'Window',
         ]
         self.assertItemsEqual(content_types_displayed, expected)
@@ -168,16 +161,4 @@ class HomePropertiesTestCase(unittest.TestCase):
         self.actions = api.portal.get_tool('portal_actions').site_actions
         login_action = self.actions.login
         self.assertEqual(login_action.url_expr, 'string:${globals_view/navigationRootUrl}/login')
-
-
-class PloneBoardTestCase(unittest.TestCase):
-
-    layer = INTEGRATION_TESTING
-
-    def setUp(self):
-        self.portal = self.layer['portal']
-        self.pb = self.portal['portal_ploneboard']
-
-    def test_enable_anon_name(self):
-        self.assertTrue(self.pb.enable_anon_name)
 
