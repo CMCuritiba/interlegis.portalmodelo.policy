@@ -14,7 +14,7 @@
     <value>True</value>
   </record>
   <record name="plone.app.discussion.interfaces.IDiscussionSettings.captcha" interface="plone.app.discussion.interfaces.IDiscussionSettings" field="captcha">
-    <value>captcha</value>
+    <value>recaptcha</value>
   </record>
   <record name="plone.app.discussion.interfaces.IDiscussionSettings.globally_enabled" interface="plone.app.discussion.interfaces.IDiscussionSettings" field="globally_enabled">
     <value>True</value>
