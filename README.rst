@@ -25,6 +25,7 @@ Este pacote instala as seguintes dependências do projeto:
 * `collective.cover`_
 * `collective.flowplayer`_
 * `collective.oembed`_
+* `collective.plonetruegallery`_
 * `collective.polls`_
 * `collective.upload`_
 * `interlegis.portalmodelo.api`_
@@ -32,24 +33,16 @@ Este pacote instala as seguintes dependências do projeto:
 * `interlegis.portalmodelo.ombudsman`_
 * `interlegis.portalmodelo.pl`_
 * `interlegis.portalmodelo.theme`_
-* `plone.formwidget.captcha`_
 * `plone.formwidget.recaptcha`_
 * `Products.AROfficeTransforms`_
 * `Products.EasyNewsletter`_
 * `Products.OpenXml`_
-* `Products.Ploneboard`_
 * `Products.PloneFormGen`_
 * `Products.windowZ`_
-* `sc.blog`_
 * `sc.embedder`_
-* `sc.galleria.support`_
 * `sc.social.like`_
 * `Solgema.fullcalendar`_
 
-Além disso, este pacote fornece as seguintes dependências que podem ser também
-instaladas:
-
-* `interlegis.intranetmodelo`_
 
 Estado deste pacote
 ========================
@@ -72,24 +65,20 @@ O estado atual dos testes pode ser visto nas imagens a seguir:
 .. _`collective.cover`: https://pypi.python.org/pypi/collective.cover
 .. _`collective.flowplayer`: https://pypi.python.org/pypi/collective.flowplayer
 .. _`collective.oembed`: https://pypi.python.org/pypi/collective.oembed
+.. _`collective.plonetruegallery`: https://pypi.python.org/pypi/collective.plonetruegallery
 .. _`collective.polls`: https://pypi.python.org/pypi/collective.polls
 .. _`collective.upload`: https://pypi.python.org/pypi/collective.upload
-.. _`interlegis.intranetmodelo`: https://pypi.python.org/pypi/interlegis.intranetmodelo
 .. _`interlegis.portalmodelo.api`: https://pypi.python.org/pypi/interlegis.portalmodelo.api
 .. _`interlegis.portalmodelo.buscadores`: https://pypi.python.org/pypi/interlegis.portalmodelo.buscadores
 .. _`interlegis.portalmodelo.ombudsman`: https://pypi.python.org/pypi/interlegis.portalmodelo.ombudsman
 .. _`interlegis.portalmodelo.pl`: https://pypi.python.org/pypi/interlegis.portalmodelo.pl
 .. _`interlegis.portalmodelo.theme`: https://pypi.python.org/pypi/interlegis.portalmodelo.theme
-.. _`plone.formwidget.captcha`: https://pypi.python.org/pypi/plone.formwidget.captcha
 .. _`plone.formwidget.recaptcha`: https://pypi.python.org/pypi/plone.formwidget.recaptcha
 .. _`Products.AROfficeTransforms`: https://pypi.python.org/pypi/Products.AROfficeTransforms
 .. _`Products.EasyNewsletter`: https://pypi.python.org/pypi/Products.EasyNewsletter
 .. _`Products.OpenXml`: https://pypi.python.org/pypi/Products.OpenXml
-.. _`Products.Ploneboard`: https://pypi.python.org/pypi/Products.Ploneboard
 .. _`Products.PloneFormGen`: https://pypi.python.org/pypi/Products.PloneFormGen
 .. _`Products.windowZ`: https://pypi.python.org/pypi/Products.windowZ
-.. _`sc.blog`: https://pypi.python.org/pypi/sc.blog
 .. _`sc.embedder`: https://pypi.python.org/pypi/sc.embedder
-.. _`sc.galleria.support`: https://pypi.python.org/pypi/sc.galleria.support
 .. _`sc.social.like`: https://pypi.python.org/pypi/sc.social.like
 .. _`Solgema.fullcalendar`: https://pypi.python.org/pypi/Solgema.fullcalendar
