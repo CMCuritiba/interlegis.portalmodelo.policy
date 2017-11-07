@@ -11,8 +11,6 @@ import unittest
 
 # these packages must be available, but not installed
 AVAILABLE = [
-    'brasil.gov.vcge',
-    'interlegis.intranetmodelo.policy',
     'webcouturier.dropdownmenu',
 ]
 
@@ -20,6 +18,7 @@ DEPENDENCIES = [
     'collective.cover',
     'collective.flowplayer',
     'collective.oembed',
+    'collective.plonetruegallery',
     'collective.polls',
     'collective.upload',
     'EasyNewsletter',
@@ -29,11 +28,8 @@ DEPENDENCIES = [
     'interlegis.portalmodelo.pl',
     'interlegis.portalmodelo.theme',
     'plone.app.event',
-    'Ploneboard',
     'PloneFormGen',
-    'sc.blog',
     'sc.embedder',
-    'sc.galleria.support',
     'sc.social.like',
     'Solgema.fullcalendar',
     'windowZ',
