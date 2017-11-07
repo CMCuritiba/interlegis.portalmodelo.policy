@@ -137,18 +137,6 @@
             <dd>
               Instalação do Portal Modelo para Casas Legislativas
             </dd>
-            <dt>
-              <input type="checkbox" name="extension_ids:list" 
-                     id="interlegis.intranetmodelo.policy:default"
-                     value="interlegis.intranetmodelo.policy:default"
-              />
-              <label for="interlegis.intranetmodelo.policy:default">
-                Intranet Modelo
-              </label>
-            </dt>
-            <dd>
-              Instalação de uma Intranet Modelo para Casas Legislativas
-            </dd>
           </dl>
         </fieldset>
       </tal:extensionprofiles>
