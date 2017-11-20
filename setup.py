@@ -74,6 +74,7 @@ setup(
         'Products.OpenXml',
         'Products.PloneFormGen',
         'Products.windowZ',
+        'rows',
         'sc.contentrules.groupbydate',
         'sc.embedder',
         'sc.social.like',
