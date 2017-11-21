@@ -59,6 +59,7 @@ setup(
         'interlegis.portalmodelo.transparency',
         'lxml >=3.2.2',
         'plone.api',
+        'plone.app.contenttypes', 
         'plone.app.discussion',
         'plone.app.event [archetypes] <1.2',
         'plone.app.upgrade',
