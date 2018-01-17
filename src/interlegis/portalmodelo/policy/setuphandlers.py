@@ -215,7 +215,7 @@ def populate_cover(site):
     # fourth row
     tiles = frontpage.list_tiles('collective.cover.richtext')
     data = dict(text=HOME_TILE_TEXT)
-    frontpage.set_tile_data(tiles[0], **data)
+    #frontpage.set_tile_data(tiles[0], **data)
     # fifth row
     tiles = frontpage.list_tiles('collective.cover.embed')
     data = dict(embed=HOME_TILE_EMBED1)
