@@ -941,6 +941,13 @@ SITE_STRUCTURE = [
         remoteUrl='http://colab.interlegis.leg.br/raw-attachment/wiki/ProjetoPortalModelo/ManualPortalModelo3.pdf',
         _transition=None,
     ),
+    dict(
+        type='Link',
+        title=u'Cartilha TCE/RS',
+        description=u'Link para cartilha de acesso à informação na pática - O que publicar no Portal? Orientações para Prefeituras e Câmaras. (este link é apenas uma referência, está privado e pode ser removido)',
+        remoteUrl='https://portal.tce.rs.gov.br/portal/page/portal/tcers/publicacoes/orientacoes_gestores/acesso_informacao_pratica.pdf',
+        _transition=None,
+    ),
 ]
 
 SITE_STRUCTURE = _add_id(SITE_STRUCTURE)
