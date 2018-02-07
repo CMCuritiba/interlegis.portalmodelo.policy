@@ -8,6 +8,7 @@ from interlegis.portalmodelo.policy.config import DEFAULT_CONTENT
 from interlegis.portalmodelo.policy.config import HOME_TILE_EMBED1
 from interlegis.portalmodelo.policy.config import HOME_TILE_EMBED2
 from interlegis.portalmodelo.policy.config import HOME_TILE_TEXT
+#from interlegis.portalmodelo.policy.config import HOME_TILE_TEXT_NOTICE
 from interlegis.portalmodelo.policy.config import HOME_TILE_BANNER_URL
 from interlegis.portalmodelo.policy.config import PROJECTNAME
 from interlegis.portalmodelo.policy.config import SITE_STRUCTURE
@@ -51,7 +52,7 @@ class HiddenProfiles(object):
 
     def getNonInstallableProfiles(self):
         return [
-            u'interlegis.portalmodelo.policy.upgrades.v2000:default'
+            u'interlegis.portalmodelo.policy.upgrades.v2:default'
             u'Products.windowZ:default'
         ]
 
@@ -215,13 +216,18 @@ def populate_cover(site):
     # fourth row
     tiles = frontpage.list_tiles('collective.cover.richtext')
     data = dict(text=HOME_TILE_TEXT)
-    #frontpage.set_tile_data(tiles[0], **data)
+    frontpage.set_tile_data(tiles[0], **data)
     # fifth row
     tiles = frontpage.list_tiles('collective.cover.embed')
     data = dict(embed=HOME_TILE_EMBED1)
     frontpage.set_tile_data(tiles[0], **data)
     data = dict(embed=HOME_TILE_EMBED2)
     frontpage.set_tile_data(tiles[1], **data)
+    # notice rows
+    #tiles = frontpage.list_tiles('collective.cover.richtext')
+    #data = dict(text=HOME_TILE_TEXT_NOTICE)
+    #frontpage.set_tile_data(tiles[1], **data)
+
 
 
 def set_site_default_page(site):
