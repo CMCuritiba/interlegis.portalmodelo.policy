@@ -35,4 +35,6 @@
 
   <include file="profiles.zcml" />
 
+  <include package=".upgrades" />
+
 </configure>

@@ -6,8 +6,8 @@ import logging
 
 
 def apply_profile(context):
-    """Atualiza perfil para versao 2000."""
+    """Atualiza perfil para versao 2."""
     logger = logging.getLogger(PROJECTNAME)
-    profile = 'profile-interlegis.portalmodelo.policy.upgrades.v2000:default'
+    profile = 'profile-interlegis.portalmodelo.policy.upgrades.v2:default'
     loadMigrationProfile(context, profile)
-    logger.info('Atualizado para versao 2000')
+    logger.info('Atualizado para versao 2')
