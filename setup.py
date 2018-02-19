@@ -3,7 +3,7 @@
 from setuptools import find_packages
 from setuptools import setup
 
-version = '1.0rc7.dev0'
+version = '1.0rc7'
 description = u'Pacote de politicas do Portal Modelo.'
 long_description = (
     open('README.rst').read() + '\n' +
