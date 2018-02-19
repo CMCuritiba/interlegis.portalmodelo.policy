@@ -130,6 +130,7 @@ def create_site_structure(root, structure):
             logger.debug(u'    {0} criado e publicado'.format(title))
         else:
             logger.debug(u'    pulando {0}; conteúdo existente'.format(title))
+            
 
 
 def setup_csvdata_permissions(portal):
@@ -148,6 +149,26 @@ def setup_csvdata_permissions(portal):
     portal.manage_permission(
         permission,
         roles=(),
+    )
+
+
+def setup_transparency_permissions(portal):
+    """Transparency section and FAQ can't be deleted.
+    """
+    permission = 'Delete objects'
+    roles = ('Manager', 'Owner')
+    folder = portal['transparencia']
+    folder.manage_permission(
+        permission,
+        roles=roles
+    )
+
+    permission = 'Delete objects'
+    roles = ('Manager', 'Owner')
+    folder = portal['faq']
+    folder.manage_permission(
+        permission,
+        roles=roles
     )
 
 
@@ -395,6 +416,7 @@ def setup_various(context):
     delete_default_portlets(portal)
     create_site_structure(portal, SITE_STRUCTURE)
     setup_csvdata_permissions(portal)
+    setup_transparency_permissions(portal)
     install_legislative_process_integration(portal)
     set_site_default_page(portal)
     miscelaneous_house_folder(portal)
