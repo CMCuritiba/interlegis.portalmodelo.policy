@@ -1,8 +1,14 @@
 Changelog
 =========
 
-1.0rc7 (unreleased)
+1.0rc7 (2018-02-19)
 -------------------
+
+- Configure transparency section and FAQ not to be deleted by Site Administrator
+  [rafahela]
+
+- Add TCE/Rs manual
+  [rafahela]
 
 - Remove interlegis.intranet packages as dependency
   [rafahela]
