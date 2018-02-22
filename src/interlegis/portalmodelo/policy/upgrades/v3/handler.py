@@ -1,5 +1,7 @@
 # -*- coding:utf-8 -*-
+from interlegis.portalmodelo.policy.config import CREATORS
 from interlegis.portalmodelo.policy.config import PROJECTNAME
+from interlegis.portalmodelo.policy.utils import _add_id
 from plone.app.upgrade.utils import loadMigrationProfile
 from plone import api
 
@@ -37,5 +39,30 @@ def apply_configurations(context):
         if q_i.isProductInstalled(up):
             q_i.uninstallProducts([up])
     logger.info('Desinstalando produtos que não serão mais usados')
+
+    SITE_STRUCTURE = [
+        dict(
+            type='Link',
+            title=u'Cartilha TCE/RS',
+            description=u'Link para cartilha de acesso à informação na pática - O que publicar no Portal? Orientações para Prefeituras e Câmaras. (este link é apenas uma referência, está privado e pode ser removido)',
+            remoteUrl='https://portal.tce.rs.gov.br/portal/page/portal/tcers/publicacoes/orientacoes_gestores/acesso_informacao_pratica.pdf',
+            _transition=None,
+        ),
+    ]
+    SITE_STRUCTURE = _add_id(SITE_STRUCTURE)
+    for item in SITE_STRUCTURE:
+        id = item['id']
+        title = item['title']
+        description = item.get('description', u'')
+        if id not in site:
+            if 'creators' not in item:
+                item['creators'] = CREATORS
+            obj = api.content.create(site, **item)
+            obj.setTitle(title)
+            obj.setDescription(description)
+            obj.reindexObject()
+            logger.debug(u'    {0} criado e publicado'.format(title))
+        else:
+            logger.debug(u'    pulando {0}; conteúdo existente'.format(title))
 
 
