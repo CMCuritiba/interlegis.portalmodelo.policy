@@ -10,7 +10,7 @@ import logging
 PROFILE_ID = 'interlegis.portalmodelo.policy:default'
 DEFAULT_FUNCTIONALITIES = ('foruns', 'blog', 'intranet')
 INSTALL_PRODUCTS = ('plone.formwidget.recaptcha', 'collective.plonetruegallery')
-UNINSTALL_PRODUCTS = ('Ploneboard', 'sc.blog', 'sc.galleria.support', 'plone.formwidget.captcha')
+UNINSTALL_PRODUCTS = ('Ploneboard', 'sc.blog', 'plone.formwidget.captcha')
 
 def apply_configurations(context):
     """Atualiza perfil para versao 3."""
