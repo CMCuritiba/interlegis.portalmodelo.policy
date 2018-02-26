@@ -1,16 +1,23 @@
 Changelog
 =========
 
-1.0rc9 (unreleased)
+1.0rc9 (2018-02-26)
 -------------------
 
-- Nothing changed yet.
+- Change notice about transparency.
+  [rafahela]
+
+- Remove sc.galleria.support from uninstall proccess.
+  [rafahela]
 
 
 1.0rc8 (2018-02-23)
 -------------------
 
 - Add TCE manual to migration steps
+  [rafahela]
+
+- Change portal accessibility page
   [rafahela]
 
 
