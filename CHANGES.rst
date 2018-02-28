@@ -1,10 +1,17 @@
 Changelog
 =========
 
-1.0rc10 (unreleased)
+1.0rc10 (2018-02-28)
 --------------------
 
-- Nothing changed yet.
+- Configure contrast on migration steps.
+  [rafahela]
+
+- Add accessibility page to migration steps.
+  [rafahela]
+
+- User can't delet transparency and faq.
+  [rafahela]
 
 
 1.0rc9 (2018-02-26)
