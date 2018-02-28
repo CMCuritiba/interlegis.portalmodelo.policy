@@ -65,4 +65,20 @@ def apply_configurations(context):
         else:
             logger.debug(u'    pulando {0}; conteúdo existente'.format(title))
 
+    permission = 'Delete objects'
+    roles = ('Manager', 'Owner')
+    folder = site['transparencia']
+    folder.manage_permission(
+        permission,
+        roles=roles
+    )
+
+    permission = 'Delete objects'
+    roles = ('Manager', 'Owner')
+    folder = site['faq']
+    folder.manage_permission(
+        permission,
+        roles=roles
+    )
+    logger.info('Configurado para não excluir pasta de transparência e faq.')
 
