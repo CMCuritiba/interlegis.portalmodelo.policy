@@ -31,6 +31,8 @@
     <property name="enable_livesearch" type="boolean">True</property>
     <property name="default_language" type="boolean">pt-br</property>
     <property name="default_charset" type="boolean">utf-8</property>
+    <property name="enable_sitemap" type="boolean">True</property> 
+    <property name="webstats_js" type="text">&lt;div id="plone-analytics"&gt;&lt;/div&gt;</property>
     <property name="types_not_searched" type="lines" purge="False">
       <element value="collective.cover.content" />
       <element value="ENLIssue" />
