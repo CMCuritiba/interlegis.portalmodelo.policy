@@ -32,8 +32,10 @@ def apply_configurations(context):
             q_i.installProduct(ip)
     logger.info('Instalando produtos para recaptcha e galeria')
 
-    site.institucional.fotos.setLayout('galleryview')
-    logger.info('Configurando a visão da pasta galeria de fotos')
+    institucional = site.institucional
+    if hasattr(institucional, 'fotos'):
+        site.institucional.fotos.setLayout('galleryview')
+        logger.info('Configurando a visão da pasta galeria de fotos')
 
     for up in UNINSTALL_PRODUCTS:
         if q_i.isProductInstalled(up):
