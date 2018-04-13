@@ -69,18 +69,20 @@ def apply_configurations(context):
 
     permission = 'Delete objects'
     roles = ('Manager', 'Owner')
-    folder = site['transparencia']
-    folder.manage_permission(
-        permission,
-        roles=roles
-    )
+    if hasattr(site, 'transparencia'):
+        folder = site['transparencia']
+        folder.manage_permission(
+            permission,
+            roles=roles
+        )
 
     permission = 'Delete objects'
     roles = ('Manager', 'Owner')
-    folder = site['faq']
-    folder.manage_permission(
-        permission,
-        roles=roles
-    )
+    if hasattr(site, 'faq'):
+        folder = site['faq']
+        folder.manage_permission(
+            permission,
+            roles=roles
+        )
     logger.info('Configurado para não excluir pasta de transparência e faq.')
 
