@@ -1,10 +1,38 @@
 Changelog
 =========
 
-1.0rc11 (unreleased)
+1.0rc12 (unreleased)
 --------------------
 
 - Nothing changed yet.
+
+
+1.0rc11 (unreleased)
+--------------------
+
+- Enable sitemap.xml.gz.
+  [rafahela]
+
+- Fix google analytics problem.
+  [rafahela]
+
+- Configure views for live radio and audio.
+  [rafahela]
+
+- Change robots rules.
+  [rafahela]
+
+- Validate on migration steps foto folder existance.
+  [rafahela]
+
+- Add upgrade step 4.
+  [rafahela]
+
+- Test folder existance.
+  [rafahela]
+
+- Add notes about tabular data, recaptcha and exercise notes.
+  [rafahela]
 
 
 1.0rc10 (2018-02-28)
