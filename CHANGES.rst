@@ -34,6 +34,9 @@ Changelog
 - Add notes about tabular data, recaptcha and exercise notes.
   [rafahela]
 
+- Enable Image in Newsletter Folder.
+  [rafahela]
+
 
 1.0rc10 (2018-02-28)
 --------------------
