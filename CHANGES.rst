@@ -1,13 +1,7 @@
 Changelog
 =========
 
-1.0rc12 (unreleased)
---------------------
-
-- Nothing changed yet.
-
-
-1.0rc11 (unreleased)
+1.0rc11 (2018-07-06)
 --------------------
 
 - Enable sitemap.xml.gz.
