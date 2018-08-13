@@ -4,7 +4,14 @@ Changelog
 1.0rc12 (unreleased)
 --------------------
 
-- Nothing changed yet.
+- Delete accessibility info template from policy.
+  [rafahela]
+
+- Add VLibras to site action.
+  [rafahela]
+
+- Add link to exercise manual.
+  [rafahela]
 
 
 1.0rc11 (2018-07-09)
