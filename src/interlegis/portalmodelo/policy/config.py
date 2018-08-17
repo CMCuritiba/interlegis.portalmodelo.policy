@@ -765,24 +765,52 @@ SITE_STRUCTURE = [
                 title=u'Orçamento e Finanças',
                 description=u'Prestação de contas das receitas, despesas, repasses e transferências da Casa Legislativa e relatórios do controle interno.',
                 _layout='folder_tabular_view',
+                _children=[
+                    dict(
+                        type='Document',
+                        id='orcamento-e-financas',
+                        title=u'Orçamento e Finanças',
+                        description=u'',
+                        text=u'<p>Publique aqui a informações sobre receitas, despesas, repasses e transferências da Casa Legislativa.</p><p>Se a contabilidade da Câmara for realizada junto com a do Executivo, você pode colocar um link que redirecione para as informações existentes no site da Prefeitura. <strong>ATENÇÃO</strong>: nesse caso deve ser possível filtrar/pesquisar as despesas da Câmara de forma específica.</p>',)],
             ),
             dict(
                 type='Folder',
                 title=u'Licitações e Contratos',
                 description=u'Publicação de editais e informações sobre os processos de licitação e contratos da Casa Legislativa.',
                 _layout='folder_tabular_view',
+                _children=[
+                    dict(
+                        type='Document',
+                        id='licitacoes-e-contratos',
+                        title=u'Licitações e Contratos',
+                        description=u'',
+                        text=u'<h2>Licitações</h2><ul><li>Informe aqui a relação dos procedimentos licitatórios da Câmara de Vereadores, com seus respectivos editais e resultados. Mantenha o histórico das informações de anos anteriores.</li><li>Caso não tenham sido realizadas licitações pela Câmara, essa informação deve constar expressamente.</li><li>Não se deve exigir cadastro prévio para acessar as informações sobre licitações e contratos. Caso exista essa.</li></ul><p> </p><h2>Contratos</h2><ul><li>Publique aqui a relação dos contratos celebrados pela Câmara, contendo, no mínimo, o resumo dos contratos e aditivos firmados.</li><li>Não se deve exigir cadastro prévio para acessar as informações sobre licitações e contratos. Caso exista essa ferramenta para acompanhamento, o cadastro deve ser opcional.</li></ul>',)],
             ),
             dict(
                 type='Folder',
                 title=u'Recursos Humanos',
                 description=u'Folha de pagamento, viagens, horas extras e outras informações sobre servidores, contratados, aposentados e pensionistas da Casa Legislativa.',
                 _layout='folder_tabular_view',
+                _children=[
+                    dict(
+                        type='Document',
+                        id='recursos-humanos',
+                        title=u'Recursos Humanos',
+                        description=u'',
+                        text=u'<h2>Relação dos servidores da Câmara</h2><p>Publique aqui a lista nominal de servidores, indicando o respectivo cargo/função desempenhada e a remuneração recebida.</p><h2>Tabela com o padrão remuneratório dos cargos e funções</h2><p>Publique aqui a tabela com o padrão remuneratório dos cargos e função, extraída da legislação atualizada que disciplina a remuneração dos servidores.</p>',)],
             ),
             dict(
                 type='Folder',
                 title=u'Parlamentares e Gabinetes',
                 description=u'Repasses, verbas indenizatórias, cotas, subsídios, viagens e demais despesas dos parlamentares e seus gabinetes.',
                 _layout='folder_tabular_view',
+                _children=[
+                    dict(
+                        type='Document',
+                        id='parlamentares-e-gabinetes',
+                        title=u'Parlamentares e Gabinetes',
+                        description=u'Publique aqui repasses, verbas indenizatórias, cotas, subsídios, viagens e demais despesas dos parlamentares e seus gabinetes.',
+                        text=u'<h2>Sobre diárias e/ou reembolsos pagos pela Câmara</h2><p>Devem conter os seguintes dados:</p><ul><li>Nome do beneficiário</li><li>Cargo do beneficiário</li><li>Número de diárias usufruídas por afastamento</li><li>Período do afastamento (data de início e de fim do afastamento)</li><li>Motivo do afastamento (Especificar os motivos curso, evento, etc.)</li><li>Local de destinado</li></ul><p> </p><p>Se houver, publique também tabela ou relação que explicite os valores das diárias dentro do Estado, fora do Estado e fora do país, conforme legislação local. Geralmente está prevista em Lei ou Resolução.</p>',)],
             ),
             dict(
                 type='Folder',
@@ -794,7 +822,7 @@ SITE_STRUCTURE = [
                 type='Document',
                 title=u'Acesso à Informação',
                 description=u'Instruções sobre como fazer solicitações com base na Lei de Acesso à Informação a esta Casa Legislativa.',
-                text=u'<p><a href="http://www.acessoainformacao.gov.br"><img class="image-right" src="../imagens/acesso-a-informacao.png/image_mini" alt="Acesso à Informação" /></a>A Lei de Acesso à Informação (LAI) - <a href="http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:2011-11-18;12527">lei nº 12.527/2011</a> - regulamenta o direito constitucional de obter informações públicas. Essa norma entrou em vigor em 16 de maio de 2012 e criou mecanismos que possibilitam a qualquer pessoa, física ou jurídica, sem necessidade de apresentar motivo, o recebimento de informações públicas dos órgãos e entidades.</p><p>Os pedidos de informações devem ser realizados nas <a href="../institucional/acesso">instalações físicas</a> desta Casa Legislativa ou através do <a href="../ouvidoria/++add++Claim?form.widgets.kind=pedido-de-acesso-a-informaassapso&form.widgets.area=ouvidoria">formulário de solicitação de informações</a> no site. Preenchendo este formulário o cidadão receberá um número de protocolo e poderá acompanhar a tramitação do seu pedido de informação.</p><p>A LAI estabelece também um conjunto mínimo de informações que devem ser publicadas nas seções de acesso à informação dos sites dos órgãos e entidades públicas. Além da publicação das informações exigidas, os órgãos podem divulgar outros dados de interesse público por iniciativa própria, ou seja, de forma proativa.</p><p>Portanto, antes de apresentar um pedido de acesso à informação, é importante que você verifique se a informação desejada já está disponível na seção de <a href="./">Transparência</a> deste site ou se ela já foi publicada como resposta a uma outra solicitação de informações realizada anteriormente através da <a href="../ouvidoria">Ouvidoria</a> deste site, que é caracterizada também como o e-SIC (Sistema Eletrônico de Informações ao Cidadão) desta Casa Legislativa.</p><h3>e-SIC — Sistema Eletrônico de Informações ao Cidadão</h3><p>Este site está equipado com um <a href="../ouvidoria">Sistema de Ouvidoria</a> que atende ao e-SIC. Se você deseja alguma informação que ainda não está publicada, faça um <a href="../ouvidoria/++add++Claim?form.widgets.kind=pedido-de-acesso-a-informaassapso&amp;form.widgets.area=ouvidoria">pedido de acesso à informação</a>. Os tipos de demandas que você pode enviar para a Ouvidoria são:</p><ul><li><a href="../ouvidoria/++add++Claim?form.widgets.kind=solicitaassapso&amp;form.widgets.area=ouvidoria">Denúncias</a></li><li><a href="../ouvidoria/++add++Claim?form.widgets.kind=daovida&amp;form.widgets.area=ouvidoria">Dúvidas</a></li><li><a href="../ouvidoria/++add++Claim?form.widgets.kind=solicitaassapso&amp;form.widgets.area=ouvidoria">Elogios</a></li><li><a href="../ouvidoria/++add++Claim?form.widgets.kind=pedido-de-acesso-a-informaassapso&amp;form.widgets.area=ouvidoria">Pedidos de Acesso à Informação</a></li><li><a href="../ouvidoria/++add++Claim?form.widgets.kind=solicitaassapso&amp;form.widgets.area=ouvidoria">Reclamações</a></li><li><a href="../ouvidoria/++add++Claim?form.widgets.kind=solicitaassapso&amp;form.widgets.area=ouvidoria">Solicitações</a></li><li><a href="../ouvidoria/++add++Claim?form.widgets.kind=sugestapso&amp;form.widgets.area=ouvidoria">Sugestões</a></li></ul><h3>Saiba mais sobre a LAI</h3><iframe width="560" height="315" src="https://www.youtube.com/embed/HiVKTKkI3nE?list=PLfcgNxuoKmUFWcqVOu--1aZJGfU97m0tG" frameborder="0" allowfullscreen></iframe><h3>Veja o Infográfico</h3><a href="../imagens/entenda-a-lai.jpg/image_view_fullscreen" title="Entenda a LAI"><img src="../imagens/entenda-a-lai.jpg/@@images/image/large" alt="Infográfico sobre a LAI" /></a>',
+                text=u'<h2><a href="http://www.acessoainformacao.gov.br"><img alt="Acesso à Informação" class="image-right" src="../imagens/acesso-a-informacao.png/image_mini" /></a><span class="internal-link">Informações disponíveis no portal</span></h2><ul><li><a class="internal-link" href="resolveuid/3c0ce9291b54441cbac39a755e2a4ce3" target="_self" title="">Transparência</a><span class="internal-link"> - antes de apresentar um pedido de acesso à informação, verifique se a informação já está disponível nesta <a class="internal-link" href="resolveuid/3c0ce9291b54441cbac39a755e2a4ce3" target="_self" title="">seção</a>.</span></li></ul><div></div><h2>Pedido de acesso à informação</h2><ul><li>Pedido eletrônico<span class="internal-link"> </span><span class="internal-link"><span class="internal-link">-</span></span> este site possui um <a href="../ouvidoria">Sistema de Ouvidoria</a> que atende ao e-SIC. Se desejar alguma informação que ainda não está publicada, faça um <a href="../ouvidoria/++add++Claim?form.widgets.kind=pedido-de-acesso-a-informaassapso&amp;form.widgets.area=ouvidoria">pedido de acesso à informação</a>. Os tipos de demandas que podem ser enviadas para a Ouvidoria são:<ul><li><a href="../ouvidoria/++add++Claim?form.widgets.kind=solicitaassapso&amp;form.widgets.area=ouvidoria">Denúncias</a></li><li><a href="../ouvidoria/++add++Claim?form.widgets.kind=daovida&amp;form.widgets.area=ouvidoria">Dúvidas</a></li><li><a href="../ouvidoria/++add++Claim?form.widgets.kind=solicitaassapso&amp;form.widgets.area=ouvidoria">Elogios</a></li><li><a href="../ouvidoria/++add++Claim?form.widgets.kind=pedido-de-acesso-a-informaassapso&amp;form.widgets.area=ouvidoria">Pedidos de Acesso à Informação</a></li><li><a href="../ouvidoria/++add++Claim?form.widgets.kind=solicitaassapso&amp;form.widgets.area=ouvidoria">Reclamações</a></li><li><a href="../ouvidoria/++add++Claim?form.widgets.kind=solicitaassapso&amp;form.widgets.area=ouvidoria">Solicitações</a></li><li><a href="../ouvidoria/++add++Claim?form.widgets.kind=sugestapso&amp;form.widgets.area=ouvidoria">Sugestões</a></li></ul></li><li>Pedido presencial - se o cidadão preferir, pode encaminhar seu pedido de forma presencial no endereço que está no rodapé do site.</li></ul><div></div><h2>Relatório estatístico de pedidos de informação</h2><p>O relatório de solicitações enviadas para a Câmara está disponível na página da <a href="../ouvidoria">Ouvidoria</a> por meio de gráfico.</p><div></div><h2>Regulamentação</h2><ul><li>Lei de Acesso à Informação (LAI) - f<a href="http://www.lexml.gov.br/urn/urn:lex:br:federal:lei:2011-11-18;12527">ederal nº 12.527/2011</a> - regulamenta o direito constitucional de obter informações públicas. Essa norma entrou em vigor em 16 de maio de 2012 e criou mecanismos que possibilitam a qualquer pessoa, física ou jurídica, sem necessidade de apresentar motivo, o recebimento de informações públicas dos órgãos e entidades.</li><li>Normativa do município - resolução ou lei que regulamenta a Lei de Acesso à Informação no âmbito do município.</li></ul><p> </p><h3>Saiba mais sobre a LAI</h3><p><iframe src="https://www.youtube.com/embed/HiVKTKkI3nE?list=PLfcgNxuoKmUFWcqVOu--1aZJGfU97m0tG" width="560" height="315" allowfullscreen="" frameborder="0"></iframe></p><h3>Veja o Infográfico</h3><p><a href="../imagens/entenda-a-lai.jpg/image_view_fullscreen" title="Entenda a LAI"><img alt="Infográfico sobre a LAI" src="../imagens/entenda-a-lai.jpg/@@images/image/large" /></a></p>',
             ),
             dict(
                 type='Document',
@@ -925,7 +953,7 @@ SITE_STRUCTURE = [
         type='Document',
         id='faq',
         title=u'Perguntas Frequentes',
-        description=u'Esta é a FAQ do site, uma relação de perguntas que são feitas com frequência para a Casa Legislativa e suas respectivas respostas.',
+        description=u'Esta é a FAQ do site, uma relação de perguntas e respostas elaboradas a partir de situações hipotéticas ou com base nos questionamentos mais frequentes recebidos pela Câmara.',
         text=u'<img class="image-right" src="imagens/faq-logo.png/image_thumb" alt="FAQ" /><h2>Perguntas</h2><ol><li><a href="#p1">O conteúdo desta FAQ deve ser modificado?</a></li><li><a href="#p2">Como posso modificar este conteúdo e compor a FAQ real deste site?</a></li></ol><br/><h2>Respostas</h2><h3>O conteúdo desta FAQ deve ser modificado?<a name="p1"></a></h3><p>Sim, este é um conteúdo padrão que foi criado automaticamente junto com o Portal Modelo. O objetivo dele é lhe orientar a formatar a seção de perguntas e respostas do seu site. <a href="edit">Edite-o</a> e crie sua FAQ real!</p><h3>Como posso modificar este conteúdo e compor a FAQ real deste site?<a name="p2"></a></h3><p>Para alterá-lo basta <a href="login">se autenticar</a> no site, e clicar na aba <em><a href="edit">Edição</a></em>, que fica logo acima do título desta página. Então inserir o conteúdo real e clicar no botão <em>Salvar</em>. Preste atenção na formatação, cada pergunta acima tem um link para a sua respectiva âncora aqui embaixo na resposta.</p>',
     ),
     dict(
