@@ -708,6 +708,50 @@ SITE_STRUCTURE = [
         description=u'Seção que contém as informações relacionadas à atividade legislativa, parlamentares, legislatura atual e anteriores.',
         excludeFromNav=True,
         _addable_types=['Folder', 'File', 'Link', 'Document', 'Window'],
+        _children=[
+            dict(
+                type='Folder',
+                title=u'Matérias Legislativas',
+                description=u'',
+            _children=[
+                dict(
+                    type='Folder',
+                    title=u'Projetos de Lei',
+                    description=u'',
+                ),
+                dict(
+                    type='Folder',
+                    title=u'Decretos Legislativos',
+                    description=u'',
+                ),
+                dict(
+                    type='Folder',
+                    title=u'Emendas',
+                    description=u'',
+                ),
+                dict(
+                    type='Folder',
+                    title=u'Indicações',
+                    description=u'',
+                ),
+                dict(
+                    type='Folder',
+                    title=u'Requerimentos',
+                    description=u'',
+                ),
+                dict(
+                    type='Folder',
+                    title=u'Moções',
+                    description=u'',
+                ),
+            ],
+            ),
+            dict(
+                type='Folder',
+                title=u'Sessões Plenárias',
+                description=u'',
+            ),
+        ],
     ),
     dict(
         type='Folder',
@@ -758,7 +802,7 @@ SITE_STRUCTURE = [
                 id='pagina-padrao',
                 title=u'Transparência',
                 description=u'Seção que contém os dados relacionados a transparência da Casa Legislativa, como as prestações de contas, publicação de editais e licitações, formulários e links para o acesso à informação e atendimento ao cidadão.',
-                text=u'<table class="invisible"><tbody><tr><td><p><a href="orcamento-e-financas"><img class="image-inline" src="../imagens/transparencia-orcamento.png" alt="Orçamento e Finanças" /></a></p><h3><a href="orcamento-e-financas">Orçamento e Finanças</a></h3><p>Receitas e despesas da Casa Legislativa, suprimento de fundos, relatórios de gestão fiscal e outros demonstrativos.</p></td><td><p><a href="licitacoes-e-contratos"><img class="image-inline" src="../imagens/transparencia-contratos.png" alt="Licitações e Contratos" /></a></p><h3><a href="licitacoes-e-contratos">Licitações e Contratos</a></h3><p>Informações relativas a todas as modalidades de licitação e contratos firmados pela Casa Legislativa.</p></td></tr><tr><td><p><a href="recursos-humanos"><img class="image-inline" src="../imagens/transparencia-pessoas.png" alt="Gestão de Pessoas" /></a></p><h3><a href="recursos-humanos">Gestão de Pessoas</a></h3><p>Informações sobre servidores ativos, aposentados, concursos, terceirizados, estagiários, pensionistas e colaboradores eventuais.</p></td><td><p><a href="parlamentares-e-gabinetes"><img class="image-inline" src="../imagens/transparencia-parlamentares.png" alt="Parlamentares e Gabinetes" /></a></p><h3><a href="parlamentares-e-gabinetes">Parlamentares e Gabinetes</a></h3><p>Informações sobre os recursos utilizados pelos parlamentares no exercício do mandato parlamentar.</p></td></tr><tr><td><p><a href="atos-administrativos"><img class="image-inline" src="../imagens/transparencia-administrativa.png" alt="Atos Administrativos" /></a></p><h3><a href="atos-administrativos">Atos Administrativos</a></h3><p>Dados sobre planejamento e gestão da Casa Legislativa, estrutura administrativa, boletim administrativo e demais atos administrativos.</p></td><td><p><a href="dados-abertos"><img class="image-inline" src="../imagens/transparencia-dados.png" alt="Dados Abertos" /></a></p><h3><a href="dados-abertos">Dados Abertos</a></h3><p>Informações em formato de dados abertos disponíveis neste site, utilizáveis por qualquer pessoa e processáveis por máquinas.</p></td></tr><tr><td><p><a href="acesso-a-informacao"><img class="image-inline" src="../imagens/transparencia-informacao.png" alt="Acesso à Informação / Ouvidoria / e-SIC" /></a></p><h3><a href="acesso-a-informacao">Acesso à Informação / e-SIC / Ouvidoria</a></h3><p>Se você deseja alguma informação que ainda não está publicada neste site, faça um <a href="../ouvidoria/++add++Claim?form.widgets.kind=pedido-de-acesso-a-informaassapso&amp;form.widgets.area=ouvidoria">pedido de acesso à informação</a>! Você também pode enviar outras <a href="../ouvidoria/++add++Claim?form.widgets.kind=solicitaassapso&amp;form.widgets.area=ouvidoria">solicitações</a>, <a href="../ouvidoria/++add++Claim?form.widgets.kind=reclamaassapso&amp;form.widgets.area=ouvidoria">reclamações</a>, <a href="../ouvidoria/++add++Claim?form.widgets.kind=elogio&amp;form.widgets.area=ouvidoria">elogios</a>, <a href="../ouvidoria/++add++Claim?form.widgets.kind=denaoncia&amp;form.widgets.area=ouvidoria">denúncias</a>, <a href="../ouvidoria/++add++Claim?form.widgets.kind=daovida&amp;form.widgets.area=ouvidoria">dúvidas</a> e <a href="../ouvidoria/++add++Claim?form.widgets.kind=sugestapso&amp;form.widgets.area=ouvidoria">sugestões</a> sobre as atividades administrativas e legislativas desta Casa.</p></td><td><p><a href="indice-de-transparencia"><img class="image-inline" src="../imagens/transparencia-indice.png" alt="Índice de Transparência" /></a></p><h3><a href="indice-de-transparencia">Índice de Transparência</a></h3><p>Como cidadão consciente e participativo, você pode avaliar este site e os demais sites do Poder Legislativo com base na Lei de Responsabilidade Fiscal (LRF) e na Lei de Acesso à Informação (LAI), basta baixar o manual e a planilha de avaliação. Participe!</p></td></tr></tbody></table>',
+                text=u'<table class="invisible"><tbody><tr><td><p><a href="orcamento-e-financas"><img alt="Orçamento e Finanças" class="image-inline" src="../imagens/transparencia-orcamento.png" /></a></p><h3><a href="orcamento-e-financas">Orçamento e Finanças</a></h3><p>Receitas e despesas da Casa Legislativa, suprimento de fundos, relatórios de gestão fiscal e outros demonstrativos.</p></td><td><p><a href="licitacoes-e-contratos"><img alt="Licitações e Contratos" class="image-inline" src="../imagens/transparencia-contratos.png" /></a></p><h3><a href="licitacoes-e-contratos">Licitações e Contratos</a></h3><p>Informações relativas a todas as modalidades de licitação e contratos firmados pela Casa Legislativa.</p></td></tr><tr><td><p><a href="recursos-humanos"><img alt="Gestão de Pessoas" class="image-inline" src="../imagens/transparencia-pessoas.png" /></a></p><h3><a href="recursos-humanos">Gestão de Pessoas</a></h3><p>Informações sobre servidores ativos, aposentados, concursos, terceirizados, estagiários, pensionistas e colaboradores eventuais.</p></td><td><p><a href="parlamentares-e-gabinetes"><img alt="Parlamentares e Gabinetes" class="image-inline" src="../imagens/transparencia-parlamentares.png" /></a></p><h3><a href="parlamentares-e-gabinetes">Parlamentares e Gabinetes</a></h3><p>Informações sobre os recursos utilizados pelos parlamentares no exercício do mandato parlamentar.</p></td></tr><tr><td><p><a href="atos-administrativos"><img alt="Atos Administrativos" class="image-inline" src="../imagens/transparencia-administrativa.png" /></a></p><h3><a href="atos-administrativos">Atos Administrativos</a></h3><p>Dados sobre planejamento e gestão da Casa Legislativa, estrutura administrativa, boletim administrativo e demais atos administrativos.</p></td><td><p><a href="dados-abertos"><img alt="Dados Abertos" class="image-inline" src="../imagens/transparencia-dados.png" /></a></p><h3><a href="dados-abertos">Dados Abertos</a></h3><p>Informações em formato de dados abertos disponíveis neste site, utilizáveis por qualquer pessoa e processáveis por máquinas.</p></td></tr><tr><td><p><a href="acesso-a-informacao"><img alt="Acesso à Informação / Ouvidoria / e-SIC" class="image-inline" src="../imagens/transparencia-informacao.png" /></a></p><h3><a href="acesso-a-informacao">Acesso à Informação / e-SIC / Ouvidoria</a></h3><p>Se você deseja alguma informação que ainda não está publicada neste site, faça um <a href="../ouvidoria/++add++Claim?form.widgets.kind=pedido-de-acesso-a-informaassapso&amp;form.widgets.area=ouvidoria">pedido de acesso à informação</a>! Você também pode enviar outras <a href="../ouvidoria/++add++Claim?form.widgets.kind=solicitaassapso&amp;form.widgets.area=ouvidoria">solicitações</a>, <a href="../ouvidoria/++add++Claim?form.widgets.kind=reclamaassapso&amp;form.widgets.area=ouvidoria">reclamações</a>, <a href="../ouvidoria/++add++Claim?form.widgets.kind=elogio&amp;form.widgets.area=ouvidoria">elogios</a>, <a href="../ouvidoria/++add++Claim?form.widgets.kind=denaoncia&amp;form.widgets.area=ouvidoria">denúncias</a>, <a href="../ouvidoria/++add++Claim?form.widgets.kind=daovida&amp;form.widgets.area=ouvidoria">dúvidas</a> e <a href="../ouvidoria/++add++Claim?form.widgets.kind=sugestapso&amp;form.widgets.area=ouvidoria">sugestões</a> sobre as atividades administrativas e legislativas desta Casa.</p></td><td><p><a href="indice-de-transparencia"><img alt="Índice de Transparência" class="image-inline" src="../imagens/transparencia-indice.png" /></a></p><h3><a href="indice-de-transparencia">Índice de Transparência</a></h3><p>Como cidadão consciente e participativo, você pode avaliar este site e os demais sites do Poder Legislativo com base na Lei de Responsabilidade Fiscal (LRF) e na Lei de Acesso à Informação (LAI), basta baixar o manual e a planilha de avaliação. Participe!</p></td></tr><tr><td><p><a href="bens-imoveis-e-veiculos"><img alt="Bens Imóveis e Veículos" class="image-inline" src="../imagens/bens.png" /></a></p><h3><a href="bens-imoveis-e-veiculos">Bens Imóveis e Veículos</a></h3><p>Informações sobre a lista de imóveis próprios e/ou alugados pela Casa Legislativa.</p></td><td><p><a href="controle-e-fiscalizacao-do-executivo"><img alt="Controle e Fiscalização do Executivo" class="image-inline" src="../imagens/executivo.png" /></a></p><h3><a href="controle-e-fiscalizacao-do-executivo">Controle e Fiscalização do Executivo</a></h3><p>Informações sobre atos que apreciaram as Contas dos Prefeitos (decretos) e o teor dos respectivos julgamentos.</p></td></tr></tbody></table>',
             ),
             dict(
                 type='Folder',
@@ -771,7 +815,7 @@ SITE_STRUCTURE = [
                         id='orcamento-e-financas',
                         title=u'Orçamento e Finanças',
                         description=u'',
-                        text=u'<p>Publique aqui a informações sobre receitas, despesas, repasses e transferências da Casa Legislativa.</p><p>Se a contabilidade da Câmara for realizada junto com a do Executivo, você pode colocar um link que redirecione para as informações existentes no site da Prefeitura. <strong>ATENÇÃO</strong>: nesse caso deve ser possível filtrar/pesquisar as despesas da Câmara de forma específica.</p>',)],
+                        text=u'<p>Publique aqui a informações sobre receitas, despesas, repasses e transferências da Casa Legislativa e os seguintes demonstrativos contábeis específicos da Câmara:</p><ul><li>Balanço Orçamentário</li></ul><ul><li>Balanço Financeiro<li></ul><ul><li>Balanço Patrimonial</li></ul><ul><li>Demonstração das Variações Patrimoniais</li></ul><ul><li>Demonstração dos Fluxos de Caixa (DFC)</li></ul><p>Se a contabilidade da Câmara for realizada junto com a do Executivo, você pode colocar um link que redirecione para as informações existentes no site da Prefeitura. <strong>ATENÇÃO</strong>: nesse caso deve ser possível filtrar/pesquisar as despesas da Câmara de forma específica.</p>',)],
             ),
             dict(
                 type='Folder',
@@ -817,6 +861,32 @@ SITE_STRUCTURE = [
                 title=u'Atos Administrativos',
                 description=u'Publicação dos atos administrativos e outros documentos referentes à atividade administrativa da Casa Legislativa.',
                 _layout='folder_tabular_view',
+            ),
+            dict(
+                type='Folder',
+                title=u'Bens Imóveis e Veículos',
+                description=u'',
+                _layout='folder_tabular_view',
+                _children=[
+                    dict(
+                        type='Document',
+                        id='bens-imoveis-e-veiculos',
+                        title=u'Bens Imóveis e Veículos',
+                        description=u'',
+                        text=u'<h2>Imóveis</h2><p>Divulgue aqui a lista de imóveis próprios e/ou alugados pela Câmara.</p><table class="plain"><tbody><tr><th>Imóvel</th><th>Descrição</th><th>Endereço</th><th>Locado ou próprio</th></tr></tbody></table><p> </p><h2>Veículos</h2><p>Divulgue aqui a lista de veículos próprios e/ou alugados pela Câmara.</p><table class="plain"><tbody><tr><th>Modelo</th><th>Ano</th><th>Placa</th><th>Locado ou próprio</th><tr></tbody></table>',)],
+            ),
+            dict(
+                type='Folder',
+                title=u'Controle e Fiscalização do Executivo',
+                description=u'',
+                _layout='folder_tabular_view',
+                _children=[
+                    dict(
+                        type='Document',
+                        id='controle-e-fiscalizacao-do-executivo',
+                        title=u'Controle e Fiscalização do Executivo',
+                        description=u'',
+                        text=u'<p>Publique aqui os atos que apreciaram as Contas dos Prefeitos (decretos) e o teor dos respectivos julgamentos. Deve ser possível extrair a justificativa a respeito do acolhimento ou da rejeição das contas dos Prefeitos, o que pode ser feito por meio da disponibilização do vídeo da sessão de julgamento ou por meio da publicação do inteiro teor da ata da respectiva sessão ou apenas de um resumo desta.</p>',)],
             ),
             dict(
                 type='Document',
