@@ -13,6 +13,9 @@ Changelog
 - Add link to exercise manual.
   [rafahela]
 
+- Add TCE/RS guidance.
+  [rafahela]
+
 
 1.0rc11 (2018-07-09)
 --------------------
