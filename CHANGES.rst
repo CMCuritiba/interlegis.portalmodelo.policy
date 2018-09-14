@@ -16,6 +16,9 @@ Changelog
 - Add TCE/RS guidance.
   [rafahela]
 
+- Remove audio and video view.
+  [rafahela]
+
 
 1.0rc11 (2018-07-09)
 --------------------
@@ -26,7 +29,7 @@ Changelog
 - Fix google analytics problem.
   [rafahela]
 
-- Configure views for live radio and audio.
+- Configure views for live video and audio.
   [rafahela]
 
 - Change robots rules.
