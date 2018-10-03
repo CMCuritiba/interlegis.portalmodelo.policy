@@ -1044,7 +1044,7 @@ SITE_STRUCTURE = [
         type='Link',
         title=u'Caderno de Exercícios',
         description=u'Link para o arquivo PDF do Caderno de Exercícios do Portal Modelo 3, utilizado nas oficinas. (este link é apenas uma referência, está privado e pode ser removido)',
-        remoteUrl='https://colab.interlegis.leg.br/raw-attachment/wiki/ProjetoPortalModelo/CadernoExerciciosPortalModelo.pdf',
+        remoteUrl='http://ftp.interlegis.leg.br/interlegis/produtos/portalmodelo/versao3.0/docs/Caderno%20de%20exercicios%20PORTAL%20MODELO%203%C2%AA%20edi%C3%A7%C3%A3o-%20Colab.pdf',
         _transition=None,
     ),
     dict(
