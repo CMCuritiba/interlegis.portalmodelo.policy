@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0rc12 (unreleased)
+1.0rc12 (2018-10-04)
 --------------------
 
 - Delete accessibility info template from policy.
