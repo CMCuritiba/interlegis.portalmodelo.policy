@@ -82,3 +82,9 @@ O estado atual dos testes pode ser visto nas imagens a seguir:
 .. _`sc.embedder`: https://pypi.python.org/pypi/sc.embedder
 .. _`sc.social.like`: https://pypi.python.org/pypi/sc.social.like
 .. _`Solgema.fullcalendar`: https://pypi.python.org/pypi/Solgema.fullcalendar
+
+
+Contribuindo
+========================
+
+Para contribuir com o projeto, por favor, leia o [CONTRIBUTING](https://github.com/interlegis/interlegis.portalmodelo.policy/blob/master/.github/CONTRIBUTING.md)
