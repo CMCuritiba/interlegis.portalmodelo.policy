@@ -9,7 +9,7 @@ Thanks for contributing!  :+1:
 
 ### Reporting a Bug
 
-* If the bug found is not in the _Issues_, just open a [New _Issue_] (https://github.com/interlegis/interlegis.portalmodelo.policy/issues/new).
+* If the bug found is not in the _Issues_, just open a [New _Issue_](https://github.com/interlegis/interlegis.portalmodelo.policy/issues/new)
 
 ### Adding and / or modifying some functionality
 
