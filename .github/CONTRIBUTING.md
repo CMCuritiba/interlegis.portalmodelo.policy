@@ -58,16 +58,16 @@ __OBS__: The _branchs_ policy was designed to work in conjunction with the _git 
 
 * __develop__ - Branch for integration of new functionalities, where it will be allowed the delivery of the features developed and that are in an advanced stage of completeness. It will be the base branch for the beginning of the development of the features and of the correction of bugs. The releases will also be released here.
 
-* __feature / <name-of-feature> __ - Branch used to develop new features of _backlog_. If the feature has been proposed by a _issue_ of the repository and accepted in _backlog_ the name should contain the _issue_ number.
+* __feature__ / <name-of-feature> __ - Branch used to develop new features of _backlog_. If the feature has been proposed by a _issue_ of the repository and accepted in _backlog_ the name should contain the _issue_ number.
 Ex: feature / 1- <new-feature-name> (whereas feature has been requested in _issue_ # 1)
 
-* __bugfix / <bug-name> __ - Branch used to fix low / medium urgency bugs that are not present in the __develop__ branch. If the bug has been reported by a _issue_ from the repository the name should contain the _issue_ number.
+* __bugfix__ / <bug-name> __ - Branch used to fix low / medium urgency bugs that are not present in the __develop__ branch. If the bug has been reported by a _issue_ from the repository the name should contain the _issue_ number.
  Ex: bugfix / 1- <bug-description> (whereas bug has been reported in _issue_ # 1)
 
-* __hotfix / <bug-name> __ - Branch used to fix high-urgency bugs that are present in the __develop__ branch. If the bug has been reported by a _issue_ from the repository the name should contain the _issue_ number.
+* __hotfix__ / <bug-name> __ - Branch used to fix high-urgency bugs that are present in the __develop__ branch. If the bug has been reported by a _issue_ from the repository the name should contain the _issue_ number.
  Ex: bugfix / 1- <bug-description> (whereas bug has been reported in _issue_ # 1)
 
-* __release / <release-version> __ - Branch where the final / build adjustments will be made before delivery of a software product version. Branch name will be the version of the release to be delivered.
+* __release__ / <release-version> __ - Branch where the final / build adjustments will be made before delivery of a software product version. Branch name will be the version of the release to be delivered.
 
-* __support / <theme-or-nature> __ - Branch where support tasks related to the software will be executed, such as documentation development, configuration management nature corrections and so on.
+* __support__ / <theme-or-nature> __ - Branch where support tasks related to the software will be executed, such as documentation development, configuration management nature corrections and so on.
 
