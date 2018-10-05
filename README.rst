@@ -87,4 +87,4 @@ O estado atual dos testes pode ser visto nas imagens a seguir:
 Contribuindo
 ========================
 
-Para contribuir com o projeto, por favor, leia o [CONTRIBUTING](https://github.com/interlegis/interlegis.portalmodelo.policy/blob/master/.github/CONTRIBUTING.md)
+Para contribuir com o projeto, por favor, leia o `CONTRIBUTING <https://github.com/interlegis/interlegis.portalmodelo.policy/blob/documentation/.github/CONTRIBUTING.md>`_.
