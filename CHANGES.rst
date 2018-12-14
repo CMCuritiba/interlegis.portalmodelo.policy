@@ -1,10 +1,11 @@
 Changelog
 =========
 
-1.0rc13 (unreleased)
+1.0rc13 (2018-12-14)
 --------------------
 
-- Nothing changed yet.
+- Add upgrade step 55555. Uninstall and install sc.social.like.
+  [IolaneAndrade]
 
 
 1.0rc12 (2018-10-04)
