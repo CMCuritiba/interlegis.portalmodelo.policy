@@ -4,7 +4,8 @@ Changelog
 1.0rc14 (unreleased)
 --------------------
 
-- Nothing changed yet.
+- Change url from transparency index.
+  [rafahela]
 
 
 1.0rc13 (2018-12-14)
