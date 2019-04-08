@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0rc14 (unreleased)
+1.0rc14 (2019-04-08)
 --------------------
 
 - Change url from transparency index.
