@@ -23,7 +23,8 @@ Dependências
 Este pacote instala as seguintes dependências do projeto:
 
 * `collective.cover`_
-* `collective.flowplayer`_
+* REMOVIDO - `collective.flowplayer`_
+* `wildcard.media`_
 * `collective.oembed`_
 * `collective.plonetruegallery`_
 * `collective.polls`_
@@ -64,6 +65,7 @@ O estado atual dos testes pode ser visto nas imagens a seguir:
 
 .. _`collective.cover`: https://pypi.python.org/pypi/collective.cover
 .. _`collective.flowplayer`: https://pypi.python.org/pypi/collective.flowplayer
+.. _`wildcard.media`: https://pypi.python.org/pypi/wildcard.media
 .. _`collective.oembed`: https://pypi.python.org/pypi/collective.oembed
 .. _`collective.plonetruegallery`: https://pypi.python.org/pypi/collective.plonetruegallery
 .. _`collective.polls`: https://pypi.python.org/pypi/collective.polls

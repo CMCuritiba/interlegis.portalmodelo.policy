@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from collective.flowplayer.interfaces import IAudio
-from collective.flowplayer.interfaces import IVideo
+from wildcard.media.interfaces import IAudioEnabled
+from wildcard.media.interfaces import IVideoEnabled
 from dateutil.relativedelta import relativedelta
 from five import grok
 from interlegis.portalmodelo.policy.config import CREATORS
@@ -272,10 +272,10 @@ def set_default_view_on_folder(folder, object_id=''):
 def set_flowplayer_file_type(obj):
     """Set flowplayer as default view on object or folder."""
     if obj.id.endswith('mp3'):
-        alsoProvides(obj, IAudio)
+        alsoProvides(obj, IAudioEnabled)
         obj.reindexObject(idxs=['object_provides'])
     elif obj.id.endswith('mp4'):
-        alsoProvides(obj, IVideo)
+        alsoProvides(obj, IVideoEnabled)
         obj.reindexObject(idxs=['object_provides'])
     logger.info(u'Tipo de arquivo estabelecido')
 

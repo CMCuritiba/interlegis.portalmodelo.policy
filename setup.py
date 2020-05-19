@@ -41,7 +41,6 @@ setup(
     install_requires=[
         'collective.contentrules.mailtogroup',
         'collective.cover',
-        'collective.flowplayer',
         'collective.oembed',
         'collective.opendata',
         'collective.plonetruegallery',
@@ -84,6 +83,7 @@ setup(
         'setuptools',
         'Solgema.fullcalendar',
         'webcouturier.dropdownmenu',
+        'wildcard.media',
         'z3c.unconfigure',
         'zope.component',
         'zope.i18nmessageid',

@@ -4,7 +4,8 @@ Changelog
 1.0rc15 (unreleased)
 --------------------
 
-- Nothing changed yet.
+- Replace collective.flowplayer with wildcard.media.
+  [ramiroluz]
 
 
 1.0rc14 (2019-04-08)

@@ -628,7 +628,6 @@ SITE_STRUCTURE = [
                         title=u'Todas as Casas Legislativas podem ter um site na Internet',
                         description=u'Arquivo em formato MP4 hospedado localmente neste site sobre a campanha da Solução Web Interlegis que visa disponibilizar gratuitamente um site para cada Câmara Municipal que ainda não possui. (este arquivo é um conteúdo de exemplo e pode ser removido)',
                         file=VIDEO2,
-                        _layout='flowplayer',
                     ),
                     dict(
                         type='File',
@@ -636,7 +635,6 @@ SITE_STRUCTURE = [
                         title=u'Como acessar os sites do Legislativo',
                         description=u'Arquivo em formato MP4 hospedado localmente neste site com a campanha para informar os cidadãos sobre como usar o domínio do legislativo brasileiro .leg.br para acessar os sites do poder legislativo. (este arquivo é um conteúdo de exemplo e pode ser removido)',
                         file=VIDEO1,
-                        _layout='flowplayer',
                     ),
                 ],
             ),
@@ -646,7 +644,6 @@ SITE_STRUCTURE = [
                 title=u'Galeria de Áudios',
                 description=u'Acervo de áudios e podcasts da Casa Legislativa sobre eventos ocorridos, sessões legislativas, promocionais, informativos, entre outros, em formato MP3 e/ou algum serviço de streaming de som pela Internet.',
                 _addable_types=['Collection', 'Folder', 'File', 'Link', 'sc.embedder'],
-                _layout='flowplayer',
                 _children=[
                     dict(
                         type='Collection',
@@ -674,7 +671,6 @@ SITE_STRUCTURE = [
                         title=u'Campanha para o cidadão usar o domínio leg.br',
                         description=u'Arquivo em formato MP3 hospedado localmente neste site sobre a campanha para orientar os cidadãos a usar o domínio do legislativo brasileiro na internet. (este arquivo é um conteúdo de exemplo e pode ser removido)',
                         file=AUDIO1,
-                        _layout='flowplayer',
                     ),
                     dict(
                         type='File',
@@ -682,7 +678,6 @@ SITE_STRUCTURE = [
                         title=u'Solução Web Interlegis',
                         description=u'Arquivo em formato MP3 hospedado localmente neste site sobre a campanha da Solução Web Interlegis que visa disponibilizar gratuitamente um site para cada Câmara Municipal que ainda não possui. (este arquivo é um conteúdo de exemplo e pode ser removido)',
                         file=AUDIO2,
-                        _layout='flowplayer',
                     ),
                     dict(
                         type='Link',

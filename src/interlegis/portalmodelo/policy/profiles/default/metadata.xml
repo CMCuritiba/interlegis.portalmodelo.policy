@@ -3,7 +3,6 @@
   <version>1</version>
   <dependencies>
     <dependency>profile-collective.cover:default</dependency>
-    <dependency>profile-collective.flowplayer:default</dependency>
     <dependency>profile-collective.oembed:default</dependency>
     <dependency>profile-collective.plonetruegallery:default</dependency>
     <dependency>profile-collective.polls:default</dependency>
@@ -24,5 +23,6 @@
     <dependency>profile-sc.embedder:default</dependency>
     <dependency>profile-sc.social.like:default</dependency>
     <dependency>profile-Solgema.fullcalendar:default</dependency>
+    <dependency>profile-wildcard.media:default</dependency>
   </dependencies>
 </metadata>

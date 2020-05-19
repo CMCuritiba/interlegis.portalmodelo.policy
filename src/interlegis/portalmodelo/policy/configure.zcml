@@ -15,7 +15,6 @@
 
   <include package="collective.contentrules.mailtogroup" />
   <include package="collective.cover" />
-  <include package="collective.flowplayer" />
   <include package="collective.opendata" />
   <include package="collective.oembed" />
   <include package="collective.plonetruegallery" />
@@ -36,6 +35,7 @@
   <include package="sc.embedder" />
   <include package="sc.social.like" />
   <include package="webcouturier.dropdownmenu" />
+  <include package="wildcard.media" />
 
   <include package=".browser" />
 

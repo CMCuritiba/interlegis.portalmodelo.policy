@@ -81,7 +81,7 @@
   <property name="footer">Mais vídeos…</property>
  </assignment>
  <assignment name="radio-legislativa" category="context" key="/"
-    manager="plone.rightcolumn" type="collective.flowplayer.Player"
+    manager="plone.rightcolumn" type="plone.portlet.static.Static"
     visible="True">
   <property name="show_more">True</property>
   <property name="header">Rádio Legislativa</property>
