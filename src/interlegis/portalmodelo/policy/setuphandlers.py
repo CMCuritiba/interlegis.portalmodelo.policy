@@ -269,8 +269,8 @@ def set_default_view_on_folder(folder, object_id=''):
     logger.info(u'Visão padrão criada e estabelecida para {0}'.format(title))
 
 
-def set_flowplayer_file_type(obj):
-    """Set flowplayer as default view on object or folder."""
+def set_media_file_type(obj):
+    """Set media as default view on object or folder."""
     if obj.id.endswith('mp3'):
         alsoProvides(obj, IAudioEnabled)
         obj.reindexObject(idxs=['object_provides'])
@@ -336,7 +336,7 @@ def miscelaneous_house_folder(site):
     """Set various adjustments on site content on "Sobre a Câmara" folder:
 
     - Set default views on subfolders
-    - Set flowplayer file types on "Áudios" and "Vídeos"
+    - Set media file types on "Áudios" and "Vídeos"
     """
     folder = site['institucional']
     set_default_view_on_folder(folder['acesso'], object_id='pagina-padrao')
@@ -349,12 +349,12 @@ def miscelaneous_house_folder(site):
     set_default_view_on_folder(site['transparencia'], object_id='pagina-padrao')
 
     videos = folder['videos']
-    set_flowplayer_file_type(videos['campanha-legbr.mp4'])
-    set_flowplayer_file_type(videos['solucao-web-interlegis.mp4'])
+    set_media_file_type(videos['campanha-legbr.mp4'])
+    set_media_file_type(videos['solucao-web-interlegis.mp4'])
 
     audios = folder['audios']
-    set_flowplayer_file_type(audios['campanha-legbr.mp3'])
-    set_flowplayer_file_type(audios['solucao-web-interlegis.mp3'])
+    set_media_file_type(audios['campanha-legbr.mp3'])
+    set_media_file_type(audios['solucao-web-interlegis.mp3'])
 
 
 def import_registry_settings(site):
@@ -461,8 +461,8 @@ def fix_image_links_in_static_portlet(portal):
     logger.debug(u'Link substituido no portlet de acesso a informacao')
 
 
-def set_flowplayer_portlet(portal):
-    """Set target and splash objects in flowplayer radio-legislativa portlet."""
+def set_media_portlet(portal):
+    """Set target and splash objects in radio-legislativa portlet."""
     manager = getUtility(IPortletManager, name='plone.rightcolumn', context=portal)
     mapping = getMultiAdapter((portal, manager), IPortletAssignmentMapping)
 
@@ -482,6 +482,6 @@ def setup_portlets(context):
 
     portal = api.portal.get()
     fix_image_links_in_static_portlet(portal)
-    set_flowplayer_portlet(portal)
+    set_media_portlet(portal)
 
 

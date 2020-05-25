@@ -1,8 +1,56 @@
 # -*- coding:utf-8 -*-
-from interlegis.portalmodelo.policy.utils import _add_id
-from StringIO import StringIO
-
 import os
+from StringIO import StringIO
+from shutil import copyfile
+from tempfile import mktemp
+
+from plone.namedfile import NamedBlobFile
+
+from interlegis.portalmodelo.policy.utils import _add_id
+
+from plone.namedfile import storages
+from plone.namedfile.interfaces import IStorage
+from zope.component import provideUtility
+
+
+# NamedBlobImage can't be instantiated until after zcml has loaded
+# (because it relies on these utilities)
+# https://community.plone.org/t/componentlookuperror-on-plone-namedfile/161/2
+# This function initializes storage utilities.
+# registerUtilities() is called on the head of this file for this reason.
+def registerUtilities():
+    provideUtility(storages.StringStorable(), IStorage, name="__builtin__.str")  # noqa
+    provideUtility(storages.UnicodeStorable(), IStorage, name="__builtin__.unicode")  # noqa
+    provideUtility(storages.FileChunkStorable(), IStorage, name="plone.namedfile.file.FileChunk")  # noqa
+    provideUtility(storages.FileDescriptorStorable(), IStorage, name="__builtin__.file")  # noqa
+
+
+registerUtilities()
+
+
+# Utility to load audio and video blob files.
+# adapted from: https://github.com/collective/wildcard.media/blob/master/wildcard/media/tests/__init__.py
+def _getBlob(_filename, _contentType='audio/mp3'):
+    def make_a_copy(filename):
+        newpath = mktemp()
+        file_path = os.path.join(
+                os.path.dirname(__file__), 'browser/static', filename)
+        copyfile(file_path, newpath)
+        return newpath
+
+    # NamedBlobFile "unlink/removes" the file, so let's make a copy first.
+    blob_file = open(make_a_copy(_filename), 'rb')
+
+    return NamedBlobFile(data=blob_file, contentType=_contentType, filename=_filename)
+
+
+def getAudioBlob(filename):
+    return _getBlob(filename, _contentType='audio/mp3')  # default to mp3, just in case.
+
+
+def getVideoBlob(filename):
+    return _getBlob(filename, _contentType='video/mp4')
+
 
 PROJECTNAME = 'interlegis.portalmodelo.policy'
 PROFILE_ID = '{0}:default'.format(PROJECTNAME)
@@ -32,18 +80,16 @@ IMAGE3 = open(
 IMAGE4 = open(
     os.path.join(
         os.path.dirname(__file__), 'browser/static', 'plenario-camara.jpg')).read()
-VIDEO1 = StringIO(open(
-    os.path.join(
-        os.path.dirname(__file__), 'browser/static', 'campanha-legbr.mp4')).read())
-VIDEO2 = StringIO(open(
-    os.path.join(
-        os.path.dirname(__file__), 'browser/static', 'solucao-web-interlegis.mp4')).read())
-AUDIO1 = StringIO(open(
-    os.path.join(
-        os.path.dirname(__file__), 'browser/static', 'campanha-legbr.mp3')).read())
-AUDIO2 = StringIO(open(
-    os.path.join(
-        os.path.dirname(__file__), 'browser/static', 'solucao-web-interlegis.mp3')).read())
+
+# NamedBlobImage can't be instantiated until after zcml has loaded
+# (because it relies on these utilities)
+# https://community.plone.org/t/componentlookuperror-on-plone-namedfile/161/2
+# This function initializes storage utilities.
+# registerUtilities() is called on the head of this file for this reason.
+VIDEO1 = getVideoBlob(u'campanha-legbr.mp4')
+VIDEO2 = getVideoBlob(u'solucao-web-interlegis.mp4')
+AUDIO1 = getAudioBlob(u'campanha-legbr.mp3')
+AUDIO2 = getAudioBlob(u'solucao-web-interlegis.mp3')
 
 # new site structure; this dictionary defines the objects that are going to be
 # created on the root of the site; it also includes information about folder
@@ -271,7 +317,7 @@ SITE_STRUCTURE = [
                 id='videos',
                 title=u'Galeria de Vídeos',
                 description=u'Acervo de vídeos da Casa Legislativa sobre eventos ocorridos, sessões legislativas, promocionais, informativos, entre outros, em formato MP4 e/ou streaming de serviços multimídia pela Internet.',
-                _addable_types=['Collection', 'Folder', 'File', 'Link', 'sc.embedder'],
+                _addable_types=['Collection', 'Folder', 'WildcardVideo', 'File', 'Link', 'sc.embedder'],
                 _children=[
                     dict(
                         type='Collection',
@@ -285,7 +331,7 @@ SITE_STRUCTURE = [
                             dict(
                                 i='portal_type',
                                 o='plone.app.querystring.operation.selection.is',
-                                v=['File', 'Link', 'sc.embedder'],
+                                v=['File', 'Link', 'sc.embedder', 'WildcardVideo'],
                             ),
                             dict(
                                 i='path',
@@ -623,18 +669,24 @@ SITE_STRUCTURE = [
                         height=344,
                     ),
                     dict(
-                        type='File',
+                        type='WildcardVideo',
                         id='solucao-web-interlegis.mp4',
                         title=u'Todas as Casas Legislativas podem ter um site na Internet',
                         description=u'Arquivo em formato MP4 hospedado localmente neste site sobre a campanha da Solução Web Interlegis que visa disponibilizar gratuitamente um site para cada Câmara Municipal que ainda não possui. (este arquivo é um conteúdo de exemplo e pode ser removido)',
-                        file=VIDEO2,
+                        video_file=VIDEO2,
+                        contentType='video/mpeg',
+                        filename='solucao-web-interlegis.mp4',
+                        file=VIDEO2,  # XXX: not sure, I think we don't need this. In the audio file it worked without it.
                     ),
                     dict(
-                        type='File',
+                        type='WildcardVideo',
                         id='campanha-legbr.mp4',
                         title=u'Como acessar os sites do Legislativo',
                         description=u'Arquivo em formato MP4 hospedado localmente neste site com a campanha para informar os cidadãos sobre como usar o domínio do legislativo brasileiro .leg.br para acessar os sites do poder legislativo. (este arquivo é um conteúdo de exemplo e pode ser removido)',
-                        file=VIDEO1,
+                        video_file=VIDEO1,
+                        contentType='video/mpeg',
+                        filename='campanha-legbr.mp4',
+                        file=VIDEO1,  # XXX: not sure, I think we don't need this. In the audio file it worked without it.
                     ),
                 ],
             ),
@@ -643,7 +695,7 @@ SITE_STRUCTURE = [
                 id='audios',
                 title=u'Galeria de Áudios',
                 description=u'Acervo de áudios e podcasts da Casa Legislativa sobre eventos ocorridos, sessões legislativas, promocionais, informativos, entre outros, em formato MP3 e/ou algum serviço de streaming de som pela Internet.',
-                _addable_types=['Collection', 'Folder', 'File', 'Link', 'sc.embedder'],
+                _addable_types=['WildcardAudio', 'Collection', 'Folder', 'File', 'Link', 'sc.embedder'],
                 _children=[
                     dict(
                         type='Collection',
@@ -656,7 +708,7 @@ SITE_STRUCTURE = [
                             dict(
                                 i='portal_type',
                                 o='plone.app.querystring.operation.selection.is',
-                                v=['File', 'Link', 'sc.embedder'],
+                                v=['File', 'Link', 'sc.embedder', 'WildcardAudio'],
                             ),
                             dict(
                                 i='path',
@@ -666,18 +718,22 @@ SITE_STRUCTURE = [
                         ],
                     ),
                     dict(
-                        type='File',
+                        type='WildcardAudio',
                         id='campanha-legbr.mp3',
                         title=u'Campanha para o cidadão usar o domínio leg.br',
                         description=u'Arquivo em formato MP3 hospedado localmente neste site sobre a campanha para orientar os cidadãos a usar o domínio do legislativo brasileiro na internet. (este arquivo é um conteúdo de exemplo e pode ser removido)',
-                        file=AUDIO1,
+                        audio_file=AUDIO1,
+                        contentType='audio/mpeg',
+                        filename='campanha-legbr.mp3',
                     ),
                     dict(
-                        type='File',
+                        type='WildcardAudio',
                         id='solucao-web-interlegis.mp3',
                         title=u'Solução Web Interlegis',
                         description=u'Arquivo em formato MP3 hospedado localmente neste site sobre a campanha da Solução Web Interlegis que visa disponibilizar gratuitamente um site para cada Câmara Municipal que ainda não possui. (este arquivo é um conteúdo de exemplo e pode ser removido)',
-                        file=AUDIO2,
+                        audio_file=AUDIO2,
+                        contentType='audio/mpeg',
+                        filename='solucao-web-interlegis.mp3',
                     ),
                     dict(
                         type='Link',
